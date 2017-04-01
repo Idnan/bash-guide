@@ -315,7 +315,7 @@ You can also force grep to ignore word case by using `-i` option. Also `-r` can 
 ```bash
 $ grep -r admin /etc/
 ```
-And `-w` to search for words only.
+And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
 
 ### c. `wc`
 Tells you how many lines, words and characters there are in a file  
