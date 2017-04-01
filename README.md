@@ -5,9 +5,9 @@
 
 ## Table of Contents
   1. [Bash Basics](#1-bash-basics)  
-    1.1. [File Commands](#11-file-commands)  
-    1.2. [Directory Commands](#12-directory-commands)  
-    1.3. [SSH, System Info & Network Commands](#13-ssh-system-info--network-commands)  
+    1.1. [File Operations](#11-file-operations)  
+    1.2. [Directory Operations](#12-directory-operations)  
+    1.3. [SSH, System Info & Network Operations](#13-ssh-system-info--network-operations)  
   1. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
     2.3. [String Substitution](#22-string-substitution)  
@@ -72,7 +72,7 @@ $ which php
 ### d. clear
 Clears content on window
 
-## 1.1. File Commands
+## 1.1. File Operations
 <table>
    <tr>
       <td><a href="#a-ls">ls</a></td>
@@ -278,7 +278,7 @@ $ grep -r admin /etc/
 ```
 And `-w` to search for words only.
 
-## 1.2. Directory Commands
+## 1.2. Directory Operations
 
 <table>
    <tr>
@@ -312,7 +312,7 @@ Syntax:
 pwd
 ```
 
-## 1.3. SSH, System Info & Network Commands
+## 1.3. SSH, System Info & Network Operations
 
 <table>
    <tr>
