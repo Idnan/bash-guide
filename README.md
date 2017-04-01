@@ -318,7 +318,17 @@ TODO
 TODO
 
 ### i. `echo`
-TODO
+Display a line of text
+```bash
+echo
+```
+Example:
+```bash
+$ echo test
+test
+$ echo $HOME
+/home/user
+```
 
 ### j. `fmt`
 TODO
