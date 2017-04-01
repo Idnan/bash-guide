@@ -306,7 +306,23 @@ Where `7459` is lines, `15915` is words and `398400` is characters.
 TODO
 
 ### e. `sort`
-TODO
+Sort lines of text file(s)
+```bash
+sort filename
+```
+Example:
+```bash
+$ sort demo.txt
+a
+b
+c
+d
+$ sort demo.txt -r
+d
+c
+b
+a
+```
 
 ### f. `uniq`
 TODO
