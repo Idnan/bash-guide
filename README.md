@@ -41,7 +41,7 @@ $ echo $SHELL
 ```
 
 ### b. `whereis`
-Finds out where a specific binary is on your system.  
+Whereis search for executables, source files, and manual pages using a database built by system automatically.
 ```bash
 whereis name
 ```
@@ -52,7 +52,7 @@ $ whereis php
 ```
 
 ### c. `which`
-Locate a program file in the user's path. This command will prints full path of the executable(s). It does this by searching the directories listed in the environment variable PATH.
+which search for executables in the directories specified by the environment variable PATH. This command will prints full path of the executable(s).
 ```bash
 which program_name 
 ```
