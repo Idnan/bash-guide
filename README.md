@@ -4,7 +4,7 @@
 </p>
 
 ## Table of Contents
-  1. [Bash Basics](#1-bash-basics)  
+  1. [Basics Operations](#1-basic-operations)  
     1.1. [File Operations](#11-file-operations)  
     1.2. [Text Operations](#12-text-operations)  
     1.3. [Directory Operations](#13-directory-operations)  
@@ -25,7 +25,7 @@ This is first line that you will in bash script files called `shebang`. The sheb
 #!/bin/bash
 ```
 
-# 1. Bash Basics
+# 1. Basic Operations
 
 ### a. `export`
 Displays all environment variables and if you want to get detail of specific variable then use `echo $VARIABLE_NAME`  
