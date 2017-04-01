@@ -4,26 +4,21 @@
 </p>
 
 ## Table of Contents
-  1. [Basics Operations](#1-basic-operations)  
+  1. [Basic Operations](#1-basic-operations)  
     1.1. [File Operations](#11-file-operations)  
     1.2. [Text Operations](#12-text-operations)  
     1.3. [Directory Operations](#13-directory-operations)  
     1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
     1.5. [Process Monitoring Operations (TODO)](#15-process-monitoring-operations)
-  1. [Basic Shell Programming](#2-basic-shell-programming)  
+  2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
     2.3. [String Substitution](#22-string-substitution)  
     2.4. [Functions](#23-functions)  
     2.5. [Conditionals](#24-conditionals)  
     2.6. [Loops](#25-loops)  
-  1. [Tricks](#4-tricks)  
-  1. [Debugging](#5-debugging)  
-
-This is first line that you will in bash script files called `shebang`. The shebang line in any script determines the script's ability to be executed like an standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
-
-```bash
-#!/bin/bash
-```
+  3. [Tricks](#4-tricks)  
+  4. [Debugging](#5-debugging)  
+  
 
 # 1. Basic Operations
 
@@ -568,7 +563,12 @@ wget file
 
 # 2. Basic Shell Programming
 
-Now lets discuss about some basic of shell programming. Lets start with creating variables first.
+
+This is first line that you will in bash script files called `shebang`. The shebang line in any script determines the script's ability to be executed like an standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
+
+```bash
+#!/bin/bash
+```
 
 ## 2.1. Variables
 
@@ -778,6 +778,13 @@ bash -n scriptname
 bash -v scriptname
 bash -x scriptname
 ```
-# Feedback
-Suggestions/improvements
-[welcome](https://github.com/idnan/lord-of-terminal/issues)!
+
+## Contribution
+
+- Report issues
+- Open pull request with improvements
+- Spread the word
+
+## License
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
