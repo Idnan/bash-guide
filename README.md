@@ -608,3 +608,7 @@ bash -n scriptname
 bash -v scriptname
 bash -x scriptname
 ```
+## Feedback
+
+Suggestions/improvements
+[welcome](https://github.com/idnan/lord-of-terminal/issues)!
