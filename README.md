@@ -663,7 +663,7 @@ jobs         # lists all jobs (use with -l to see associated PID)
 kill -l      # returns a list of all signals on the system, by name and number
 kill PID     # terminates process with specified PID
 
-ps           # prints a line of information about the current running login shell and any processes running under it
+ps           # prints a line of information about the current running login shell and any processes running under it  
 ps -a        # selects all processes with a tty except session leaders
 
 # 4. Tricks
