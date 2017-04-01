@@ -41,11 +41,32 @@ $ whereis php
 Clears content on window
 
 ## 1.1. File Commands
-
 <table>
-    <tr><td>[ls](https://github.com/Idnan/lord-of-terminal#a-ls)</td><td>[touch](https://github.com/Idnan/lord-of-terminal#b-touch)</td><td>[cat](https://github.com/Idnan/lord-of-terminal#c-cat)</td><td>[more](https://github.com/Idnan/lord-of-terminal#d-more)</td><td>[head](https://github.com/Idnan/lord-of-terminal#e-head)</td><td>[tail](https://github.com/Idnan/lord-of-terminal#f-tail)</td><td>[mv](https://github.com/Idnan/lord-of-terminal#g-mv)</td></tr>
-    <tr><td>[cp](https://github.com/Idnan/lord-of-terminal#h-cp)</td><td>[rm](https://github.com/Idnan/lord-of-terminal#i-rm)</td><td>[diff](https://github.com/Idnan/lord-of-terminal#j-diff)</td><td>[wc](https://github.com/Idnan/lord-of-terminal#k-wc)</td><td>[chmod](https://github.com/Idnan/lord-of-terminal#l-chmod)</td><td>[gzip](https://github.com/Idnan/lord-of-terminal#m-gzip)</td><td>[gunzip](https://github.com/Idnan/lord-of-terminal#n-gunzip)</td></tr>
-    <tr><td>[gzcat](https://github.com/Idnan/lord-of-terminal#o-gzcat)</td><td>[lpr](https://github.com/Idnan/lord-of-terminal#o-lpr)</td><td>[lpq](https://github.com/Idnan/lord-of-terminal#p-lpq)</td><td>[lprm](https://github.com/Idnan/lord-of-terminal#q-lprm)</td><td>[grep](https://github.com/Idnan/lord-of-terminal#q-grep)</td></tr>
+   <tr>
+      <td><a href="#a-ls">ls</a></td>
+      <td><a href="#b-touch">touch</a></td>
+      <td><a href="#c-cat">cat</a></td>
+      <td><a href="#d-more">more</a></td>
+      <td><a href="#e-head">head</a></td>
+      <td><a href="#f-tail">tail</a></td>
+      <td><a href="#g-mv">mv</a></td>
+   </tr>
+   <tr>
+      <td><a href="#h-cp">cp</a></td>
+      <td><a href="#i-rm">rm</a></td>
+      <td><a href="#j-diff">diff</a></td>
+      <td><a href="#k-wc">wc</a></td>
+      <td><a href="#l-chmod">chmod</a></td>
+      <td><a href="#m-gzip">gzip</a></td>
+      <td><a href="#n-gunzip">gunzip</a></td>
+   </tr>
+   <tr>
+      <td><a href="#o-gzcat">gzcat</a></td>
+      <td><a href="#p-lpr">lpr</a></td>
+      <td><a href="#q-lpq">lpq</a></td>
+      <td><a href="#r-lprm">lprm</a></td>
+      <td><a href="#s-grep">grep</a></td>
+   </tr>
 </table>
 
 ### a. `ls`
