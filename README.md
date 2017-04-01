@@ -1,4 +1,8 @@
 
+<p align="center">
+  <img src="http://i.imgur.com/yzpkXF6.png"/>
+</p>
+
 ## Table of Contents
   1. [Bash Basics](#1-bash-basics)  
     1.1. [File Commands](#11-file-commands)  
