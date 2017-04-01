@@ -50,17 +50,15 @@ Clears content on window
       <td><a href="#e-head">head</a></td>
       <td><a href="#f-tail">tail</a></td>
       <td><a href="#g-mv">mv</a></td>
-   </tr>
-   <tr>
       <td><a href="#h-cp">cp</a></td>
       <td><a href="#i-rm">rm</a></td>
       <td><a href="#j-diff">diff</a></td>
+   </tr>
+   <tr>
       <td><a href="#k-wc">wc</a></td>
       <td><a href="#l-chmod">chmod</a></td>
       <td><a href="#m-gzip">gzip</a></td>
       <td><a href="#n-gunzip">gunzip</a></td>
-   </tr>
-   <tr>
       <td><a href="#o-gzcat">gzcat</a></td>
       <td><a href="#p-lpr">lpr</a></td>
       <td><a href="#q-lpq">lpq</a></td>
@@ -251,10 +249,10 @@ And `-w` to search for words only.
 ## 1.2. Directory Commands
 
 <table>
-   	<tr>
-      <td><a herf="#a-mkdir">mkdir</a></td>
-      <td><a herf="#b-cd">cd</a></td>
-      <td><a herf="#c-pwd">pwd</a></td>
+   <tr>
+      <td><a href="#a-mkdir">mkdir</a></td>
+      <td><a href="#b-cd">cd</a></td>
+      <td><a href="#c-pwd">pwd</a></td>
    </tr>
 </table>
 
@@ -283,6 +281,39 @@ pwd
 ```
 
 ## 1.3. SSH, System Info & Network Commands
+
+<table>
+   <tr>
+      <td><a href="#a-mkdir">ssh</a></td>
+      <td><a href="#b-cd">whoami</a></td>
+      <td><a href="#c-pwd">passwd</a></td>
+      <td><a href="#d-quota">quota</a></td>
+      <td><a href="#e-date">date</a></td>
+      <td><a href="#f-cal">cal</a></td>
+      <td><a href="#g-uptime">uptime</a></td>
+      <td><a href="#h-w">w</a></td>
+      <td><a href="#i-finger">finger</a></td>
+      <td><a href="#j-uname">uname</a></td>
+   </tr>
+   <tr>
+      <td><a href="#k-man">man</a></td>
+      <td><a href="#l-df">df</a></td>
+      <td><a href="#m-du">du</a></td>
+      <td><a href="#n-last">last</a></td>
+      <td><a href="#o-ps">ps</a></td>
+      <td><a href="#p-kill">kill</a></td>
+      <td><a href="#q-killall">killall</a></td>
+      <td><a href="#r-top">top</a></td>
+      <td><a href="#s-bg">bg</a></td>
+      <td><a href="#t-fg">fg</a></td>
+   </tr>
+   <tr>
+      <td><a href="#u-ping">ping</a></td>
+      <td><a href="#v-whois">whois</a></td>
+      <td><a href="#w-dig">dig</a></td>
+      <td><a href="#x-wget">wget</a></td>
+   </tr>
+</table>
 
 ### a. `ssh`
 ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine.  
@@ -319,7 +350,7 @@ Shows the month's calendar
 Shows current uptime
 
 ### h. `w`
-Displays whois online
+Displays who is online
 
 ### i. `finger`
 Displays information about user  
@@ -373,44 +404,44 @@ Syntax:
 kill `PID`
 ```
 
-### p. `killall`
+### q. `killall`
 Kill all processes with the name  
 Syntax:
 ```
 killall `processname`
 ```
 
-### q. `top`
+### r. `top`
 Displays your currently active processes
 
-### r. bg
+### s. `bg`
 Lists stopped or background jobs ; resume a stopped job in the background
 
-### s. `fg`
+### t. `fg`
 Brings the most recent job in the foreground.
 
-### t. `ping`
+### u. `ping`
 Pings host and outputs results  
 Syntax:
 ```
 ping `host`
 ```
 
-### u. `whois`
+### v. `whois`
 Gets whois information for domain  
 Syntax:
 ```
 whois `domain`
 ```
 
-### v. `dig`
+### w. `dig`
 Gets DNS information for domain  
 Syntax:
 ```
 dig `domain`
 ```
 
-### w. `wget`
+### x. `wget`
 Downloads file  
 Syntax:
 ```
