@@ -53,7 +53,17 @@ $ whereis php
 /usr/bin/php
 ```
 
-### c. clear
+### c. `which`
+Locate a program file in the user's path. This command will prints full path of the executable(s). It does this by searching the directories listed in the environment variable PATH.
+Syntax:
+```
+Example:
+```
+$ which php
+/c/xampp/php/php
+```
+
+### d. clear
 Clears content on window
 
 ## 1.1. File Commands
