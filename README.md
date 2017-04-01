@@ -16,7 +16,7 @@
 
 This is first line that you will in bash script files called `shebang`. The shebang line in any script determines the script's ability to be executed like an standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
-```
+```bash
 #!/bin/bash
 ```
 
@@ -25,11 +25,11 @@ This is first line that you will in bash script files called `shebang`. The sheb
 ### a. `export`
 Displays all environment variables and if you want to get detail of specific variable then use `echo $VARIABLE_NAME`  
 Syntax:
-```
+```bash
 export
 ```
 Example:
-```
+```bash
 $ export
 SHELL=/bin/zsh
 AWS_HOME=/Users/adnanadnan/.aws
@@ -44,11 +44,11 @@ $ echo $SHELL
 ### b. `whereis`
 Finds out where a specific binary is on your system.  
 Syntax:
-```
+```bash
 whereis `name`
 ```
 Example:
-```
+```bash
 $ whereis php
 /usr/bin/php
 ```
@@ -56,9 +56,11 @@ $ whereis php
 ### c. `which`
 Locate a program file in the user's path. This command will prints full path of the executable(s). It does this by searching the directories listed in the environment variable PATH.
 Syntax:
+```bash
+which `program_name `
 ```
 Example:
-```
+```bash
 $ which php
 /c/xampp/php/php
 ```
@@ -96,7 +98,7 @@ Clears content on window
 ### a. `ls`
 Lists your files. It has a lot of options like `-l` lists files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html)  
 Syntax:
-```
+```bash
 ls `option`
 ```
 Example:
@@ -115,39 +117,39 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 ### b. `touch`
 Creates or updates your file  
 Syntax:
-```
+```bash
 touch `filename`
 ```
 Example:
-```
+```bash
 $ touch trick.md
 ```
 
 ### c. `cat`
 Places standard input into file. Means that it opens the file in terminal for you to edit  
 Syntax:
-```
+```bash
 cat > `filename`
 ```
 
 ### d. `more`
 Shows the first part of a file (move with space and type q to quit)  
 Syntax:
-```
+```bash
 more `filename`
 ```
 
 ### e. `head`
 Outputs the first 10 lines of file  
 Syntax:
-```
+```bash
 head `filename`
 ```
 
 ### f. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows  
 Syntax:
-```
+```bash
 tail `filename`
 ```
 
@@ -155,7 +157,7 @@ tail `filename`
 ### g. `mv`
 Moves a file from one location to other  
 Syntax:
-```
+```bash
 mv `filename1` `filename2`
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
@@ -163,7 +165,7 @@ Where `filename1` is the source path to the file and `filename2` is the destinat
 ### h. `cp`
 Copies a file from one location to other  
 Syntax:
-```
+```bash
 cp `filename1` `filename2`
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
@@ -173,25 +175,25 @@ Removes a file. But if you will apply this command on a directory directory, it 
 `rm: directory: is a directory`
 So in order to remove directory you have to pass `-rf` to remove all the content of the directory recursively  
 Syntax:
-```
+```bash
 rm `filename`
 ```
 
 ### j. `diff`
 Compares files, and shows where they differ  
 Syntax:
-```
+```bash
 diff `filename1` `filename2`
 ```
 
 ### k. `wc`
 Tells you how many lines, words and characters there are in a file  
 Syntax:
-```
+```bash
 wc `filename`
 ```
 Example:
-```
+```bash
 $ wc demo.txt
 7459   15915  398400 demo.txt
 ```
@@ -200,46 +202,46 @@ Where `7459` is lines, `15915` is words and `398400` is characters.
 ### l. `chmod`
 Lets you change the read, write, and execute permissions on your files  
 Syntax:
-```
+```bash
 chmod -options `filename`
 ```
 
 ### m. `gzip`
 Compresses files  
 Syntax:
-```
+```bash
 gzip `filename`
 ```
 
 ### n. `gunzip`
 Un-compresses files compressed by gzip  
 Syntax:
-```
+```bash
 gunzip `filename`
 ```
 
 ### o. `gzcat`
 Lets you look at gzipped file without actually having to gunzip it  
 Syntax:
-```
+```bash
 gzcat `filename`
 ```
 
 ### p. `lpr`
 Print the file  
 Syntax:
-```
+```bash
 lpr `filename`
 ```
 
 ### q. `lpq`
 Check out the printer queue  
 Syntax:
-```
+```bash
 lpq
 ```
 Example:
-```
+```bash
 $ lpq
 Rank    Owner   Job     File(s)                         Total Size
 active  adnanad 59      demo                            399360 bytes
@@ -249,25 +251,25 @@ active  adnanad 59      demo                            399360 bytes
 ### r. `lprm`
 Remove something from the printer queue  
 Syntax:
-```
+```bash
 lprm `jobnumber`
 ```
 
 ### s. `grep`
 Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
 Syntax:
-```
+```bash
 grep `pattern` `filename`
 ```
 Example:
-```
+```bash
 $ grep admin /etc/passwd
 _kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
 _kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
 _krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
 ```
 You can also force grep to ignore word case by using `-i` option. Also `-r` can be used to search all files under the specified directory like
-```
+```bash
 $ grep -r admin /etc/
 ```
 And `-w` to search for words only.
@@ -285,24 +287,24 @@ And `-w` to search for words only.
 ### a. `mkdir`
 Makes a new directory  
 Syntax:
-```
+```bash
 mkdir `dirname`
 ```
 
 ### b. `cd`
 Moves you from one directory to other. If you just run  
-```
+```bash
 $ cd
 ```
 Then it will moves you to home. Also this command accepts an optional `dirname`, which if provided will moves you to that directory.
-```
+```bash
 cd `dirname`
 ```
 
 ### c. `pwd`
 Tells you in which directory you currently are  
 Syntax:
-```
+```bash
 pwd
 ```
 
@@ -344,12 +346,12 @@ pwd
 ### a. `ssh`
 ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine.  
 Syntax:
-```
+```bash
 ssh user@host
 ```
 This command also accepts an option `-p` that can to used to connect to specific port.  
 Syntax:
-```
+```bash
 ssh -p `port` user@host
 ```
 
@@ -362,7 +364,7 @@ Allows the current logged user to change his password
 ### d. `quota`
 Shows what your disk quota is
 Syntax:
-```
+```bash
 quota -v
 ```
 
@@ -381,21 +383,21 @@ Displays who is online
 ### i. `finger`
 Displays information about user  
 Syntax:
-```
+```bash
 finger `username`
 ```
 
 ### j. `uname`
 Shows kernel information  
 Syntax:
-```
+```bash
 uname -a
 ```
 
 ### k. `man`
 Shows the manual for specified command  
 Syntax:
-```
+```bash
 man `command`
 ```
 
@@ -405,35 +407,35 @@ Shows disk usage
 ### m. `du`
 Shows the disk usage of the files and directories in filename (du -s give only a total)  
 Syntax:
-```
+```bash
 du `filename`
 ```
 
 ### n. `last`
 Lists your last logins of specified user  
 Syntax:
-```
+```bash
 last `yourUsername`
 ```
 
 ### o. `ps`
 Lists your processes  
 Syntax:
-```
+```bash
 ps -u `yourusername`
 ```
 
 ### p. `kill`
 Kills (ends) the processes with the ID you gave  
 Syntax:
-```
+```bash
 kill `PID`
 ```
 
 ### q. `killall`
 Kill all processes with the name  
 Syntax:
-```
+```bash
 killall `processname`
 ```
 
@@ -449,28 +451,28 @@ Brings the most recent job in the foreground.
 ### u. `ping`
 Pings host and outputs results  
 Syntax:
-```
+```bash
 ping `host`
 ```
 
 ### v. `whois`
 Gets whois information for domain  
 Syntax:
-```
+```bash
 whois `domain`
 ```
 
 ### w. `dig`
 Gets DNS information for domain  
 Syntax:
-```
+```bash
 dig `domain`
 ```
 
 ### x. `wget`
 Downloads file  
 Syntax:
-```
+```bash
 wget `file`
 ```
 
@@ -484,21 +486,21 @@ Now lets discuss about some basic of shell programming. Lets start with creating
 Creating variable in bash is similar to other language. There are no data types. A variable in bash can contain a number, a character, a string of characters. You have no need to declare a variable, just assigning a value to its reference will create it.
 
 Example:
-```
+```bash
 str="hello world"
 ```
 
 The above line creates a variable `str` and assigns "hello world" to it. Then the value of variable is retrieved by putting the `$` in the beginning of variable name.
 
 Example:
-```
+```bash
 echo $str   # hello world
 ```
 
 Also like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
 
 Examples:
-```
+```bash
 array[0] = val
 array[1] = val
 array[2] = val
@@ -507,19 +509,19 @@ array(val val val)
 ```
 To display a value at specific index use following syntax
 
-```
+```bash
 ${array[i]}     # where i is the index
 ```
 
 One thing to note that if no index is supplied, array element 0 is assumed. To find out how many values there are in the array check following syntax
 
-```
+```bash
 ${#array[@]}
 ```
 
 Bash has also support for the ternary conditions. Check some examples below.
 
-```
+```bash
 ${varname:-word}    # if varname exists and isn't null, return its value; otherwise return word
 ${varname:=word}    # if varname exists and isn't null, return its value; otherwise set it word and then return its value
 ${varname:+word}    # if varname exists and isn't null, return word; otherwise return null
@@ -530,7 +532,7 @@ ${varname:offset:length}    # performs substring expansion. It returns the subst
 
 Check some of the syntax on how to manipulate strings
 
-```
+```bash
 ${variable#pattern}         # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
 ${variable##pattern}        # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
 ${variable%pattern}         # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
@@ -544,14 +546,14 @@ ${#varname}     # returns the length of the value of the variable as a character
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
 Syntax:
-```
+```bash
 functname() {
     shell commands
 }
 ```
 
 Example:
-```
+```bash
 #!/bin/bash
 function hello {
    echo world!
@@ -571,7 +573,7 @@ When you will run above example the `hello` function will output "world!". The a
 The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
 Syntax:
-```
+```bash
 if [expression]; then
     will execute only if expression is true
 else
@@ -582,7 +584,7 @@ fi
 Sometime if conditions becoming confusing so you can write the same condition using the `case statements`.
 
 Syntax:
-```
+```bash
 case expression in
     pattern1 )
         statements ;;
@@ -594,7 +596,7 @@ esac
 
 Expression Examples:
 
-```
+```bash
 statement1 && statement2  # both statements are true
 statement1 || statement2  # one of the statement is true
 
@@ -633,7 +635,7 @@ file1 -ot file2     # file1 is older than file2
 There are three types of loops in bash. `for`, `while` and `until`.
 
 Different `for` Syntax:
-```
+```bash
 for x := 1 to 10 do
 begin
   statements
@@ -651,14 +653,14 @@ done
 ```
 
 `while` Syntax:
-```
+```bash
 while condition; do
   statements
 done
 ```
 
 `until` Syntax:
-```
+```bash
 until condition; do
   statements
 done
@@ -694,7 +696,7 @@ cd hotellogs
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
 Syntax:
-```
+```bash
 bash -n scriptname
 bash -v scriptname
 bash -x scriptname
