@@ -42,6 +42,12 @@ Clears content on window
 
 ## 1.1. File Commands
 
+<table>
+    <tr><td>[ls](https://github.com/Idnan/lord-of-terminal#a-ls)</td><td>[touch](https://github.com/Idnan/lord-of-terminal#b-touch)</td><td>[cat](https://github.com/Idnan/lord-of-terminal#c-cat)</td><td>[more](https://github.com/Idnan/lord-of-terminal#d-more)</td><td>[head](https://github.com/Idnan/lord-of-terminal#e-head)</td><td>[tail](https://github.com/Idnan/lord-of-terminal#f-tail)</td><td>[mv](https://github.com/Idnan/lord-of-terminal#g-mv)</td></tr>
+    <tr><td>[cp](https://github.com/Idnan/lord-of-terminal#h-cp)</td><td>[rm](https://github.com/Idnan/lord-of-terminal#i-rm)</td><td>[diff](https://github.com/Idnan/lord-of-terminal#j-diff)</td><td>[wc](https://github.com/Idnan/lord-of-terminal#k-wc)</td><td>[chmod](https://github.com/Idnan/lord-of-terminal#l-chmod)</td><td>[gzip](https://github.com/Idnan/lord-of-terminal#m-gzip)</td><td>[gunzip](https://github.com/Idnan/lord-of-terminal#n-gunzip)</td></tr>
+    <tr><td>[gzcat](https://github.com/Idnan/lord-of-terminal#o-gzcat)</td><td>[lpr](https://github.com/Idnan/lord-of-terminal#o-lpr)</td><td>[lpq](https://github.com/Idnan/lord-of-terminal#p-lpq)</td><td>[lprm](https://github.com/Idnan/lord-of-terminal#q-lprm)</td><td>[grep](https://github.com/Idnan/lord-of-terminal#q-grep)</td></tr>
+</table>
+
 ### a. `ls`
 Lists your files. It has a lot of options like `-l` lists files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html)  
 Syntax:
