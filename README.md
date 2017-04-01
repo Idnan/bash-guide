@@ -9,13 +9,13 @@
     1.2. [Text Operations](#12-text-operations)  
     1.3. [Directory Operations](#13-directory-operations)  
     1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
+    1.5. [Process Monitoring Operations (TODO)](#15-process-monitoring-operations)
   1. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
     2.3. [String Substitution](#22-string-substitution)  
     2.4. [Functions](#23-functions)  
     2.5. [Conditionals](#24-conditionals)  
     2.6. [Loops](#25-loops)  
-  1. [Process Handling](#3-process-handling)  
   1. [Tricks](#4-tricks)  
   1. [Debugging](#5-debugging)  
 
@@ -755,19 +755,7 @@ until condition; do
 done
 ```
 
-# 3. Process Handling
-
-myCommand &  # runs job in the background and prompts back the shell
-
-jobs         # lists all jobs (use with -l to see associated PID)
-
-kill -l      # returns a list of all signals on the system, by name and number
-kill PID     # terminates process with specified PID
-
-ps           # prints a line of information about the current running login shell and any processes running under it  
-ps -a        # selects all processes with a tty except session leaders
-
-# 4. Tricks
+# 3. Tricks
 
 ## set an alias
 Open `bash_profile` by running following command `nano ~/.bash_profile`
@@ -781,7 +769,7 @@ source ~/.bashrc
 cd hotellogs
 
 
-# 5. Debugging
+# 4. Debugging
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
 Syntax:
