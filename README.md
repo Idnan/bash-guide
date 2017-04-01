@@ -6,7 +6,7 @@
 ## Table of Contents
   1. [Bash Basics](#1-bash-basics)  
     1.1. [File Operations](#11-file-operations)  
-    1.2. [Text Operations](#12-file-operations)  
+    1.2. [Text Operations](#12-text-operations)  
     1.3. [Directory Operations](#13-directory-operations)  
     1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
   1. [Basic Shell Programming](#2-basic-shell-programming)  
