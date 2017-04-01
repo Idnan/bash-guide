@@ -45,7 +45,7 @@ $ echo $SHELL
 Finds out where a specific binary is on your system.  
 Syntax:
 ```bash
-whereis `name`
+whereis name
 ```
 Example:
 ```bash
@@ -57,7 +57,7 @@ $ whereis php
 Locate a program file in the user's path. This command will prints full path of the executable(s). It does this by searching the directories listed in the environment variable PATH.
 Syntax:
 ```bash
-which `program_name `
+which program_name 
 ```
 Example:
 ```bash
@@ -99,7 +99,7 @@ Clears content on window
 Lists your files. It has a lot of options like `-l` lists files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html)  
 Syntax:
 ```bash
-ls `option`
+ls option
 ```
 Example:
 <pre>
@@ -118,7 +118,7 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 Creates or updates your file  
 Syntax:
 ```bash
-touch `filename`
+touch filename
 ```
 Example:
 ```bash
@@ -129,28 +129,28 @@ $ touch trick.md
 Places standard input into file. Means that it opens the file in terminal for you to edit  
 Syntax:
 ```bash
-cat > `filename`
+cat > filename
 ```
 
 ### d. `more`
 Shows the first part of a file (move with space and type q to quit)  
 Syntax:
 ```bash
-more `filename`
+more filename
 ```
 
 ### e. `head`
 Outputs the first 10 lines of file  
 Syntax:
 ```bash
-head `filename`
+head filename
 ```
 
 ### f. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows  
 Syntax:
 ```bash
-tail `filename`
+tail filename
 ```
 
 
@@ -158,7 +158,7 @@ tail `filename`
 Moves a file from one location to other  
 Syntax:
 ```bash
-mv `filename1` `filename2`
+mv filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
@@ -166,7 +166,7 @@ Where `filename1` is the source path to the file and `filename2` is the destinat
 Copies a file from one location to other  
 Syntax:
 ```bash
-cp `filename1` `filename2`
+cp filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
@@ -176,21 +176,21 @@ Removes a file. But if you will apply this command on a directory directory, it 
 So in order to remove directory you have to pass `-rf` to remove all the content of the directory recursively  
 Syntax:
 ```bash
-rm `filename`
+rm filename
 ```
 
 ### j. `diff`
 Compares files, and shows where they differ  
 Syntax:
 ```bash
-diff `filename1` `filename2`
+diff filename1 filename2
 ```
 
 ### k. `wc`
 Tells you how many lines, words and characters there are in a file  
 Syntax:
 ```bash
-wc `filename`
+wc filename
 ```
 Example:
 ```bash
@@ -203,35 +203,35 @@ Where `7459` is lines, `15915` is words and `398400` is characters.
 Lets you change the read, write, and execute permissions on your files  
 Syntax:
 ```bash
-chmod -options `filename`
+chmod -options filename
 ```
 
 ### m. `gzip`
 Compresses files  
 Syntax:
 ```bash
-gzip `filename`
+gzip filename
 ```
 
 ### n. `gunzip`
 Un-compresses files compressed by gzip  
 Syntax:
 ```bash
-gunzip `filename`
+gunzip filename
 ```
 
 ### o. `gzcat`
 Lets you look at gzipped file without actually having to gunzip it  
 Syntax:
 ```bash
-gzcat `filename`
+gzcat filename
 ```
 
 ### p. `lpr`
 Print the file  
 Syntax:
 ```bash
-lpr `filename`
+lpr filename
 ```
 
 ### q. `lpq`
@@ -252,14 +252,14 @@ active  adnanad 59      demo                            399360 bytes
 Remove something from the printer queue  
 Syntax:
 ```bash
-lprm `jobnumber`
+lprm jobnumber
 ```
 
 ### s. `grep`
 Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
 Syntax:
 ```bash
-grep `pattern` `filename`
+grep pattern filename
 ```
 Example:
 ```bash
@@ -288,7 +288,7 @@ And `-w` to search for words only.
 Makes a new directory  
 Syntax:
 ```bash
-mkdir `dirname`
+mkdir dirname
 ```
 
 ### b. `cd`
@@ -298,7 +298,7 @@ $ cd
 ```
 Then it will moves you to home. Also this command accepts an optional `dirname`, which if provided will moves you to that directory.
 ```bash
-cd `dirname`
+cd dirname
 ```
 
 ### c. `pwd`
@@ -352,7 +352,7 @@ ssh user@host
 This command also accepts an option `-p` that can to used to connect to specific port.  
 Syntax:
 ```bash
-ssh -p `port` user@host
+ssh -p port user@host
 ```
 
 ### b. `whoami`
@@ -384,7 +384,7 @@ Displays who is online
 Displays information about user  
 Syntax:
 ```bash
-finger `username`
+finger username
 ```
 
 ### j. `uname`
@@ -398,7 +398,7 @@ uname -a
 Shows the manual for specified command  
 Syntax:
 ```bash
-man `command`
+man command
 ```
 
 ### l. `df`
@@ -408,35 +408,35 @@ Shows disk usage
 Shows the disk usage of the files and directories in filename (du -s give only a total)  
 Syntax:
 ```bash
-du `filename`
+du filename
 ```
 
 ### n. `last`
 Lists your last logins of specified user  
 Syntax:
 ```bash
-last `yourUsername`
+last yourUsername
 ```
 
 ### o. `ps`
 Lists your processes  
 Syntax:
 ```bash
-ps -u `yourusername`
+ps -u yourusername
 ```
 
 ### p. `kill`
 Kills (ends) the processes with the ID you gave  
 Syntax:
 ```bash
-kill `PID`
+kill PID
 ```
 
 ### q. `killall`
 Kill all processes with the name  
 Syntax:
 ```bash
-killall `processname`
+killall processname
 ```
 
 ### r. `top`
@@ -452,28 +452,28 @@ Brings the most recent job in the foreground.
 Pings host and outputs results  
 Syntax:
 ```bash
-ping `host`
+ping host
 ```
 
 ### v. `whois`
 Gets whois information for domain  
 Syntax:
 ```bash
-whois `domain`
+whois domain
 ```
 
 ### w. `dig`
 Gets DNS information for domain  
 Syntax:
 ```bash
-dig `domain`
+dig domain
 ```
 
 ### x. `wget`
 Downloads file  
 Syntax:
 ```bash
-wget `file`
+wget file
 ```
 
 
