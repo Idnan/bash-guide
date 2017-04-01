@@ -6,8 +6,9 @@
 ## Table of Contents
   1. [Bash Basics](#1-bash-basics)  
     1.1. [File Operations](#11-file-operations)  
-    1.2. [Directory Operations](#12-directory-operations)  
-    1.3. [SSH, System Info & Network Operations](#13-ssh-system-info--network-operations)  
+    1.2. [Text Operations](#12-file-operations)
+    1.3. [Directory Operations](#13-directory-operations)  
+    1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
   1. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
     2.3. [String Substitution](#22-string-substitution)  
@@ -87,7 +88,6 @@ Clears content on window
       <td><a href="#j-diff">diff</a></td>
    </tr>
    <tr>
-      <td><a href="#k-wc">wc</a></td>
       <td><a href="#l-chmod">chmod</a></td>
       <td><a href="#m-gzip">gzip</a></td>
       <td><a href="#n-gunzip">gunzip</a></td>
@@ -95,7 +95,6 @@ Clears content on window
       <td><a href="#p-lpr">lpr</a></td>
       <td><a href="#q-lpq">lpq</a></td>
       <td><a href="#r-lprm">lprm</a></td>
-      <td><a href="#s-grep">grep</a></td>
    </tr>
 </table>
 
@@ -190,55 +189,42 @@ Syntax:
 diff filename1 filename2
 ```
 
-### k. `wc`
-Tells you how many lines, words and characters there are in a file  
-Syntax:
-```bash
-wc filename
-```
-Example:
-```bash
-$ wc demo.txt
-7459   15915  398400 demo.txt
-```
-Where `7459` is lines, `15915` is words and `398400` is characters.
-
-### l. `chmod`
+### k. `chmod`
 Lets you change the read, write, and execute permissions on your files  
 Syntax:
 ```bash
 chmod -options filename
 ```
 
-### m. `gzip`
+### l. `gzip`
 Compresses files  
 Syntax:
 ```bash
 gzip filename
 ```
 
-### n. `gunzip`
+### m. `gunzip`
 Un-compresses files compressed by gzip  
 Syntax:
 ```bash
 gunzip filename
 ```
 
-### o. `gzcat`
+### n. `gzcat`
 Lets you look at gzipped file without actually having to gunzip it  
 Syntax:
 ```bash
 gzcat filename
 ```
 
-### p. `lpr`
+### o. `lpr`
 Print the file  
 Syntax:
 ```bash
 lpr filename
 ```
 
-### q. `lpq`
+### p. `lpq`
 Check out the printer queue  
 Syntax:
 ```bash
@@ -252,14 +238,67 @@ active  adnanad 59      demo                            399360 bytes
 1st     adnanad 60      (stdin)                         0 bytes
 ```
 
-### r. `lprm`
+### q. `lprm`
 Remove something from the printer queue  
 Syntax:
 ```bash
 lprm jobnumber
 ```
 
-### s. `grep`
+## 1.2. Text Operations
+
+<table>
+   <tr>
+      <td><a href="#a-awk">awk</a></td>
+      <td><a href="#b-grep">grep</a></td>
+      <td><a href="#c-wc">wc</a></td>
+      <td><a href="#d-sed">sed</a></td>
+      <td><a href="#e-sort">sort</a></td>
+      <td><a href="#f-uniq">uniq</a></td>
+      <td><a href="#g-cat">cat</a></td>
+      <td><a href="#h-cut">cut</a></td>
+      <td><a href="#i-echo">echo</a></td>
+      <td><a href="#j-fmt">fmt</a></td>
+   </tr>
+   <tr>
+      <td><a href="#l-tr">tr</a></td>
+      <td><a href="#m-nl">nl</a></td>
+      <td><a href="#n-egrep">egrep</a></td>
+      <td><a href="#o-fgrep">fgrep</a></td>
+   </tr>
+</table>
+
+### a. `awk`
+Awk is most usefull command for handling text files. It operates on entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
+
+Syntax:
+```bash
+awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
+```
+
+Lets take following file `/etc/passwd`. Here's the sample data that this file contains.
+```
+root:x:0:0:root:/root:/usr/bin/zsh
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+```
+So now lets get only username from this file. Where `-F` specfies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
+```bash
+awk -F':' '{ print $1 }' /etc/passwd
+```
+After running the above command you will get following output.
+```
+root
+daemon
+bin
+sys
+sync
+```
+For more detail on how to use `awk`, check following [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
+
+### b. `grep`
 Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
 Syntax:
 ```bash
@@ -278,7 +317,53 @@ $ grep -r admin /etc/
 ```
 And `-w` to search for words only.
 
-## 1.2. Directory Operations
+### c. `wc`
+Tells you how many lines, words and characters there are in a file  
+Syntax:
+```bash
+wc filename
+```
+Example:
+```bash
+$ wc demo.txt
+7459   15915  398400 demo.txt
+```
+Where `7459` is lines, `15915` is words and `398400` is characters.
+
+### d. `sed`
+TODO
+
+### e. `sort`
+TODO
+
+### f. `uniq`
+TODO
+
+### g. `cat`
+TODO
+
+### h. `cut`
+TODO
+
+### i. `echo`
+TODO
+
+### j. `fmt`
+TODO
+
+### k. `tr`
+TODO
+
+### l. `nl`
+TODO
+
+### m. `egrep`
+TODO
+
+### n. `fgrep`
+TODO
+
+## 1.3. Directory Operations
 
 <table>
    <tr>
@@ -312,7 +397,7 @@ Syntax:
 pwd
 ```
 
-## 1.3. SSH, System Info & Network Operations
+## 1.4. SSH, System Info & Network Operations
 
 <table>
    <tr>
