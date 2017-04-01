@@ -24,7 +24,6 @@
 
 ### a. `export`
 Displays all environment variables and if you want to get detail of specific variable then use `echo $VARIABLE_NAME`  
-Syntax:
 ```bash
 export
 ```
@@ -43,7 +42,6 @@ $ echo $SHELL
 
 ### b. `whereis`
 Finds out where a specific binary is on your system.  
-Syntax:
 ```bash
 whereis name
 ```
@@ -55,7 +53,6 @@ $ whereis php
 
 ### c. `which`
 Locate a program file in the user's path. This command will prints full path of the executable(s). It does this by searching the directories listed in the environment variable PATH.
-Syntax:
 ```bash
 which program_name 
 ```
@@ -95,7 +92,6 @@ Clears content on window
 
 ### a. `ls`
 Lists your files. It has a lot of options like `-l` lists files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html)  
-Syntax:
 ```bash
 ls option
 ```
@@ -114,7 +110,6 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 
 ### b. `touch`
 Creates or updates your file  
-Syntax:
 ```bash
 touch filename
 ```
@@ -125,28 +120,24 @@ $ touch trick.md
 
 ### c. `cat`
 Places standard input into file. Means that it opens the file in terminal for you to edit  
-Syntax:
 ```bash
 cat > filename
 ```
 
 ### d. `more`
 Shows the first part of a file (move with space and type q to quit)  
-Syntax:
 ```bash
 more filename
 ```
 
 ### e. `head`
 Outputs the first 10 lines of file  
-Syntax:
 ```bash
 head filename
 ```
 
 ### f. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows  
-Syntax:
 ```bash
 tail filename
 ```
@@ -154,7 +145,6 @@ tail filename
 
 ### g. `mv`
 Moves a file from one location to other  
-Syntax:
 ```bash
 mv filename1 filename2
 ```
@@ -162,7 +152,6 @@ Where `filename1` is the source path to the file and `filename2` is the destinat
 
 ### h. `cp`
 Copies a file from one location to other  
-Syntax:
 ```bash
 cp filename1 filename2
 ```
@@ -172,56 +161,48 @@ Where `filename1` is the source path to the file and `filename2` is the destinat
 Removes a file. But if you will apply this command on a directory directory, it will gives you an error
 `rm: directory: is a directory`
 So in order to remove directory you have to pass `-rf` to remove all the content of the directory recursively  
-Syntax:
 ```bash
 rm filename
 ```
 
 ### j. `diff`
 Compares files, and shows where they differ  
-Syntax:
 ```bash
 diff filename1 filename2
 ```
 
 ### k. `chmod`
 Lets you change the read, write, and execute permissions on your files  
-Syntax:
 ```bash
 chmod -options filename
 ```
 
 ### l. `gzip`
 Compresses files  
-Syntax:
 ```bash
 gzip filename
 ```
 
 ### m. `gunzip`
 Un-compresses files compressed by gzip  
-Syntax:
 ```bash
 gunzip filename
 ```
 
 ### n. `gzcat`
 Lets you look at gzipped file without actually having to gunzip it  
-Syntax:
 ```bash
 gzcat filename
 ```
 
 ### o. `lpr`
 Print the file  
-Syntax:
 ```bash
 lpr filename
 ```
 
 ### p. `lpq`
 Check out the printer queue  
-Syntax:
 ```bash
 lpq
 ```
@@ -235,7 +216,6 @@ active  adnanad 59      demo                            399360 bytes
 
 ### q. `lprm`
 Remove something from the printer queue  
-Syntax:
 ```bash
 lprm jobnumber
 ```
@@ -266,7 +246,6 @@ lprm jobnumber
 ### a. `awk`
 Awk is most usefull command for handling text files. It operates on entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
 
-Syntax:
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
@@ -295,7 +274,6 @@ For more detail on how to use `awk`, check following [link](https://www.cybercit
 
 ### b. `grep`
 Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
-Syntax:
 ```bash
 grep pattern filename
 ```
@@ -314,7 +292,6 @@ And `-w` to search for words only. For more detail on `grep`, check following [l
 
 ### c. `wc`
 Tells you how many lines, words and characters there are in a file  
-Syntax:
 ```bash
 wc filename
 ```
@@ -370,7 +347,6 @@ TODO
 
 ### a. `mkdir`
 Makes a new directory  
-Syntax:
 ```bash
 mkdir dirname
 ```
@@ -387,7 +363,6 @@ cd dirname
 
 ### c. `pwd`
 Tells you in which directory you currently are  
-Syntax:
 ```bash
 pwd
 ```
@@ -429,12 +404,10 @@ pwd
 
 ### a. `ssh`
 ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine.  
-Syntax:
 ```bash
 ssh user@host
 ```
 This command also accepts an option `-p` that can to used to connect to specific port.  
-Syntax:
 ```bash
 ssh -p port user@host
 ```
@@ -446,8 +419,7 @@ Return current logged in username
 Allows the current logged user to change his password
 
 ### d. `quota`
-Shows what your disk quota is
-Syntax:
+Shows what your disk quota is  
 ```bash
 quota -v
 ```
@@ -466,21 +438,18 @@ Displays who is online
 
 ### i. `finger`
 Displays information about user  
-Syntax:
 ```bash
 finger username
 ```
 
 ### j. `uname`
 Shows kernel information  
-Syntax:
 ```bash
 uname -a
 ```
 
 ### k. `man`
 Shows the manual for specified command  
-Syntax:
 ```bash
 man command
 ```
@@ -490,35 +459,30 @@ Shows disk usage
 
 ### m. `du`
 Shows the disk usage of the files and directories in filename (du -s give only a total)  
-Syntax:
 ```bash
 du filename
 ```
 
 ### n. `last`
 Lists your last logins of specified user  
-Syntax:
 ```bash
 last yourUsername
 ```
 
 ### o. `ps`
 Lists your processes  
-Syntax:
 ```bash
 ps -u yourusername
 ```
 
 ### p. `kill`
 Kills (ends) the processes with the ID you gave  
-Syntax:
 ```bash
 kill PID
 ```
 
 ### q. `killall`
 Kill all processes with the name  
-Syntax:
 ```bash
 killall processname
 ```
@@ -534,28 +498,24 @@ Brings the most recent job in the foreground.
 
 ### u. `ping`
 Pings host and outputs results  
-Syntax:
 ```bash
 ping host
 ```
 
 ### v. `whois`
 Gets whois information for domain  
-Syntax:
 ```bash
 whois domain
 ```
 
 ### w. `dig`
 Gets DNS information for domain  
-Syntax:
 ```bash
 dig domain
 ```
 
 ### x. `wget`
 Downloads file  
-Syntax:
 ```bash
 wget file
 ```
@@ -634,7 +594,6 @@ ${#varname}     # returns the length of the value of the variable as a character
 ## 2.3. Functions
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
-Syntax:
 ```bash
 functname() {
     shell commands
@@ -661,7 +620,6 @@ When you will run above example the `hello` function will output "world!". The a
 
 The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
-Syntax:
 ```bash
 if [expression]; then
     will execute only if expression is true
@@ -672,7 +630,6 @@ fi
 
 Sometime if conditions becoming confusing so you can write the same condition using the `case statements`.
 
-Syntax:
 ```bash
 case expression in
     pattern1 )
@@ -772,7 +729,6 @@ cd hotellogs
 # 4. Debugging
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
-Syntax:
 ```bash
 bash -n scriptname
 bash -v scriptname
