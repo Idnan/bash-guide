@@ -325,7 +325,28 @@ a
 ```
 
 ### f. `uniq`
-TODO
+Omit repeated lines of text file or standard input
+```bash
+uniq filename
+```
+Example:
+```bash
+$ cat demo.txt
+a
+a
+b
+c
+c
+a
+a
+a
+$ uniq demo.txt
+a
+b
+c
+a
+```
+
 
 ### g. `cat`
 TODO
