@@ -250,6 +250,14 @@ And `-w` to search for words only.
 
 ## 1.2. Directory Commands
 
+<table>
+   	<tr>
+      <td><a herf="#a-mkdir">mkdir</a></td>
+      <td><a herf="#b-cd">cd</a></td>
+      <td><a herf="#c-pwd">pwd</a></td>
+   </tr>
+</table>
+
 ### a. `mkdir`
 Makes a new directory  
 Syntax:
