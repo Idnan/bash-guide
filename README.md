@@ -1,18 +1,18 @@
 
 ## Table of Contents
-  1. [Bash Basics](#1-bash-basics)
-    1.1. [File Commands](#11-file-commands)
-    1.2. [Directory Commands](#12-directory-commands)
-    1.3. [SSH, System Info & Network Commands](#13-ssh-system-info--network-commands)
-  1. [Basic Shell Programming](#2-basic-shell-programming)
-    2.1. [Variables](#21-variables)
-    2.3. [String Substitution](#22-string-substitution)
-    2.4. [Functions](#23-functions)
-    2.5. [Conditionals](#24-conditionals)
-    2.6. [Loops](#25-loops)
-  1. [Process Handling](#3-process-handling)
-  1. [Tricks](#4-tricks)
-  1. [Debugging](#5-debugging)
+  1. [Bash Basics](#1-bash-basics)  
+    1.1. [File Commands](#11-file-commands)  
+    1.2. [Directory Commands](#12-directory-commands)  
+    1.3. [SSH, System Info & Network Commands](#13-ssh-system-info--network-commands)  
+  1. [Basic Shell Programming](#2-basic-shell-programming)  
+    2.1. [Variables](#21-variables)  
+    2.3. [String Substitution](#22-string-substitution)  
+    2.4. [Functions](#23-functions)  
+    2.5. [Conditionals](#24-conditionals)  
+    2.6. [Loops](#25-loops)  
+  1. [Process Handling](#3-process-handling)  
+  1. [Tricks](#4-tricks)  
+  1. [Debugging](#5-debugging)  
 
 This is first line that you will in bash script files called `shebang`. The shebang line in any script determines the script's ability to be executed like an standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
