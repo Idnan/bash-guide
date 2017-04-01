@@ -1,3 +1,19 @@
+
+## Table of Contents
+  1. [Bash Basics](#1-bash-basics)
+    1. [File Commands](#11-file-commands)
+    1. [Directory Commands](#12-directory-commands)
+    1. [SSH, System Info & Network Commands](#13-ssh-system-info--network-commands)
+  1. [Basic Shell Programming](#2-basic-shell-programming)
+    1. [Variables](#21-variables)
+    1. [String Substitution](#22-string-substitution)
+    1. [Functions](#23-functions)
+    1. [Conditionals](#24-conditionals)
+    1. [Loops](#25-loops)
+  1. [Process Handling](#3-process-handling)
+  1. [Tricks](#4-tricks)
+  1. [Debugging](#5-debugging)
+
 This is first line that you will in bash script files called `shebang`. The shebang line in any script determines the script's ability to be executed like an standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
 ```
@@ -514,7 +530,7 @@ ${variable//pattern/string} # the longest match to pattern in variable is replac
 ${#varname}     # returns the length of the value of the variable as a character string
 ```
 
-## 2.3. Functions.
+## 2.3. Functions
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
 Syntax:
@@ -650,7 +666,7 @@ kill PID     # terminates process with specified PID
 ps           # prints a line of information about the current running login shell and any processes running under it
 ps -a        # selects all processes with a tty except session leaders
 
-# 4. Tips and Tricks
+# 4. Tricks
 
 ## set an alias
 Open `bash_profile` by running following command `nano ~/.bash_profile`
@@ -664,8 +680,7 @@ source ~/.bashrc
 cd hotellogs
 
 
-# 5. Debugging Shell Programs
-
+# 5. Debugging
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
 Syntax:
@@ -674,7 +689,6 @@ bash -n scriptname
 bash -v scriptname
 bash -x scriptname
 ```
-## Feedback
-
+# Feedback
 Suggestions/improvements
 [welcome](https://github.com/idnan/lord-of-terminal/issues)!
