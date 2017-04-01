@@ -88,13 +88,13 @@ Clears content on window
       <td><a href="#j-diff">diff</a></td>
    </tr>
    <tr>
-      <td><a href="#l-chmod">chmod</a></td>
-      <td><a href="#m-gzip">gzip</a></td>
-      <td><a href="#n-gunzip">gunzip</a></td>
-      <td><a href="#o-gzcat">gzcat</a></td>
-      <td><a href="#p-lpr">lpr</a></td>
-      <td><a href="#q-lpq">lpq</a></td>
-      <td><a href="#r-lprm">lprm</a></td>
+      <td><a href="#k-chmod">chmod</a></td>
+      <td><a href="#l-gzip">gzip</a></td>
+      <td><a href="#m-gunzip">gunzip</a></td>
+      <td><a href="#n-gzcat">gzcat</a></td>
+      <td><a href="#o-lpr">lpr</a></td>
+      <td><a href="#p-lpq">lpq</a></td>
+      <td><a href="#q-lprm">lprm</a></td>
    </tr>
 </table>
 
@@ -261,10 +261,10 @@ lprm jobnumber
       <td><a href="#j-fmt">fmt</a></td>
    </tr>
    <tr>
-      <td><a href="#l-tr">tr</a></td>
-      <td><a href="#m-nl">nl</a></td>
-      <td><a href="#n-egrep">egrep</a></td>
-      <td><a href="#o-fgrep">fgrep</a></td>
+      <td><a href="#k-tr">tr</a></td>
+      <td><a href="#l-nl">nl</a></td>
+      <td><a href="#m-egrep">egrep</a></td>
+      <td><a href="#n-fgrep">fgrep</a></td>
    </tr>
 </table>
 
