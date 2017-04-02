@@ -121,9 +121,9 @@ $ touch trick.md
 ### c. `cat`
 It can be used for the following purposes under UNIX or Linux
 Display text files on screen
-Copy text files
-Combine text files
-Create new text files  
+* Copy text files  
+* Combine text files  
+* Create new text files  
 ```bash
 cat filename
 cat file1 file2 
