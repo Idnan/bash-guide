@@ -674,9 +674,9 @@ pwd
 
 <table>
    <tr>
-      <td><a href="#a-mkdir">ssh</a></td>
-      <td><a href="#b-cd">whoami</a></td>
-      <td><a href="#c-pwd">passwd</a></td>
+      <td><a href="#a-ssh">ssh</a></td>
+      <td><a href="#b-whoami">whoami</a></td>
+      <td><a href="#c-passwd">passwd</a></td>
       <td><a href="#d-quota">quota</a></td>
       <td><a href="#e-date">date</a></td>
       <td><a href="#f-cal">cal</a></td>
@@ -702,6 +702,7 @@ pwd
       <td><a href="#v-whois">whois</a></td>
       <td><a href="#w-dig">dig</a></td>
       <td><a href="#x-wget">wget</a></td>
+      <td><a href="#y-scp">scp</a></td>
    </tr>
 </table>
 
@@ -821,6 +822,24 @@ dig domain
 Downloads file  
 ```bash
 wget file
+```
+
+
+### y. `scp`
+Transfer files between a local host and a remote host or between two remote hosts.
+
+*copy from local host to remote host*
+```bash
+scp source_file user@host:directory/target_file
+```
+*copy from remote host to local host*
+```bash
+scp user@host:directory/source_file target_file
+scp -r user@host:directory/source_folder farget_folder
+```
+This command also accepts an option `-P` that can to used to connect to specific port.  
+```bash
+scp -P port user@host:directory/source_file target_file
 ```
 
 
