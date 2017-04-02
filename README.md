@@ -674,9 +674,9 @@ pwd
 
 <table>
    <tr>
-      <td><a href="#a-mkdir">ssh</a></td>
-      <td><a href="#b-cd">whoami</a></td>
-      <td><a href="#c-pwd">passwd</a></td>
+      <td><a href="#a-ssh">ssh</a></td>
+      <td><a href="#b-whoami">whoami</a></td>
+      <td><a href="#c-passwd">passwd</a></td>
       <td><a href="#d-quota">quota</a></td>
       <td><a href="#e-date">date</a></td>
       <td><a href="#f-cal">cal</a></td>
