@@ -118,9 +118,15 @@ $ touch trick.md
 ```
 
 ### c. `cat`
-Places standard input into file. Means that it opens the file in terminal for you to edit  
+It can be used for the following purposes under UNIX or Linux  
+* Display text files on screen
+* Copy text files  
+* Combine text files  
+* Create new text files  
 ```bash
-cat > filename
+cat filename
+cat file1 file2 
+cat file1 file2 > newcombinedfile
 ```
 
 ### d. `more`
@@ -229,16 +235,15 @@ lprm jobnumber
       <td><a href="#d-sed">sed</a></td>
       <td><a href="#e-sort">sort</a></td>
       <td><a href="#f-uniq">uniq</a></td>
-      <td><a href="#g-cat">cat</a></td>
-      <td><a href="#h-cut">cut</a></td>
-      <td><a href="#i-echo">echo</a></td>
-      <td><a href="#j-fmt">fmt</a></td>
+      <td><a href="#g-cut">cut</a></td>
+      <td><a href="#h-echo">echo</a></td>
+      <td><a href="#i-fmt">fmt</a></td>
    </tr>
    <tr>
-      <td><a href="#k-tr">tr</a></td>
-      <td><a href="#l-nl">nl</a></td>
-      <td><a href="#m-egrep">egrep</a></td>
-      <td><a href="#n-fgrep">fgrep</a></td>
+      <td><a href="#j-tr">tr</a></td>
+      <td><a href="#k-nl">nl</a></td>
+      <td><a href="#l-egrep">egrep</a></td>
+      <td><a href="#m-fgrep">fgrep</a></td>
    </tr>
 </table>
 
@@ -408,47 +413,7 @@ sort example.txt | uniq -c
     1 d
 ```
 
-### g. `cat`
-concatenate files and print on the standard output
-
-*example.txt*
-```bash
-Hello World
-```
-
-*send example.txt to standard output*
-```bash
-cat example.txt
-```
-```bash
-Hello World
-```
-
-*useless interactive example. Use cat to take what you type, and send it back to stdout*
-This is useful if you have a bash script that does something with standard input.
-You'd use a command such as `cat - | while read i; do echo "${i}; done"`
-
-```bash
-cat -
-```
-typing...
-> hello this is a test
-
-```bash
-hello this is a test
-```
-> foo1
-
-```bash
-foo1
-```
-> foo2
-
-```bash
-foo2
-```
-
-### h. `cut`
+### g. `cut`
 remove sections from each line of files
 
 *example.txt*
@@ -464,7 +429,7 @@ cut -d " " -f2,7,9 example.txt
 riding park play
 ```
 
-### i. `echo`
+### h. `echo`
 display a line of text
 
 *display "Hello World"*
@@ -484,7 +449,7 @@ Hello
 World
 ```
 
-### j. `fmt`
+### i. `fmt`
 simple optimal text formatter
 
 *example: example.txt (1 line)*
@@ -518,7 +483,7 @@ ipsum dolor sit
 amet.
 ```
 
-### k. `tr`
+### j. `tr`
 translate or delete characters
 
 *example.txt*
@@ -546,7 +511,7 @@ Bar
 Baz!
 ```
 
-### l. `nl`
+### k. `nl`
 number lines of files
 
 *example.txt*
@@ -598,7 +563,7 @@ nl -s". " example.txt
     19. amet.
 ```
 
-### m. `egrep`
+### l. `egrep`
 print lines matching a pattern - Extended Expression (alias for: 'grep -E')
 
 *example.txt*
@@ -639,7 +604,7 @@ sanctus est Lorem
 ipsum dolor sit
 ```
 
-### n. `fgrep`
+### m. `fgrep`
 print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
 
 *example.txt*
