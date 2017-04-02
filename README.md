@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="http://i.imgur.com/Vi9HBwR.png"/>
 </p>
@@ -236,16 +235,15 @@ lprm jobnumber
       <td><a href="#d-sed">sed</a></td>
       <td><a href="#e-sort">sort</a></td>
       <td><a href="#f-uniq">uniq</a></td>
-      <td><a href="#g-cat">cat</a></td>
-      <td><a href="#h-cut">cut</a></td>
-      <td><a href="#i-echo">echo</a></td>
-      <td><a href="#j-fmt">fmt</a></td>
+      <td><a href="#g-cut">cut</a></td>
+      <td><a href="#h-echo">echo</a></td>
+      <td><a href="#i-fmt">fmt</a></td>
    </tr>
    <tr>
-      <td><a href="#k-tr">tr</a></td>
-      <td><a href="#l-nl">nl</a></td>
-      <td><a href="#m-egrep">egrep</a></td>
-      <td><a href="#n-fgrep">fgrep</a></td>
+      <td><a href="#j-tr">tr</a></td>
+      <td><a href="#k-nl">nl</a></td>
+      <td><a href="#l-egrep">egrep</a></td>
+      <td><a href="#m-fgrep">fgrep</a></td>
    </tr>
 </table>
 
@@ -309,84 +307,339 @@ $ wc demo.txt
 Where `7459` is lines, `15915` is words and `398400` is characters.
 
 ### d. `sed`
-TODO
+stream editor for filtering and transforming text
+
+*example.txt*
+```bash
+Hello This is a Test 1 2 3 4
+``` 
+
+*replace all spaces with hyphens*
+```bash
+sed 's/ /-/g' example.txt
+```
+```bash
+Hello-This-is-a-Test-1-2-3-4
+```
+
+*replace all digits with "d"*
+```bash
+sed 's/[0-9]/d/g' example.txt
+```
+```bash
+Hello This is a Test d d d d
+```
 
 ### e. `sort`
-Sort lines of text file(s)
+sort lines of text files
+
+*example.txt*
 ```bash
-sort filename
+f
+b
+c
+g
+a
+e
+d
 ```
-Example:
+
+
+*sort example.txt*
 ```bash
-$ sort demo.txt
+sort example.txt
+```
+```bash
 a
 b
 c
 d
-$ sort demo.txt -r
-d
-c
+e
+f
+g
+```
+
+*randomize a sorted example.txt*
+```bash
+sort example.txt | sort -R
+```
+```bash
 b
+f
 a
+c
+d
+g
+e
 ```
 
 ### f. `uniq`
-Omit repeated lines of text file or standard input
+report or omit repeated lines
+
+*example.txt*
 ```bash
-uniq filename
-```
-Example:
-```bash
-$ cat demo.txt
 a
 a
 b
-c
-c
-a
-a
-a
-$ uniq demo.txt
 a
 b
 c
+d
+c
+```
+
+*show only unique lines of example.txt (first you need to sort it, otherwise it won't see the overlap)*
+```bash
+sort example.txt | uniq
+```
+```bash
 a
+b
+a
+b
+c
+d
+c
 ```
 
-
-### g. `cat`
-TODO
-
-### h. `cut`
-TODO
-
-### i. `echo`
-Display a line of text
+*show the unique items for each line, and tell me how many instances it found*
 ```bash
-echo
+sort example.txt | uniq -c
 ```
-Example:
 ```bash
-$ echo test
-test
-$ echo $HOME
-/home/user
+    3 a
+    2 b
+    2 c
+    1 d
 ```
 
-### j. `fmt`
-TODO
+### g. `cut`
+remove sections from each line of files
 
-### k. `tr`
-TODO
+*example.txt*
+```bash
+red riding hood went to the park to play
+```
 
-### l. `nl`
-TODO
+*show me columns 2 , 7 , and 9 with a space as a separator*
+```bash
+cut -d " " -f2,7,9 example.txt
+```
+```bash
+riding park play
+```
 
-### m. `egrep`
-TODO
+### h. `echo`
+display a line of text
 
-### n. `fgrep`
-TODO
+*display "Hello World"*
+```bash
+echo Hello World
+```
+```bash
+Hello World
+```
+
+*display "Hello World" with newlines between words*
+```bash
+echo -ne "Hello\nWorld\n"
+```
+```bash
+Hello
+World
+```
+
+### i. `fmt`
+simple optimal text formatter
+
+*example: example.txt (1 line)*
+```bash
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+```
+
+*output the lines of example.txt to 20 character width*
+```bash
+cat example.txt | fmt -w 20
+```
+```bash
+Lorem ipsum
+dolor sit amet,
+consetetur
+sadipscing elitr,
+sed diam nonumy
+eirmod tempor
+invidunt ut labore
+et dolore magna
+aliquyam erat, sed
+diam voluptua. At
+vero eos et
+accusam et justo
+duo dolores et ea
+rebum. Stet clita
+kasd gubergren,
+no sea takimata
+sanctus est Lorem
+ipsum dolor sit
+amet.
+```
+
+### j. `tr`
+translate or delete characters
+
+*example.txt*
+```bash
+Hello World Foo Bar Baz!
+```
+
+*take all lower case letters and make them upper case*
+```bash
+cat example.txt | tr 'a-z' 'A-Z' 
+```
+```bash
+HELLO WORLD FOO BAR BAZ!
+```
+
+*take all spaces and make them into newlines*
+```bash
+cat example.txt | tr ' ' '\n'
+```
+```bash
+Hello
+World
+Foo
+Bar
+Baz!
+```
+
+### k. `nl`
+number lines of files
+
+*example.txt*
+```bash
+Lorem ipsum
+dolor sit amet,
+consetetur
+sadipscing elitr,
+sed diam nonumy
+eirmod tempor
+invidunt ut labore
+et dolore magna
+aliquyam erat, sed
+diam voluptua. At
+vero eos et
+accusam et justo
+duo dolores et ea
+rebum. Stet clita
+kasd gubergren,
+no sea takimata
+sanctus est Lorem
+ipsum dolor sit
+amet.
+```
+
+*show example.txt with line numbers*
+```bash
+nl -s". " example.txt 
+```
+```bash
+     1. Lorem ipsum
+     2. dolor sit amet,
+     3. consetetur
+     4. sadipscing elitr,
+     5. sed diam nonumy
+     6. eirmod tempor
+     7. invidunt ut labore
+     8. et dolore magna
+     9. aliquyam erat, sed
+    10. diam voluptua. At
+    11. vero eos et
+    12. accusam et justo
+    13. duo dolores et ea
+    14. rebum. Stet clita
+    15. kasd gubergren,
+    16. no sea takimata
+    17. sanctus est Lorem
+    18. ipsum dolor sit
+    19. amet.
+```
+
+### l. `egrep`
+print lines matching a pattern - Extended Expression (alias for: 'grep -E')
+
+*example.txt*
+```bash
+Lorem ipsum
+dolor sit amet, 
+consetetur
+sadipscing elitr,
+sed diam nonumy
+eirmod tempor
+invidunt ut labore
+et dolore magna
+aliquyam erat, sed
+diam voluptua. At
+vero eos et
+accusam et justo
+duo dolores et ea
+rebum. Stet clita
+kasd gubergren,
+no sea takimata
+sanctus est Lorem
+ipsum dolor sit
+amet.
+```
+
+*display lines that have either "Lorem" or "dolor" in them.*
+```bash
+egrep '(Lorem|dolor)' example.txt
+or
+grep -E '(Lorem|dolor)' example.txt
+```
+```bash
+Lorem ipsum
+dolor sit amet,
+et dolore magna
+duo dolores et ea
+sanctus est Lorem
+ipsum dolor sit
+```
+
+### m. `fgrep`
+print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
+
+*example.txt*
+```bash
+Lorem ipsum
+dolor sit amet,
+consetetur
+sadipscing elitr,
+sed diam nonumy
+eirmod tempor
+foo (Lorem|dolor) 
+invidunt ut labore
+et dolore magna
+aliquyam erat, sed
+diam voluptua. At
+vero eos et
+accusam et justo
+duo dolores et ea
+rebum. Stet clita
+kasd gubergren,
+no sea takimata
+sanctus est Lorem
+ipsum dolor sit
+amet.
+```
+
+*Find the exact string '(Lorem|doloar)' in example.txt*
+```bash
+fgrep '(Lorem|dolor)' example.txt
+or
+grep -F '(Lorem|dolor)' example.txt
+```
+```bash
+foo (Lorem|dolor) 
+```
 
 ## 1.3. Directory Operations
 
