@@ -312,10 +312,47 @@ Where `7459` is lines, `15915` is words and `398400` is characters.
 TODO
 
 ### e. `sort`
-TODO
+Sort lines of text file(s)
+```bash
+sort filename
+```
+Example:
+```bash
+$ sort demo.txt
+a
+b
+c
+d
+$ sort demo.txt -r
+d
+c
+b
+a
+```
 
 ### f. `uniq`
-TODO
+Omit repeated lines of text file or standard input
+```bash
+uniq filename
+```
+Example:
+```bash
+$ cat demo.txt
+a
+a
+b
+c
+c
+a
+a
+a
+$ uniq demo.txt
+a
+b
+c
+a
+```
+
 
 ### g. `cat`
 TODO
@@ -324,7 +361,17 @@ TODO
 TODO
 
 ### i. `echo`
-TODO
+Display a line of text
+```bash
+echo
+```
+Example:
+```bash
+$ echo test
+test
+$ echo $HOME
+/home/user
+```
 
 ### j. `fmt`
 TODO
