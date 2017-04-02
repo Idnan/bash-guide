@@ -395,11 +395,8 @@ sort example.txt | uniq
 ```bash
 a
 b
-a
-b
 c
 d
-c
 ```
 
 *show the unique items for each line, and tell me how many instances it found*
