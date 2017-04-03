@@ -18,6 +18,8 @@
   3. [Tricks](#4-tricks)  
   4. [Debugging](#5-debugging)  
   
+# Introduction
+Using bash, the built-in command-line interface in linux, offers a convenient way to navigate the file system, as well as gain access to tools native to bash, such as using pipes.
 
 # 1. Basic Operations
 
