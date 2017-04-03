@@ -22,7 +22,7 @@
 # 1. Basic Operations
 
 ### a. `export`
-Displays all environment variables and if you want to get detail of specific variable then use `echo $VARIABLE_NAME`  
+Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
 ```bash
 export
 ```
@@ -40,7 +40,7 @@ $ echo $SHELL
 ```
 
 ### b. `whereis`
-Whereis search for executables, source files, and manual pages using a database built by system automatically.
+whereis searches for executables, source files, and manual pages using a database built by system automatically.
 ```bash
 whereis name
 ```
@@ -51,7 +51,7 @@ $ whereis php
 ```
 
 ### c. `which`
-which search for executables in the directories specified by the environment variable PATH. This command will prints full path of the executable(s).
+which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
 ```bash
 which program_name 
 ```
@@ -62,7 +62,7 @@ $ which php
 ```
 
 ### d. clear
-Clears content on window
+Clears content on window.
 
 ## 1.1. File Operations
 <table>
@@ -90,7 +90,7 @@ Clears content on window
 </table>
 
 ### a. `ls`
-Lists your files. It has a lot of options like `-l` lists files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html)  
+Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
 ```
@@ -108,7 +108,7 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 </pre>
 
 ### b. `touch`
-Creates or updates your file  
+Creates or updates your file.  
 ```bash
 touch filename
 ```
@@ -118,7 +118,7 @@ $ touch trick.md
 ```
 
 ### c. `cat`
-It can be used for the following purposes under UNIX or Linux  
+It can be used for the following purposes under UNIX or Linux.  
 * Display text files on screen
 * Copy text files  
 * Combine text files  
@@ -130,7 +130,7 @@ cat file1 file2 > newcombinedfile
 ```
 
 ### d. `more`
-Shows the first part of a file (move with space and type q to quit)  
+Shows the first part of a file (move with space and type q to quit).  
 ```bash
 more filename
 ```
@@ -142,72 +142,72 @@ head filename
 ```
 
 ### f. `tail`
-Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows  
+Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
 ```bash
 tail filename
 ```
 
 
 ### g. `mv`
-Moves a file from one location to other  
+Moves a file from one location to other.  
 ```bash
 mv filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
 ### h. `cp`
-Copies a file from one location to other  
+Copies a file from one location to other.  
 ```bash
 cp filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
 ### i. `rm`
-Removes a file. But if you will apply this command on a directory directory, it will gives you an error
+Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
-So in order to remove directory you have to pass `-rf` to remove all the content of the directory recursively  
+In order to remove a directory you have to pass `-rf` to remove all the content of the directory recursively.  
 ```bash
 rm filename
 ```
 
 ### j. `diff`
-Compares files, and shows where they differ  
+Compares files, and lists their differences.  
 ```bash
 diff filename1 filename2
 ```
 
 ### k. `chmod`
-Lets you change the read, write, and execute permissions on your files  
+Lets you change the read, write, and execute permissions on your files.  
 ```bash
 chmod -options filename
 ```
 
 ### l. `gzip`
-Compresses files  
+Compresses files.  
 ```bash
 gzip filename
 ```
 
 ### m. `gunzip`
-Un-compresses files compressed by gzip  
+Un-compresses files compressed by gzip.  
 ```bash
 gunzip filename
 ```
 
 ### n. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it  
+Lets you look at gzipped file without actually having to gunzip it.  
 ```bash
 gzcat filename
 ```
 
 ### o. `lpr`
-Print the file  
+Print the file.  
 ```bash
 lpr filename
 ```
 
 ### p. `lpq`
-Check out the printer queue  
+Check out the printer queue.  
 ```bash
 lpq
 ```
@@ -220,7 +220,7 @@ active  adnanad 59      demo                            399360 bytes
 ```
 
 ### q. `lprm`
-Remove something from the printer queue  
+Remove something from the printer queue.  
 ```bash
 lprm jobnumber
 ```
@@ -248,13 +248,13 @@ lprm jobnumber
 </table>
 
 ### a. `awk`
-Awk is most usefull command for handling text files. It operates on entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
+awk is the most useful command for handling text files. It operates on an entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
 
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
 
-Lets take following file `/etc/passwd`. Here's the sample data that this file contains.
+Lets take following file `/etc/passwd`. Here's the sample data that this file contains:
 ```
 root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -262,7 +262,7 @@ bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
-So now lets get only username from this file. Where `-F` specfies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
+So now lets get only username from this file. Where `-F` specifies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
 ```bash
 awk -F':' '{ print $1 }' /etc/passwd
 ```
@@ -288,14 +288,14 @@ _kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
 _kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
 _krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
 ```
-You can also force grep to ignore word case by using `-i` option. Also `-r` can be used to search all files under the specified directory like
+You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for example:
 ```bash
 $ grep -r admin /etc/
 ```
 And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
 
 ### c. `wc`
-Tells you how many lines, words and characters there are in a file  
+Tells you how many lines, words and characters there are in a file.  
 ```bash
 wc filename
 ```
@@ -307,7 +307,7 @@ $ wc demo.txt
 Where `7459` is lines, `15915` is words and `398400` is characters.
 
 ### d. `sed`
-stream editor for filtering and transforming text
+Stream editor for filtering and transforming text
 
 *example.txt*
 ```bash
@@ -331,7 +331,7 @@ Hello This is a Test d d d d
 ```
 
 ### e. `sort`
-sort lines of text files
+Sort lines of text files
 
 *example.txt*
 ```bash
@@ -374,7 +374,7 @@ e
 ```
 
 ### f. `uniq`
-report or omit repeated lines
+Report or omit repeated lines
 
 *example.txt*
 ```bash
@@ -411,7 +411,7 @@ sort example.txt | uniq -c
 ```
 
 ### g. `cut`
-remove sections from each line of files
+Remove sections from each line of files
 
 *example.txt*
 ```bash
@@ -427,7 +427,7 @@ riding park play
 ```
 
 ### h. `echo`
-display a line of text
+Display a line of text
 
 *display "Hello World"*
 ```bash
@@ -447,7 +447,7 @@ World
 ```
 
 ### i. `fmt`
-simple optimal text formatter
+Simple optimal text formatter
 
 *example: example.txt (1 line)*
 ```bash
@@ -481,7 +481,7 @@ amet.
 ```
 
 ### j. `tr`
-translate or delete characters
+Translate or delete characters
 
 *example.txt*
 ```bash
@@ -509,7 +509,7 @@ Baz!
 ```
 
 ### k. `nl`
-number lines of files
+Number lines of files
 
 *example.txt*
 ```bash
@@ -561,7 +561,7 @@ nl -s". " example.txt
 ```
 
 ### l. `egrep`
-print lines matching a pattern - Extended Expression (alias for: 'grep -E')
+Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
 
 *example.txt*
 ```bash
@@ -602,7 +602,7 @@ ipsum dolor sit
 ```
 
 ### m. `fgrep`
-print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
+Print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
 
 *example.txt*
 ```bash
@@ -649,23 +649,23 @@ foo (Lorem|dolor)
 </table>
 
 ### a. `mkdir`
-Makes a new directory  
+Makes a new directory.  
 ```bash
 mkdir dirname
 ```
 
 ### b. `cd`
-Moves you from one directory to other. If you just run  
+Moves you from one directory to other. Running this  
 ```bash
 $ cd
 ```
-Then it will moves you to home. Also this command accepts an optional `dirname`, which if provided will moves you to that directory.
+moves you to home directory. This command accepts an optional `dirname`, which moves you to that directory.
 ```bash
 cd dirname
 ```
 
 ### c. `pwd`
-Tells you in which directory you currently are  
+Tells you which directory you currently are in.  
 ```bash
 pwd
 ```
@@ -707,7 +707,7 @@ pwd
 </table>
 
 ### a. `ssh`
-ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine.  
+ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
 ```bash
 ssh user@host
 ```
@@ -717,109 +717,109 @@ ssh -p port user@host
 ```
 
 ### b. `whoami`
-Return current logged in username
+Return current logged in username.
 
 ### c. `passwd`
-Allows the current logged user to change his password
+Allows the current logged user to change his password.
 
 ### d. `quota`
-Shows what your disk quota is  
+Shows what your disk quota is.  
 ```bash
 quota -v
 ```
 
 ### e. `date`
-Shows the current date and time
+Shows the current date and time.
 
 ### f. `cal`
-Shows the month's calendar
+Shows the month's calendar.
 
 ### g. `uptime`
-Shows current uptime
+Shows current uptime.
 
 ### h. `w`
-Displays who is online
+Displays who is online.
 
 ### i. `finger`
-Displays information about user  
+Displays information about user.  
 ```bash
 finger username
 ```
 
 ### j. `uname`
-Shows kernel information  
+Shows kernel information.  
 ```bash
 uname -a
 ```
 
 ### k. `man`
-Shows the manual for specified command  
+Shows the manual for specified command.  
 ```bash
 man command
 ```
 
 ### l. `df`
-Shows disk usage
+Shows disk usage.
 
 ### m. `du`
-Shows the disk usage of the files and directories in filename (du -s give only a total)  
+Shows the disk usage of the files and directories in filename (du -s give only a total).  
 ```bash
 du filename
 ```
 
 ### n. `last`
-Lists your last logins of specified user  
+Lists your last logins of specified user.  
 ```bash
 last yourUsername
 ```
 
 ### o. `ps`
-Lists your processes  
+Lists your processes.  
 ```bash
 ps -u yourusername
 ```
 
 ### p. `kill`
-Kills (ends) the processes with the ID you gave  
+Kills (ends) the processes with the ID you gave.  
 ```bash
 kill PID
 ```
 
 ### q. `killall`
-Kill all processes with the name  
+Kill all processes with the name.  
 ```bash
 killall processname
 ```
 
 ### r. `top`
-Displays your currently active processes
+Displays your currently active processes.
 
 ### s. `bg`
-Lists stopped or background jobs ; resume a stopped job in the background
+Lists stopped or background jobs ; resume a stopped job in the background.
 
 ### t. `fg`
 Brings the most recent job in the foreground.
 
 ### u. `ping`
-Pings host and outputs results  
+Pings host and outputs results.  
 ```bash
 ping host
 ```
 
 ### v. `whois`
-Gets whois information for domain  
+Gets whois information for domain.  
 ```bash
 whois domain
 ```
 
 ### w. `dig`
-Gets DNS information for domain  
+Gets DNS information for domain.  
 ```bash
 dig domain
 ```
 
 ### x. `wget`
-Downloads file  
+Downloads file.  
 ```bash
 wget file
 ```
@@ -846,7 +846,7 @@ scp -P port user@host:directory/source_file target_file
 # 2. Basic Shell Programming
 
 
-This is first line that you will in bash script files called `shebang`. The shebang line in any script determines the script's ability to be executed like an standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
+The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like an standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
 ```bash
 #!/bin/bash
@@ -854,21 +854,21 @@ This is first line that you will in bash script files called `shebang`. The sheb
 
 ## 2.1. Variables
 
-Creating variable in bash is similar to other language. There are no data types. A variable in bash can contain a number, a character, a string of characters. You have no need to declare a variable, just assigning a value to its reference will create it.
+Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
 
 Example:
 ```bash
 str="hello world"
 ```
 
-The above line creates a variable `str` and assigns "hello world" to it. Then the value of variable is retrieved by putting the `$` in the beginning of variable name.
+The above line creates a variable `str` and assigns "hello world" to it. The value of variable is retrieved by putting the `$` in the beginning of variable name.
 
 Example:
 ```bash
 echo $str   # hello world
 ```
 
-Also like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
+Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
 
 Examples:
 ```bash
@@ -878,13 +878,13 @@ array[2] = val
 array=([2]=val [0]=val [1]=val)
 array(val val val)
 ```
-To display a value at specific index use following syntax
+To display a value at specific index use following syntax:
 
 ```bash
 ${array[i]}     # where i is the index
 ```
 
-One thing to note that if no index is supplied, array element 0 is assumed. To find out how many values there are in the array check following syntax
+If no index is supplied, array element 0 is assumed. To find out how many values there are in the array use the following syntax:
 
 ```bash
 ${#array[@]}
@@ -936,7 +936,7 @@ function say {
 say "hello world!"
 ```
 
-When you will run above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within funtions, are treated in the same manner as arguments given to the script.
+When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within funtions, are treated in the same manner as arguments given to the script.
 
 ## 2.4. Conditionals
 
