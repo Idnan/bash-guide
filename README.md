@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://i.imgur.com/Vi9HBwR.png"/>
+  <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
 ## Table of Contents
