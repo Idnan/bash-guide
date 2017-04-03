@@ -86,6 +86,7 @@ Clears content on window.
       <td><a href="#o-lpr">lpr</a></td>
       <td><a href="#p-lpq">lpq</a></td>
       <td><a href="#q-lprm">lprm</a></td>
+      <td><a href="#r-file">file</a></td>
    </tr>
 </table>
 
@@ -223,6 +224,17 @@ active  adnanad 59      demo                            399360 bytes
 Remove something from the printer queue.  
 ```bash
 lprm jobnumber
+```
+
+### r. `file`
+Determine file type.  
+```bash
+file filename
+```
+Example:
+```bash
+$ file index.html
+ index.html: HTML document, ASCII text
 ```
 
 ## 1.2. Text Operations
