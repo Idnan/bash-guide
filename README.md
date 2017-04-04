@@ -15,8 +15,8 @@
     2.4. [Functions](#23-functions)  
     2.5. [Conditionals](#24-conditionals)  
     2.6. [Loops](#25-loops)  
-  3. [Tricks](#4-tricks)  
-  4. [Debugging](#5-debugging)  
+  3. [Tricks](#3-tricks)  
+  4. [Debugging](#4-debugging)  
   
 
 # 1. Basic Operations
@@ -1036,11 +1036,11 @@ done
 
 # 3. Tricks
 
-## set an alias
+## Set an alias
 Open `bash_profile` by running following command `nano ~/.bash_profile`
 > alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
 
-## to quickly go to a specific directory
+## To quickly go to a specific directory
 nano ~/.bashrc
 > export hotellogs="/workspace/hotel-api/storage/logs"
 
