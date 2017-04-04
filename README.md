@@ -885,7 +885,7 @@ array[0] = val
 array[1] = val
 array[2] = val
 array=([2]=val [0]=val [1]=val)
-array(val val val)
+array=(val val val)
 ```
 To display a value at specific index use following syntax:
 
