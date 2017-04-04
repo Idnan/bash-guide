@@ -723,7 +723,7 @@ ssh (SSH client) is a program for logging into and executing commands on a remot
 ```bash
 ssh user@host
 ```
-This command also accepts an option `-p` that can to used to connect to specific port.  
+This command also accepts an option `-p` that can be used to connect to specific port.  
 ```bash
 ssh -p port user@host
 ```
@@ -807,7 +807,7 @@ killall processname
 Displays your currently active processes.
 
 ### s. `bg`
-Lists stopped or background jobs ; resume a stopped job in the background.
+Lists stopped or background jobs; resume a stopped job in the background.
 
 ### t. `fg`
 Brings the most recent job in the foreground.
@@ -849,7 +849,7 @@ scp source_file user@host:directory/target_file
 scp user@host:directory/source_file target_file
 scp -r user@host:directory/source_folder farget_folder
 ```
-This command also accepts an option `-P` that can to used to connect to specific port.  
+This command also accepts an option `-P` that can be used to connect to specific port.  
 ```bash
 scp -P port user@host:directory/source_file target_file
 ```
@@ -858,7 +858,7 @@ scp -P port user@host:directory/source_file target_file
 # 2. Basic Shell Programming
 
 
-The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like an standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
+The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
 ```bash
 #!/bin/bash
