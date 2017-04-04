@@ -67,30 +67,121 @@ Clears content on window.
 ## 1.1. File Operations
 <table>
    <tr>
-      <td><a href="#a-ls">ls</a></td>
-      <td><a href="#b-touch">touch</a></td>
-      <td><a href="#c-cat">cat</a></td>
-      <td><a href="#d-more">more</a></td>
-      <td><a href="#e-head">head</a></td>
-      <td><a href="#f-tail">tail</a></td>
-      <td><a href="#g-mv">mv</a></td>
-      <td><a href="#h-cp">cp</a></td>
-      <td><a href="#i-rm">rm</a></td>
-      <td><a href="#j-diff">diff</a></td>
+      <td><a href="#a-cat">cat</a></td>
+      <td><a href="#b-chmod">chmod</a></td>
+      <td><a href="#c-cp">cp</a></td>
+      <td><a href="#d-diff">diff</a></td>
+      <td><a href="#e-file">file</a></td>
+      <td><a href="#f-gunzip">gunzip</a></td>
+      <td><a href="#g-gzcat">gzcat</a></td>
+      <td><a href="#h-gzip">gzip</a></td>
+      <td><a href="#i-head">head</a></td>
+      <td><a href="#j-lpq">lpq</a></td>
    </tr>
    <tr>
-      <td><a href="#k-chmod">chmod</a></td>
-      <td><a href="#l-gzip">gzip</a></td>
-      <td><a href="#m-gunzip">gunzip</a></td>
-      <td><a href="#n-gzcat">gzcat</a></td>
-      <td><a href="#o-lpr">lpr</a></td>
-      <td><a href="#p-lpq">lpq</a></td>
-      <td><a href="#q-lprm">lprm</a></td>
-      <td><a href="#r-file">file</a></td>
+      <td><a href="#k-lpr">lpr</a></td>
+      <td><a href="#l-lprm">lprm</a></td>
+      <td><a href="#m-ls">ls</a></td>
+      <td><a href="#n-more">more</a></td>
+      <td><a href="#o-mv">mv</a></td>
+      <td><a href="#p-rm">rm</a></td>
+      <td><a href="#q-tail">tail</a></td>
+      <td><a href="#r-touch">touch</a></td>
    </tr>
 </table>
 
-### a. `ls`
+### a. `cat`
+It can be used for the following purposes under UNIX or Linux.  
+* Display text files on screen
+* Copy text files  
+* Combine text files  
+* Create new text files  
+```bash
+cat filename
+cat file1 file2 
+cat file1 file2 > newcombinedfile
+```
+
+### b. `chmod`
+Lets you change the read, write, and execute permissions on your files.  
+```bash
+chmod -options filename
+```
+
+### c. `cp`
+Copies a file from one location to other.  
+```bash
+cp filename1 filename2
+```
+Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+
+### d. `diff`
+Compares files, and lists their differences.  
+```bash
+diff filename1 filename2
+```
+
+### e. `file`
+Determine file type.  
+```bash
+file filename
+```
+Example:
+```bash
+$ file index.html
+ index.html: HTML document, ASCII text
+```
+
+### f. `gunzip`
+Un-compresses files compressed by gzip.  
+```bash
+gunzip filename
+```
+
+### g. `gzcat`
+Lets you look at gzipped file without actually having to gunzip it.  
+```bash
+gzcat filename
+```
+
+### h. `gzip`
+Compresses files.  
+```bash
+gzip filename
+```
+
+### i. `head`
+Outputs the first 10 lines of file  
+```bash
+head filename
+```
+
+### j. `lpq`
+Check out the printer queue.  
+```bash
+lpq
+```
+Example:
+```bash
+$ lpq
+Rank    Owner   Job     File(s)                         Total Size
+active  adnanad 59      demo                            399360 bytes
+1st     adnanad 60      (stdin)                         0 bytes
+```
+
+### k. `lpr`
+Print the file.  
+```bash
+lpr filename
+```
+
+### l. `lprm`
+Remove something from the printer queue.  
+```bash
+lprm jobnumber
+```
+
+### m. `ls`
 Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
@@ -108,7 +199,34 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
 </pre>
 
-### b. `touch`
+### n. `more`
+Shows the first part of a file (move with space and type q to quit).  
+```bash
+more filename
+```
+
+### o. `mv`
+Moves a file from one location to other.  
+```bash
+mv filename1 filename2
+```
+Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+
+### p. `rm`
+Removes a file. Using this command on a directory gives you an error.
+`rm: directory: is a directory`
+To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
+```bash
+rm filename
+```
+
+### q. `tail`
+Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
+```bash
+tail filename
+```
+
+### r. `touch`
 Creates or updates your file.  
 ```bash
 touch filename
@@ -118,144 +236,25 @@ Example:
 $ touch trick.md
 ```
 
-### c. `cat`
-It can be used for the following purposes under UNIX or Linux.  
-* Display text files on screen
-* Copy text files  
-* Combine text files  
-* Create new text files  
-```bash
-cat filename
-cat file1 file2 
-cat file1 file2 > newcombinedfile
-```
-
-### d. `more`
-Shows the first part of a file (move with space and type q to quit).  
-```bash
-more filename
-```
-
-### e. `head`
-Outputs the first 10 lines of file  
-```bash
-head filename
-```
-
-### f. `tail`
-Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
-```bash
-tail filename
-```
-
-
-### g. `mv`
-Moves a file from one location to other.  
-```bash
-mv filename1 filename2
-```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
-
-### h. `cp`
-Copies a file from one location to other.  
-```bash
-cp filename1 filename2
-```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
-
-### i. `rm`
-Removes a file. Using this command on a directory gives you an error.
-`rm: directory: is a directory`
-To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
-```bash
-rm filename
-```
-
-### j. `diff`
-Compares files, and lists their differences.  
-```bash
-diff filename1 filename2
-```
-
-### k. `chmod`
-Lets you change the read, write, and execute permissions on your files.  
-```bash
-chmod -options filename
-```
-
-### l. `gzip`
-Compresses files.  
-```bash
-gzip filename
-```
-
-### m. `gunzip`
-Un-compresses files compressed by gzip.  
-```bash
-gunzip filename
-```
-
-### n. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it.  
-```bash
-gzcat filename
-```
-
-### o. `lpr`
-Print the file.  
-```bash
-lpr filename
-```
-
-### p. `lpq`
-Check out the printer queue.  
-```bash
-lpq
-```
-Example:
-```bash
-$ lpq
-Rank    Owner   Job     File(s)                         Total Size
-active  adnanad 59      demo                            399360 bytes
-1st     adnanad 60      (stdin)                         0 bytes
-```
-
-### q. `lprm`
-Remove something from the printer queue.  
-```bash
-lprm jobnumber
-```
-
-### r. `file`
-Determine file type.  
-```bash
-file filename
-```
-Example:
-```bash
-$ file index.html
- index.html: HTML document, ASCII text
-```
-
 ## 1.2. Text Operations
 
 <table>
-   <tr>
+    <tr>
       <td><a href="#a-awk">awk</a></td>
-      <td><a href="#b-grep">grep</a></td>
-      <td><a href="#c-wc">wc</a></td>
-      <td><a href="#d-sed">sed</a></td>
-      <td><a href="#e-sort">sort</a></td>
-      <td><a href="#f-uniq">uniq</a></td>
-      <td><a href="#g-cut">cut</a></td>
-      <td><a href="#h-echo">echo</a></td>
-      <td><a href="#i-fmt">fmt</a></td>
+      <td><a href="#b-cut">cut</a></td>
+      <td><a href="#c-echo">echo</a></td>
+      <td><a href="#d-egrep">egrep</a></td>
+      <td><a href="#e-fgrep">fgrep</a></td>
+      <td><a href="#f-fmt">fmt</a></td>
+      <td><a href="#g-grep">grep</a></td>
+      <td><a href="#h-nl">nl</a></td>
+      <td><a href="#i-sed">sed</a></td>
+      <td><a href="#j-sort">sort</a></td>
    </tr>
    <tr>
-      <td><a href="#j-tr">tr</a></td>
-      <td><a href="#k-nl">nl</a></td>
-      <td><a href="#l-egrep">egrep</a></td>
-      <td><a href="#m-fgrep">fgrep</a></td>
+      <td><a href="#k-tr">tr</a></td>
+      <td><a href="#l-uniq">uniq</a></td>
+      <td><a href="#m-wc">wc</a></td>
    </tr>
 </table>
 
@@ -288,141 +287,8 @@ sync
 ```
 For more detail on how to use `awk`, check following [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
 
-### b. `grep`
-Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
-```bash
-grep pattern filename
-```
-Example:
-```bash
-$ grep admin /etc/passwd
-_kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
-_kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
-_krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
-```
-You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for example:
-```bash
-$ grep -r admin /etc/
-```
-And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
 
-### c. `wc`
-Tells you how many lines, words and characters there are in a file.  
-```bash
-wc filename
-```
-Example:
-```bash
-$ wc demo.txt
-7459   15915  398400 demo.txt
-```
-Where `7459` is lines, `15915` is words and `398400` is characters.
-
-### d. `sed`
-Stream editor for filtering and transforming text
-
-*example.txt*
-```bash
-Hello This is a Test 1 2 3 4
-``` 
-
-*replace all spaces with hyphens*
-```bash
-sed 's/ /-/g' example.txt
-```
-```bash
-Hello-This-is-a-Test-1-2-3-4
-```
-
-*replace all digits with "d"*
-```bash
-sed 's/[0-9]/d/g' example.txt
-```
-```bash
-Hello This is a Test d d d d
-```
-
-### e. `sort`
-Sort lines of text files
-
-*example.txt*
-```bash
-f
-b
-c
-g
-a
-e
-d
-```
-
-
-*sort example.txt*
-```bash
-sort example.txt
-```
-```bash
-a
-b
-c
-d
-e
-f
-g
-```
-
-*randomize a sorted example.txt*
-```bash
-sort example.txt | sort -R
-```
-```bash
-b
-f
-a
-c
-d
-g
-e
-```
-
-### f. `uniq`
-Report or omit repeated lines
-
-*example.txt*
-```bash
-a
-a
-b
-a
-b
-c
-d
-c
-```
-
-*show only unique lines of example.txt (first you need to sort it, otherwise it won't see the overlap)*
-```bash
-sort example.txt | uniq
-```
-```bash
-a
-b
-c
-d
-```
-
-*show the unique items for each line, and tell me how many instances it found*
-```bash
-sort example.txt | uniq -c
-```
-```bash
-    3 a
-    2 b
-    2 c
-    1 d
-```
-
-### g. `cut`
+### b. `cut`
 Remove sections from each line of files
 
 *example.txt*
@@ -438,7 +304,7 @@ cut -d " " -f2,7,9 example.txt
 riding park play
 ```
 
-### h. `echo`
+### c. `echo`
 Display a line of text
 
 *display "Hello World"*
@@ -458,7 +324,85 @@ Hello
 World
 ```
 
-### i. `fmt`
+### d. `egrep`
+Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
+
+*example.txt*
+```bash
+Lorem ipsum
+dolor sit amet, 
+consetetur
+sadipscing elitr,
+sed diam nonumy
+eirmod tempor
+invidunt ut labore
+et dolore magna
+aliquyam erat, sed
+diam voluptua. At
+vero eos et
+accusam et justo
+duo dolores et ea
+rebum. Stet clita
+kasd gubergren,
+no sea takimata
+sanctus est Lorem
+ipsum dolor sit
+amet.
+```
+
+*display lines that have either "Lorem" or "dolor" in them.*
+```bash
+egrep '(Lorem|dolor)' example.txt
+or
+grep -E '(Lorem|dolor)' example.txt
+```
+```bash
+Lorem ipsum
+dolor sit amet,
+et dolore magna
+duo dolores et ea
+sanctus est Lorem
+ipsum dolor sit
+```
+
+### e. `fgrep`
+Print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
+
+*example.txt*
+```bash
+Lorem ipsum
+dolor sit amet,
+consetetur
+sadipscing elitr,
+sed diam nonumy
+eirmod tempor
+foo (Lorem|dolor) 
+invidunt ut labore
+et dolore magna
+aliquyam erat, sed
+diam voluptua. At
+vero eos et
+accusam et justo
+duo dolores et ea
+rebum. Stet clita
+kasd gubergren,
+no sea takimata
+sanctus est Lorem
+ipsum dolor sit
+amet.
+```
+
+*Find the exact string '(Lorem|doloar)' in example.txt*
+```bash
+fgrep '(Lorem|dolor)' example.txt
+or
+grep -F '(Lorem|dolor)' example.txt
+```
+```bash
+foo (Lorem|dolor) 
+```
+
+### f. `fmt`
 Simple optimal text formatter
 
 *example: example.txt (1 line)*
@@ -492,35 +436,25 @@ ipsum dolor sit
 amet.
 ```
 
-### j. `tr`
-Translate or delete characters
+### g. `grep`
+Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
+```bash
+grep pattern filename
+```
+Example:
+```bash
+$ grep admin /etc/passwd
+_kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
+_kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
+_krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
+```
+You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for example:
+```bash
+$ grep -r admin /etc/
+```
+And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
 
-*example.txt*
-```bash
-Hello World Foo Bar Baz!
-```
-
-*take all lower case letters and make them upper case*
-```bash
-cat example.txt | tr 'a-z' 'A-Z' 
-```
-```bash
-HELLO WORLD FOO BAR BAZ!
-```
-
-*take all spaces and make them into newlines*
-```bash
-cat example.txt | tr ' ' '\n'
-```
-```bash
-Hello
-World
-Foo
-Bar
-Baz!
-```
-
-### k. `nl`
+### h. `nl`
 Number lines of files
 
 *example.txt*
@@ -572,101 +506,160 @@ nl -s". " example.txt
     19. amet.
 ```
 
-### l. `egrep`
-Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
+### i. `sed`
+Stream editor for filtering and transforming text
 
 *example.txt*
 ```bash
-Lorem ipsum
-dolor sit amet, 
-consetetur
-sadipscing elitr,
-sed diam nonumy
-eirmod tempor
-invidunt ut labore
-et dolore magna
-aliquyam erat, sed
-diam voluptua. At
-vero eos et
-accusam et justo
-duo dolores et ea
-rebum. Stet clita
-kasd gubergren,
-no sea takimata
-sanctus est Lorem
-ipsum dolor sit
-amet.
-```
+Hello This is a Test 1 2 3 4
+``` 
 
-*display lines that have either "Lorem" or "dolor" in them.*
+*replace all spaces with hyphens*
 ```bash
-egrep '(Lorem|dolor)' example.txt
-or
-grep -E '(Lorem|dolor)' example.txt
+sed 's/ /-/g' example.txt
 ```
 ```bash
-Lorem ipsum
-dolor sit amet,
-et dolore magna
-duo dolores et ea
-sanctus est Lorem
-ipsum dolor sit
+Hello-This-is-a-Test-1-2-3-4
 ```
 
-### m. `fgrep`
-Print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
+*replace all digits with "d"*
+```bash
+sed 's/[0-9]/d/g' example.txt
+```
+```bash
+Hello This is a Test d d d d
+```
+
+### j. `sort`
+Sort lines of text files
 
 *example.txt*
 ```bash
-Lorem ipsum
-dolor sit amet,
-consetetur
-sadipscing elitr,
-sed diam nonumy
-eirmod tempor
-foo (Lorem|dolor) 
-invidunt ut labore
-et dolore magna
-aliquyam erat, sed
-diam voluptua. At
-vero eos et
-accusam et justo
-duo dolores et ea
-rebum. Stet clita
-kasd gubergren,
-no sea takimata
-sanctus est Lorem
-ipsum dolor sit
-amet.
+f
+b
+c
+g
+a
+e
+d
 ```
 
-*Find the exact string '(Lorem|doloar)' in example.txt*
+*sort example.txt*
 ```bash
-fgrep '(Lorem|dolor)' example.txt
-or
-grep -F '(Lorem|dolor)' example.txt
+sort example.txt
 ```
 ```bash
-foo (Lorem|dolor) 
+a
+b
+c
+d
+e
+f
+g
 ```
+
+*randomize a sorted example.txt*
+```bash
+sort example.txt | sort -R
+```
+```bash
+b
+f
+a
+c
+d
+g
+e
+```
+
+### k. `tr`
+Translate or delete characters
+
+*example.txt*
+```bash
+Hello World Foo Bar Baz!
+```
+
+*take all lower case letters and make them upper case*
+```bash
+cat example.txt | tr 'a-z' 'A-Z' 
+```
+```bash
+HELLO WORLD FOO BAR BAZ!
+```
+
+*take all spaces and make them into newlines*
+```bash
+cat example.txt | tr ' ' '\n'
+```
+```bash
+Hello
+World
+Foo
+Bar
+Baz!
+```
+
+### l. `uniq`
+Report or omit repeated lines
+
+*example.txt*
+```bash
+a
+a
+b
+a
+b
+c
+d
+c
+```
+
+*show only unique lines of example.txt (first you need to sort it, otherwise it won't see the overlap)*
+```bash
+sort example.txt | uniq
+```
+```bash
+a
+b
+c
+d
+```
+
+*show the unique items for each line, and tell me how many instances it found*
+```bash
+sort example.txt | uniq -c
+```
+```bash
+    3 a
+    2 b
+    2 c
+    1 d
+```
+
+### m. `wc`
+Tells you how many lines, words and characters there are in a file.  
+```bash
+wc filename
+```
+Example:
+```bash
+$ wc demo.txt
+7459   15915  398400 demo.txt
+```
+Where `7459` is lines, `15915` is words and `398400` is characters.
 
 ## 1.3. Directory Operations
 
 <table>
    <tr>
-      <td><a href="#a-mkdir">mkdir</a></td>
-      <td><a href="#b-cd">cd</a></td>
+      <td><a href="#a-cd">cd</a></td>
+      <td><a href="#b-mkdir">mkdir</a></td>
       <td><a href="#c-pwd">pwd</a></td>
    </tr>
 </table>
 
-### a. `mkdir`
-Makes a new directory.  
-```bash
-mkdir dirname
-```
-
-### b. `cd`
+### a. `cd`
 Moves you from one directory to other. Running this  
 ```bash
 $ cd
@@ -674,6 +667,12 @@ $ cd
 moves you to home directory. This command accepts an optional `dirname`, which moves you to that directory.
 ```bash
 cd dirname
+```
+
+### b. `mkdir`
+Makes a new directory.  
+```bash
+mkdir dirname
 ```
 
 ### c. `pwd`
@@ -686,103 +685,102 @@ pwd
 
 <table>
    <tr>
-      <td><a href="#a-ssh">ssh</a></td>
-      <td><a href="#b-whoami">whoami</a></td>
-      <td><a href="#c-passwd">passwd</a></td>
-      <td><a href="#d-quota">quota</a></td>
-      <td><a href="#e-date">date</a></td>
-      <td><a href="#f-cal">cal</a></td>
-      <td><a href="#g-uptime">uptime</a></td>
-      <td><a href="#h-w">w</a></td>
-      <td><a href="#i-finger">finger</a></td>
-      <td><a href="#j-uname">uname</a></td>
+      <td><a href="#a-bg">bg</a></td>
+      <td><a href="#b-cal">cal</a></td>
+      <td><a href="#c-date">date</a></td>
+      <td><a href="#d-df">df</a></td>
+      <td><a href="#e-dig">dig</a></td>
+      <td><a href="#f-du">du</a></td>
+      <td><a href="#g-fg">fg</a></td>
+      <td><a href="#h-finger">finger</a></td>
+      <td><a href="#i-kill">kill</a></td>
+      <td><a href="#j-killall">killall</a></td>
    </tr>
    <tr>
-      <td><a href="#k-man">man</a></td>
-      <td><a href="#l-df">df</a></td>
-      <td><a href="#m-du">du</a></td>
-      <td><a href="#n-last">last</a></td>
+      <td><a href="#k-last">last</a></td>
+      <td><a href="#l-man">man</a></td>
+      <td><a href="#m-passwd">passwd</a></td>
+      <td><a href="#n-ping">ping</a></td>
       <td><a href="#o-ps">ps</a></td>
-      <td><a href="#p-kill">kill</a></td>
-      <td><a href="#q-killall">killall</a></td>
-      <td><a href="#r-top">top</a></td>
-      <td><a href="#s-bg">bg</a></td>
-      <td><a href="#t-fg">fg</a></td>
+      <td><a href="#p-quota">quota</a></td>
+      <td><a href="#q-scp">scp</a></td>
+      <td><a href="#r-ssh">ssh</a></td>
+      <td><a href="#s-top">top</a></td>
+      <td><a href="#t-uname">uname</a></td>
    </tr>
    <tr>
-      <td><a href="#u-ping">ping</a></td>
-      <td><a href="#v-whois">whois</a></td>
-      <td><a href="#w-dig">dig</a></td>
-      <td><a href="#x-wget">wget</a></td>
-      <td><a href="#y-scp">scp</a></td>
+      <td><a href="#u-uptime">uptime</a></td>
+      <td><a href="#v-w">w</a></td>
+      <td><a href="#w-wget">wget</a></td>
+      <td><a href="#x-whoami">whoami</a></td>
+      <td><a href="#y-whois">whois</a></td>
    </tr>
 </table>
 
-### a. `ssh`
-ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
-```bash
-ssh user@host
-```
-This command also accepts an option `-p` that can be used to connect to specific port.  
-```bash
-ssh -p port user@host
-```
+### a. `bg`
+Lists stopped or background jobs; resume a stopped job in the background.
 
-### b. `whoami`
-Return current logged in username.
-
-### c. `passwd`
-Allows the current logged user to change his password.
-
-### d. `quota`
-Shows what your disk quota is.  
-```bash
-quota -v
-```
-
-### e. `date`
-Shows the current date and time.
-
-### f. `cal`
+### b. `cal`
 Shows the month's calendar.
 
-### g. `uptime`
-Shows current uptime.
+### c. `date`
+Shows the current date and time.
 
-### h. `w`
-Displays who is online.
-
-### i. `finger`
-Displays information about user.  
-```bash
-finger username
-```
-
-### j. `uname`
-Shows kernel information.  
-```bash
-uname -a
-```
-
-### k. `man`
-Shows the manual for specified command.  
-```bash
-man command
-```
-
-### l. `df`
+### d. `df`
 Shows disk usage.
 
-### m. `du`
+### e. `dig`
+Gets DNS information for domain.  
+```bash
+dig domain
+```
+
+### f. `du`
 Shows the disk usage of the files and directories in filename (du -s give only a total).  
 ```bash
 du filename
 ```
 
-### n. `last`
+### g. `fg`
+Brings the most recent job in the foreground.
+
+### h. `finger`
+Displays information about user.  
+```bash
+finger username
+```
+
+### i. `kill`
+Kills (ends) the processes with the ID you gave.  
+```bash
+kill PID
+```
+
+### j. `killall`
+Kill all processes with the name.  
+```bash
+killall processname
+```
+
+### k. `last`
 Lists your last logins of specified user.  
 ```bash
 last yourUsername
+```
+
+### l. `man`
+Shows the manual for specified command.  
+```bash
+man command
+```
+
+### m. `passwd`
+Allows the current logged user to change his password.
+
+### n. `ping`
+Pings host and outputs results.  
+```bash
+ping host
 ```
 
 ### o. `ps`
@@ -791,53 +789,13 @@ Lists your processes.
 ps -u yourusername
 ```
 
-### p. `kill`
-Kills (ends) the processes with the ID you gave.  
+### p. `quota`
+Shows what your disk quota is.  
 ```bash
-kill PID
+quota -v
 ```
 
-### q. `killall`
-Kill all processes with the name.  
-```bash
-killall processname
-```
-
-### r. `top`
-Displays your currently active processes.
-
-### s. `bg`
-Lists stopped or background jobs; resume a stopped job in the background.
-
-### t. `fg`
-Brings the most recent job in the foreground.
-
-### u. `ping`
-Pings host and outputs results.  
-```bash
-ping host
-```
-
-### v. `whois`
-Gets whois information for domain.  
-```bash
-whois domain
-```
-
-### w. `dig`
-Gets DNS information for domain.  
-```bash
-dig domain
-```
-
-### x. `wget`
-Downloads file.  
-```bash
-wget file
-```
-
-
-### y. `scp`
+### q. `scp`
 Transfer files between a local host and a remote host or between two remote hosts.
 
 *copy from local host to remote host*
@@ -854,6 +812,45 @@ This command also accepts an option `-P` that can be used to connect to specific
 scp -P port user@host:directory/source_file target_file
 ```
 
+### r. `ssh`
+ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
+```bash
+ssh user@host
+```
+This command also accepts an option `-p` that can be used to connect to specific port.  
+```bash
+ssh -p port user@host
+```
+
+### s. `top`
+Displays your currently active processes.
+
+### t. `uname`
+Shows kernel information.  
+```bash
+uname -a
+```
+
+### u. `uptime`
+Shows current uptime.
+
+### v. `w`
+Displays who is online.
+
+### w. `wget`
+Downloads file.  
+```bash
+wget file
+```
+
+### x. `whoami`
+Return current logged in username.
+
+### y. `whois`
+Gets whois information for domain.  
+```bash
+whois domain
+```
 
 # 2. Basic Shell Programming
 
