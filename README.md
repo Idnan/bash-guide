@@ -166,7 +166,7 @@ Where `filename1` is the source path to the file and `filename2` is the destinat
 ### i. `rm`
 Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
-In order to remove a directory you have to pass `-rf` to remove all the content of the directory recursively.  
+In order to remove a directory you have to pass `-r` to remove all the content of the directory recursively.  
 ```bash
 rm filename
 ```
