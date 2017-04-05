@@ -29,14 +29,13 @@ export
 Example:
 ```bash
 $ export
-SHELL=/bin/zsh
 AWS_HOME=/Users/adnanadnan/.aws
 LANG=en_US.UTF-8
 LC_CTYPE=en_US.UTF-8
 LESS=-R
 
-$ echo $SHELL
-/usr/bin/zsh
+$ echo $AWS_HOME
+/Users/adnanadnan/.aws
 ```
 
 ### b. `whereis`
