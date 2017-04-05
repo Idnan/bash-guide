@@ -756,11 +756,8 @@ Options:
 - `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
 
 Example:
-```shell
+```bash
 du -sh pictures
-```
-
-```shell
 1.4M pictures
 ```
 
