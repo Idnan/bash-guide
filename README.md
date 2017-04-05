@@ -199,7 +199,7 @@ ls option
 ```
 Example:
 <pre>
-$ ls -al
+$ ls -la
 rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .
 drwxrwxrwx  60 adnan  staff    2040 Mar 21 15:06 ..
 -rw-r--r--@  1 adnan  staff   14340 Mar 23 15:05 .DS_Store
