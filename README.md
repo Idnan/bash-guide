@@ -72,22 +72,22 @@ Clears content on window.
       <td><a href="#c-cp">cp</a></td>
       <td><a href="#d-diff">diff</a></td>
       <td><a href="#e-file">file</a></td>
-      <td><a href="#f-gunzip">gunzip</a></td>
-      <td><a href="#g-gzcat">gzcat</a></td>
-      <td><a href="#h-gzip">gzip</a></td>
-      <td><a href="#i-head">head</a></td>
-      <td><a href="#j-lpq">lpq</a></td>
+      <td><a href="#f-find">find</a></td>
+      <td><a href="#g-gunzip">gunzip</a></td>
+      <td><a href="#h-gzcat">gzcat</a></td>
+      <td><a href="#i-gzip">gzip</a></td>
+      <td><a href="#j-head">head</a></td>
    </tr>
    <tr>
-      <td><a href="#k-lpr">lpr</a></td>
-      <td><a href="#l-lprm">lprm</a></td>
-      <td><a href="#m-ls">ls</a></td>
-      <td><a href="#n-more">more</a></td>
-      <td><a href="#o-mv">mv</a></td>
-      <td><a href="#p-rm">rm</a></td>
-      <td><a href="#q-tail">tail</a></td>
-      <td><a href="#r-touch">touch</a></td>
-      <td><a href="#s-find">find</a></td>
+      <td><a href="#k-lpq">lpq</a></td>
+      <td><a href="#l-lpr">lpr</a></td>
+      <td><a href="#m-lprm">lprm</a></td>
+      <td><a href="#n-ls">ls</a></td>
+      <td><a href="#o-more">more</a></td>
+      <td><a href="#p-mv">mv</a></td>
+      <td><a href="#q-rm">rm</a></td>
+      <td><a href="#r-tail">tail</a></td>
+      <td><a href="#s-touch">touch</a></td>
    </tr>
 </table>
 
@@ -132,32 +132,42 @@ Example:
 $ file index.html
  index.html: HTML document, ASCII text
 ```
+### f. `find`
+Find files in directory
+```bash
+find directory options pattern
+```
+Example:
+```bash
+$ find . -name README.md
+$ find /home/user1 -name '*.png'
+```
 
-### f. `gunzip`
+### g. `gunzip`
 Un-compresses files compressed by gzip.  
 ```bash
 gunzip filename
 ```
 
-### g. `gzcat`
+### h. `gzcat`
 Lets you look at gzipped file without actually having to gunzip it.  
 ```bash
 gzcat filename
 ```
 
-### h. `gzip`
+### i. `gzip`
 Compresses files.  
 ```bash
 gzip filename
 ```
 
-### i. `head`
+### j. `head`
 Outputs the first 10 lines of file  
 ```bash
 head filename
 ```
 
-### j. `lpq`
+### k. `lpq`
 Check out the printer queue.  
 ```bash
 lpq
@@ -170,19 +180,19 @@ active  adnanad 59      demo                            399360 bytes
 1st     adnanad 60      (stdin)                         0 bytes
 ```
 
-### k. `lpr`
+### l. `lpr`
 Print the file.  
 ```bash
 lpr filename
 ```
 
-### l. `lprm`
+### m. `lprm`
 Remove something from the printer queue.  
 ```bash
 lprm jobnumber
 ```
 
-### m. `ls`
+### n. `ls`
 Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
@@ -200,20 +210,20 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
 </pre>
 
-### n. `more`
+### o. `more`
 Shows the first part of a file (move with space and type q to quit).  
 ```bash
 more filename
 ```
 
-### o. `mv`
+### p. `mv`
 Moves a file from one location to other.  
 ```bash
 mv filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
-### p. `rm`
+### q. `rm`
 Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
 To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
@@ -221,13 +231,13 @@ To remove a directory you have to pass `-r` which will remove the content of the
 rm filename
 ```
 
-### q. `tail`
+### r. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
 ```bash
 tail filename
 ```
 
-### r. `touch`
+### s. `touch`
 Creates or updates your file.  
 ```bash
 touch filename
@@ -235,17 +245,6 @@ touch filename
 Example:
 ```bash
 $ touch trick.md
-```
-
-### s. `find`
-Find files in directory
-```bash
-find directory options pattern
-```
-Example:
-```bash
-$ find . -name README.md
-$ find /home/user1 -name '*.png'
 ```
 
 ## 1.2. Text Operations
