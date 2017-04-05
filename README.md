@@ -106,7 +106,7 @@ cat file1 file2 > newcombinedfile
 ### b. `chmod`
 Lets you change the read, write, and execute permissions on your files.  
 ```bash
-chmod -options filename
+chmod +x script
 ```
 
 ### c. `cp`
