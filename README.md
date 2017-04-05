@@ -747,9 +747,21 @@ dig domain
 ```
 
 ### f. `du`
-Shows the disk usage of the files and directories in filename (du -s give only a total).  
+Shows the disk usage of files or directories. For more information on this command check this [link](http://www.linfo.org/du.html)
 ```bash
-du filename
+du [option] [filename|directory]
+```
+Options:
+- `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
+- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
+
+Example:
+```shell
+du -sh pictures
+```
+
+```shell
+1.4M pictures
 ```
 
 ### g. `fg`
