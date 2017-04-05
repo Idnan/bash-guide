@@ -87,6 +87,7 @@ Clears content on window.
       <td><a href="#p-rm">rm</a></td>
       <td><a href="#q-tail">tail</a></td>
       <td><a href="#r-touch">touch</a></td>
+      <td><a href="#s-find">find</a></td>
    </tr>
 </table>
 
@@ -234,6 +235,17 @@ touch filename
 Example:
 ```bash
 $ touch trick.md
+```
+
+### s. `find`
+Find files in directory
+```bash
+find directory options pattern
+```
+Example:
+```bash
+$ find . -name README.md
+$ find /home/user1 -name '*.png'
 ```
 
 ## 1.2. Text Operations
