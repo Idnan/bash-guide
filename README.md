@@ -222,6 +222,11 @@ mv filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
+Also it can be used for rename a file.
+```bash
+mv old_name new_name
+```
+
 ### q. `rm`
 Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
