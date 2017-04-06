@@ -402,7 +402,7 @@ ipsum dolor sit
 amet.
 ```
 
-*Find the exact string '(Lorem|doloar)' in example.txt*
+*Find the exact string '(Lorem|dolor)' in example.txt*
 ```bash
 fgrep '(Lorem|dolor)' example.txt
 or
