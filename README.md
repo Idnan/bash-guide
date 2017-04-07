@@ -45,7 +45,7 @@ whatis something
 ```
 Example:
 ```bash
-$ whatis socket
+$ whatis bash
 bash (1)             - GNU Bourne-Again SHell
 ```
 
