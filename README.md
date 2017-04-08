@@ -785,52 +785,40 @@ Displays information about user.
 finger username
 ```
 
-### i. `kill`
-Kills (ends) the processes with the ID you gave.  
-```bash
-kill PID
-```
-
-### j. `killall`
-Kill all processes with the name.  
-```bash
-killall processname
-```
-
-### k. `last`
+### i. `last`
 Lists your last logins of specified user.  
 ```bash
 last yourUsername
 ```
 
-### l. `man`
+### j. `man`
 Shows the manual for specified command.  
 ```bash
 man command
 ```
 
-### m. `passwd`
+### k. `passwd`
 Allows the current logged user to change his password.
 
-### n. `ping`
+### l. `ping`
 Pings host and outputs results.  
 ```bash
 ping host
 ```
 
-### o. `ps`
+### m. `ps`
 Lists your processes.  
 ```bash
 ps -u yourusername
 ```
 
-### p. `quota`
+### n. `quota`
 Shows what your disk quota is.  
 ```bash
 quota -v
 ```
 
-### q. `scp`
+### o. `scp`
 Transfer files between a local host and a remote host or between two remote hosts.
 
 *copy from local host to remote host*
@@ -847,7 +835,7 @@ This command also accepts an option `-P` that can be used to connect to specific
 scp -P port user@host:directory/source_file target_file
 ```
 
-### r. `ssh`
+### p. `ssh`
 ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
 ```bash
 ssh user@host
@@ -857,34 +845,54 @@ This command also accepts an option `-p` that can be used to connect to specific
 ssh -p port user@host
 ```
 
-### s. `top`
+### q. `top`
 Displays your currently active processes.
 
-### t. `uname`
+### r. `uname`
 Shows kernel information.  
 ```bash
 uname -a
 ```
 
-### u. `uptime`
+### s. `uptime`
 Shows current uptime.
 
-### v. `w`
+### t. `w`
 Displays who is online.
 
-### w. `wget`
+### u. `wget`
 Downloads file.  
 ```bash
 wget file
 ```
 
-### x. `whoami`
+### w. `whoami`
 Return current logged in username.
 
-### y. `whois`
+### x. `whois`
 Gets whois information for domain.  
 ```bash
 whois domain
+```
+
+## 1.5. Process Monitoring Operations
+
+### a. `kill`
+Kills (ends) the processes with the ID you gave.  
+```bash
+kill PID
+```
+
+### b. `killall`
+Kill all processes with the name.  
+```bash
+killall processname
+```
+
+### c. `nohup`
+Daemonize (run in background) the process   
+```bash
+nohup processname
 ```
 
 # 2. Basic Shell Programming
