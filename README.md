@@ -79,25 +79,26 @@ Clears content on window.
    <tr>
       <td><a href="#a-cat">cat</a></td>
       <td><a href="#b-chmod">chmod</a></td>
-      <td><a href="#c-cp">cp</a></td>
-      <td><a href="#d-diff">diff</a></td>
-      <td><a href="#e-file">file</a></td>
-      <td><a href="#f-find">find</a></td>
-      <td><a href="#g-gunzip">gunzip</a></td>
-      <td><a href="#h-gzcat">gzcat</a></td>
-      <td><a href="#i-gzip">gzip</a></td>
-      <td><a href="#j-head">head</a></td>
+      <td><a href="#c-chown">chown</a></td>
+      <td><a href="#d-cp">cp</a></td>
+      <td><a href="#e-diff">diff</a></td>
+      <td><a href="#f-file">file</a></td>
+      <td><a href="#g-find">find</a></td>
+      <td><a href="#h-gunzip">gunzip</a></td>
+      <td><a href="#i-gzcat">gzcat</a></td>
+      <td><a href="#j-gzip">gzip</a></td>
+      <td><a href="#k-head">head</a></td>
    </tr>
    <tr>
-      <td><a href="#k-lpq">lpq</a></td>
-      <td><a href="#l-lpr">lpr</a></td>
-      <td><a href="#m-lprm">lprm</a></td>
-      <td><a href="#n-ls">ls</a></td>
-      <td><a href="#o-more">more</a></td>
-      <td><a href="#p-mv">mv</a></td>
-      <td><a href="#q-rm">rm</a></td>
-      <td><a href="#r-tail">tail</a></td>
-      <td><a href="#s-touch">touch</a></td>
+      <td><a href="#l-lpq">lpq</a></td>
+      <td><a href="#m-lpr">lpr</a></td>
+      <td><a href="#n-lprm">lprm</a></td>
+      <td><a href="#o-ls">ls</a></td>
+      <td><a href="#p-more">more</a></td>
+      <td><a href="#q-mv">mv</a></td>
+      <td><a href="#r-rm">rm</a></td>
+      <td><a href="#s-tail">tail</a></td>
+      <td><a href="#t-touch">touch</a></td>
    </tr>
 </table>
 
@@ -118,21 +119,26 @@ Lets you change the read, write, and execute permissions on your files.
 ```bash
 chmod -options filename
 ```
+### c. `chown`
+Lets you change the ownerships on your files.  
+```bash
+chown -options owner-user:owner-group filename
+```
 
-### c. `cp`
+### d. `cp`
 Copies a file from one location to other.  
 ```bash
 cp filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
-### d. `diff`
+### e. `diff`
 Compares files, and lists their differences.  
 ```bash
 diff filename1 filename2
 ```
 
-### e. `file`
+### f. `file`
 Determine file type.  
 ```bash
 file filename
@@ -142,7 +148,7 @@ Example:
 $ file index.html
  index.html: HTML document, ASCII text
 ```
-### f. `find`
+### g. `find`
 Find files in directory
 ```bash
 find directory options pattern
@@ -153,31 +159,31 @@ $ find . -name README.md
 $ find /home/user1 -name '*.png'
 ```
 
-### g. `gunzip`
+### h. `gunzip`
 Un-compresses files compressed by gzip.  
 ```bash
 gunzip filename
 ```
 
-### h. `gzcat`
+### i. `gzcat`
 Lets you look at gzipped file without actually having to gunzip it.  
 ```bash
 gzcat filename
 ```
 
-### i. `gzip`
+### j. `gzip`
 Compresses files.  
 ```bash
 gzip filename
 ```
 
-### j. `head`
+### k. `head`
 Outputs the first 10 lines of file  
 ```bash
 head filename
 ```
 
-### k. `lpq`
+### l. `lpq`
 Check out the printer queue.  
 ```bash
 lpq
@@ -190,19 +196,19 @@ active  adnanad 59      demo                            399360 bytes
 1st     adnanad 60      (stdin)                         0 bytes
 ```
 
-### l. `lpr`
+### m. `lpr`
 Print the file.  
 ```bash
 lpr filename
 ```
 
-### m. `lprm`
+### n. `lprm`
 Remove something from the printer queue.  
 ```bash
 lprm jobnumber
 ```
 
-### n. `ls`
+### o. `ls`
 Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
@@ -220,13 +226,13 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
 </pre>
 
-### o. `more`
+### p. `more`
 Shows the first part of a file (move with space and type q to quit).  
 ```bash
 more filename
 ```
 
-### p. `mv`
+### q. `mv`
 Moves a file from one location to other.  
 ```bash
 mv filename1 filename2
@@ -238,7 +244,7 @@ Also it can be used for rename a file.
 mv old_name new_name
 ```
 
-### q. `rm`
+### r. `rm`
 Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
 To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
@@ -246,13 +252,13 @@ To remove a directory you have to pass `-r` which will remove the content of the
 rm filename
 ```
 
-### r. `tail`
+### s. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
 ```bash
 tail filename
 ```
 
-### s. `touch`
+### t. `touch`
 Creates or updates your file.  
 ```bash
 touch filename
