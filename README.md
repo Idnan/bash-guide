@@ -111,6 +111,7 @@ It can be used for the following purposes under UNIX or Linux.
 cat filename
 cat file1 file2 
 cat file1 file2 > newcombinedfile
+cat < file1 > file2 #copy file1 to file2
 ```
 
 ### b. `chmod`
