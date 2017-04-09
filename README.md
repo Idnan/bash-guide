@@ -889,10 +889,20 @@ Kill all processes with the name.
 killall processname
 ```
 
-### c. `nohup`
-Daemonize (run in background) the process   
+### c. `&`
+The `&` symbol instructs the command to run as a background process in a subshell 
 ```bash
-nohup processname
+command &
+```
+
+### d. `nohup`
+The process launched by the command ignore the SIGHUP signal ( signal sent to a process when its controlling terminal is closed ) 
+```bash
+nohup command
+```
+Combine it with `&` to create background processes 
+```bash
+nohup command &
 ```
 
 # 2. Basic Shell Programming
