@@ -911,7 +911,7 @@ Example:
 ```bash
 echo $str   # hello world
 ```
-
+## 2.2. Array
 Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
 
 Examples:
@@ -943,7 +943,7 @@ ${varname:+word}    # if varname exists and isn't null, return word; otherwise r
 ${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
 ```
 
-## 2.2 String Substitution
+## 2.3 String Substitution
 
 Check some of the syntax on how to manipulate strings
 
@@ -957,7 +957,7 @@ ${variable//pattern/string} # the longest match to pattern in variable is replac
 ${#varname}     # returns the length of the value of the variable as a character string
 ```
 
-## 2.3. Functions
+## 2.4. Functions
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
 ```bash
@@ -982,7 +982,7 @@ say "hello world!"
 
 When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within functions, are treated in the same manner as arguments given to the script.
 
-## 2.4. Conditionals
+## 2.5. Conditionals
 
 The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
@@ -1042,7 +1042,7 @@ file1 -ot file2     # file1 is older than file2
 -ne     # not equal
 ```
 
-## 2.5. Loops
+## 2.6. Loops
 
 There are three types of loops in bash. `for`, `while` and `until`.
 
@@ -1104,8 +1104,8 @@ bash -x scriptname
 
 ## Contribution
 
-- Report issues
-- Open pull request with improvements
+- Report issues [How to](https://help.github.com/articles/creating-an-issue/)
+- Open pull request with improvements [How to](https://help.github.com/articles/about-pull-requests/)
 - Spread the word
 
 ## License
