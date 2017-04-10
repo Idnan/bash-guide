@@ -89,15 +89,16 @@ Clears content on window.
       <td><a href="#j-head">head</a></td>
    </tr>
    <tr>
-      <td><a href="#k-lpq">lpq</a></td>
-      <td><a href="#l-lpr">lpr</a></td>
-      <td><a href="#m-lprm">lprm</a></td>
-      <td><a href="#n-ls">ls</a></td>
-      <td><a href="#o-more">more</a></td>
-      <td><a href="#p-mv">mv</a></td>
-      <td><a href="#q-rm">rm</a></td>
-      <td><a href="#r-tail">tail</a></td>
-      <td><a href="#s-touch">touch</a></td>
+      <td><a href="#k-ln">lpq</a></td>
+      <td><a href="#l-lpq">lpq</a></td>
+      <td><a href="#m-lpr">lpr</a></td>
+      <td><a href="#n-lprm">lprm</a></td>
+      <td><a href="#o-ls">ls</a></td>
+      <td><a href="#p-more">more</a></td>
+      <td><a href="#q-mv">mv</a></td>
+      <td><a href="#r-rm">rm</a></td>
+      <td><a href="#s-tail">tail</a></td>
+      <td><a href="#t-touch">touch</a></td>
    </tr>
 </table>
 
@@ -178,7 +179,43 @@ Outputs the first 10 lines of file
 head filename
 ```
 
-### k. `lpq`
+### k. `ln`
+Make links between files  
+```bash
+ln /path/to/sourcefile /path/to/thelinkyouwannasave  # hard link
+ln -s /path/to/sourcefile /path/to/thelinkyouwannasave  # soft/symbolic link
+```
+
+* hard link point to the source file's inode, rename the source file won't effect hard link
+* soft link point to the source file, rename the source file will effect soft link
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/cyl19910101/bash-guide/ln/ln.png" alt="ln"/>
+</p>
+
+Example:
+```bash
+[root@355a4ec336b2 tmp]# echo "source file" > source_file
+[root@355a4ec336b2 tmp]# ln /tmp/source_file link_hard  # create a hard link
+[root@355a4ec336b2 tmp]# ln -s /tmp/source_file link_soft # create a soft link
+# both links can access the source file now
+[root@355a4ec336b2 tmp]# cat link_hard
+source file
+[root@355a4ec336b2 tmp]# cat link_soft
+source file
+[root@355a4ec336b2 tmp]# ls -alh source_file link_*
+-rw-r--r-- 2 root root 12 Apr 10 05:09 link_hard
+lrwxrwxrwx 1 root root 16 Apr 10 05:09 link_soft -> /tmp/source_file  # soft link's permissons are normally 777
+-rw-r--r-- 2 root root 12 Apr 10 05:09 source_file
+# chage the source file's name will only effect soft link's access
+[root@355a4ec336b2 tmp]# mv source_file new_file
+[root@355a4ec336b2 tmp]# cat link_hard
+source file
+[root@355a4ec336b2 tmp]# cat link_soft
+cat: link_soft: No such file or directory
+```
+
+### l. `lpq`
 Check out the printer queue.  
 ```bash
 lpq
@@ -191,19 +228,19 @@ active  adnanad 59      demo                            399360 bytes
 1st     adnanad 60      (stdin)                         0 bytes
 ```
 
-### l. `lpr`
+### m. `lpr`
 Print the file.  
 ```bash
 lpr filename
 ```
 
-### m. `lprm`
+### n. `lprm`
 Remove something from the printer queue.  
 ```bash
 lprm jobnumber
 ```
 
-### n. `ls`
+### o. `ls`
 Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
@@ -221,13 +258,13 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
 </pre>
 
-### o. `more`
+### p. `more`
 Shows the first part of a file (move with space and type q to quit).  
 ```bash
 more filename
 ```
 
-### p. `mv`
+### q. `mv`
 Moves a file from one location to other.  
 ```bash
 mv filename1 filename2
@@ -239,7 +276,7 @@ Also it can be used for rename a file.
 mv old_name new_name
 ```
 
-### q. `rm`
+### r. `rm`
 Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
 To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
@@ -247,13 +284,13 @@ To remove a directory you have to pass `-r` which will remove the content of the
 rm filename
 ```
 
-### r. `tail`
+### s. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
 ```bash
 tail filename
 ```
 
-### s. `touch`
+### t. `touch`
 Creates or updates your file.  
 ```bash
 touch filename
