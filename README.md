@@ -89,7 +89,7 @@ Clears content on window.
       <td><a href="#j-head">head</a></td>
    </tr>
    <tr>
-      <td><a href="#k-ln">lpq</a></td>
+      <td><a href="#k-ln">ln</a></td>
       <td><a href="#l-lpq">lpq</a></td>
       <td><a href="#m-lpr">lpr</a></td>
       <td><a href="#n-lprm">lprm</a></td>
