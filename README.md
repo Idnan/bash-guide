@@ -74,7 +74,6 @@ DESCRIPTION
 
 SEE ALSO
     bash(1)
-
 IMPLEMENTATION
     GNU bash, version 4.1.5(1)-release (i486-pc-linux-gnu)
     Copyright (C) 2013 Free Software Foundation, Inc.
