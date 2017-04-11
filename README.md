@@ -161,7 +161,7 @@ $ which php
 ```
 
 ### i. `history`
-history prints previous exicuted commands.
+History prints previous exicuted commands.
 
 ### h. `clear`
 Clears content on window.
