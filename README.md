@@ -100,16 +100,7 @@ too.
    --help            display this help and exit
    --version         output version information and exit
 ```
-### d. `man`
-Most executable programs intended for command line use provide a formal piece of documentation called a manual or man page.
-```bash
-man command
-```
-Example:
-```bash
-$  man ls
-```
-### e. `export`
+### d. `export`
 Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
 ```bash
 export
@@ -126,7 +117,7 @@ $ echo $AWS_HOME
 /Users/adnanadnan/.aws
 ```
 
-### f. `whatis`
+### e. `whatis`
 whatis shows description for user commands, system calls, library functions, and others in manual pages
 ```bash
 whatis something
@@ -137,7 +128,7 @@ $ whatis bash
 bash (1)             - GNU Bourne-Again SHell
 ```
 
-### g. `whereis`
+### f. `whereis`
 whereis searches for executables, source files, and manual pages using a database built by system automatically.
 ```bash
 whereis name
@@ -148,7 +139,7 @@ $ whereis php
 /usr/bin/php
 ```
 
-### h. `which`
+### g. `which`
 which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
 ```bash
 which program_name 
@@ -159,10 +150,10 @@ $ which php
 /c/xampp/php/php
 ```
 
-### i. `history`
-History prints previous exicuted commands.
+### h. `history`
+History prints previous executed commands.
 
-### h. `clear`
+### i. `clear`
 Clears content on window.
 
 ## 1.1. File Operations
@@ -896,7 +887,7 @@ last yourUsername
 ```
 
 ### l. `man`
-Shows the manual for specified command.  
+Most executable programs intended for command line use provide a formal piece of documentation called a manual or man page. 
 ```bash
 man command
 ```
