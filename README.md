@@ -17,7 +17,8 @@
     2.5. [Conditionals](#25-conditionals)  
     2.6. [Loops](#26-loops)  
   3. [Tricks](#3-tricks)  
-  4. [Debugging](#4-debugging)  
+  4. [Debugging](#4-debugging)
+  5. [Package Management](#5-package-management) 
   
 
 # 1. Basic Operations
@@ -1103,6 +1104,16 @@ bash -n scriptname
 bash -v scriptname
 bash -x scriptname
 ```
+
+# 5. Package Management
+There are two types of packages available for linux systems.
+* Debian Packages (.deb)
+* RedHat Package Manager
+
+### Debian Package Management
+The Debian package manager updates its package data by ```bash sudo apt update```.
+After updating package information if there is any update available then run ```bash sudo apt upgrade``` to get the available update.
+
 
 ## Contribution
 
