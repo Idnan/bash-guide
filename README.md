@@ -1110,7 +1110,7 @@ There are two types of packages available for linux systems.
 * Debian Packages (.deb)
 * RedHat Package Manager (.rpm)
 
-## 5.1 Debian Package Management
+## 5.1 Debian Package (deb)
 deb is the format, as well as extension of the software package format for the Debian distribution and its derivatives.
 
 ### 5.1 A.`Update Packages`
@@ -1125,8 +1125,30 @@ You can install new package by ```bash sudo apt install <package-name>```
 ### 5.1 D.`Remove/Uninstall Package`
 To remove/uninstall package ```bash sudo apt autoremove <package-name>```
 
-### 5.1 D.`Install required dependecies`
-Sometimes to fullfill the requirements of package you need to install its dependencies it can be done by ```bash sudo apt-get install --fix-missing```
+### 5.1 E.`Install Required Dependecies`
+Sometimes to fullfill the reqirements of package you need to install its dependencies it can be done by ```bash sudo apt-get install --fix-missing```
+
+### 5.1 F.`List All Installed Packages`
+To list all installed packages ```bash dpkg -l```
+
+## 5.2 RedHat Packages (rpm)
+RPM Package Manager(RPM) (originally Red Hat Package Manager; now a recursive acronym) is a package management system. The name RPM refers to the following: the .rpm file format, files in the .rpm file format, software packaged in such files, and the package manager program itself. RPM was intended primarily for Linux distributions; the file format is the baseline package format of the Linux Standard Base.
+
+### 5.2 A.`Install Package`
+You can install new package by ```bash sudo rpm -ivh <package-name>```
+
+### 5.1 B.`List All Installed Packages`
+To list all installed packages ```bash rpm -qa ```
+
+### 5.2 C.`Update Packages`
+The Debian package manager updates its package data by ```bash sudo apt update```
+
+### 5.2 D.`Upgrade Packages`
+If we want to upgrade any RPM package “–U” (upgrade) option will be used. One of the major advantages of using this option is that it will not only upgrade the latest version of any package, but it will also maintain the backup of the older package so that in case if the newer upgraded package does not run the previously installed package can be used again. ```bash sudo rpm -Uvh <package-name>```
+
+### 5.2 E.`Remove/Uninstall Package`
+To remove/uninstall package ```bash sudo rpm -evv <package-name>```
+
 
 ## Contribution
 
