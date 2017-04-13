@@ -1140,13 +1140,10 @@ You can install new package by ```sudo rpm -ivh <package-name>```
 ### 5.1 B.`List All Installed Packages`
 To list all installed packages ```rpm -qa ```
 
-### 5.2 C.`Update Packages`
-The Debian package manager updates its package data by ```sudo apt update```
-
-### 5.2 D.`Upgrade Packages`
+### 5.2 C.`Upgrade Packages`
 If we want to upgrade any RPM package “–U” (upgrade) option will be used. One of the major advantages of using this option is that it will not only upgrade the latest version of any package, but it will also maintain the backup of the older package so that in case if the newer upgraded package does not run the previously installed package can be used again. ```sudo rpm -Uvh <package-name>```
 
-### 5.2 E.`Remove/Uninstall Package`
+### 5.2 D.`Remove/Uninstall Package`
 To remove/uninstall package ```sudo rpm -evv <package-name>```
 
 
