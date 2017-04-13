@@ -1112,17 +1112,17 @@ There are two types of packages available for linux systems.
 
 ## 5.1 Debian Package Management
 
-### 5.1 A.Update Packages
+### 5.1 A.`Update Packages`
 The Debian package manager updates its package data by ```bash sudo apt update```
 
-### 5.1 B.Upgrade Packages
+### 5.1 B.`Upgrade Packages`
 After updating package information if there is any update available then run ```bash sudo apt upgrade``` to get the available update.
 
-### 5.1 C.Install Packages
-The Debian package manager updates its package data by ```bash sudo apt install <package-name>```
+### 5.1 C.`Install Package`
+You can install new package by ```bash sudo apt install <package-name>```
 
-### 5.1 D.Remove/Uninstall Packages
-The Debian package manager updates its package data by ```bash sudo apt autoremove <package-name>```
+### 5.1 D.`Remove/Uninstall Package`
+To remove/uninstall package ```bash sudo apt autoremove <package-name>```
 
 
 ## Contribution
