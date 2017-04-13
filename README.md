@@ -1108,9 +1108,10 @@ bash -x scriptname
 # 5. Package Management
 There are two types of packages available for linux systems.
 * Debian Packages (.deb)
-* RedHat Package Manager
+* RedHat Package Manager (.rpm)
 
 ## 5.1 Debian Package Management
+deb is the format, as well as extension of the software package format for the Debian distribution and its derivatives.
 
 ### 5.1 A.`Update Packages`
 The Debian package manager updates its package data by ```bash sudo apt update```
@@ -1124,6 +1125,8 @@ You can install new package by ```bash sudo apt install <package-name>```
 ### 5.1 D.`Remove/Uninstall Package`
 To remove/uninstall package ```bash sudo apt autoremove <package-name>```
 
+### 5.1 D.`Install required dependecies`
+Sometimes to fullfill the requirements of package you need to install its dependencies it can be done by ```bash sudo apt-get install --fix-missing```
 
 ## Contribution
 
