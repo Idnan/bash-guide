@@ -1110,7 +1110,7 @@ There are two types of packages available for linux systems.
 * Debian Packages (.deb)
 * RedHat Package Manager (.rpm)
 
-The deb and rpm are majorly used in many linux distributions. there are some linux distributions don't use these types of packages (like Arch Linux for instance).
+The deb and rpm are majorly used in many linux distributions, but there are many other linux distributions which don't use these types of packages (like Arch Linux for instance).
 
 The ```apt``` command is a powerful command-line tool, which works with Ubuntu's Advanced Packaging Tool (APT) performing such functions as installation of new software packages, upgrade of existing software packages, updating of the package list index, and even upgrading the entire Ubuntu system.
 
@@ -1132,7 +1132,7 @@ You can install new package by ```apt install <package-name>```
 To remove/uninstall package ```apt autoremove <package-name>```
 
 ### 5.1 E.`Install Required Dependecies`
-Sometimes to fullfill the reqirements of package you need to install its dependencies it can be done by ```apt-get install --fix-missing```
+Sometimes to fullfill the requirements of package you need to install its dependencies it can be done by ```apt-get install --fix-missing```
 
 ### 5.1 F.`List All Installed Packages`
 To list all installed packages ```dpkg -l```
