@@ -18,7 +18,7 @@
     2.6. [Loops](#26-loops)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
-  
+
 
 # 1. Basic Operations
 
@@ -64,7 +64,7 @@ $ whereis php
 ### d. `which`
 which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
 ```bash
-which program_name 
+which program_name
 ```
 Example:
 ```bash
@@ -110,7 +110,7 @@ It can be used for the following purposes under UNIX or Linux.
 * Create new text files  
 ```bash
 cat filename
-cat file1 file2 
+cat file1 file2
 cat file1 file2 > newcombinedfile
 cat < file1 > file2 #copy file1 to file2
 ```
@@ -358,7 +358,7 @@ Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
 *example.txt*
 ```bash
 Lorem ipsum
-dolor sit amet, 
+dolor sit amet,
 consetetur
 sadipscing elitr,
 sed diam nonumy
@@ -404,7 +404,7 @@ consetetur
 sadipscing elitr,
 sed diam nonumy
 eirmod tempor
-foo (Lorem|dolor) 
+foo (Lorem|dolor)
 invidunt ut labore
 et dolore magna
 aliquyam erat, sed
@@ -427,7 +427,7 @@ or
 grep -F '(Lorem|dolor)' example.txt
 ```
 ```bash
-foo (Lorem|dolor) 
+foo (Lorem|dolor)
 ```
 
 ### f. `fmt`
@@ -510,7 +510,7 @@ amet.
 
 *show example.txt with line numbers*
 ```bash
-nl -s". " example.txt 
+nl -s". " example.txt
 ```
 ```bash
      1. Lorem ipsum
@@ -540,7 +540,7 @@ Stream editor for filtering and transforming text
 *example.txt*
 ```bash
 Hello This is a Test 1 2 3 4
-``` 
+```
 
 *replace all spaces with hyphens*
 ```bash
@@ -610,7 +610,7 @@ Hello World Foo Bar Baz!
 
 *take all lower case letters and make them upper case*
 ```bash
-cat example.txt | tr 'a-z' 'A-Z' 
+cat example.txt | tr 'a-z' 'A-Z'
 ```
 ```bash
 HELLO WORLD FOO BAR BAZ!
@@ -770,7 +770,7 @@ du [option] [filename|directory]
 ```
 Options:
 - `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
-- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
+- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories.
 
 Example:
 ```bash
@@ -1101,7 +1101,7 @@ cd $hotellogs
 When you export FOO = "BAR" your variable is only exported in this section, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
 ```bash
 echo export FOO="BAR" >> ~/.profile
-``` 
+```
 
 ## Accessing your scripts
 
@@ -1125,6 +1125,25 @@ function finish {
 }
 trap finish EXIT
 >>>>>>> 1131add1067394bd85d651784cbfb1d6d48dda2d
+```
+
+## Saving your environment variables
+
+When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
+```bash
+echo export FOO=BAR >> ~/.bash_profile
+```
+
+## Accessing your scripts
+
+You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
+
+If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
+```bash
+    # set PATH so it includes user's private bin if it exists
+    if [ -d "$HOME/bin" ] ; then
+        PATH="$HOME/bin:$PATH"
+    fi
 ```
 
 # 4. Debugging
