@@ -1095,6 +1095,7 @@ source ~/.bashrc
 cd $hotellogs
 ```
 
+<<<<<<< HEAD
 ## Saving your environment variables
 
 When you export FOO = "BAR" your variable is only exported in this section, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
@@ -1112,6 +1113,18 @@ If you can not access, try append the code below in your `.bash_profile` file an
     if [ -d "$HOME/bin" ] ; then
         PATH="$HOME/bin:$PATH"
     fi
+=======
+## Exit traps
+
+Make your bash scripts more robust by reliably performing cleanup.
+
+```bash
+function finish {
+  # your cleanup here. e.g. kill any forked processes
+  jobs -p | xargs kill
+}
+trap finish EXIT
+>>>>>>> 1131add1067394bd85d651784cbfb1d6d48dda2d
 ```
 
 # 4. Debugging
