@@ -1096,18 +1096,37 @@ cd $hotellogs
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+## Exit traps
+
+Make your bash scripts more robust by reliably performing cleanup.
+
+```bash
+function finish {
+  # your cleanup here. e.g. kill any forked processes
+  jobs -p | xargs kill
+}
+trap finish EXIT
+```
+
+>>>>>>> 8d1eba65e380a1e3910ab835cffbb0953ac0bf6f
 ## Saving your environment variables
 
-When you export FOO = "BAR" your variable is only exported in this section, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
+When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
 ```bash
+<<<<<<< HEAD
 echo export FOO="BAR" >> ~/.profile
+=======
+echo export FOO=BAR >> ~/.bash_profile
+>>>>>>> 8d1eba65e380a1e3910ab835cffbb0953ac0bf6f
 ```
 
 ## Accessing your scripts
 
-You can easily access your scripts by creating a bin folder in your home with `mkdir ~ / bin`, now all the scripts you put in this folder you can access in any directory.
+You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
 
-If you can not access, try append the code below in your `.bash_profile` file and restart your section.
+If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
 ```bash
     # set PATH so it includes user's private bin if it exists
     if [ -d "$HOME/bin" ] ; then
