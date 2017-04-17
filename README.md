@@ -1107,6 +1107,13 @@ function finish {
 trap finish EXIT
 ```
 
+## Saving your environment variables
+
+When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
+```bash
+echo export FOO=BAR >> ~/.bash_profile
+```
+
 # 4. Debugging
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
