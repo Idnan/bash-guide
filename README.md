@@ -1114,6 +1114,18 @@ When you do `export FOO = BAR`, your variable is only exported in this current s
 echo export FOO=BAR >> ~/.bash_profile
 ```
 
+## Accessing your scripts
+
+You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
+
+If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
+```bash
+    # set PATH so it includes user's private bin if it exists
+    if [ -d "$HOME/bin" ] ; then
+        PATH="$HOME/bin:$PATH"
+    fi
+```
+
 # 4. Debugging
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
