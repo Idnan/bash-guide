@@ -41,42 +41,6 @@ Optionally, the -m option is added to change the format of the output.
 Example:
 ```bash
 $ help -m cd
-NAME
-    cd - Change the shell working directory.
-
-SYNOPSIS
-    cd [-L|-P] [dir]
-
-DESCRIPTION
-    Change the shell working directory.
-    
-    Change the current directory to DIR.  The default DIR is the value of the
-    HOME shell variable.
-    
-    The variable CDPATH defines the search path for the directory containing
-    DIR.  Alternative directory names in CDPATH are separated by a colon (:).
-    A null directory name is the same as the current directory.  If DIR begins
-    with a slash (/), then CDPATH is not used.
-    
-    If the directory is not found, and the shell option `cdable_vars' is set,
-    the word is assumed to be  a variable name.  If that variable has a value,
-    its value is used for DIR.
-    
-    Options:
-        -L  force symbolic links to be followed
-        -P  use the physical directory structure without following symbolic
-      links
-    
-    The default is to follow symbolic links, as if `-L' were specified.
-    
-    Exit Status:
-    Returns 0 if the directory is changed; non-zero otherwise.
-
-SEE ALSO
-    bash(1)
-IMPLEMENTATION
-    GNU bash, version 4.1.5(1)-release (i486-pc-linux-gnu)
-    Copyright (C) 2013 Free Software Foundation, Inc.
 ```
 
 ### c. `--help`
@@ -87,18 +51,6 @@ command --help
 Example:
 ```bash
 $ mkdir --help
-Usage: mkdir [OPTION] DIRECTORY...
-Create the DIRECTORY(ies), if they do not already exist.
-
-   -Z, --context=CONTEXT (SELinux) set security context to CONTEXT
-Mandatory arguments to long options are mandatory for short options
-too.
-   -m, --mode=MODE   set file mode (as in chmod), not a=rwx – umask
-   -p, --parents     no error if existing, make parent directories as
-                     needed
-   -v, --verbose     print a message for each created directory
-   --help            display this help and exit
-   --version         output version information and exit
 ```
 ### d. `export`
 Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
