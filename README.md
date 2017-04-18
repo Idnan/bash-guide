@@ -38,6 +38,7 @@ It is used to get information about each of the shell builtin commands.
 help command
 ```
 Optionally, the -m option is added to change the format of the output.
+
 Example:
 ```bash
 $ help -m cd
