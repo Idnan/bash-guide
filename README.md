@@ -255,7 +255,7 @@ tail filename
 ```
 
 ### s. `touch`
-Creates or updates your file.  
+Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
 ```bash
 touch filename
 ```
