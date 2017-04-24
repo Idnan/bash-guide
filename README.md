@@ -261,7 +261,7 @@ Outputs the last 10 lines of file. Use `-f` to output appended data as the file 
 tail filename
 ```
 
-### t. `touch`
+### t. `touch` 
 Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
 ```bash
 touch filename
