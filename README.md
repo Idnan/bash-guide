@@ -889,6 +889,7 @@ whois domain
       <td><a href="#a-kill">kill</a></td>
       <td><a href="#b-killall">killall</a></td>
       <td><a href="#c-&">&amp;</a></td>
+      <td><a href="#d-nohup">nohup</a></td>
    </tr>
 </table>
 
@@ -904,7 +905,7 @@ Kill all processes with the name.
 killall processname
 ```
 
-### c. `&`
+### c. `&amp;`
 The `&` symbol instructs the command to run as a background process in a subshell.
 ```bash
 command &
