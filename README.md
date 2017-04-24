@@ -905,7 +905,7 @@ Kill all processes with the name.
 killall processname
 ```
 
-### c. `&amp;`
+### c. &
 The `&` symbol instructs the command to run as a background process in a subshell.
 ```bash
 command &
