@@ -11,10 +11,11 @@
     1.5. [Process Monitoring Operations (TODO)](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
-    2.3. [String Substitution](#22-string-substitution)  
-    2.4. [Functions](#23-functions)  
-    2.5. [Conditionals](#24-conditionals)  
-    2.6. [Loops](#25-loops)  
+    2.2  [Array](#22-array)  
+    2.3. [String Substitution](#23-string-substitution)  
+    2.4. [Functions](#24-functions)  
+    2.5. [Conditionals](#25-conditionals)  
+    2.6. [Loops](#26-loops)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
   
@@ -112,17 +113,19 @@ It can be used for the following purposes under UNIX or Linux.
 cat filename
 cat file1 file2 
 cat file1 file2 > newcombinedfile
+cat < file1 > file2 #copy file1 to file2
 ```
 
 ### b. `chmod`
-Lets you change the read, write, and execute permissions on your files.  
+The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
 ```bash
 chmod -options filename
 ```
+
 ### c. `chown`
-Lets you change the ownerships on your files.  
+The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
 ```bash
-chown -options owner-user:owner-group filename
+chown -R idnan:admins filename
 ```
 
 ### d. `cp`
@@ -259,7 +262,7 @@ tail filename
 ```
 
 ### t. `touch`
-Creates or updates your file.  
+Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
 ```bash
 touch filename
 ```
@@ -917,7 +920,7 @@ Example:
 ```bash
 echo $str   # hello world
 ```
-
+## 2.2. Array
 Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
 
 Examples:
@@ -949,7 +952,7 @@ ${varname:+word}    # if varname exists and isn't null, return word; otherwise r
 ${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
 ```
 
-## 2.2 String Substitution
+## 2.3 String Substitution
 
 Check some of the syntax on how to manipulate strings
 
@@ -963,7 +966,7 @@ ${variable//pattern/string} # the longest match to pattern in variable is replac
 ${#varname}     # returns the length of the value of the variable as a character string
 ```
 
-## 2.3. Functions
+## 2.4. Functions
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
 ```bash
@@ -988,7 +991,7 @@ say "hello world!"
 
 When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within functions, are treated in the same manner as arguments given to the script.
 
-## 2.4. Conditionals
+## 2.5. Conditionals
 
 The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
@@ -1016,7 +1019,7 @@ Expression Examples:
 
 ```bash
 statement1 && statement2  # both statements are true
-statement1 || statement2  # one of the statement is true
+statement1 || statement2  # at least one of the statements is true
 
 str1=str2       # str1 matches str2
 str1!=str2      # str1 does not match str2
@@ -1048,7 +1051,7 @@ file1 -ot file2     # file1 is older than file2
 -ne     # not equal
 ```
 
-## 2.5. Loops
+## 2.6. Loops
 
 There are three types of loops in bash. `for`, `while` and `until`.
 
@@ -1099,6 +1102,18 @@ source ~/.bashrc
 cd $hotellogs
 ```
 
+## Exit traps
+
+Make your bash scripts more robust by reliably performing cleanup.
+
+```bash
+function finish {
+  # your cleanup here. e.g. kill any forked processes
+  jobs -p | xargs kill
+}
+trap finish EXIT
+```
+
 # 4. Debugging
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
@@ -1110,8 +1125,8 @@ bash -x scriptname
 
 ## Contribution
 
-- Report issues
-- Open pull request with improvements
+- Report issues [How to](https://help.github.com/articles/creating-an-issue/)
+- Open pull request with improvements [How to](https://help.github.com/articles/about-pull-requests/)
 - Spread the word
 
 ## License
