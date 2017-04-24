@@ -22,7 +22,38 @@
 
 # 1. Basic Operations
 
-### a. `export`
+### a. `type`
+Displays the kind of command the shell will execute, given a particular command name. 
+```bash
+type command
+```
+Example:
+```bash
+$ type cp
+cp is /bin/cp
+```
+### b. `help`
+It is used to get information about each of the shell builtin commands.
+```bash
+help command
+```
+Optionally, the -m option is added to change the format of the output.
+
+Example:
+```bash
+$ help -m cd
+```
+
+### c. `--help`
+Many executable programs support a “--help” option that displays a description of the command's supported syntax and options.
+```bash
+command --help
+``` 
+Example:
+```bash
+$ mkdir --help
+```
+### d. `export`
 Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
 ```bash
 export
@@ -39,7 +70,7 @@ $ echo $AWS_HOME
 /Users/adnanadnan/.aws
 ```
 
-### b. `whatis`
+### e. `whatis`
 whatis shows description for user commands, system calls, library functions, and others in manual pages
 ```bash
 whatis something
@@ -50,7 +81,7 @@ $ whatis bash
 bash (1)             - GNU Bourne-Again SHell
 ```
 
-### c. `whereis`
+### f. `whereis`
 whereis searches for executables, source files, and manual pages using a database built by system automatically.
 ```bash
 whereis name
@@ -61,7 +92,7 @@ $ whereis php
 /usr/bin/php
 ```
 
-### d. `which`
+### g. `which`
 which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
 ```bash
 which program_name 
@@ -72,7 +103,10 @@ $ which php
 /c/xampp/php/php
 ```
 
-### e. clear
+### h. `history`
+History prints previous executed commands.
+
+### i. `clear`
 Clears content on window.
 
 ## 1.1. File Operations
@@ -813,7 +847,7 @@ last yourUsername
 ```
 
 ### l. `man`
-Shows the manual for specified command.  
+Most executable programs intended for command line use provide a formal piece of documentation called a manual or man page. 
 ```bash
 man command
 ```
