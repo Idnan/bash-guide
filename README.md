@@ -8,7 +8,7 @@
     1.2. [Text Operations](#12-text-operations)  
     1.3. [Directory Operations](#13-directory-operations)  
     1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
-    1.5. [Process Monitoring Operations (TODO)](#15-process-monitoring-operations)
+    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
     2.3. [String Substitution](#22-string-substitution)  
@@ -718,28 +718,26 @@ pwd
       <td><a href="#e-dig">dig</a></td>
       <td><a href="#f-du">du</a></td>
       <td><a href="#g-fg">fg</a></td>
-      <td><a href="#h-finger">finger</a></td>
-      <td><a href="#i-kill">kill</a></td>
-      <td><a href="#j-killall">killall</a></td>
+      <td><a href="#h-finger">finger</a></td>      
+      <td><a href="#i-last">last</a></td>
+      <td><a href="#j-man">man</a></td>
    </tr>
    <tr>
-      <td><a href="#k-last">last</a></td>
-      <td><a href="#l-man">man</a></td>
-      <td><a href="#m-passwd">passwd</a></td>
-      <td><a href="#n-ping">ping</a></td>
-      <td><a href="#o-ps">ps</a></td>
-      <td><a href="#p-quota">quota</a></td>
-      <td><a href="#q-scp">scp</a></td>
-      <td><a href="#r-ssh">ssh</a></td>
-      <td><a href="#s-top">top</a></td>
-      <td><a href="#t-uname">uname</a></td>
+      <td><a href="#k-passwd">passwd</a></td>
+      <td><a href="#l-ping">ping</a></td>
+      <td><a href="#m-ps">ps</a></td>
+      <td><a href="#n-quota">quota</a></td>
+      <td><a href="#o-scp">scp</a></td>
+      <td><a href="#p-ssh">ssh</a></td>
+      <td><a href="#q-top">top</a></td>
+      <td><a href="#r-uname">uname</a></td>
+      <td><a href="#s-uptime">uptime</a></td>
+      <td><a href="#t-w">w</a></td>
    </tr>
    <tr>
-      <td><a href="#u-uptime">uptime</a></td>
-      <td><a href="#v-w">w</a></td>
-      <td><a href="#w-wget">wget</a></td>
-      <td><a href="#x-whoami">whoami</a></td>
-      <td><a href="#y-whois">whois</a></td>
+      <td><a href="#u-wget">wget</a></td>
+      <td><a href="#v-whoami">whoami</a></td>
+      <td><a href="#w-whois">whois</a></td>
    </tr>
 </table>
 
@@ -866,16 +864,24 @@ Downloads file.
 wget file
 ```
 
-### w. `whoami`
+### v. `whoami`
 Return current logged in username.
 
-### x. `whois`
+### w. `whois`
 Gets whois information for domain.  
 ```bash
 whois domain
 ```
 
 ## 1.5. Process Monitoring Operations
+
+<table>
+   <tr>
+      <td><a href="#a-kill">kill</a></td>
+      <td><a href="#b-killall">killall</a></td>
+      <td><a href="#c-&">&amp;</a></td>
+   </tr>
+</table>
 
 ### a. `kill`
 Kills (ends) the processes with the ID you gave.  
@@ -896,7 +902,7 @@ command &
 ```
 
 ### d. `nohup`
-The process launched by the command ignore the SIGHUP signal ( signal sent to a process when its controlling terminal is closed ) 
+nohup stands for "No Hang Up". This allows to run command/process or shell script that can continue running in the background after you log out from a shell.
 ```bash
 nohup command
 ```
