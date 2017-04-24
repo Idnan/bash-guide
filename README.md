@@ -116,36 +116,9 @@ cat < file1 > file2 #copy file1 to file2
 ```
 
 ### b. `chmod`
-Lets you change the read, write, and execute permissions on your files.  
+Lets you change the read, write, and execute permissions on your files. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
 ```bash
 chmod -options filename
-```
-Syntax : (for numericals role assignment)
-```bash
-chmod nnn /path/to/file
-```
-Where n is number from 0 to 7
-
-<ul>Here,
-<li>First number is for Owner</li>
-<li>Second number is for group</li>
-<li>Third number is for Other</li>
-</ul>
-
-<b>Following number are used for permissions</b></br>
-0 - no permissions</br>
-1 - execute</br>
-2 - write</br>
-3 - write and execute</br>
-4 - read</br>
-5 - read and execute</br>
-6 - read and write</br>
-7 - read, write and execute.</br>
-
-For example to provide full access to only Owner
-
-```bash
-chmod 700 path/to/file
 ```
 
 ### c. `cp`
