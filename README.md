@@ -125,7 +125,7 @@ chmod -options filename
 ### c. `chown`
 The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
 ```bash
-chown -R idnan:admins filename
+chown -options user:group filename
 ```
 
 ### d. `cp`
@@ -261,7 +261,7 @@ Outputs the last 10 lines of file. Use `-f` to output appended data as the file 
 tail filename
 ```
 
-### t. `touch` 
+### t. `touch`
 Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
 ```bash
 touch filename
