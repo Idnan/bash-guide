@@ -8,7 +8,7 @@
     1.2. [Text Operations](#12-text-operations)  
     1.3. [Directory Operations](#13-directory-operations)  
     1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
-    1.5. [Process Monitoring Operations (TODO)](#15-process-monitoring-operations)
+    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
     2.2  [Array](#22-array)  
@@ -727,28 +727,26 @@ pwd
       <td><a href="#e-dig">dig</a></td>
       <td><a href="#f-du">du</a></td>
       <td><a href="#g-fg">fg</a></td>
-      <td><a href="#h-finger">finger</a></td>
-      <td><a href="#i-kill">kill</a></td>
-      <td><a href="#j-killall">killall</a></td>
+      <td><a href="#h-finger">finger</a></td>      
+      <td><a href="#i-last">last</a></td>
+      <td><a href="#j-man">man</a></td>
    </tr>
    <tr>
-      <td><a href="#k-last">last</a></td>
-      <td><a href="#l-man">man</a></td>
-      <td><a href="#m-passwd">passwd</a></td>
-      <td><a href="#n-ping">ping</a></td>
-      <td><a href="#o-ps">ps</a></td>
-      <td><a href="#p-quota">quota</a></td>
-      <td><a href="#q-scp">scp</a></td>
-      <td><a href="#r-ssh">ssh</a></td>
-      <td><a href="#s-top">top</a></td>
-      <td><a href="#t-uname">uname</a></td>
+      <td><a href="#k-passwd">passwd</a></td>
+      <td><a href="#l-ping">ping</a></td>
+      <td><a href="#m-ps">ps</a></td>
+      <td><a href="#n-quota">quota</a></td>
+      <td><a href="#o-scp">scp</a></td>
+      <td><a href="#p-ssh">ssh</a></td>
+      <td><a href="#q-top">top</a></td>
+      <td><a href="#r-uname">uname</a></td>
+      <td><a href="#s-uptime">uptime</a></td>
+      <td><a href="#t-w">w</a></td>
    </tr>
    <tr>
-      <td><a href="#u-uptime">uptime</a></td>
-      <td><a href="#v-w">w</a></td>
-      <td><a href="#w-wget">wget</a></td>
-      <td><a href="#x-whoami">whoami</a></td>
-      <td><a href="#y-whois">whois</a></td>
+      <td><a href="#u-wget">wget</a></td>
+      <td><a href="#v-whoami">whoami</a></td>
+      <td><a href="#w-whois">whois</a></td>
    </tr>
 </table>
 
@@ -794,52 +792,40 @@ Displays information about user.
 finger username
 ```
 
-### i. `kill`
-Kills (ends) the processes with the ID you gave.  
-```bash
-kill PID
-```
-
-### j. `killall`
-Kill all processes with the name.  
-```bash
-killall processname
-```
-
-### k. `last`
+### i. `last`
 Lists your last logins of specified user.  
 ```bash
 last yourUsername
 ```
 
-### l. `man`
+### j. `man`
 Shows the manual for specified command.  
 ```bash
 man command
 ```
 
-### m. `passwd`
+### k. `passwd`
 Allows the current logged user to change his password.
 
-### n. `ping`
+### l. `ping`
 Pings host and outputs results.  
 ```bash
 ping host
 ```
 
-### o. `ps`
+### m. `ps`
 Lists your processes.  
 ```bash
 ps -u yourusername
 ```
 
-### p. `quota`
+### n. `quota`
 Shows what your disk quota is.  
 ```bash
 quota -v
 ```
 
-### q. `scp`
+### o. `scp`
 Transfer files between a local host and a remote host or between two remote hosts.
 
 *copy from local host to remote host*
@@ -856,7 +842,7 @@ This command also accepts an option `-P` that can be used to connect to specific
 scp -P port user@host:directory/source_file target_file
 ```
 
-### r. `ssh`
+### p. `ssh`
 ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
 ```bash
 ssh user@host
@@ -866,34 +852,72 @@ This command also accepts an option `-p` that can be used to connect to specific
 ssh -p port user@host
 ```
 
-### s. `top`
+### q. `top`
 Displays your currently active processes.
 
-### t. `uname`
+### r. `uname`
 Shows kernel information.  
 ```bash
 uname -a
 ```
 
-### u. `uptime`
+### s. `uptime`
 Shows current uptime.
 
-### v. `w`
+### t. `w`
 Displays who is online.
 
-### w. `wget`
+### u. `wget`
 Downloads file.  
 ```bash
 wget file
 ```
 
-### x. `whoami`
+### v. `whoami`
 Return current logged in username.
 
-### y. `whois`
+### w. `whois`
 Gets whois information for domain.  
 ```bash
 whois domain
+```
+
+## 1.5. Process Monitoring Operations
+
+<table>
+   <tr>
+      <td><a href="#a-kill">kill</a></td>
+      <td><a href="#b-killall">killall</a></td>
+      <td><a href="#c-&">&amp;</a></td>
+   </tr>
+</table>
+
+### a. `kill`
+Kills (ends) the processes with the ID you gave.  
+```bash
+kill PID
+```
+
+### b. `killall`
+Kill all processes with the name.  
+```bash
+killall processname
+```
+
+### c. `&`
+The `&` symbol instructs the command to run as a background process in a subshell.
+```bash
+command &
+```
+
+### d. `nohup`
+nohup stands for "No Hang Up". This allows to run command/process or shell script that can continue running in the background after you log out from a shell.
+```bash
+nohup command
+```
+Combine it with `&` to create background processes 
+```bash
+nohup command &
 ```
 
 # 2. Basic Shell Programming
