@@ -2,80 +2,80 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
-## Table of Contents
-  1. [Basic Operations](#1-basic-operations)  
-    1.1. [File Operations](#11-file-operations)  
-    1.2. [Text Operations](#12-text-operations)  
-    1.3. [Directory Operations](#13-directory-operations)  
-    1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
-    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
+## İçindekiler
+  1. [Basit Komutlar](#1-basic-operations)  
+    1.1. [Dosya Komutlar](#11-file-operations)  
+    1.2. [Text Komutları](#12-text-operations)  
+    1.3. [Dizin Komutları](#13-directory-operations)  
+    1.4. [SSH, Sistem Bilgisi & Ağ Komutları(#14-ssh-system-info--network-operations)  
+    1.5. [İşlem Gösterme Komutları](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
-    2.1. [Variables](#21-variables)  
-    2.2  [Array](#22-array)  
-    2.3. [String Substitution](#23-string-substitution)  
-    2.4. [Functions](#24-functions)  
-    2.5. [Conditionals](#25-conditionals)  
-    2.6. [Loops](#26-loops)  
-  3. [Tricks](#3-tricks)  
+    2.1. [Değişkenler](#21-variables)  
+    2.2  [Diziler](#22-array)  
+    2.3. [String Yerleştirme](#23-string-substitution)  
+    2.4. [Fonksiyonlar](#24-functions)  
+    2.5. [Koşullar(if)](#25-conditionals)  
+    2.6. [Döngüler](#26-loops)  
+  3. [İpuçları](#3-tricks)  
   4. [Debugging](#4-debugging)  
   
 
-# 1. Basic Operations
+# 1. Basit Komutlar
 
 ### a. `export`
-Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
+Tüm çevre değişkenlerini göstermek için kullanılır. Özel bir çevre değişkeni özelliğini görüntülemek için, `echo $VARIABLE_NAME` kullanın.
 ```bash
 export
 ```
-Example:
+Örnek:
 ```bash
 $ export
-AWS_HOME=/Users/adnanadnan/.aws
+AWS_HOME=/Users/omergulen/.aws
 LANG=en_US.UTF-8
 LC_CTYPE=en_US.UTF-8
 LESS=-R
 
 $ echo $AWS_HOME
-/Users/adnanadnan/.aws
+/Users/omergulen/.aws
 ```
 
 ### b. `whatis`
-whatis shows description for user commands, system calls, library functions, and others in manual pages
+whatis kullanıcı komutları, sistem çağrıları, kütüphane fonksiyonları ve manuel sayfasındaki diğer şeylerin açıklamasını görüntüler.
 ```bash
-whatis something
+whatis bir_sey
 ```
-Example:
+Örnek:
 ```bash
 $ whatis bash
 bash (1)             - GNU Bourne-Again SHell
 ```
 
 ### c. `whereis`
-whereis searches for executables, source files, and manual pages using a database built by system automatically.
+whereis çalıştırabilir dosyaları, kaynak kodlarını ve manuel sayfalarını sistem tarafından otomatik oluşturulan bir veri tabanı ile araştırır.
 ```bash
-whereis name
+whereis isim
 ```
-Example:
+Örnek:
 ```bash
 $ whereis php
 /usr/bin/php
 ```
 
 ### d. `which`
-which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
+which çalıştırabilir dosyaları belirtilmiş bir PATH (yol) içerisinde arar. Bu komut aranan çalıştırabilirlerin tam yolunu yazdırır.
 ```bash
-which program_name 
+which program_adi 
 ```
-Example:
+Örnek:
 ```bash
 $ which php
 /c/xampp/php/php
 ```
 
 ### e. clear
-Clears content on window.
+Pencere içeriğini temizler.
 
-## 1.1. File Operations
+## 1.1. Dosya Komutları
 <table>
    <tr>
       <td><a href="#a-cat">cat</a></td>
@@ -104,169 +104,175 @@ Clears content on window.
 </table>
 
 ### a. `cat`
-It can be used for the following purposes under UNIX or Linux.  
-* Display text files on screen
-* Copy text files  
-* Combine text files  
-* Create new text files  
+UNIX veya Linux altında, aşağıdaki amaçlar için kullanılır.  
+* Text dosyalarını ekranda gösterir
+* Text dosyalarını kopyalar 
+* Text dosyalarını birleştirir 
+* Yeni text dosyaları oluşturur
+
+Örnek:
 ```bash
-cat filename
-cat file1 file2 
-cat file1 file2 > newcombinedfile
-cat < file1 > file2 #copy file1 to file2
+cat dosya_adi
+cat dosya1 dosya2 
+cat dosya1 dosya2 > yeni_birlesmis_dosya
+cat < dosya1 > dosya2 #dosya 1'i dosya2'ye kopyalar.
 ```
 
 ### b. `chmod`
-The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
+```chmod``` komutu "change mode" yani mod değiştir anlamına karşılık gelmektedir ve dosyanın veya dizinin okunabilir, yazılabilir ve çalıştırabilir olmasını değiştirebilir. Daha fazla bilgi için bu linki kontrol edin [link](https://ss64.com/bash/chmod.html).
 ```bash
-chmod -options filename
+chmod -secenekler dosya_adi
+chmod +x -w calistir_ama_yazama
 ```
 
 ### c. `chown`
-The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
+chown komutu "change owner" yani sahibini değiştir anlamına karşılık gelmektedir ve verilen dosya veya dizinin sahibini kullanıcı ve grup olarak değiştirebilir. Basit kullanımı önce kullanıcı:grup adı gelir ve sonrasında dosya veya dizin adı verilir.
 ```bash
-chown -options user:group filename
+chown -secenekler kullanici:grop dosya_adi
 ```
 
 ### d. `cp`
-Copies a file from one location to other.  
+Dosyaları kopyalar.  
 ```bash
-cp filename1 filename2
+cp dosya1 dosya2
+cp /root/Desktop/file1.txt /var/www/html/file2.php
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+`dosya1` kaynak yolunu `dosya2` ise hedef yolunu belirtir.
 
 ### e. `diff`
-Compares files, and lists their differences.  
+Dosyaları karşılaştırıp, farklılıklarını gösterir. 
 ```bash
-diff filename1 filename2
+diff dosya1 dosya2
 ```
 
 ### f. `file`
-Determine file type.  
+Dosya türünü belirler.  
 ```bash
-file filename
+file dosya
 ```
-Example:
+Örnek:
 ```bash
 $ file index.html
  index.html: HTML document, ASCII text
 ```
 ### g. `find`
-Find files in directory
+Dizinde dosya arar.
 ```bash
-find directory options pattern
+find dizin secenek duzen(yapi)
 ```
 Example:
 ```bash
 $ find . -name README.md
-$ find /home/user1 -name '*.png'
+$ find /home/ -name '*.png'
 ```
 
 ### h. `gunzip`
-Un-compresses files compressed by gzip.  
+Dosyaları ```gzip``` ile çıkartır.  
 ```bash
 gunzip filename
 ```
 
 ### i. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it.  
+Çıkarmadan gzip ile sıkıştırılmış dosyalara bakmamızı sağlar.  
 ```bash
-gzcat filename
+gzcat dosya
 ```
 
 ### j. `gzip`
-Compresses files.  
+Dosyaları sıkıştırır. 
 ```bash
-gzip filename
+gzip dosya
 ```
 
 ### k. `head`
-Outputs the first 10 lines of file  
+Dosyanın ilk 10 satırını yazdırır. 
 ```bash
-head filename
+head dosya
 ```
 
 ### l. `lpq`
-Check out the printer queue.  
+Yazıcı baskı sırasını yazdırır.  
 ```bash
 lpq
 ```
-Example:
+Örnek:
 ```bash
 $ lpq
-Rank    Owner   Job     File(s)                         Total Size
-active  adnanad 59      demo                            399360 bytes
-1st     adnanad 60      (stdin)                         0 bytes
+Sıra    Sahip       İş      Dosya(lar)                      Toplam Boyut
+active  omergulen   59      deneme                          399360 bytes
+1st     omergulen   60      (stdin)                         0 bytes
 ```
 
 ### m. `lpr`
-Print the file.  
+Dosyayı yazıcıdan yazdırır.  
 ```bash
-lpr filename
+lpr dosya
 ```
 
 ### n. `lprm`
-Remove something from the printer queue.  
+Yazıcı baskı sırasından bir iş siler.  
 ```bash
-lprm jobnumber
+lprm is_numarasi
 ```
 
 ### o. `ls`
-Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
+Dosyaları listelemek için kullanılır. Hiç bir yol veya dizin göstermezseniz bulunduğunuz dizinde çalışır. ```-l``` gibi listeleyip daha çok bilgi veren ve ```-a``` gibi tüm dosyaları (gizliler dahil) gösteren parametreleri vardır. Daha detaylı bilgi için [link](https://ss64.com/bash/ls.html).  
 ```bash
-ls option
+ls secenek
 ```
-Example:
+Örnek:
 <pre>
 $ ls -la
-rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .
-drwxrwxrwx  60 adnan  staff    2040 Mar 21 15:06 ..
--rw-r--r--@  1 adnan  staff   14340 Mar 23 15:05 .DS_Store
--rw-r--r--   1 adnan  staff     157 Mar 25 18:08 .bumpversion.cfg
--rw-r--r--   1 adnan  staff    6515 Mar 25 18:08 .config.ini
--rw-r--r--   1 adnan  staff    5805 Mar 27 18:44 .config.override.ini
-drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
--rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
+rwxr-xr-x   33 omergulen  staff    1122 Mar 27 18:44 .
+drwxrwxrwx  60 omergulen  staff    2040 Mar 21 15:06 ..
+-rw-r--r--@  1 omergulen  staff   14340 Mar 23 15:05 .DS_Store
+-rw-r--r--   1 omergulen  staff     157 Mar 25 18:08 .bumpversion.cfg
+-rw-r--r--   1 omergulen  staff    6515 Mar 25 18:08 .config.ini
+-rw-r--r--   1 omergulen  staff    5805 Mar 27 18:44 .config.override.ini
+drwxr-xr-x  17 omergulen  staff     578 Mar 27 23:36 .git
+-rwxr-xr-x   1 omergulen  staff    2702 Mar 25 18:08 .gitignore
 </pre>
 
 ### p. `more`
-Shows the first part of a file (move with space and type q to quit).  
+Dosyanın ilk kısmını gösterir (```Space``` ile hareket eder ve ```q``` ile çıkılır).  
 ```bash
-more filename
+more dosya
 ```
 
 ### q. `mv`
-Moves a file from one location to other.  
+Dosyayı taşır.  
 ```bash
-mv filename1 filename2
+mv dosya1 dosya2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+`dosya1` kaynak yolunu `dosya2` ise hedef yolunu belirtir.
 
-Also it can be used for rename a file.
+Ayrıca dosyanın ismini değiştirmek için kullanır.
 ```bash
-mv old_name new_name
+mv eski_isim yeni_isim
 ```
 
 ### r. `rm`
-Removes a file. Using this command on a directory gives you an error.
+Dosyaları silmeye yarar. Bunu bir dizin üzerinde kullanmaya çalışmak hataya yol açar.
 `rm: directory: is a directory`
 To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
+Dizin silmek için `-r` kullanmalısınız. Silinmeyen dosyaları zorla silmek için de `-f` komutu kullanılmaktadır.
 ```bash
-rm filename
+rm dosya
 ```
 
 ### s. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
+Dosyanın son 10 satırını yazdırır. `-f` parametresiyle çıktıyı sona ekler dosya büyüdükçe.
 ```bash
-tail filename
+tail dosya
 ```
 
 ### t. `touch`
-Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
+Yetki ve zaman etiketini günceller. Böylelikle dosya var olmamışsa yaratır.
 ```bash
-touch filename
+touch dosya
 ```
-Example:
+Örnek:
 ```bash
 $ touch trick.md
 ```
