@@ -7,7 +7,7 @@
     1.1. [Dosya Komutlar](#11-file-operations)  
     1.2. [Text Komutları](#12-text-operations)  
     1.3. [Dizin Komutları](#13-directory-operations)  
-    1.4. [SSH, Sistem Bilgisi & Ağ Komutları(#14-ssh-system-info--network-operations)  
+    1.4. [SSH, Sistem Bilgisi & Ağ Komutları](#14-ssh-system-info--network-operations)  
     1.5. [İşlem Gösterme Komutları](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Değişkenler](#21-variables)  
