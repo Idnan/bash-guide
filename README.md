@@ -23,7 +23,7 @@
 # 1. Basit Komutlar
 
 ### a. `export`
-Tüm çevre değişkenlerini göstermek için kullanılır. Özel bir çevre değişkeni özelliğini görüntülemek için, `echo $VARIABLE_NAME` kullanın.
+Tüm çevre değişkenlerini göstermek için kullanılır. Özel bir çevre değişkeni özelliğini görüntülemek için, `echo $VARIABLE_NAME` kullanın. Alternatif olarak ayrıntılı görüntülemek için `printenv` komutu da kullanılabilir.
 ```bash
 export
 ```
@@ -252,13 +252,13 @@ mv eski_isim yeni_isim
 ```
 
 ### r. `rm`
-Dosyaları silmeye yarar. Bunu bir dizin üzerinde kullanmaya çalışmak hataya yol açar.
-`rm: directory: is a directory`
-To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
+Dosyaları silmeye yarar. Bunu bir dizin üzerinde kullanmaya çalışmak hataya yol açar. `rm: directory: is a directory`
 Dizin silmek için `-r` kullanmalısınız. Silinmeyen dosyaları zorla silmek için de `-f` komutu kullanılmaktadır.
 ```bash
 rm dosya
 ```
+
+#### DİKKAT: `rm -rf /` komutu tüm sistemin silinmesine yol açar, sanal makine dışında kullanılması tehlikelidir.
 
 ### s. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
