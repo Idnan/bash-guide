@@ -17,7 +17,7 @@
     2.5. [Koşullar](#25-koşullar)  
     2.6. [Döngüler](#26-döngüler)  
   3. [İpuçları](#3-İpuçları)  
-  4. [Debugging](#4--derleme--debugging)  
+  4. [Hata Ayıklama - Debugging](#4--hata-ayıklama--debugging)  
   
 
 # 1. Basit Komutlar
@@ -119,7 +119,7 @@ cat < dosya1 > dosya2 #dosya 1'i dosya2'ye kopyalar.
 ```
 
 ### b. `chmod`
-```chmod``` komutu "change mode" yani mod değiştir anlamına karşılık gelmektedir ve dosyanın veya dizinin okunabilir, yazılabilir ve çalıştırabilir olmasını değiştirebilir. Daha fazla bilgi için bu linki kontrol edin [link](https://ss64.com/bash/chmod.html).
+```chmod``` komutu "change mode" yani mod değiştir anlamına karşılık gelmektedir ve dosyanın veya dizinin okunabilir, yazılabilir ve çalıştırabilir olmasını değiştirebilir. Daha fazla bilgi için bu [linki](https://ss64.com/bash/chmod.html) kontrol edin.
 ```bash
 chmod -secenekler dosya_adi
 chmod +x -w calistir_ama_yazama
@@ -745,14 +745,15 @@ pwd
       <td><a href="#o-scp">scp</a></td>
       <td><a href="#p-ssh">ssh</a></td>
       <td><a href="#q-top">top</a></td>
-      <td><a href="#r-uname">uname</a></td>
-      <td><a href="#s-uptime">uptime</a></td>
-      <td><a href="#t-w">w</a></td>
+      <td><a href="#r-traceroute">traceroute</a></td>
+      <td><a href="#s-uname">uname</a></td>
+      <td><a href="#t-uptime">uptime</a></td>
+      <td><a href="#u-w">w</a></td>
    </tr>
    <tr>
-      <td><a href="#u-wget">wget</a></td>
-      <td><a href="#v-whoami">whoami</a></td>
-      <td><a href="#w-whois">whois</a></td>
+      <td><a href="#v-wget">wget</a></td>
+      <td><a href="#w-whoami">whoami</a></td>
+      <td><a href="#y-whois">whois</a></td>
    </tr>
 </table>
 
@@ -790,7 +791,17 @@ du -sh resimler
 ```
 
 ### g. `fg`
-Ön planda çalışan en son işlemi getirir.
+Ön planda çalışan en son işlemi getirir veya arka planda çalışan işlemleri `jobs` komutu ile gördükten sonra ID numarası ile ön planda çalışmasını isteyebiliriz.
+
+Örnek:
+```bash
+# jobs
+[1]   Running                 bash download-file.sh &
+[2]-  Running                 evolution &
+[3]+  Done                    nautilus .
+
+# fg %1
+```
 
 ### h. `finger`
 Kullanıcı hakkında bilgi verir.  
@@ -877,29 +888,37 @@ ssh -p port kullanici@sunucu
 ### q. `top`
 Anlık aktif işlemleri görüntüler.
 
-### r. `uname`
+### r. `traceroute`
+Bir ip paketinin (örnek olarak ping işlemini gerçeleştirirken kullandığımız ICMP paketi de olabilir) hedef adresine varana kadar hangi sunucu ve/veya yönlendiriciler üzerinden geçtiğini görmemize imkan sağlayan bir programdır.
+
+Örnek:
+```bash
+traceroute 8.8.8.8
+```
+
+### s. `uname`
 Kernel bilgisini gösterir.  
 ```bash
 uname -a
 ```
 
-### s. `uptime`
+### t. `uptime`
 Sunucunun ne zamandır açık olduğunu gösterir.
 
-### t. `w`
+### u. `w`
 Sunucuda kimin online olduğunu gösterir.
 
-### u. `wget`
+### v. `wget`
 Dosya indirir.  
 ```bash
 wget dosya
 wget http://site.com/dosya.txt
 ```
 
-### v. `whoami`
+### w. `whoami`
 Anlık giriş yapmış kullanıcı adını yazdırır.
 
-### w. `whois`
+### y. `whois`
 Domain'in whois bilgilerini gösterir.  
 ```bash
 whois domain
@@ -1181,7 +1200,7 @@ Eğer erişemezseniz, aşağıdaki kodu `~/.bash_profile`dosyanıza eklemeyi ve 
     fi
 ```
 
-# 4.  Derleme | Debugging
+# 4.  Hata Ayıklama | Debugging
 `bash` komutuna farklı parametreler vererek kolayca scriptinizi derleyebilirsiniz. Örneğin `-n` parametresi kodu çalıştırmayıp sadece hata kontrolü yapacaktır, `-v` komutları çalıştırmadan yazdıracak, `-x` ise işlem bittikten sonra kodları yazdıracaktır.
 
 ```bash
