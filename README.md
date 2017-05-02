@@ -11,13 +11,13 @@
     1.5. [İşlem İzleme Komutları](#15-İşlem-İzleme-komutları)
   2. [Basit Shell Programlama](#2-basit-shell-programlama)  
     2.1. [Değişkenler](#21-değişkenler)  
-    2.2  [Diziler](#22-dizinler)  
+    2.2  [Diziler](#22-diziler)  
     2.3. [String Yerleştirme](#23-string-yerleştirme)  
     2.4. [Fonksiyonlar](#24-fonksiyonlar)  
     2.5. [Koşullar](#25-koşullar)  
     2.6. [Döngüler](#26-döngüler)  
-  3. [İpuçları](#3-İpuçlari)  
-  4. [Debugging](#4-debugging)  
+  3. [İpuçları](#3-İpuçları)  
+  4. [Debugging](#4--derleme--debugging)  
   
 
 # 1. Basit Komutlar
@@ -277,7 +277,7 @@ touch dosya
 $ touch trick.md
 ```
 
-## 1.2. Text Operatörleri
+## 1.2. Text Komutları
 
 <table>
     <tr>
@@ -1000,7 +1000,7 @@ ${degisken:+word}    # degisken varsa ve "null" değilse, "word" ü döndür; ak
 ${degisken:offset:length}    # alt dizi ilerlemesi yapar. $degisken 'in alt dizilerini karakter uzunluğuna göre dallandırarak döndürür
 ```
 
-## 2.3 String Yerleştirmeleri
+## 2.3 String Yerleştirme
 
 Stringleri düzenlemede bir kaç örneği inceleyelim
 
