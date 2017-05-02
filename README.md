@@ -73,7 +73,7 @@ $ which php
 ```
 
 ### e. `clear`
-Pencere içeriğini temizler.
+Pencere içeriğini temizler. `CTRL + L` kısayolu da aynı görevi görür.
 
 ## 1.1. Dosya Komutları
 <table>
