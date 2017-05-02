@@ -1120,14 +1120,14 @@ do
 done
 ```
 
-`while` Syntax:
+`while` Yazımı (Syntax):
 ```bash
 while kosullar; do
   durum ve komutlar
 done
 ```
 
-`until` Syntax:
+`until` Yazımı (Syntax):
 ```bash
 until kosullar; do
   durum ve komutlar
