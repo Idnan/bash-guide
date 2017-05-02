@@ -11,7 +11,7 @@
     1.5. [İşlem İzleme Komutları](#15-İşlem-İzleme-komutları)
   2. [Basit Shell Programlama](#2-basit-shell-programlama)  
     2.1. [Değişkenler](#21-değişkenler)  
-    2.2  [Diziler](#22-diziler)  
+    2.2. [Diziler](#22-diziler)  
     2.3. [String Yerleştirme](#23-string-yerleştirme)  
     2.4. [Fonksiyonlar](#24-fonksiyonlar)  
     2.5. [Koşullar](#25-koşullar)  
