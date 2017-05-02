@@ -303,7 +303,7 @@ $ touch trick.md
 awk text dosyalarını idare etmek için en iyi araçtır. Tüm dosyaları satır satır idare eder. Değiştirmezseniz normal olarak kelimeleri ayırmak için boşluğu kullanır. En yaygın kullanımı aşağıdaki gibidir:
 
 ```bash
-awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
+awk '/arama_yapisi/ { eslesme_gerceklesirse_gerceklesecek_komut; }' parcalanacak_text_dosyasi
 ```
 
 `/etc/passwd` dosyasını ele alalım. Dosyanın içeriği böyle oluyor normal şartlarda:
