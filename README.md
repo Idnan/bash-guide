@@ -727,26 +727,27 @@ pwd
       <td><a href="#e-dig">dig</a></td>
       <td><a href="#f-du">du</a></td>
       <td><a href="#g-fg">fg</a></td>
-      <td><a href="#h-finger">finger</a></td>      
-      <td><a href="#i-last">last</a></td>
-      <td><a href="#j-man">man</a></td>
+      <td><a href="#h-finger">finger</a></td>   
+      <td><a href="#i-jobs">jobs</a></td>
+      <td><a href="#j-last">last</a></td>
+      <td><a href="#k-man">man</a></td>
    </tr>
    <tr>
-      <td><a href="#k-passwd">passwd</a></td>
-      <td><a href="#l-ping">ping</a></td>
-      <td><a href="#m-ps">ps</a></td>
-      <td><a href="#n-quota">quota</a></td>
-      <td><a href="#o-scp">scp</a></td>
-      <td><a href="#p-ssh">ssh</a></td>
-      <td><a href="#q-top">top</a></td>
-      <td><a href="#r-uname">uname</a></td>
-      <td><a href="#s-uptime">uptime</a></td>
-      <td><a href="#t-w">w</a></td>
+      <td><a href="#l-passwd">passwd</a></td>
+      <td><a href="#m-ping">ping</a></td>
+      <td><a href="#n-ps">ps</a></td>
+      <td><a href="#o-quota">quota</a></td>
+      <td><a href="#p-scp">scp</a></td>
+      <td><a href="#q-ssh">ssh</a></td>
+      <td><a href="#r-top">top</a></td>
+      <td><a href="#s-uname">uname</a></td>
+      <td><a href="#t-uptime">uptime</a></td>
+      <td><a href="#u-w">w</a></td>
    </tr>
    <tr>
-      <td><a href="#u-wget">wget</a></td>
-      <td><a href="#v-whoami">whoami</a></td>
-      <td><a href="#w-whois">whois</a></td>
+      <td><a href="#v-wget">wget</a></td>
+      <td><a href="#w-whoami">whoami</a></td>
+      <td><a href="#x-whois">whois</a></td>
    </tr>
 </table>
 
@@ -791,41 +792,43 @@ Displays information about user.
 ```bash
 finger username
 ```
+### i. `jobs`
+Lists the jobs running in the background, giving the job number.
 
-### i. `last`
+### j. `last`
 Lists your last logins of specified user.  
 ```bash
 last yourUsername
 ```
 
-### j. `man`
+### k. `man`
 Shows the manual for specified command.  
 ```bash
 man command
 ```
 
-### k. `passwd`
+### l. `passwd`
 Allows the current logged user to change his password.
 
-### l. `ping`
+### m. `ping`
 Pings host and outputs results.  
 ```bash
 ping host
 ```
 
-### m. `ps`
+### n. `ps`
 Lists your processes.  
 ```bash
 ps -u yourusername
 ```
 
-### n. `quota`
+### o. `quota`
 Shows what your disk quota is.  
 ```bash
 quota -v
 ```
 
-### o. `scp`
+### p. `scp`
 Transfer files between a local host and a remote host or between two remote hosts.
 
 *copy from local host to remote host*
@@ -842,7 +845,7 @@ This command also accepts an option `-P` that can be used to connect to specific
 scp -P port user@host:directory/source_file target_file
 ```
 
-### p. `ssh`
+### q. `ssh`
 ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
 ```bash
 ssh user@host
@@ -852,31 +855,31 @@ This command also accepts an option `-p` that can be used to connect to specific
 ssh -p port user@host
 ```
 
-### q. `top`
+### r. `top`
 Displays your currently active processes.
 
-### r. `uname`
+### s. `uname`
 Shows kernel information.  
 ```bash
 uname -a
 ```
 
-### s. `uptime`
+### t. `uptime`
 Shows current uptime.
 
-### t. `w`
+### u. `w`
 Displays who is online.
 
-### u. `wget`
+### v. `wget`
 Downloads file.  
 ```bash
 wget file
 ```
 
-### v. `whoami`
+### w. `whoami`
 Return current logged in username.
 
-### w. `whois`
+### x. `whois`
 Gets whois information for domain.  
 ```bash
 whois domain
