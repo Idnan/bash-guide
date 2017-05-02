@@ -730,9 +730,9 @@ pwd
       <td><a href="#h-finger">finger</a></td>   
       <td><a href="#i-jobs">jobs</a></td>
       <td><a href="#j-last">last</a></td>
-      <td><a href="#k-man">man</a></td>
    </tr>
    <tr>
+      <td><a href="#k-man">man</a></td>
       <td><a href="#l-passwd">passwd</a></td>
       <td><a href="#m-ping">ping</a></td>
       <td><a href="#n-ps">ps</a></td>
@@ -742,9 +742,9 @@ pwd
       <td><a href="#r-top">top</a></td>
       <td><a href="#s-uname">uname</a></td>
       <td><a href="#t-uptime">uptime</a></td>
-      <td><a href="#u-w">w</a></td>
    </tr>
    <tr>
+      <td><a href="#u-w">w</a></td>
       <td><a href="#v-wget">wget</a></td>
       <td><a href="#w-whoami">whoami</a></td>
       <td><a href="#x-whois">whois</a></td>
