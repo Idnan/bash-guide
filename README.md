@@ -169,7 +169,7 @@ $ find /home/ -name '*.png'
 ### h. `gunzip`
 Dosyaları ```gzip``` ile çıkartır.  
 ```bash
-gunzip filename
+gunzip dosya
 ```
 
 ### i. `gzcat`
