@@ -928,14 +928,21 @@ whois domain
 
 <table>
    <tr>
-      <td><a href="#a-kill">kill</a></td>
-      <td><a href="#b-killall">killall</a></td>
-      <td><a href="#c-&">&amp;</a></td>
-      <td><a href="#d-nohup">nohup</a></td>
+      <td><a href="#a-jobs">jobs</a></td>
+      <td><a href="#b-kill">kill</a></td>
+      <td><a href="#c-killall">killall</a></td>
+      <td><a href="#d-&">&amp;</a></td>
+      <td><a href="#e-nohup">nohup</a></td>
    </tr>
 </table>
+### a. `jobs`
+Arkaplanda çalışmakta olan işlemleri gösterir.
+```bash
+jobs
+[1]+  Running                 sleep 100 &
+```
 
-### a. `kill`
+### b. `kill`
 Verilen ID ile işlemleri sonlandırır.  
 ```bash
 kill PID
@@ -947,13 +954,13 @@ Verilen isimdeki tüm işlemleri sonlandırır.
 killall islem_adi
 ```
 
-### c. &
+### d. &
 `&` simgesi verilen işlemin sonuna eklenir ve arka planda çalışacağını gösterir.
 ```bash
 komut &
 ```
 
-### d. `nohup`
+### e. `nohup`
 "No Hang Up" sözüne karşılık gelen nohup komutu, "kapatma" anlamına gelir. Yani shell'den çıktığınızda dahi çalışmayı sürdürür.
 ```bash
 nohup komut
