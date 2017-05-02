@@ -3,20 +3,20 @@
 </p>
 
 ## İçindekiler
-  1. [Basit Komutlar](#1-basic-operations)  
-    1.1. [Dosya Komutlar](#11-file-operations)  
-    1.2. [Text Komutları](#12-text-operations)  
-    1.3. [Dizin Komutları](#13-directory-operations)  
-    1.4. [SSH, Sistem Bilgisi & Ağ Komutları](#14-ssh-system-info--network-operations)  
-    1.5. [İşlem Gösterme Komutları](#15-process-monitoring-operations)
-  2. [Basic Shell Programming](#2-basic-shell-programming)  
-    2.1. [Değişkenler](#21-variables)  
-    2.2  [Diziler](#22-array)  
-    2.3. [String Yerleştirme](#23-string-substitution)  
-    2.4. [Fonksiyonlar](#24-functions)  
-    2.5. [Koşullar(if)](#25-conditionals)  
-    2.6. [Döngüler](#26-loops)  
-  3. [İpuçları](#3-tricks)  
+  1. [Basit Komutlar](#1-basit-komutlar)  
+    1.1. [Dosya Komutlar](#11-dosya-komutlari)  
+    1.2. [Text Komutları](#12-text-komutlari)  
+    1.3. [Dizin Komutları](#13-dizin-komutlari)  
+    1.4. [SSH, Sistem Bilgisi & Ağ Komutları](#14-ssh-sistem-bilgisi--ag-komutlari)  
+    1.5. [İşlem İzleme Komutları](#15-islem-izleme-komutlari)
+  2. [Basit Shell Programlama](#2-basit-shell-programlama)  
+    2.1. [Değişkenler](#21-degiskenler)  
+    2.2  [Diziler](#22-dizinler)  
+    2.3. [String Yerleştirme](#23-string-yerlestirme)  
+    2.4. [Fonksiyonlar](#24-fonksiyonlar)  
+    2.5. [Koşullar](#25-kosullar)  
+    2.6. [Döngüler](#26-donguler)  
+  3. [İpuçları](#3-ipuclari)  
   4. [Debugging](#4-debugging)  
   
 
@@ -72,7 +72,7 @@ $ which php
 /c/xampp/php/php
 ```
 
-### e. clear
+### e. `clear`
 Pencere içeriğini temizler.
 
 ## 1.1. Dosya Komutları
@@ -277,7 +277,7 @@ touch dosya
 $ touch trick.md
 ```
 
-## 1.2. Text Operations
+## 1.2. Text Operatörleri
 
 <table>
     <tr>
@@ -300,13 +300,13 @@ $ touch trick.md
 </table>
 
 ### a. `awk`
-awk is the most useful command for handling text files. It operates on an entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
+awk text dosyalarını idare etmek için en iyi araçtır. Tüm dosyaları satır satır idare eder. Değiştirmezseniz normal olarak kelimeleri ayırmak için boşluğu kullanır. En yaygın kullanımı aşağıdaki gibidir:
 
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
 
-Lets take following file `/etc/passwd`. Here's the sample data that this file contains:
+`/etc/passwd` dosyasını ele alalım. Dosyanın içeriği böyle oluyor normal şartlarda:
 ```
 root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -314,11 +314,11 @@ bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
-So now lets get only username from this file. Where `-F` specifies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
+Şimdi sadece kullanıcı adlarını alalım buradan. `-F` parametresi neye göre ayıracağımızı gösterir. Burada `:` ayracımız oluyor. `{ print $1 }` komutu ilk karşılaştığı eşleşmeyi yazdırır.
 ```bash
 awk -F':' '{ print $1 }' /etc/passwd
 ```
-After running the above command you will get following output.
+Komutu çalıştırdıktan sonra çıktı şöyle olacaktır.
 ```
 root
 daemon
@@ -326,29 +326,29 @@ bin
 sys
 sync
 ```
-For more detail on how to use `awk`, check following [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
+`awk` ' ı daha detaylı anlamak için, [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk)'e göz atın.
 
 
 ### b. `cut`
-Remove sections from each line of files
+Dosyanın her satırından seçilen kısımları siler veya gösterir.
 
 *example.txt*
 ```bash
 red riding hood went to the park to play
 ```
 
-*show me columns 2 , 7 , and 9 with a space as a separator*
+* boşlukla ayrı ve 2. , 7. , 9. elemanları göster*
 ```bash
-cut -d " " -f2,7,9 example.txt
+cut -d " " -f2,7,9 ornek.txt
 ```
 ```bash
 riding park play
 ```
 
 ### c. `echo`
-Display a line of text
+Bir satır text yazdırır.
 
-*display "Hello World"*
+*"Hello World" yazdır*
 ```bash
 echo Hello World
 ```
@@ -356,7 +356,7 @@ echo Hello World
 Hello World
 ```
 
-*display "Hello World" with newlines between words*
+*"Hello World" 'u kelimeleri arasında yeni satır koyarak yazdırır*
 ```bash
 echo -ne "Hello\nWorld\n"
 ```
@@ -366,9 +366,9 @@ World
 ```
 
 ### d. `egrep`
-Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
+Girdiğimiz yapı ile eşleşen satırları yazdır - Uzun yazımı ('grep -E' (extended))
 
-*example.txt*
+*ornek.txt*
 ```bash
 Lorem ipsum
 dolor sit amet, 
@@ -391,11 +391,11 @@ ipsum dolor sit
 amet.
 ```
 
-*display lines that have either "Lorem" or "dolor" in them.*
+*İçinde "Lorem" veya "dolor" geçen satırları yazdırır.*
 ```bash
-egrep '(Lorem|dolor)' example.txt
-or
-grep -E '(Lorem|dolor)' example.txt
+egrep '(Lorem|dolor)' ornek.txt
+ya da
+grep -E '(Lorem|dolor)' ornek.txt
 ```
 ```bash
 Lorem ipsum
@@ -407,9 +407,9 @@ ipsum dolor sit
 ```
 
 ### e. `fgrep`
-Print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
+Girdiğiniz yapı ile tamamen eşleşen satırları yazdırır. ('grep -F' (fixed))
 
-*example.txt*
+*ornek.txt*
 ```bash
 Lorem ipsum
 dolor sit amet,
@@ -433,27 +433,27 @@ ipsum dolor sit
 amet.
 ```
 
-*Find the exact string '(Lorem|dolor)' in example.txt*
+*'(Lorem|dolor)' un tam olarak geçtiği satırları yazdırır*
 ```bash
-fgrep '(Lorem|dolor)' example.txt
-or
-grep -F '(Lorem|dolor)' example.txt
+fgrep '(Lorem|dolor)' ornek.txt
+ya da
+grep -F '(Lorem|dolor)' ornek.txt
 ```
 ```bash
 foo (Lorem|dolor) 
 ```
 
 ### f. `fmt`
-Simple optimal text formatter
+Basit optimize text düzenleyici
 
-*example: example.txt (1 line)*
+*ornek: ornek.txt (1 satır)*
 ```bash
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 ```
 
-*output the lines of example.txt to 20 character width*
+*ornek.txt dosyasının çıktısı 20 karakter genişliğinde olacak*
 ```bash
-cat example.txt | fmt -w 20
+cat ornek.txt | fmt -w 20
 ```
 ```bash
 Lorem ipsum
@@ -478,27 +478,27 @@ amet.
 ```
 
 ### g. `grep`
-Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
+Text dosyalarının içine bakar. Dosya içerisinde arama yapmak için de kullanabilirsiniz.
 ```bash
-grep pattern filename
+grep yapi dosya
 ```
-Example:
+Örnek:
 ```bash
 $ grep admin /etc/passwd
 _kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
 _kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
 _krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
 ```
-You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for example:
+Aramayı tersine çevirmek için `-i` parametresini, belirli bir dizin altındaki tüm text dosyalarını taramak için ise `-r`(recursive) parametresi kullanılabilir, örnek olarak:
 ```bash
 $ grep -r admin /etc/
 ```
-And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
+`-w` (word) parametresi de sadece kelimeleri aramak için kullanılaiblir. `grep` hakkında daha detaylı bilgi için: [link](https://www.cyberciti.biz/faq/grep-in-bash).
 
 ### h. `nl`
-Number lines of files
+Dosyanın satırlarını numaralndırır
 
-*example.txt*
+*ornek.txt*
 ```bash
 Lorem ipsum
 dolor sit amet,
@@ -521,9 +521,9 @@ ipsum dolor sit
 amet.
 ```
 
-*show example.txt with line numbers*
+*ornek.txt'yi satır numaraları ile yazdır*
 ```bash
-nl -s". " example.txt 
+nl -s". " ornek.txt 
 ```
 ```bash
      1. Lorem ipsum
@@ -548,33 +548,33 @@ nl -s". " example.txt
 ```
 
 ### i. `sed`
-Stream editor for filtering and transforming text
+Texti düzenlemek ve şekillendirmek için kullanılan bir editör
 
-*example.txt*
+*ornek.txt*
 ```bash
 Hello This is a Test 1 2 3 4
 ``` 
 
-*replace all spaces with hyphens*
+*tüm boşlukları tire(-) ile değiştir*
 ```bash
-sed 's/ /-/g' example.txt
+sed 's/ /-/g' ornek.txt
 ```
 ```bash
 Hello-This-is-a-Test-1-2-3-4
 ```
 
-*replace all digits with "d"*
+*tüm rakamları "d" ile değiştir*
 ```bash
-sed 's/[0-9]/d/g' example.txt
+sed 's/[0-9]/d/g' ornek.txt
 ```
 ```bash
 Hello This is a Test d d d d
 ```
 
 ### j. `sort`
-Sort lines of text files
+Text dosyasının satırlarını alfabetik sıralar
 
-*example.txt*
+*ornek.txt*
 ```bash
 f
 b
@@ -585,9 +585,9 @@ e
 d
 ```
 
-*sort example.txt*
+*sıralanmış ornek.txt*
 ```bash
-sort example.txt
+sort ornek.txt
 ```
 ```bash
 a
@@ -599,9 +599,9 @@ f
 g
 ```
 
-*randomize a sorted example.txt*
+*rastgele sıralanmış ornek.txt*
 ```bash
-sort example.txt | sort -R
+sort ornek.txt | sort -R
 ```
 ```bash
 b
@@ -614,24 +614,24 @@ e
 ```
 
 ### k. `tr`
-Translate or delete characters
+Karakter silme veya değiştirme (translate)
 
-*example.txt*
+*ornek.txt*
 ```bash
 Hello World Foo Bar Baz!
 ```
 
-*take all lower case letters and make them upper case*
+*tüm küçük harfleri büyük harf yap*
 ```bash
-cat example.txt | tr 'a-z' 'A-Z' 
+cat ornek.txt | tr 'a-z' 'A-Z' 
 ```
 ```bash
 HELLO WORLD FOO BAR BAZ!
 ```
 
-*take all spaces and make them into newlines*
+*tüm boşlukları yeni satır yao*
 ```bash
-cat example.txt | tr ' ' '\n'
+cat ornek.txt | tr ' ' '\n'
 ```
 ```bash
 Hello
@@ -642,9 +642,9 @@ Baz!
 ```
 
 ### l. `uniq`
-Report or omit repeated lines
+Tekrar eden satırları sil ya da bildir
 
-*example.txt*
+*ornek.txt*
 ```bash
 a
 a
@@ -656,9 +656,9 @@ d
 c
 ```
 
-*show only unique lines of example.txt (first you need to sort it, otherwise it won't see the overlap)*
+*sadece eşsiz satırları göster(önce sıralamanız(sort) gerekir yoksa düzgün çalışmayacaktır*
 ```bash
-sort example.txt | uniq
+sort ornek.txt | uniq
 ```
 ```bash
 a
@@ -667,9 +667,9 @@ c
 d
 ```
 
-*show the unique items for each line, and tell me how many instances it found*
+*farklı satırları birer kere göster ve aynı olanların kaçar kere geçtiğini yaz*
 ```bash
-sort example.txt | uniq -c
+sort ornek.txt | uniq -c
 ```
 ```bash
     3 a
@@ -679,18 +679,18 @@ sort example.txt | uniq -c
 ```
 
 ### m. `wc`
-Tells you how many lines, words and characters there are in a file.  
+Dosyada kaç satır, kelime ve karakter olduğunu yazar.  
 ```bash
-wc filename
+wc dosya
 ```
-Example:
+Örnek:
 ```bash
-$ wc demo.txt
-7459   15915  398400 demo.txt
+$ wc ornek.txt
+7459   15915  398400 ornek.txt
 ```
-Where `7459` is lines, `15915` is words and `398400` is characters.
+`7459` satır, `15915` kelime ve `398400` karakter içerir.
 
-## 1.3. Directory Operations
+## 1.3. Dizin Komutları
 
 <table>
    <tr>
@@ -701,28 +701,28 @@ Where `7459` is lines, `15915` is words and `398400` is characters.
 </table>
 
 ### a. `cd`
-Moves you from one directory to other. Running this  
+Sizi bir dizinden diğerine taşır(change directory). Aşağıdaki
 ```bash
 $ cd
 ```
-moves you to home directory. This command accepts an optional `dirname`, which moves you to that directory.
+komutu sizi `home` dizinine taşır. Bu komut isteğe bağlı `dizin_adi` değişkeni alır ve sizi o dizine götürür.
 ```bash
-cd dirname
+cd dizin_adi
 ```
 
 ### b. `mkdir`
-Makes a new directory.  
+Yeni dizin oluşturur.  
 ```bash
-mkdir dirname
+mkdir dizin_adi
 ```
 
 ### c. `pwd`
-Tells you which directory you currently are in.  
+Şu an hangi dizinde olduğunu yazdırır(print working directory).  
 ```bash
 pwd
 ```
 
-## 1.4. SSH, System Info & Network Operations
+## 1.4. SSH, Sistem Bilgisi & Ağ Komutları
 
 <table>
    <tr>
@@ -757,138 +757,155 @@ pwd
 </table>
 
 ### a. `bg`
-Lists stopped or background jobs; resume a stopped job in the background.
+Durdurulmuş veya arka plana atılmış işlemleri listeler, arka planda durdurulmuş bir işi devam ettirir.
 
 ### b. `cal`
-Shows the month's calendar.
+Aylık takvimi gösterir.
 
 ### c. `date`
-Shows the current date and time.
+Anlık tarih ve saati gösterir.
 
 ### d. `df`
-Shows disk usage.
+Disk kullanımını gösterir.
 
 ### e. `dig`
-Gets DNS information for domain.  
+Domain'in DNS bilgilerini alır.  
 ```bash
 dig domain
 ```
 
 ### f. `du`
-Shows the disk usage of files or directories. For more information on this command check this [link](http://www.linfo.org/du.html)
+Dosya ve dizinlerin disk kullanımını gösterir. Daha fazla bilgi için: [link](http://www.linfo.org/du.html)
 ```bash
-du [option] [filename|directory]
+du [secenek] [dosya|dizin]
 ```
-Options:
-- `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
-- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
+Seçenekler:
+- `-h` (human readable) Çıktıyı kilobyte (K), megabyte (M) ve gigabyte (G) olarak verir.
+- `-s` (supress or summarize) dizinin toplam boyutunu yazar ve alt dizinler için rapor verir. 
 
-Example:
+Örnek:
 ```bash
-du -sh pictures
-1.4M pictures
+du -sh resimler
+1.4M resimler
 ```
 
 ### g. `fg`
-Brings the most recent job in the foreground.
+Ön planda çalışan en son işlemi getirir.
 
 ### h. `finger`
-Displays information about user.  
+Kullanıcı hakkında bilgi verir.  
 ```bash
-finger username
+finger kullanici_adi
 ```
 
 ### i. `last`
-Lists your last logins of specified user.  
+Bahsedilen kullanıcının son girişini gösterir.  
 ```bash
-last yourUsername
+last seninKullanici_adin
 ```
 
 ### j. `man`
-Shows the manual for specified command.  
+Bir komutun dökümantasyonunu gösterir.  
 ```bash
-man command
+man komut
+```
+
+Örnek:
+```bash
+man cd
+man ls
 ```
 
 ### k. `passwd`
-Allows the current logged user to change his password.
+Belirtilen kullanıcı (belirtilmezse giriş yapmış kullanıcı) şifre belirlenmesini veya değiştirilmesini sağlar.
+```bash
+passwd [secenek] [kullanici]
+```
+
+Örnek:
+```bash
+passwd
+sudo passwd jeff
+```
+
 
 ### l. `ping`
-Pings host and outputs results.  
+Sunucuyu pingler ve sonucu yazdırır.  
 ```bash
-ping host
+ping sunucu_ip_or_domain
 ```
 
 ### m. `ps`
-Lists your processes.  
+İşlemleri (processes) görüntüler.  
 ```bash
-ps -u yourusername
+ps -u kullanici_adi
 ```
 
 ### n. `quota`
-Shows what your disk quota is.  
+Disk kotanı gösterir.  
 ```bash
 quota -v
 ```
 
 ### o. `scp`
-Transfer files between a local host and a remote host or between two remote hosts.
+Lokal sunucu ve uzak sunucu  veya iki uzak sunucu arasında dosya aktarımını sağlar.
 
-*copy from local host to remote host*
+*lokal sunucudan uzak sunucuya*
 ```bash
-scp source_file user@host:directory/target_file
+scp kaynak_dosya kullanici@sunucu:dizin/hedef_dosya
 ```
-*copy from remote host to local host*
+*uzak sunucudan lokal sunucuya*
 ```bash
-scp user@host:directory/source_file target_file
-scp -r user@host:directory/source_folder farget_folder
+scp kullanici@sunucu:dizin/kaynak_dosya hedef_dosya
+scp -r kullanici@sunucu:dizin/kaynak_dizin hedef_dizin
 ```
-This command also accepts an option `-P` that can be used to connect to specific port.  
+Özel bir porta bağlanmak için `-P` parametresi kullanılabilir.  
 ```bash
-scp -P port user@host:directory/source_file target_file
+scp -P port kullanici@sunucu:dizin/kaynak_dosya hedef_dosya
 ```
 
 ### p. `ssh`
-ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
+ssh (SSH client) uzak makineye bağlanmak ve üzerinde komut çalıştırmak için tasarlanmış bir programdır.  
 ```bash
-ssh user@host
+ssh kullanici@sunucu
 ```
-This command also accepts an option `-p` that can be used to connect to specific port.  
+Özel bir porta bağlanmak için `-P` parametresi kullanılabilir  
 ```bash
-ssh -p port user@host
+ssh -p port kullanici@sunucu
 ```
 
 ### q. `top`
-Displays your currently active processes.
+Anlık aktif işlemleri görüntüler.
 
 ### r. `uname`
-Shows kernel information.  
+Kernel bilgisini gösterir.  
 ```bash
 uname -a
 ```
 
 ### s. `uptime`
-Shows current uptime.
+Sunucunun ne zamandır açık olduğunu gösterir.
 
 ### t. `w`
-Displays who is online.
+Sunucuda kimin online olduğunu gösterir.
 
 ### u. `wget`
-Downloads file.  
+Dosya indirir.  
 ```bash
-wget file
+wget dosya
+wget http://site.com/dosya.txt
 ```
 
 ### v. `whoami`
-Return current logged in username.
+Anlık giriş yapmış kullanıcı adını yazdırır.
 
 ### w. `whois`
-Gets whois information for domain.  
+Domain'in whois bilgilerini gösterir.  
 ```bash
 whois domain
 ```
 
-## 1.5. Process Monitoring Operations
+## 1.5. İşlem İzleme Komutları
 
 <table>
    <tr>
@@ -900,105 +917,105 @@ whois domain
 </table>
 
 ### a. `kill`
-Kills (ends) the processes with the ID you gave.  
+Verilen ID ile işlemleri sonlandırır.  
 ```bash
 kill PID
 ```
 
 ### b. `killall`
-Kill all processes with the name.  
+Verilen isimdeki tüm işlemleri sonlandırır.  
 ```bash
-killall processname
+killall islem_adi
 ```
 
 ### c. &
-The `&` symbol instructs the command to run as a background process in a subshell.
+`&` simgesi verilen işlemin sonuna eklenir ve arka planda çalışacağını gösterir.
 ```bash
-command &
+komut &
 ```
 
 ### d. `nohup`
-nohup stands for "No Hang Up". This allows to run command/process or shell script that can continue running in the background after you log out from a shell.
+"No Hang Up" sözüne karşılık gelen nohup komutu, "kapatma" anlamına gelir. Yani shell'den çıktığınızda dahi çalışmayı sürdürür.
 ```bash
-nohup command
+nohup komut
 ```
-Combine it with `&` to create background processes 
+`&` ile birlikte kullanarak arka plan işlemi oluşturulabilir
 ```bash
-nohup command &
+nohup komut &
 ```
 
-# 2. Basic Shell Programming
+# 2. Basit Shell Programlama
 
 
-The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
+`shebang` bash programlamanın ilk satırına yazılan belirli text'e denir. Bu satır script'in tek başına sh, bash, python, php gibi programları yazmadan çalışabilmesini sağlar. 
 
 ```bash
 #!/bin/bash
 ```
 
-## 2.1. Variables
+## 2.1. Değişkenler
 
-Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
+bash üzerinde değişken yaratmak diğer dillerde olduğu gibidir. Veri tipleri yoktur. Bash içinde değişkenler sayı, karakter, karakter dizisi gibi şeyler alabilir. Başlangıçta tanımlarken ne olduğunu belirtmenize gerek yoktur, vermek istediğiniz değere eşitlemek yeterli olacaktır.
 
-Example:
+Örnek:
 ```bash
 str="hello world"
 ```
 
-The above line creates a variable `str` and assigns "hello world" to it. The value of variable is retrieved by putting the `$` in the beginning of variable name.
+Yukarıdaki satır `str`  adında bir değişken oluşturur ve "hello world" stringini atar. Değeri okumak için değişken isminin başına `$` koymak yeterlidir.
 
-Example:
+Örnek:
 ```bash
 echo $str   # hello world
 ```
-## 2.2. Array
-Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
+## 2.2. Diziler
+Diğer diller gibi bash de dizilere sahiptir. Diziler birden çok değer içerek değişkenlerdir.Dizilerin değerleri için sayı sınırı yoktur. Bash'de ki dizler sıfır tabanlıdır. İlk eleman 0 ile belirtilir. Bir kaç dizi oluşturma yolu vardır, aşağıda gösterildiği gibi:
 
-Examples:
+Örnekler:
 ```bash
-array[0] = val
-array[1] = val
-array[2] = val
-array=([2]=val [0]=val [1]=val)
-array=(val val val)
+dizi[0] = deger
+dizi[1] = deger
+dizi[2] = deger
+dizi=([2]=deger [0]=deger [1]=deger)
+dizi=(deger deger deger)
 ```
-To display a value at specific index use following syntax:
-
-```bash
-${array[i]}     # where i is the index
-```
-
-If no index is supplied, array element 0 is assumed. To find out how many values there are in the array use the following syntax:
+Bir dizinin özel bir değerini yazdırmak için:
 
 ```bash
-${#array[@]}
+${dizi[i]}     # belirteç "i" için
 ```
 
-Bash has also support for the ternary conditions. Check some examples below.
+Hiç bir belirteç verilmezse, dizi 0'dan başlar. Dizide kaç değer olduğunu öğrenmek için aşağıdaki yazım kullanılır:
 
 ```bash
-${varname:-word}    # if varname exists and isn't null, return its value; otherwise return word
-${varname:=word}    # if varname exists and isn't null, return its value; otherwise set it word and then return its value
-${varname:+word}    # if varname exists and isn't null, return word; otherwise return null
-${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+${#dizi[@]}
 ```
 
-## 2.3 String Substitution
-
-Check some of the syntax on how to manipulate strings
+Bash ayrıca üçlü durumlara sahiptir. Aşağıdaki durumlara bakınız.
 
 ```bash
-${variable#pattern}         # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
-${variable##pattern}        # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
-${variable%pattern}         # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
-${variable%%pattern}        # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
-${variable/pattern/string}  # the longest match to pattern in variable is replaced by string. Only the first match is replaced
-${variable//pattern/string} # the longest match to pattern in variable is replaced by string. All matches are replaced
-${#varname}     # returns the length of the value of the variable as a character string
+${degisken:-word}    # degisken varsa ve "null" değilse, degeri dondur; aksi halde "word" ü döndür
+${degisken:=word}    # degisken varsa ve "null" değilse, degeri dondur; aksi halde "word" e eşitle ve değerini döndür
+${degisken:+word}    # degisken varsa ve "null" değilse, "word" ü döndür; aksi halde "null" döndür
+${degisken:offset:length}    # alt dizi ilerlemesi yapar. $degisken 'in alt dizilerini karakter uzunluğuna göre dallandırarak döndürür
 ```
 
-## 2.4. Functions
-As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
+## 2.3 String Yerleştirmeleri
+
+Stringleri düzenlemede bir kaç örneği inceleyelim
+
+```bash
+${degisken#deger}         # eğer verilen "deger" degisken'in değerinin başıyla eşleşiyorsa, eşleşen en kısa kısmı sil ve geri kalanı yazdır
+${degisken##deger}        # eğer verilen "deger" degisken'in değerinin başıyla eşleşiyorsa, eşleşen en uzun kısmı sil ve geri kalanı yazdır
+${degisken%deger}         # eğer verilen "deger" degisken'in değerinin sonuyla eşleşiyorsa, eşleşen en kısa kısmı sil ve geri kalanı yazdır
+${degisken%%deger}        # eğer verilen "deger" degisken'in değerinin sonuyla eşleşiyorsa, eşleşen en uzun kısmı sil ve geri kalanı yazdır
+${degisken/deger/yeni_deger}  # Değişkenin değeri içinde "deger" ile eşleşen en uzun kısım ile "yeni_deger" değiştirilir. Sadece ilk eşleşme değiştirilir
+${degisken//deger/string} # Değişkenin değeri içinde "deger" ile eşleşen en uzun kısım ile "yeni_deger" değiştirilir. Tüm eşleşmeler değiştirilir
+${#degisken_ismi}     # değişkenin değerinin uzunluğunu string olarak döndürür
+```
+
+## 2.4. Fonksiyonlar
+Tüm programlama dillerinde olduğu gibi, bash'de de fonksiyonları birden fazla satır kodu tek seferde çalıştırmak ve tekrarlamak için kullanbiliriz. Fonksiyon tanımlamak `function my_func { my_code }` yazmak kadar kolay. Fonksiyon çağırmak da başka bir programı çağırmakla aynı şekilde sadece adını yazmanız yeterli.
 
 ```bash
 functname() {
@@ -1006,7 +1023,7 @@ functname() {
 }
 ```
 
-Example:
+Örnek:
 ```bash
 #!/bin/bash
 function hello {
@@ -1020,165 +1037,165 @@ function say {
 say "hello world!"
 ```
 
-When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within functions, are treated in the same manner as arguments given to the script.
+Yukarıdaki kodu çalıştırdığımızda `hello` fonksiyonu "world!" yazdıracaktır. Yukarıdaki `hello` ve `say` fonksiyonları özdeştir. Tek farkları `say` fonksiyonu parametre alır ve aldığı ilk parametreyi `echo` komutu ile yazdırır. Argümanlar scripti çalıştırırkenki sırayla isimlendirilir. `1,2 ($1,$2)`
 
-## 2.5. Conditionals
+## 2.5. Koşullar
 
-The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
-
+Bash'deki koşullar diğer programlama dilleri ile aynıdır.  `if` ifadesi doğru ise `then` durumu çalışır.
 ```bash
-if [expression]; then
-    will execute only if expression is true
+if [ifade]; then
+    ifade doğru ise çalışacak durum
 else
-    will execute if expression is false
+    ifade yanlış ise çalışacak durum
 fi
 ```
 
-Sometime if conditions becoming confusing so you can write the same condition using the `case statements`.
+Bazen iç içe if - else yazmak kafa karıştırıcı olabilir, bunun için `case statements` denilen (switch-case) yapıları bulunur.
 
 ```bash
-case expression in
-    pattern1 )
-        statements ;;
-    pattern2 )
-        statements ;;
+case ifade in
+    yapi1 )
+        durum-komut ;;
+    yapi2 )
+        durum-komut ;;
     ...
 esac
 ```
 
-Expression Examples:
+İfade Örnekleri:
 
 ```bash
-statement1 && statement2  # both statements are true
-statement1 || statement2  # at least one of the statements is true
+durum1 && durum2  # iki durum da doğru olmalı
+durum1 || durum2  # en az biri doğru olmalı
 
-str1=str2       # str1 matches str2
-str1!=str2      # str1 does not match str2
-str1<str2       # str1 is less than str2
-str1>str2       # str1 is greater than str2
--n str1         # str1 is not null (has length greater than 0)
--z str1         # str1 is null (has length 0)
+str1=str2       # str1 ve str2 eşittir
+str1!=str2      # str1 ve str2 eşit değildir
+str1<str2       # str1, str2'den azdır
+str1>str2       # str1, str2'den çoktur
+-n str1         # str1 "null" değildir (str1'in karakter uzunluğu 0'dan fazla)
+-z str1         # str1 "null" dur (str1'in karakter uzunluğu 0)
 
--a file         # file exists
--d file         # file exists and is a directory
--e file         # file exists; same -a
--f file         # file exists and is a regular file (i.e., not a directory or other special type of file)
--r file         # you have read permission
--s file         # file exists and is not empty
--w file         # your have write permission
--x file         # you have execute permission on file, or directory search permission if it is a directory
--N file         # file was modified since it was last read
--O file         # you own file
--G file         # file's group ID matches yours (or one of yours, if you are in multiple groups)
+-a dosya         # dosya var (oluşturulmuş)
+-d dosya         # dosya var (oluşturulmuş) ve dosya bir dizin
+-e dosya         # dosya var; -a ile aynı
+-f dosya         # dosya var ve düzgün bir dosya (dizin veya özel dosya türü değil)
+-r dosya         # okuma yetkin var
+-s dosya         # dosya var ve boş değil
+-w dosya         # yazma yatkin var
+-x dosya         # dosya ve dizin üzerinde çalıştırma yetkin var, dizin ise çalıştırma yetkisi arar
+-N dosya         # son okumadan beri dosya değiştirilmiş
+-O dosya         # dosyanın sahibisin ( owner )
+-G dosya         # dosya'nın group ID'si seninki ile eşleşiyor (birden çok grupta ise, grouplarından biri ile)
 
-file1 -nt file2     # file1 is newer than file2
-file1 -ot file2     # file1 is older than file2
+dosya1 -nt dosya2    # dosya1, dosya2'den daha yeni
+dosya1 -ot dosya2    # dosya1, dosya2'den daha eski
 
--lt     # less than
--le     # less than or equal
--eq     # equal
--ge     # greater than or equal
--gt     # greater than
--ne     # not equal
+-lt     # daha az (less than)
+-le     # daha az veya eşit (less than or equal)
+-eq     # eşit (equal)
+-ge     # daha büyük veya eşit (greater than or equal)
+-gt     # daha büyük (greater than)
+-ne     # eşit değil (not equal)
 ```
 
-## 2.6. Loops
+## 2.6. Döngüler
 
-There are three types of loops in bash. `for`, `while` and `until`.
+Bash üzerinde üç tip döngü vardır. `for`, `while` ve `until`.
 
-Different `for` Syntax:
+Farklı `for` Yazımı (Syntax):
 ```bash
 for x := 1 to 10 do
 begin
-  statements
+  durum - komutlar
 end
 
-for name [in list]
+for dongu_adi [in list]
 do
-  statements that can use $name
+  $name kullanan durum ve komutlar
 done
 
-for (( initialisation ; ending condition ; update ))
+for (( baslatma ; bitis_kosulu ; degisiklik ))
 do
-  statements...
+  durum ve komutlar...
 done
 ```
 
 `while` Syntax:
 ```bash
-while condition; do
-  statements
+while kosullar; do
+  durum ve komutlar
 done
 ```
 
 `until` Syntax:
 ```bash
-until condition; do
-  statements
+until kosullar; do
+  durum ve komutlar
 done
 ```
 
-# 3. Tricks
+# 3. İpuçları
 
-## Set an alias
-Open `bash_profile` by running following command `nano ~/.bash_profile`
-> alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
+## Alias (Takma ad) ekleme
+`bash_profile` dosyasını `nano ~/.bash_profile` komutu ile veya `vim ~/.bash_profile` komutu ile açın
+> alias dockerlogin='ssh www-data@omergulen.local -p2222'  # adınızı .bash_profile' e ekleyin
 
-## To quickly go to a specific directory
-nano ~/.bashrc
-> export hotellogs="/workspace/hotel-api/storage/logs"
+## Çabukça Özel Bir Dizine Gitme
+`nano ~/.bashrc`
+> export otel_kayitlari="/workspace/hotel-api/storage/logs"
 
 ```bash
 source ~/.bashrc
-cd $hotellogs
+cd $otel_kayitlari
 ```
 
-## Exit traps
+## Yakalanmalardan Çıkış | Exit traps
 
-Make your bash scripts more robust by reliably performing cleanup.
+Bash script'inizi daha düzenli, hatasız ve arkada gereksiz işlem bırakmayacak şekilde yazın.
 
 ```bash
 function finish {
-  # your cleanup here. e.g. kill any forked processes
+  # temizlemeyi yapın örn. açık kalan gereksiz işlemleri sonlandır
   jobs -p | xargs kill
 }
 trap finish EXIT
 ```
 
-## Saving your environment variables
+## Çevre değişkenlerinizi kaydedin
 
-When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
+`export FOO = BAR` yaptığınızda, değişkenleriniz bu shell'de ve bunun üzerinden açılan shell'lerde etkili olacaktır. Kalıcılığı sağlamak için `~/.bash_profile` dosyasına aşağıdaki komutu ekleyin.
+
 ```bash
 echo export FOO=BAR >> ~/.bash_profile
 ```
 
-## Accessing your scripts
+## Scriptlerinize erişim
 
-You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
+Scriptlerinize kolayca erişmek için home klasörünüzün içinde `mkdir ~/bin` komutuyla `bin` dizini oluşturabilirsiniz, artık tüm scriptlerinizi bu dizine koyup erişebilirsiniz.
 
-If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
+Eğer erişemezseniz, aşağıdaki kodu `~/.bash_profile`dosyanıza eklemeyi ve `source ~/.bash_profile` komutunu çalıştırmayı deneyin.
 ```bash
-    # set PATH so it includes user's private bin if it exists
+    # PATH değişkenini belirtin
     if [ -d "$HOME/bin" ] ; then
         PATH="$HOME/bin:$PATH"
     fi
 ```
 
-# 4. Debugging
-You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
+# 4.  Derleme | Debugging
+`bash` komutuna farklı parametreler vererek kolayca scriptinizi derleyebilirsiniz. Örneğin `-n` parametresi kodu çalıştırmayıp sadece hata kontrolü yapacaktır, `-v` komutları çalıştırmadan yazdıracak, `-x` ise işlem bittikten sonra kodları yazdıracaktır.
 
 ```bash
-bash -n scriptname
-bash -v scriptname
-bash -x scriptname
+bash -n script_adi
+bash -v script_adi
+bash -x script_adi
 ```
 
-## Contribution
+## Katkı Sağlama
 
-- Report issues [How to](https://help.github.com/articles/creating-an-issue/)
-- Open pull request with improvements [How to](https://help.github.com/articles/about-pull-requests/)
-- Spread the word
+- Sorunları bildir [How to](https://help.github.com/articles/creating-an-issue/)
+- Geliştirmeler ile birlikte "pull request" açın [How to](https://help.github.com/articles/about-pull-requests/)
+- Bilginin yayılmasına yardımcı olun.
 
-## License
+## Lisans
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
