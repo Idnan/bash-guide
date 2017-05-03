@@ -1062,7 +1062,7 @@ str1>str2       # str1 is greater than str2
 -f file         # file exists and is a regular file (i.e., not a directory or other special type of file)
 -r file         # you have read permission
 -s file         # file exists and is not empty
--w file         # your have write permission
+-w file         # you have write permission
 -x file         # you have execute permission on file, or directory search permission if it is a directory
 -N file         # file was modified since it was last read
 -O file         # you own file
