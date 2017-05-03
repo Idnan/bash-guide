@@ -838,7 +838,7 @@ scp source_file user@host:directory/target_file
 *copy from remote host to local host*
 ```bash
 scp user@host:directory/source_file target_file
-scp -r user@host:directory/source_folder farget_folder
+scp -r user@host:directory/source_folder target_folder
 ```
 This command also accepts an option `-P` that can be used to connect to specific port.  
 ```bash
