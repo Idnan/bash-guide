@@ -119,7 +119,7 @@ cat < file1 > file2 #copy file1 to file2
 ### b. `chmod`
 The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
 ```bash
-chmod -options filename
+chmod +x script
 ```
 
 ### c. `chown`
