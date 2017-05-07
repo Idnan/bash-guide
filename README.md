@@ -777,7 +777,7 @@ pwd
 
 ### a. `apropos`
 İstediğiniz görevle ilgili arama yapmanızı sağlar. Örneğin komutu bilmiyorsunuz ama yaptığı işi biliyorsunuz anahtar kelimeleri aratarak komutu bulabilirsiniz.
-````bash
+```bash
 apropos komut
 ```
 
