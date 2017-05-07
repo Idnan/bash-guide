@@ -39,7 +39,24 @@ $ echo $AWS_HOME
 /Users/omergulen/.aws
 ```
 
-### b. `whatis`
+### b. `su` ve `exit`
+`su` kullanıcı değiştirmeye ya da `root` olmaya yarar. `su` komutundan sonra boşluk bırakılırsa `sudo root` yerine geçer.
+`exit` ise bağlı olunan oturumdan çıkmayı sağlar, kısayolu `CTRL+D` dir.
+```bash
+omergulen@host:~$ su
+Password:
+root@host:/home/omergulen#
+
+root@host:/home/omergulen# exit
+exit
+omergulen@host:~$ 
+
+omergulen@host:~$ su guest
+Password:
+guest@host:#
+```
+
+### c. `whatis`
 whatis kullanıcı komutları, sistem çağrıları, kütüphane fonksiyonları ve manuel sayfasındaki diğer şeylerin açıklamasını görüntüler.
 ```bash
 whatis bir_sey
@@ -50,7 +67,7 @@ $ whatis bash
 bash (1)             - GNU Bourne-Again SHell
 ```
 
-### c. `whereis`
+### d. `whereis`
 whereis çalıştırabilir dosyaları, kaynak kodlarını ve manuel sayfalarını sistem tarafından otomatik oluşturulan bir veri tabanı ile araştırır.
 ```bash
 whereis isim
@@ -61,7 +78,7 @@ $ whereis php
 /usr/bin/php
 ```
 
-### d. `which`
+### e. `which`
 which çalıştırabilir dosyaları belirtilmiş bir PATH (yol) içerisinde arar. Bu komut aranan çalıştırabilirlerin tam yolunu yazdırır.
 ```bash
 which program_adi 
@@ -72,7 +89,7 @@ $ which php
 /c/xampp/php/php
 ```
 
-### e. `clear`
+### f. `clear`
 Pencere içeriğini temizler. `CTRL + L` kısayolu da aynı görevi görür.
 
 ## 1.1. Dosya Komutları
@@ -726,56 +743,88 @@ pwd
 
 <table>
    <tr>
-      <td><a href="#a-bg">bg</a></td>
-      <td><a href="#b-cal">cal</a></td>
-      <td><a href="#c-date">date</a></td>
-      <td><a href="#d-df">df</a></td>
-      <td><a href="#e-dig">dig</a></td>
-      <td><a href="#f-du">du</a></td>
-      <td><a href="#g-fg">fg</a></td>
-      <td><a href="#h-finger">finger</a></td>      
-      <td><a href="#i-last">last</a></td>
-      <td><a href="#j-man">man</a></td>
+      <td><a href="#a-apropos">apropos</a></td>
+      <td><a href="#b-bg">bg</a></td>
+      <td><a href="#c-cal">cal</a></td>
+      <td><a href="#d-date">date</a></td>
+      <td><a href="#e-df">df</a></td>
+      <td><a href="#f-dig">dig</a></td>
+      <td><a href="#g-du">du</a></td>
+      <td><a href="#h-fg">fg</a></td>
+      <td><a href="#i-finger">finger</a></td>      
+      <td><a href="#j-last">last</a></td>
+      <td><a href="#k-man">man</a></td>
    </tr>
    <tr>
-      <td><a href="#k-passwd">passwd</a></td>
-      <td><a href="#l-ping">ping</a></td>
-      <td><a href="#m-ps">ps</a></td>
-      <td><a href="#n-quota">quota</a></td>
-      <td><a href="#o-scp">scp</a></td>
-      <td><a href="#p-ssh">ssh</a></td>
-      <td><a href="#q-top">top</a></td>
-      <td><a href="#r-traceroute">traceroute</a></td>
-      <td><a href="#s-uname">uname</a></td>
-      <td><a href="#t-uptime">uptime</a></td>
-      <td><a href="#u-w">w</a></td>
+      <td><a href="#l-passwd">passwd</a></td>
+      <td><a href="#m-ping">ping</a></td>
+      <td><a href="#n-ps">ps</a></td>
+      <td><a href="#o-quota">quota</a></td>
+      <td><a href="#p-scp">scp</a></td>
+      <td><a href="#q-ssh">ssh</a></td>
+      <td><a href="#r-top">top</a></td>
+      <td><a href="#s-traceroute">traceroute</a></td>
+      <td><a href="#t-uname">uname</a></td>
+      <td><a href="#u-uptime">uptime</a></td>
+      <td><a href="#v-w">w</a></td>
    </tr>
    <tr>
-      <td><a href="#v-wget">wget</a></td>
-      <td><a href="#w-whoami">whoami</a></td>
-      <td><a href="#y-whois">whois</a></td>
+      <td><a href="#w-wget">wget</a></td>
+      <td><a href="#y-whoami">whoami</a></td>
+      <td><a href="#z-whois">whois</a></td>
    </tr>
 </table>
 
-### a. `bg`
+### a. `apropos`
+İstediğiniz görevle ilgili arama yapmanızı sağlar. Örneğin komutu bilmiyorsunuz ama yaptığı işi biliyorsunuz anahtar kelimeleri aratarak komutu bulabilirsiniz.
+````bash
+apropos komut
+```
+
+Örnek:
+```bash
+apropos ssh
+authorized_keys (5)  - OpenSSH SSH daemon
+rlogin (1)           - OpenSSH SSH client (remote login program)
+rsh (1)              - OpenSSH SSH client (remote login program)
+slogin (1)           - OpenSSH SSH client (remote login program)
+ssh (1)              - OpenSSH SSH client (remote login program)
+ssh-add (1)          - adds private key identities to the authentication agent
+ssh-agent (1)        - authentication agent
+ssh-argv0 (1)        - replaces the old ssh command-name as hostname handling
+ssh-copy-id (1)      - use locally available keys to authorise logins on a remote machine
+ssh-import-id (1)    - retrieve one or more public keys from a public keyserver and append them to the current user's...
+ssh-import-id-gh (1) - retrieve one or more public keys from a public keyserver and append them to the current user's...
+ssh-import-id-lp (1) - retrieve one or more public keys from a public keyserver and append them to the current user's...
+ssh-keygen (1)       - authentication key generation, management and conversion
+ssh-keyscan (1)      - gather ssh public keys
+ssh-keysign (8)      - ssh helper program for host-based authentication
+ssh-pkcs11-helper (8) - ssh-agent helper program for PKCS#11 support
+ssh_config (5)       - OpenSSH SSH client configuration files
+sshd (5)             - OpenSSH SSH daemon
+sshd (8)             - OpenSSH SSH daemon
+sshd_config (5)      - OpenSSH SSH daemon configuration file
+```
+
+### b. `bg`
 Durdurulmuş veya arka plana atılmış işlemleri listeler, arka planda durdurulmuş bir işi devam ettirir.
 
-### b. `cal`
-Aylık takvimi gösterir.
+### c. `cal`
+Aylık takvimi gösterir. `ncal` ile de takvimin dikey halini yazdırabilirsiniz.
 
-### c. `date`
+### d. `date`
 Anlık tarih ve saati gösterir.
 
-### d. `df`
+### e. `df`
 Disk kullanımını gösterir.
 
-### e. `dig`
+### f. `dig`
 Domain'in DNS bilgilerini alır.  
 ```bash
 dig domain
 ```
 
-### f. `du`
+### g. `du`
 Dosya ve dizinlerin disk kullanımını gösterir. Daha fazla bilgi için: [link](http://www.linfo.org/du.html)
 ```bash
 du [secenek] [dosya|dizin]
@@ -790,8 +839,8 @@ du -sh resimler
 1.4M resimler
 ```
 
-### g. `fg`
-Ön planda çalışan en son işlemi getirir veya arka planda çalışan işlemleri `jobs` komutu ile gördükten sonra ID numarası ile ön planda çalışmasını isteyebiliriz.
+### h. `fg`
+Ön panda çalışan en son işlemi getirir veya arka planda çalışan işlemleri `jobs` komutu ile gördükten sonra ID numarası ile ön planda çalışmasını isteyebiliriz.
 
 Örnek:
 ```bash
@@ -803,22 +852,23 @@ du -sh resimler
 # fg %1
 ```
 
-### h. `finger`
+### i. `finger`
 Kullanıcı hakkında bilgi verir.  
 ```bash
 finger kullanici_adi
 ```
 
-### i. `last`
+### j. `last`
 Bahsedilen kullanıcının son girişini gösterir.  
 ```bash
 last seninKullanici_adin
 ```
 
-### j. `man`
-Bir komutun dökümantasyonunu gösterir.  
+### k. `man`
+Bir komutun dökümantasyonunu gösterir.  `info` komutu ile daha detaylı bir dökümantasyon görüntülenebilir.
 ```bash
 man komut
+info komut
 ```
 
 Örnek:
@@ -827,7 +877,7 @@ man cd
 man ls
 ```
 
-### k. `passwd`
+### l. `passwd`
 Belirtilen kullanıcı (belirtilmezse giriş yapmış kullanıcı) şifre belirlenmesini veya değiştirilmesini sağlar.
 ```bash
 passwd [secenek] [kullanici]
@@ -840,25 +890,25 @@ sudo passwd jeff
 ```
 
 
-### l. `ping`
+### m. `ping`
 Sunucuyu pingler ve sonucu yazdırır.  
 ```bash
 ping sunucu_ip_or_domain
 ```
 
-### m. `ps`
+### n. `ps`
 İşlemleri (processes) görüntüler.  
 ```bash
 ps -u kullanici_adi
 ```
 
-### n. `quota`
+### o. `quota`
 Disk kotanı gösterir.  
 ```bash
 quota -v
 ```
 
-### o. `scp`
+### p. `scp`
 Lokal sunucu ve uzak sunucu  veya iki uzak sunucu arasında dosya aktarımını sağlar.
 
 *lokal sunucudan uzak sunucuya*
@@ -875,7 +925,7 @@ scp -r kullanici@sunucu:dizin/kaynak_dizin hedef_dizin
 scp -P port kullanici@sunucu:dizin/kaynak_dosya hedef_dosya
 ```
 
-### p. `ssh`
+### q. `ssh`
 ssh (SSH client) uzak makineye bağlanmak ve üzerinde komut çalıştırmak için tasarlanmış bir programdır.  
 ```bash
 ssh kullanici@sunucu
@@ -885,10 +935,10 @@ ssh kullanici@sunucu
 ssh -p port kullanici@sunucu
 ```
 
-### q. `top`
+### r. `top`
 Anlık aktif işlemleri görüntüler.
 
-### r. `traceroute`
+### s. `traceroute`
 Bir ip paketinin (örnek olarak ping işlemini gerçeleştirirken kullandığımız ICMP paketi de olabilir) hedef adresine varana kadar hangi sunucu ve/veya yönlendiriciler üzerinden geçtiğini görmemize imkan sağlayan bir programdır.
 
 Örnek:
@@ -896,29 +946,29 @@ Bir ip paketinin (örnek olarak ping işlemini gerçeleştirirken kullandığım
 traceroute 8.8.8.8
 ```
 
-### s. `uname`
+### t. `uname`
 Kernel bilgisini gösterir.  
 ```bash
 uname -a
 ```
 
-### t. `uptime`
+### u. `uptime`
 Sunucunun ne zamandır açık olduğunu gösterir.
 
-### u. `w`
-Sunucuda kimin online olduğunu gösterir.
+### v. `w`
+Sunucuda kimin online olduğunu gösterir. `users` komutu da aynı işlevi görmektedir.
 
-### v. `wget`
+### w. `wget`
 Dosya indirir.  
 ```bash
 wget dosya
 wget http://site.com/dosya.txt
 ```
 
-### w. `whoami`
+### y. `whoami`
 Anlık giriş yapmış kullanıcı adını yazdırır.
 
-### y. `whois`
+### z. `whois`
 Domain'in whois bilgilerini gösterir.  
 ```bash
 whois domain
