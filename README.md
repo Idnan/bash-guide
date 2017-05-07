@@ -828,10 +828,10 @@ pwd
       <td><a href="#t-top">top</a></td>
       <td><a href="#u-traceroute">traceroute</a></td>
       <td><a href="#v-uname">uname</a></td>
-      <td><a href="#w-uptime">uptime</a></td>
-      <td><a href="#y-w">w</a></td>
    </tr>
    <tr>
+      <td><a href="#w-uptime">uptime</a></td>
+      <td><a href="#y-w">w</a></td>
       <td><a href="#z-wget">wget</a></td>
       <td><a href="#aa-whoami">whoami</a></td>
       <td><a href="#ab-whois">whois</a></td>
