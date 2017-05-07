@@ -1054,6 +1054,7 @@ whois domain
       <td><a href="#e-nohup">nohup</a></td>
    </tr>
 </table>
+
 ### a. `jobs`
 Arkaplanda çalışmakta olan işlemleri gösterir.
 ```bash
