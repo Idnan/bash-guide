@@ -39,7 +39,15 @@ $ echo $AWS_HOME
 /Users/omergulen/.aws
 ```
 
-### b. `su` ve `exit`
+### b. `history`
+Terminal geçmişini görüntüler.
+```bash
+$ history
+    1 whoami
+    2 history
+```
+
+### c. `su` ve `exit`
 `su` kullanıcı değiştirmeye ya da `root` olmaya yarar. `su` komutundan sonra boşluk bırakılırsa `sudo root` yerine geçer.
 `exit` ise bağlı olunan oturumdan çıkmayı sağlar, kısayolu `CTRL+D` dir.
 ```bash
@@ -56,7 +64,7 @@ Password:
 guest@host:#
 ```
 
-### c. `whatis`
+### d. `whatis`
 whatis kullanıcı komutları, sistem çağrıları, kütüphane fonksiyonları ve manuel sayfasındaki diğer şeylerin açıklamasını görüntüler.
 ```bash
 whatis bir_sey
@@ -67,7 +75,7 @@ $ whatis bash
 bash (1)             - GNU Bourne-Again SHell
 ```
 
-### d. `whereis`
+### e. `whereis`
 whereis çalıştırabilir dosyaları, kaynak kodlarını ve manuel sayfalarını sistem tarafından otomatik oluşturulan bir veri tabanı ile araştırır.
 ```bash
 whereis isim
@@ -78,7 +86,7 @@ $ whereis php
 /usr/bin/php
 ```
 
-### e. `which`
+### f. `which`
 which çalıştırabilir dosyaları belirtilmiş bir PATH (yol) içerisinde arar. Bu komut aranan çalıştırabilirlerin tam yolunu yazdırır.
 ```bash
 which program_adi 
@@ -89,7 +97,7 @@ $ which php
 /c/xampp/php/php
 ```
 
-### f. `clear`
+### g. `clear`
 Pencere içeriğini temizler. `CTRL + L` kısayolu da aynı görevi görür.
 
 ## 1.1. Dosya Komutları
@@ -97,7 +105,7 @@ Pencere içeriğini temizler. `CTRL + L` kısayolu da aynı görevi görür.
    <tr>
       <td><a href="#a-cat">cat</a></td>
       <td><a href="#b-chmod">chmod</a></td>
-      <td><a href="#c-chown">chown</a></td>
+      <td><a href="#c-chown-ve-chgrp">chown ve chgrp</a></td>
       <td><a href="#d-cp">cp</a></td>
       <td><a href="#e-diff">diff</a></td>
       <td><a href="#f-file">file</a></td>
@@ -108,15 +116,17 @@ Pencere içeriğini temizler. `CTRL + L` kısayolu da aynı görevi görür.
       <td><a href="#k-head">head</a></td>
    </tr>
    <tr>
-      <td><a href="#l-lpq">lpq</a></td>
-      <td><a href="#m-lpr">lpr</a></td>
-      <td><a href="#n-lprm">lprm</a></td>
-      <td><a href="#o-ls">ls</a></td>
-      <td><a href="#p-more">more</a></td>
-      <td><a href="#q-mv">mv</a></td>
-      <td><a href="#r-rm">rm</a></td>
-      <td><a href="#s-tail">tail</a></td>
-      <td><a href="#t-touch">touch</a></td>
+      <td><a href="#l-less">less</a></td>
+      <td><a href="#m-lpq">lpq</a></td>
+      <td><a href="#n-lpr">lpr</a></td>
+      <td><a href="#o-lprm">lprm</a></td>
+      <td><a href="#p-ls">ls</a></td>
+      <td><a href="#q-more">more</a></td>
+      <td><a href="#r-mv">mv</a></td>
+      <td><a href="#s-rm">rm</a></td>
+      <td><a href="#t-tail">tail</a></td>
+      <td><a href="#u-touch">touch</a></td>
+      <td><a href="#v-umask">umask</a></td>
    </tr>
 </table>
 
@@ -135,18 +145,22 @@ cat dosya1 dosya2 > yeni_birlesmis_dosya
 cat < dosya1 > dosya2 #dosya 1'i dosya2'ye kopyalar.
 ```
 
-### b. `chmod`
-```chmod``` komutu "change mode" yani mod değiştir anlamına karşılık gelmektedir ve dosyanın veya dizinin okunabilir, yazılabilir ve çalıştırabilir olmasını değiştirebilir. Daha fazla bilgi için bu [linki](https://ss64.com/bash/chmod.html) kontrol edin.
+### b. `chmod` 
+`chmod` komutu "change mode" yani mod değiştir anlamına karşılık gelmektedir ve dosyanın veya dizinin okunabilir, yazılabilir ve çalıştırabilir olmasını değiştirebilir. Daha fazla bilgi için bu [linki](https://ss64.com/bash/chmod.html) kontrol edin.
 ```bash
 chmod -secenekler dosya_adi
 chmod +x -w calistir_ama_yazama
 ```
 
-### c. `chown`
-chown komutu "change owner" yani sahibini değiştir anlamına karşılık gelmektedir ve verilen dosya veya dizinin sahibini kullanıcı ve grup olarak değiştirebilir. Basit kullanımı önce kullanıcı:grup adı gelir ve sonrasında dosya veya dizin adı verilir.
+
+### c. `chown` ve `chgrp`
+`chown` komutu "change owner" yani sahibini değiştir anlamına karşılık gelmektedir ve verilen dosya veya dizinin sahibini kullanıcı ve grup olarak değiştirebilir. Basit kullanımı önce kullanıcı:grup adı gelir ve sonrasında dosya veya dizin adı verilir.
 ```bash
 chown -secenekler kullanici:grop dosya_adi
 ```
+
+`chgrp` komutu "change group" anlamından gelir ve dosyanın grubunu değiştirir.
+
 
 ### d. `cp`
 Dosyaları kopyalar.  
@@ -207,7 +221,10 @@ Dosyanın ilk 10 satırını yazdırır.
 head dosya
 ```
 
-### l. `lpq`
+### l. `less`
+`more` gibi kullanılır ama daha çok özelliği vardır.
+
+### m. `lpq`
 Yazıcı baskı sırasını yazdırır.  
 ```bash
 lpq
@@ -220,19 +237,19 @@ active  omergulen   59      deneme                          399360 bytes
 1st     omergulen   60      (stdin)                         0 bytes
 ```
 
-### m. `lpr`
+### n. `lpr`
 Dosyayı yazıcıdan yazdırır.  
 ```bash
 lpr dosya
 ```
 
-### n. `lprm`
+### o. `lprm`
 Yazıcı baskı sırasından bir iş siler.  
 ```bash
 lprm is_numarasi
 ```
 
-### o. `ls`
+### p. `ls`
 Dosyaları listelemek için kullanılır. Hiç bir yol veya dizin göstermezseniz bulunduğunuz dizinde çalışır. ```-l``` gibi listeleyip daha çok bilgi veren ve ```-a``` gibi tüm dosyaları (gizliler dahil) gösteren parametreleri vardır. Daha detaylı bilgi için [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls secenek
@@ -250,13 +267,13 @@ drwxr-xr-x  17 omergulen  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 omergulen  staff    2702 Mar 25 18:08 .gitignore
 </pre>
 
-### p. `more`
+### q. `more`
 Dosyanın ilk kısmını gösterir (```Space``` ile hareket eder ve ```q``` ile çıkılır).  
 ```bash
 more dosya
 ```
 
-### q. `mv`
+### r. `mv`
 Dosyayı taşır.  
 ```bash
 mv dosya1 dosya2
@@ -268,7 +285,7 @@ Ayrıca dosyanın ismini değiştirmek için kullanır.
 mv eski_isim yeni_isim
 ```
 
-### r. `rm`
+### s. `rm`
 Dosyaları silmeye yarar. Bunu bir dizin üzerinde kullanmaya çalışmak hataya yol açar. `rm: directory: is a directory`
 Dizin silmek için `-r` kullanmalısınız. Silinmeyen dosyaları zorla silmek için de `-f` komutu kullanılmaktadır.
 ```bash
@@ -277,14 +294,14 @@ rm dosya
 
 #### DİKKAT: `rm -rf /` komutu tüm sistemin silinmesine yol açar, sanal makine dışında kullanılması tehlikelidir.
 
-### s. `tail`
+### t. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
 Dosyanın son 10 satırını yazdırır. `-f` parametresiyle çıktıyı sona ekler dosya büyüdükçe.
 ```bash
 tail dosya
 ```
 
-### t. `touch`
+### u. `touch`
 Yetki ve zaman etiketini günceller. Böylelikle dosya var olmamışsa yaratır.
 ```bash
 touch dosya
@@ -293,6 +310,17 @@ touch dosya
 ```bash
 $ touch trick.md
 ```
+
+### v. `umask`
+`umask` dosya oluşturma kuralı belirlemek için kullanılır. Default Linux umask'ı = `022`'dir ve anlamı: eğer bir dosya/dizin oluşturursak dosya izinleri `666 - 022 = 644`, dizin izinleri `777-022 = 755` olacaktır. Bu da `umask -S` komutu ile daha anlaşılır bir şekilde görüntülenebilir;
+```bash
+$umask
+0022
+$umask -S
+u=rwx,g=rx,o=rx
+```
+yani u(owner): için okuma,yazma ve çalıştırma
+g(group) ve o(others): için okuma ve çalıştırma anlamına gelmektedir.
 
 ## 1.2. Text Komutları
 
@@ -313,6 +341,7 @@ $ touch trick.md
       <td><a href="#k-tr">tr</a></td>
       <td><a href="#l-uniq">uniq</a></td>
       <td><a href="#m-wc">wc</a></td>
+      <td><a href="#n->-ve->>">> ve >></a></td>
    </tr>
 </table>
 
@@ -707,6 +736,10 @@ $ wc ornek.txt
 ```
 `7459` satır, `15915` kelime ve `398400` karakter içerir.
 
+
+### n. `>` ve `>>`
+Komutun çıktısını bir dosyaya yazmaya yararlar. `>` var olan dosyanın üzerine yazar, `>>` ise dosyaya ekleme yapar.
+
 ## 1.3. Dizin Komutları
 
 <table>
@@ -722,9 +755,37 @@ Sizi bir dizinden diğerine taşır(change directory). Aşağıdaki
 ```bash
 $ cd
 ```
-komutu sizi `home` dizinine taşır. Bu komut isteğe bağlı `dizin_adi` değişkeni alır ve sizi o dizine götürür.
+komutu sizi `home` dizinine taşır, `cd ~` 'de aynı işi görür. Bu komut isteğe bağlı `dizin_adi` değişkeni alır ve sizi o dizine götürür.
 ```bash
 cd dizin_adi
+```
+
+`cd ..` bir üst dizine döndürür.
+```bash
+$pwd
+/home/a/b/c/d
+
+$cd ..
+$pwd
+/home/a/b/c
+
+$cd ..
+$pwd
+/home/a/b
+```
+
+`cd -` son dizine geri döndürür.
+```bash
+$pwd 
+/
+
+$cd /home
+$pwd
+/home
+
+$cd -
+$pwd
+/
 ```
 
 ### b. `mkdir`
@@ -751,7 +812,7 @@ pwd
       <td><a href="#f-dig">dig</a></td>
       <td><a href="#g-du">du</a></td>
       <td><a href="#h-fg">fg</a></td>
-      <td><a href="#i-finger">finger</a></td>      
+      <td><a href="#i-finger">finger</a></td>
       <td><a href="#j-last">last</a></td>
       <td><a href="#k-man">man</a></td>
    </tr>
@@ -760,18 +821,20 @@ pwd
       <td><a href="#m-ping">ping</a></td>
       <td><a href="#n-ps">ps</a></td>
       <td><a href="#o-quota">quota</a></td>
-      <td><a href="#p-scp">scp</a></td>
-      <td><a href="#q-ssh">ssh</a></td>
-      <td><a href="#r-top">top</a></td>
-      <td><a href="#s-traceroute">traceroute</a></td>
-      <td><a href="#t-uname">uname</a></td>
-      <td><a href="#u-uptime">uptime</a></td>
-      <td><a href="#v-w">w</a></td>
+      <td><a href="#p-reboot">reboot</a></td>
+      <td><a href="#q-shutdown">shutdown</a></td>
+      <td><a href="#r-scp">scp</a></td>
+      <td><a href="#s-ssh">ssh</a></td>
+      <td><a href="#t-top">top</a></td>
+      <td><a href="#u-traceroute">traceroute</a></td>
+      <td><a href="#v-uname">uname</a></td>
+      <td><a href="#w-uptime">uptime</a></td>
+      <td><a href="#y-w">w</a></td>
    </tr>
    <tr>
-      <td><a href="#w-wget">wget</a></td>
-      <td><a href="#y-whoami">whoami</a></td>
-      <td><a href="#z-whois">whois</a></td>
+      <td><a href="#z-wget">wget</a></td>
+      <td><a href="#aa-whoami">whoami</a></td>
+      <td><a href="#ab-whois">whois</a></td>
    </tr>
 </table>
 
@@ -844,12 +907,12 @@ du -sh resimler
 
 Örnek:
 ```bash
-# jobs
+$ jobs
 [1]   Running                 bash download-file.sh &
 [2]-  Running                 evolution &
 [3]+  Done                    nautilus .
 
-# fg %1
+$ fg %1
 ```
 
 ### i. `finger`
@@ -908,7 +971,10 @@ Disk kotanı gösterir.
 quota -v
 ```
 
-### p. `scp`
+### p. `reboot`
+Makine yeniden başlatır.
+
+### q. `scp`
 Lokal sunucu ve uzak sunucu  veya iki uzak sunucu arasında dosya aktarımını sağlar.
 
 *lokal sunucudan uzak sunucuya*
@@ -925,7 +991,10 @@ scp -r kullanici@sunucu:dizin/kaynak_dizin hedef_dizin
 scp -P port kullanici@sunucu:dizin/kaynak_dosya hedef_dosya
 ```
 
-### q. `ssh`
+### r `shutdown -h`
+Makineyi kapatma komutudur. Genellikle `shutdown -h now` olarak kullanılır, `now` şimdi kapat anlamına gelir, farklı süreler de girilebilir.
+
+### s. `ssh`
 ssh (SSH client) uzak makineye bağlanmak ve üzerinde komut çalıştırmak için tasarlanmış bir programdır.  
 ```bash
 ssh kullanici@sunucu
@@ -935,10 +1004,10 @@ ssh kullanici@sunucu
 ssh -p port kullanici@sunucu
 ```
 
-### r. `top`
+### t. `top`
 Anlık aktif işlemleri görüntüler.
 
-### s. `traceroute`
+### u. `traceroute`
 Bir ip paketinin (örnek olarak ping işlemini gerçeleştirirken kullandığımız ICMP paketi de olabilir) hedef adresine varana kadar hangi sunucu ve/veya yönlendiriciler üzerinden geçtiğini görmemize imkan sağlayan bir programdır.
 
 Örnek:
@@ -946,29 +1015,29 @@ Bir ip paketinin (örnek olarak ping işlemini gerçeleştirirken kullandığım
 traceroute 8.8.8.8
 ```
 
-### t. `uname`
+### v. `uname`
 Kernel bilgisini gösterir.  
 ```bash
 uname -a
 ```
 
-### u. `uptime`
+### w. `uptime`
 Sunucunun ne zamandır açık olduğunu gösterir.
 
-### v. `w`
+### y. `w`
 Sunucuda kimin online olduğunu gösterir. `users` komutu da aynı işlevi görmektedir.
 
-### w. `wget`
+### z. `wget`
 Dosya indirir.  
 ```bash
 wget dosya
 wget http://site.com/dosya.txt
 ```
 
-### y. `whoami`
+### aa. `whoami`
 Anlık giriş yapmış kullanıcı adını yazdırır.
 
-### z. `whois`
+### ab. `whois`
 Domain'in whois bilgilerini gösterir.  
 ```bash
 whois domain
