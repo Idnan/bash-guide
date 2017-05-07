@@ -991,7 +991,7 @@ scp -r kullanici@sunucu:dizin/kaynak_dizin hedef_dizin
 scp -P port kullanici@sunucu:dizin/kaynak_dosya hedef_dosya
 ```
 
-### r `shutdown -h`
+### r. `shutdown -h`
 Makineyi kapatma komutudur. Genellikle `shutdown -h now` olarak kullanılır, `now` şimdi kapat anlamına gelir, farklı süreler de girilebilir.
 
 ### s. `ssh`
