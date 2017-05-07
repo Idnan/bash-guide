@@ -341,7 +341,7 @@ g(group) ve o(others): için okuma ve çalıştırma anlamına gelmektedir.
       <td><a href="#k-tr">tr</a></td>
       <td><a href="#l-uniq">uniq</a></td>
       <td><a href="#m-wc">wc</a></td>
-      <td><a href="#n->-ve->>">> ve >></a></td>
+      <td><a href="#n-&gt-ve-&gt&gt">> ve >></a></td>
    </tr>
 </table>
 
@@ -1050,7 +1050,7 @@ whois domain
       <td><a href="#a-jobs">jobs</a></td>
       <td><a href="#b-kill">kill</a></td>
       <td><a href="#c-killall">killall</a></td>
-      <td><a href="#d-&">&amp;</a></td>
+      <td><a href="#d-&amp">&amp;</a></td>
       <td><a href="#e-nohup">nohup</a></td>
    </tr>
 </table>
@@ -1068,7 +1068,7 @@ Verilen ID ile işlemleri sonlandırır.
 kill PID
 ```
 
-### b. `killall`
+### c. `killall`
 Verilen isimdeki tüm işlemleri sonlandırır.  
 ```bash
 killall islem_adi
