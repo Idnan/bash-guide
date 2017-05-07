@@ -341,7 +341,7 @@ g(group) ve o(others): için okuma ve çalıştırma anlamına gelmektedir.
       <td><a href="#k-tr">tr</a></td>
       <td><a href="#l-uniq">uniq</a></td>
       <td><a href="#m-wc">wc</a></td>
-      <td><a href="#n--ve-t">> ve >></a></td>
+      <td><a href="#n--ve-">> ve >></a></td>
    </tr>
 </table>
 
