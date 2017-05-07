@@ -822,8 +822,8 @@ pwd
       <td><a href="#n-ps">ps</a></td>
       <td><a href="#o-quota">quota</a></td>
       <td><a href="#p-reboot">reboot</a></td>
-      <td><a href="#q-shutdown">shutdown</a></td>
-      <td><a href="#r-scp">scp</a></td>
+      <td><a href="#q-scp">scp</a></td>
+      <td><a href="#r-shutdown--h">shutdown</a></td>
       <td><a href="#s-ssh">ssh</a></td>
       <td><a href="#t-top">top</a></td>
       <td><a href="#u-traceroute">traceroute</a></td>
