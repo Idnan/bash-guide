@@ -2,6 +2,8 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
+#### Turkish Version is below. | Türkçe linki dosyanın alt kısmında.
+
 ## Table of Contents
   1. [Basic Operations](#1-basic-operations)  
     1.1. [File Operations](#11-file-operations)  
@@ -1175,6 +1177,9 @@ bash -x scriptname
 - Report issues [How to](https://help.github.com/articles/creating-an-issue/)
 - Open pull request with improvements [How to](https://help.github.com/articles/about-pull-requests/)
 - Spread the word
+
+## Translation
+- [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 
 ## License
 
