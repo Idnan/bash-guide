@@ -17,7 +17,8 @@
     2.5. [Conditionals](#25-conditionals)  
     2.6. [Loops](#26-loops)  
   3. [Tricks](#3-tricks)  
-  4. [Debugging](#4-debugging)  
+  4. [Debugging](#4-debugging)
+  5. [Package Management](#5-package-management) 
   
 
 # 1. Basic Operations
@@ -1169,6 +1170,59 @@ bash -n scriptname
 bash -v scriptname
 bash -x scriptname
 ```
+
+# 5. Package Management
+There are two types of packages available for linux systems.
+* Debian Packages (.deb)
+* RedHat Package Manager (.rpm)
+
+The deb and rpm are majorly used in many linux distributions, but there are many other linux distributions which don't use these types of packages (like Arch Linux for instance).
+
+The ```apt``` command is a powerful command-line tool, which works with Ubuntu's Advanced Packaging Tool (APT) performing such functions as installation of new software packages, upgrade of existing software packages, updating of the package list index, and even upgrading the entire Ubuntu system.
+
+dpkg is the software at the base of the package management system in the free operating system Debian and its numerous derivatives. dpkg is used to install, remove, and provide information about .deb packages.
+
+## 5.1 Debian Package (deb)
+deb is the format, as well as extension of the software package format for the Debian distribution and its derivatives.
+
+### 5.1 A.`Update Packages`
+The Debian package manager updates its package data by ```apt update```
+
+### 5.1 B.`Upgrade Packages`
+After updating package information if there is any update available then run ```apt upgrade``` to get the available update.
+
+### 5.1 C.`Install Package`
+You can install new package by ```apt install <package-name>```
+
+### 5.1 D.`Remove/Uninstall Package`
+To remove/uninstall package ```apt autoremove <package-name>```
+
+### 5.1 E.`Install Required Dependecies`
+Sometimes to fullfill the requirements of package you need to install its dependencies it can be done by ```apt-get install --fix-missing```
+
+### 5.1 F.`List All Installed Packages`
+To list all installed packages ```dpkg -l```
+
+## 5.2 RedHat Packages (rpm)
+RPM Package Manager(RPM) (originally Red Hat Package Manager; now a recursive acronym) is a package management system. The name RPM refers to the following: the .rpm file format, files in the .rpm file format, software packaged in such files, and the package manager program itself. RPM was intended primarily for Linux distributions; the file format is the baseline package format of the Linux Standard Base.
+
+Yum is an automatic updater and package installer/remover for rpm systems. It automatically computes dependencies and figures out what things should occur to install packages. It makes it easier to maintain groups of machines without having to manually update each one using rpm.
+
+### 5.2 A.`Install Package`
+You can install new package by ```rpm -ivh <package-name>```
+You can also do it by Yum ```yum install <package-name>```
+
+### 5.1 B.`List All Installed Packages`
+To list all installed packages ```rpm -qa ```
+Using Yum ```yum list installed```
+
+### 5.2 C.`Upgrade Packages`
+If we want to upgrade any RPM package “–U” (upgrade) option will be used. One of the major advantages of using this option is that it will not only upgrade the latest version of any package, but it will also maintain the backup of the older package so that in case if the newer upgraded package does not run the previously installed package can be used again. ```rpm -Uvh <package-name>```
+Using Yum package manager ```yum update <package-name>```
+
+### 5.2 D.`Remove/Uninstall Package`
+To remove/uninstall package ```rpm -evv <package-name>```
+With Yum ```yum remove <package-name>```
 
 ## Contribution
 
