@@ -1099,6 +1099,11 @@ for (( initialisation ; ending condition ; update ))
 do
   statements...
 done
+
+for x in {1..100..2}
+do
+  statements
+done
 ```
 
 `while` Syntax:
