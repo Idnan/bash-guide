@@ -675,7 +675,7 @@ cat ornek.txt | tr 'a-z' 'A-Z'
 HELLO WORLD FOO BAR BAZ!
 ```
 
-*tüm boşlukları yeni satır yao*
+*tüm boşlukları yeni satır yap*
 ```bash
 cat ornek.txt | tr ' ' '\n'
 ```
@@ -702,7 +702,7 @@ d
 c
 ```
 
-*sadece eşsiz satırları göster(önce sıralamanız(sort) gerekir yoksa düzgün çalışmayacaktır*
+*Sadece eşsiz satırları göster(önce sıralamanız(sort) gerekir yoksa düzgün çalışmayacaktır)*
 ```bash
 sort ornek.txt | uniq
 ```
@@ -713,7 +713,7 @@ c
 d
 ```
 
-*farklı satırları birer kere göster ve aynı olanların kaçar kere geçtiğini yaz*
+*Farklı satırları birer kere göster ve aynı olanların kaçar kere geçtiğini yaz*
 ```bash
 sort ornek.txt | uniq -c
 ```
