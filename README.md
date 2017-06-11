@@ -18,12 +18,12 @@
     2.6. [Loops](#26-loops)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
-  
+
 
 # 1. Basic Operations
 
 ### a. `export`
-Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
+全ての環境変数を表示する。特定の変数を表示する場合、`echo $VARIABLE_NAME` を利用する。
 ```bash
 export
 ```
@@ -40,7 +40,7 @@ $ echo $AWS_HOME
 ```
 
 ### b. `whatis`
-whatis shows description for user commands, system calls, library functions, and others in manual pages
+`whatis` はユーザコマンド、システムコール、ライブラリ関数、その他のマニュアル概要を表示する。
 ```bash
 whatis something
 ```
@@ -51,7 +51,7 @@ bash (1)             - GNU Bourne-Again SHell
 ```
 
 ### c. `whereis`
-whereis searches for executables, source files, and manual pages using a database built by system automatically.
+`whereis` はシステムによって構築されたデータベースを利用して、実行可能ファイル、ソースファイル、マニュアルページを検索する。
 ```bash
 whereis name
 ```
@@ -62,9 +62,9 @@ $ whereis php
 ```
 
 ### d. `which`
-which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
+`which` は環境変数PATH で指定されたディレクトリ内の実行可能ファイルを検索する。このコマンドは実行可能ファイルのフルパスを出力する。
 ```bash
-which program_name 
+which program_name
 ```
 Example:
 ```bash
@@ -73,7 +73,7 @@ $ which php
 ```
 
 ### e. clear
-Clears content on window.
+ウィンドウのコンテンツをクリアする。
 
 ## 1.1. File Operations
 <table>
