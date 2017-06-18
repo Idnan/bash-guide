@@ -971,7 +971,13 @@ Example:
 echo $str   # hello world
 ```
 ## 2.2. Array
-Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
+他の言語と同様、bash にも配列があります。
+配列は、複数の値を含む変数です。
+配列のサイズには最大限の制限はありません。
+bash の配列はゼロベースです。
+最初の要素は要素0で索引付けされます。
+bash で配列を作成する方法はいくつかあります。
+これは以下の通り。
 
 Examples:
 ```bash
@@ -981,25 +987,27 @@ array[2] = val
 array=([2]=val [0]=val [1]=val)
 array=(val val val)
 ```
-To display a value at specific index use following syntax:
+
+特定のインデックスで値を表示するには、次の構文を使用 :
 
 ```bash
 ${array[i]}     # where i is the index
 ```
 
-If no index is supplied, array element 0 is assumed. To find out how many values there are in the array use the following syntax:
+インデックスが指定されない場合、配列要素0が仮定される。
+配列内にある値の数を調べるには、次の構文を使用 :
 
 ```bash
 ${#array[@]}
 ```
 
-Bash has also support for the ternary conditions. Check some examples below.
+Bash は三項演算子もサポートしている。以下の例をチェック。
 
 ```bash
-${varname:-word}    # if varname exists and isn't null, return its value; otherwise return word
-${varname:=word}    # if varname exists and isn't null, return its value; otherwise set it word and then return its value
-${varname:+word}    # if varname exists and isn't null, return word; otherwise return null
-${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+${varname:-word}    # varname が存在し、null でない場合は、その値を返す。そうでなければ word を返す
+${varname:=word}    # varname が存在し、null でない場合は、その値を返す。それ以外の場合は word を設定し、その値を返す
+${varname:+word}    # varname が存在し、null でない場合は、word を返す。そうでない場合は null を返す
+${varname:offset:length}    # 部分文字列展開を行う。これは、offset から始まり length 文字までの $varname の部分文字列を返す
 ```
 
 ## 2.3 String Substitution
