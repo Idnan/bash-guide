@@ -946,10 +946,8 @@ nohup command &
 ```
 
 # 2. Basic Shell Programming
-
-
-The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
-
+bash スクリプトファイルに書き込み最初の行は、`shebang` (シバン、シェバン) と呼ばれる。  
+どのスクリプトでも、あらかじめターミナルに sh, bash, python, php など入力しなくても、スタンドアロンの実行可能ファイルのように実行できる。
 ```bash
 #!/bin/bash
 ```
