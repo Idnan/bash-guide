@@ -303,13 +303,14 @@ $ touch trick.md
 </table>
 
 ### a. `awk`
-awk is the most useful command for handling text files. It operates on an entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
-
+awk はテキストファイルを扱うのに最も有用なコマンドです。
+ファイル全体を1行ずつ処理します。
+デフォルトではスペースを使用してフィールドを区切ります。
+awk コマンドの最も一般的な構文は次の通りです。
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
-
-Lets take following file `/etc/passwd`. Here's the sample data that this file contains:
+`/etc/passwd` ファイルをフォローできる。このファイルに含まれているサンプルデータは次の通りです。
 ```
 root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -317,11 +318,14 @@ bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
-So now lets get only username from this file. Where `-F` specifies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
+これで、このファイルからユーザ名だけを取得できるようになりました。
+`-F` は、どの文字をベースにフィールドを区切るかを指定する。
+今回の場合は `:` 。
+`{ print $1 }` の意味は、最初に一致するフィールドを表示することを意味する。
 ```bash
 awk -F':' '{ print $1 }' /etc/passwd
 ```
-After running the above command you will get following output.
+上記のコマンドを実行すると、次の出力が得られる。
 ```
 root
 daemon
@@ -329,18 +333,17 @@ bin
 sys
 sync
 ```
-For more detail on how to use `awk`, check following [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
-
+`awk` の使い方の詳細については、この[リンク(英語)](https://www.cyberciti.biz/faq/bash-scripting-using-awk)をチェック。
 
 ### b. `cut`
-Remove sections from each line of files
+ファイルの各行からセクションを削除する。
 
 *example.txt*
 ```bash
 red riding hood went to the park to play
 ```
 
-*show me columns 2 , 7 , and 9 with a space as a separator*
+*スペースをセパレータとして列 2, 7, 9 を表示する*
 ```bash
 cut -d " " -f2,7,9 example.txt
 ```
@@ -349,9 +352,9 @@ riding park play
 ```
 
 ### c. `echo`
-Display a line of text
+テキスト行を表示する。
 
-*display "Hello World"*
+*"Hello World" を表示する*
 ```bash
 echo Hello World
 ```
@@ -359,7 +362,7 @@ echo Hello World
 Hello World
 ```
 
-*display "Hello World" with newlines between words*
+*単語間の改行で "Hello World" を表示する*
 ```bash
 echo -ne "Hello\nWorld\n"
 ```
@@ -369,12 +372,12 @@ World
 ```
 
 ### d. `egrep`
-Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
+パターンにマッチする行を表示する - 正規表現 ( `grep -E` のエイリアス )
 
 *example.txt*
 ```bash
 Lorem ipsum
-dolor sit amet, 
+dolor sit amet,
 consetetur
 sadipscing elitr,
 sed diam nonumy
@@ -394,7 +397,7 @@ ipsum dolor sit
 amet.
 ```
 
-*display lines that have either "Lorem" or "dolor" in them.*
+*"Lorem" か "dolor" を持つ行を表示する*
 ```bash
 egrep '(Lorem|dolor)' example.txt
 or
@@ -410,7 +413,7 @@ ipsum dolor sit
 ```
 
 ### e. `fgrep`
-Print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
+パターンにマッチする行を表示する - FIXED パターンマッチング ( `grep -F` のエイリアス )
 
 *example.txt*
 ```bash
@@ -420,7 +423,7 @@ consetetur
 sadipscing elitr,
 sed diam nonumy
 eirmod tempor
-foo (Lorem|dolor) 
+foo (Lorem|dolor)
 invidunt ut labore
 et dolore magna
 aliquyam erat, sed
@@ -436,25 +439,25 @@ ipsum dolor sit
 amet.
 ```
 
-*Find the exact string '(Lorem|dolor)' in example.txt*
+*example.txt から (Lorem|dolor) 文字列を検索する*
 ```bash
 fgrep '(Lorem|dolor)' example.txt
 or
 grep -F '(Lorem|dolor)' example.txt
 ```
 ```bash
-foo (Lorem|dolor) 
+foo (Lorem|dolor)
 ```
 
 ### f. `fmt`
-Simple optimal text formatter
+シンプルで最適なテキストフォーマッター
 
 *example: example.txt (1 line)*
 ```bash
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 ```
 
-*output the lines of example.txt to 20 character width*
+*example.txt 行を20文字幅で出力する*
 ```bash
 cat example.txt | fmt -w 20
 ```
@@ -481,7 +484,8 @@ amet.
 ```
 
 ### g. `grep`
-Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
+ファイル内のテキストを検索する。
+grep を使用して、1つまたは複数の正規表現に一致するテキスト行を検索し、一致する行だけを出力することが出来る。
 ```bash
 grep pattern filename
 ```
@@ -492,14 +496,17 @@ _kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
 _kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
 _krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
 ```
-You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for example:
+`-i` オプションを使うことで、grep に単語の大文字小文字を無視することが出来る。  
+`-r` を使うと指定されたディレクトリの下にあるすべてのファイルを検索することが出来る。  
+例 :
 ```bash
 $ grep -r admin /etc/
 ```
-And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
+`-w` は単語だけを検索する。  
+grep の詳細については、この[リンク(英語)](https://www.cyberciti.biz/faq/grep-in-bash)をチェック。
 
 ### h. `nl`
-Number lines of files
+ファイルの行数
 
 *example.txt*
 ```bash
@@ -524,7 +531,7 @@ ipsum dolor sit
 amet.
 ```
 
-*show example.txt with line numbers*
+*行数と共に example.txt を表示*
 ```bash
 nl -s". " example.txt 
 ```
@@ -551,14 +558,14 @@ nl -s". " example.txt
 ```
 
 ### i. `sed`
-Stream editor for filtering and transforming text
+テキストのフィルタリングと変換のためのストリームエディタ
 
 *example.txt*
 ```bash
 Hello This is a Test 1 2 3 4
-``` 
+```
 
-*replace all spaces with hyphens*
+*全てのスペースをハイフンに置換する*
 ```bash
 sed 's/ /-/g' example.txt
 ```
@@ -566,7 +573,7 @@ sed 's/ /-/g' example.txt
 Hello-This-is-a-Test-1-2-3-4
 ```
 
-*replace all digits with "d"*
+*全ての数字を d に置換する*
 ```bash
 sed 's/[0-9]/d/g' example.txt
 ```
@@ -575,7 +582,7 @@ Hello This is a Test d d d d
 ```
 
 ### j. `sort`
-Sort lines of text files
+テキストファイルの行をソートする
 
 *example.txt*
 ```bash
@@ -602,7 +609,7 @@ f
 g
 ```
 
-*randomize a sorted example.txt*
+*ソートされた example.txt をランダム化*
 ```bash
 sort example.txt | sort -R
 ```
@@ -617,22 +624,22 @@ e
 ```
 
 ### k. `tr`
-Translate or delete characters
+文字の翻訳または削除
 
 *example.txt*
 ```bash
 Hello World Foo Bar Baz!
 ```
 
-*take all lower case letters and make them upper case*
+*すべての小文字を取り大文字にする*
 ```bash
-cat example.txt | tr 'a-z' 'A-Z' 
+cat example.txt | tr 'a-z' 'A-Z'
 ```
 ```bash
 HELLO WORLD FOO BAR BAZ!
 ```
 
-*take all spaces and make them into newlines*
+*全てのスペースをとって改行する*
 ```bash
 cat example.txt | tr ' ' '\n'
 ```
@@ -645,7 +652,7 @@ Baz!
 ```
 
 ### l. `uniq`
-Report or omit repeated lines
+繰り返し行を報告するか省略するか
 
 *example.txt*
 ```bash
@@ -659,7 +666,7 @@ d
 c
 ```
 
-*show only unique lines of example.txt (first you need to sort it, otherwise it won't see the overlap)*
+*example.txt の一意の行だけを表示する ( 最初にソートする必要がある、そうでなければ重複を判定できない )*
 ```bash
 sort example.txt | uniq
 ```
@@ -670,7 +677,7 @@ c
 d
 ```
 
-*show the unique items for each line, and tell me how many instances it found*
+*各行のユニークな項目を表示し、見つかった数を教えてくれる*
 ```bash
 sort example.txt | uniq -c
 ```
@@ -682,7 +689,7 @@ sort example.txt | uniq -c
 ```
 
 ### m. `wc`
-Tells you how many lines, words and characters there are in a file.  
+ファイル内にいくつの行、単語、文字があるかを表示する。
 ```bash
 wc filename
 ```
@@ -691,7 +698,7 @@ Example:
 $ wc demo.txt
 7459   15915  398400 demo.txt
 ```
-Where `7459` is lines, `15915` is words and `398400` is characters.
+`7459` は行、`15915` は単語、`398400` は文字。
 
 ## 1.3. Directory Operations
 
