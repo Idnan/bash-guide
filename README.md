@@ -917,29 +917,30 @@ whois domain
 </table>
 
 ### a. `kill`
-Kills (ends) the processes with the ID you gave.  
+指定した ID でプロセスを Kill ( 終了 ) する。
 ```bash
 kill PID
 ```
 
 ### b. `killall`
-Kill all processes with the name.  
+すべてのプロセスを名前で削除する。
 ```bash
 killall processname
 ```
 
 ### c. &
-The `&` symbol instructs the command to run as a background process in a subshell.
+`&` シンボルは、コマンドがサブシェルのバックグラウンドプロセスとして実行されるように指示する。
 ```bash
 command &
 ```
 
 ### d. `nohup`
-nohup stands for "No Hang Up". This allows to run command/process or shell script that can continue running in the background after you log out from a shell.
+nohup は "No Hang Up" の略。
+シェルからログアウトした後、バックグラウンドで実行を継続できるコマンド/プロセスまたはシェルスクリプトを実行できる。
 ```bash
 nohup command
 ```
-Combine it with `&` to create background processes 
+`&` と組み合わせてバックグラウンドプロセスを作成する
 ```bash
 nohup command &
 ```
