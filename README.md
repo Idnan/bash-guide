@@ -953,15 +953,18 @@ bash スクリプトファイルに書き込み最初の行は、`shebang` (シ�
 ```
 
 ## 2.1. Variables
-
-Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
+bash で変数を作成することは他の言語に似ている。
+データ型は無い。
+bash の変数には、数値、文字、文字列などを含めることが出来る。
+変数を宣言する必要はなく、参照に値を代入するだけで変数が作成される。
 
 Example:
 ```bash
 str="hello world"
 ```
 
-The above line creates a variable `str` and assigns "hello world" to it. The value of variable is retrieved by putting the `$` in the beginning of variable name.
+上記の行は変数 `str` を作成し、それに "hello world" を割り当てている。
+変数の値は、変数名の先頭に `$` を置くことによって取り出される。
 
 Example:
 ```bash
