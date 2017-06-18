@@ -1011,17 +1011,17 @@ ${varname:offset:length}    # 部分文字列展開を行う。これは、offse
 ```
 
 ## 2.3 String Substitution
-
+文字列を操作する方法の構文をチェック
 Check some of the syntax on how to manipulate strings
 
 ```bash
-${variable#pattern}         # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
-${variable##pattern}        # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
-${variable%pattern}         # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
-${variable%%pattern}        # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
-${variable/pattern/string}  # the longest match to pattern in variable is replaced by string. Only the first match is replaced
-${variable//pattern/string} # the longest match to pattern in variable is replaced by string. All matches are replaced
-${#varname}     # returns the length of the value of the variable as a character string
+${variable#pattern}         # パターンが変数の値の先頭に一致する場合は、一致する最も短い部分を削除し、残りの部分を返す
+${variable##pattern}        # パターンが変数の値の先頭に一致する場合は、一致する最も長い部分を削除し、残りの部分を返す
+${variable%pattern}         # パターンが変数の値の終わりと一致する場合は、一致する最も短い部分を削除し、残りの部分を返す
+${variable%%pattern}        # パターンが変数の値の終わりと一致する場合は、一致する最も長い部分を削除し、残りの部分を返す
+${variable/pattern/string}  # 変数の中で最も長いパターンが文字列に置き換えられる。最初の一致のみ置換される
+${variable//pattern/string} # 変数の中で最も長いパターンが文字列に置き換えられる。全ての一致が置換される
+${#varname}     # 変数の値の長さを文字列として返す
 ```
 
 ## 2.4. Functions
