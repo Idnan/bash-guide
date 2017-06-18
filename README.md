@@ -711,23 +711,25 @@ $ wc demo.txt
 </table>
 
 ### a. `cd`
-Moves you from one directory to other. Running this  
+1つのディレクトリから別のディレクトリに移動する。
 ```bash
 $ cd
 ```
-moves you to home directory. This command accepts an optional `dirname`, which moves you to that directory.
+home ディレクトリに移動する。
+
+このコマンドはオプションの `dirname` を受け取り、そのディレクトリに移動する。
 ```bash
 cd dirname
 ```
 
 ### b. `mkdir`
-Makes a new directory.  
+新しいディレクトリを作る。
 ```bash
 mkdir dirname
 ```
 
 ### c. `pwd`
-Tells you which directory you currently are in.  
+今いるディレクトリを表示する。
 ```bash
 pwd
 ```
