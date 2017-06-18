@@ -770,31 +770,33 @@ pwd
 </table>
 
 ### a. `bg`
-Lists stopped or background jobs; resume a stopped job in the background.
+停止したジョブまたはバックグラウンドジョブを一覧表示する。
+停止したジョブをバックグラウンドで再開する。
 
 ### b. `cal`
-Shows the month's calendar.
+月のカレンダーを表示する。
 
 ### c. `date`
-Shows the current date and time.
+現在の日付と時刻を表示する。
 
 ### d. `df`
-Shows disk usage.
+ディスクの使用状況を表示する。
 
 ### e. `dig`
-Gets DNS information for domain.  
+ドメインの DNS 情報を取得する。
 ```bash
 dig domain
 ```
 
 ### f. `du`
-Shows the disk usage of files or directories. For more information on this command check this [link](http://www.linfo.org/du.html)
+ファイルまたはディレクトリのディスク使用量を表示する。
+このコマンドの詳細については、この[リンク(英語)](http://www.linfo.org/du.html)をチェック
 ```bash
 du [option] [filename|directory]
 ```
-Options:
-- `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
-- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
+オプション:
+- `-h` (人間が読める) 出力をキロバイト、メガバイト、ギガバイトで表示する。
+- `-s` (抑制または要約) ディレクトリの合計ディスク容量を出力し、サブディレクトリのレポートは控える。
 
 Example:
 ```bash
@@ -803,102 +805,102 @@ du -sh pictures
 ```
 
 ### g. `fg`
-Brings the most recent job in the foreground.
+直前のジョブをフォアグラウンドに表示する。
 
 ### h. `finger`
-Displays information about user.  
+ユーザーに関する情報を表示する。
 ```bash
 finger username
 ```
 ### i. `jobs`
-Lists the jobs running in the background, giving the job number.
+バックグラウンドで実行中のジョブをリストし、ジョブ番号を指定する。
 
 ### j. `last`
-Lists your last logins of specified user.  
+指定したユーザーの最終ログインを一覧表示する。
 ```bash
 last yourUsername
 ```
 
 ### k. `man`
-Shows the manual for specified command.  
+指定されたコマンドのマニュアルを表示する。
 ```bash
 man command
 ```
 
 ### l. `passwd`
-Allows the current logged user to change his password.
+現在ログインしているユーザーがパスワードを変更できるようにする。
 
 ### m. `ping`
-Pings host and outputs results.  
+ホストに ping して結果を出力する。
 ```bash
 ping host
 ```
 
 ### n. `ps`
-Lists your processes.  
+プロセスを一覧表示する。
 ```bash
 ps -u yourusername
 ```
 
 ### o. `quota`
-Shows what your disk quota is.  
+ディスククォータ情報を表示する。
 ```bash
 quota -v
 ```
 
 ### p. `scp`
-Transfer files between a local host and a remote host or between two remote hosts.
+ローカルホストとリモートホスト間、または2つのリモートホスト間でファイルを転送する。
 
-*copy from local host to remote host*
+*ローカルホストからリモートホストにコピーする*
 ```bash
 scp source_file user@host:directory/target_file
 ```
-*copy from remote host to local host*
+*リモートホストからローカルホストにコピーする*
 ```bash
 scp user@host:directory/source_file target_file
 scp -r user@host:directory/source_folder target_folder
 ```
-This command also accepts an option `-P` that can be used to connect to specific port.  
+このコマンドは、特定ポートに接続するために使用 `-P` オプションも受け付ける。
 ```bash
 scp -P port user@host:directory/source_file target_file
 ```
 
 ### q. `ssh`
-ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
+ssh ( SSH クライアント ) は、リモートマシンでログインしてコマンドを実行するためのプログラム。
 ```bash
 ssh user@host
 ```
-This command also accepts an option `-p` that can be used to connect to specific port.  
+このコマンドは、特定ポートに接続するために使用 `-P` オプションも受け付ける。
 ```bash
 ssh -p port user@host
 ```
 
 ### r. `top`
-Displays your currently active processes.
+現在アクティブなプロセスを表示する。
 
 ### s. `uname`
-Shows kernel information.  
+カーネル情報を表示する。
 ```bash
 uname -a
 ```
 
 ### t. `uptime`
-Shows current uptime.
+現在の uptime ( 稼働時間 ) を表示する。
 
 ### u. `w`
-Displays who is online.
+オンラインのユーザーを表示する。
 
 ### v. `wget`
-Downloads file.  
+ファイルをダウンロードする。
 ```bash
 wget file
 ```
 
 ### w. `whoami`
-Return current logged in username.
+現在ログインしているユーザー名を返す。
 
 ### x. `whois`
-Gets whois information for domain.  
+ドメインの whois 情報を取得する。
 ```bash
 whois domain
 ```
