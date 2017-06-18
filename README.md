@@ -104,45 +104,48 @@ $ which php
 </table>
 
 ### a. `cat`
-It can be used for the following purposes under UNIX or Linux.  
-* Display text files on screen
-* Copy text files  
-* Combine text files  
-* Create new text files  
+UNIX または Linux で以下の目的に利用できる。
+
+- 画面にテキストファイルを表示する
+- テキストファイルをコピーする
+- テキストファイルを結合する
+- テキストファイルを新規作成する
 ```bash
 cat filename
-cat file1 file2 
+cat file1 file2
 cat file1 file2 > newcombinedfile
-cat < file1 > file2 #copy file1 to file2
+cat < file1 > file2 # file1 を file2 にコピー
 ```
 
 ### b. `chmod`
-The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
+chmod コマンドは change mode の略で、ファイルとフォルダに対する読み取り、書き込み、実行の権限を変更することができる。  
+このコマンドの詳細については、この[リンク(英語)](https://ss64.com/bash/chmod.html)をチェック。
 ```bash
 chmod -options filename
 ```
 
 ### c. `chown`
-The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
+chown コマンドは change owner の略で、ファイルかフォルダの所有者を変更することができます。ユーザーやグループにできます。  
+基本的な使い方はシンプルで、ユーザーのあとにグループを指定します。`:` で区切ります。
 ```bash
 chown -options user:group filename
 ```
 
 ### d. `cp`
-Copies a file from one location to other.  
+ある場所から他の場所にファイルをコピーする
 ```bash
 cp filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+`filename1` がファイルへのソースパスで、`filename2` がファイルへのコピー先パスです。
 
 ### e. `diff`
-Compares files, and lists their differences.  
+ファイルを比較し、その違いを表示する。
 ```bash
 diff filename1 filename2
 ```
 
 ### f. `file`
-Determine file type.  
+ファイルタイプを表示する。
 ```bash
 file filename
 ```
@@ -152,7 +155,7 @@ $ file index.html
  index.html: HTML document, ASCII text
 ```
 ### g. `find`
-Find files in directory
+ディレクトリからファイルを探す。
 ```bash
 find directory options pattern
 ```
@@ -163,31 +166,31 @@ $ find /home/user1 -name '*.png'
 ```
 
 ### h. `gunzip`
-Un-compresses files compressed by gzip.  
+gzip で圧縮されたファイルの圧縮を解除する。
 ```bash
 gunzip filename
 ```
 
 ### i. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it.  
+gzip ファイルを gunzip (展開) することなく見ることができる。
 ```bash
 gzcat filename
 ```
 
 ### j. `gzip`
-Compresses files.  
+ファイルを圧縮する。
 ```bash
 gzip filename
 ```
 
 ### k. `head`
-Outputs the first 10 lines of file  
+ファイルの先頭10行を出力する。
 ```bash
 head filename
 ```
 
 ### l. `lpq`
-Check out the printer queue.  
+プリンタのキューをチェックする。
 ```bash
 lpq
 ```
@@ -200,24 +203,29 @@ active  adnanad 59      demo                            399360 bytes
 ```
 
 ### m. `lpr`
-Print the file.  
+ファイルを印刷する。
 ```bash
 lpr filename
 ```
 
 ### n. `lprm`
-Remove something from the printer queue.  
+プリンタのキューから何かを削除する。
 ```bash
 lprm jobnumber
 ```
 
 ### o. `ls`
-Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
+ファイルを一覧表示する。
+
+`ls` には多くのオプションがある :
+
+`-l` は、ファイルの正確なサイズ、ファイルの所有者、閲覧権限を持つユーザ、そして、最後に変更された時間を表示する long format でファイルを表示する。  
+`-a` は、隠しファイルを含む全てのファイルを表示する。このコマンドの詳細については、この[リンク(英語)](https://ss64.com/bash/ls.html)をチェック。
 ```bash
 ls option
 ```
 Example:
-<pre>
+```
 $ ls -la
 rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .
 drwxrwxrwx  60 adnan  staff    2040 Mar 21 15:06 ..
@@ -227,42 +235,43 @@ drwxrwxrwx  60 adnan  staff    2040 Mar 21 15:06 ..
 -rw-r--r--   1 adnan  staff    5805 Mar 27 18:44 .config.override.ini
 drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
-</pre>
+```
 
 ### p. `more`
-Shows the first part of a file (move with space and type q to quit).  
+ファイルの最初の部分を表示する ( スペースで移動、q で終了 ) 。
 ```bash
 more filename
 ```
 
 ### q. `mv`
-Moves a file from one location to other.  
+ある場所から別の場所にファイルを移動する。
 ```bash
 mv filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+`filename1` はファイルのソースパスで、 `filename2` は移動先のパスです。
 
-Also it can be used for rename a file.
+また、ファイル名の変更にも使用できます。
 ```bash
 mv old_name new_name
 ```
 
 ### r. `rm`
-Removes a file. Using this command on a directory gives you an error.
+ファイルを削除する。ディレクトリでこのコマンドを使用するとエラーが発生する。
 `rm: directory: is a directory`
-To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
+ディレクトリを削除するには `-r` を渡す必要がある。これはディレクトリのコンテンツを再帰的に削除する。
+オプションで `-r` フラグを使用して削除を強制することができる。確認なしで実行したい場合など
 ```bash
 rm filename
 ```
 
 ### s. `tail`
-Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
+ファイルの最後10行を出力する。ファイルが大きくなると追加されたデータを出力するために、`-f` を使う。
 ```bash
 tail filename
 ```
 
 ### t. `touch`
-Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
+ファイルのアクセスタイムスタンプと更新タイムスタンプを更新する。ファイルが存在しない場合は作成される。
 ```bash
 touch filename
 ```
