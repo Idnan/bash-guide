@@ -18,12 +18,12 @@
     2.6. [Loops](#26-loops)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
-  
+
 
 # 1. Basic Operations
 
 ### a. `export`
-Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
+全ての環境変数を表示する。特定の変数を表示する場合、`echo $VARIABLE_NAME` を利用する。
 ```bash
 export
 ```
@@ -40,7 +40,7 @@ $ echo $AWS_HOME
 ```
 
 ### b. `whatis`
-whatis shows description for user commands, system calls, library functions, and others in manual pages
+`whatis` はユーザコマンド、システムコール、ライブラリ関数、その他のマニュアル概要を表示する。
 ```bash
 whatis something
 ```
@@ -51,7 +51,7 @@ bash (1)             - GNU Bourne-Again SHell
 ```
 
 ### c. `whereis`
-whereis searches for executables, source files, and manual pages using a database built by system automatically.
+`whereis` はシステムによって構築されたデータベースを利用して、実行可能ファイル、ソースファイル、マニュアルページを検索する。
 ```bash
 whereis name
 ```
@@ -62,9 +62,9 @@ $ whereis php
 ```
 
 ### d. `which`
-which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
+`which` は環境変数PATH で指定されたディレクトリ内の実行可能ファイルを検索する。このコマンドは実行可能ファイルのフルパスを出力する。
 ```bash
-which program_name 
+which program_name
 ```
 Example:
 ```bash
@@ -73,7 +73,7 @@ $ which php
 ```
 
 ### e. clear
-Clears content on window.
+ウィンドウのコンテンツをクリアする。
 
 ## 1.1. File Operations
 <table>
@@ -104,45 +104,48 @@ Clears content on window.
 </table>
 
 ### a. `cat`
-It can be used for the following purposes under UNIX or Linux.  
-* Display text files on screen
-* Copy text files  
-* Combine text files  
-* Create new text files  
+UNIX または Linux で以下の目的に利用できる。
+
+- 画面にテキストファイルを表示する
+- テキストファイルをコピーする
+- テキストファイルを結合する
+- テキストファイルを新規作成する
 ```bash
 cat filename
-cat file1 file2 
+cat file1 file2
 cat file1 file2 > newcombinedfile
-cat < file1 > file2 #copy file1 to file2
+cat < file1 > file2 # file1 を file2 にコピー
 ```
 
 ### b. `chmod`
-The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
+chmod コマンドは change mode の略で、ファイルとフォルダに対する読み取り、書き込み、実行の権限を変更することができる。  
+このコマンドの詳細については、この[リンク(英語)](https://ss64.com/bash/chmod.html)をチェック。
 ```bash
 chmod -options filename
 ```
 
 ### c. `chown`
-The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
+chown コマンドは change owner の略で、ファイルかフォルダの所有者を変更することができます。ユーザーやグループにできます。  
+基本的な使い方はシンプルで、ユーザーのあとにグループを指定します。`:` で区切ります。
 ```bash
 chown -options user:group filename
 ```
 
 ### d. `cp`
-Copies a file from one location to other.  
+ある場所から他の場所にファイルをコピーする
 ```bash
 cp filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+`filename1` がファイルへのソースパスで、`filename2` がファイルへのコピー先パスです。
 
 ### e. `diff`
-Compares files, and lists their differences.  
+ファイルを比較し、その違いを表示する。
 ```bash
 diff filename1 filename2
 ```
 
 ### f. `file`
-Determine file type.  
+ファイルタイプを表示する。
 ```bash
 file filename
 ```
@@ -152,7 +155,7 @@ $ file index.html
  index.html: HTML document, ASCII text
 ```
 ### g. `find`
-Find files in directory
+ディレクトリからファイルを探す。
 ```bash
 find directory options pattern
 ```
@@ -163,31 +166,31 @@ $ find /home/user1 -name '*.png'
 ```
 
 ### h. `gunzip`
-Un-compresses files compressed by gzip.  
+gzip で圧縮されたファイルの圧縮を解除する。
 ```bash
 gunzip filename
 ```
 
 ### i. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it.  
+gzip ファイルを gunzip (展開) することなく見ることができる。
 ```bash
 gzcat filename
 ```
 
 ### j. `gzip`
-Compresses files.  
+ファイルを圧縮する。
 ```bash
 gzip filename
 ```
 
 ### k. `head`
-Outputs the first 10 lines of file  
+ファイルの先頭10行を出力する。
 ```bash
 head filename
 ```
 
 ### l. `lpq`
-Check out the printer queue.  
+プリンタのキューをチェックする。
 ```bash
 lpq
 ```
@@ -200,24 +203,29 @@ active  adnanad 59      demo                            399360 bytes
 ```
 
 ### m. `lpr`
-Print the file.  
+ファイルを印刷する。
 ```bash
 lpr filename
 ```
 
 ### n. `lprm`
-Remove something from the printer queue.  
+プリンタのキューから何かを削除する。
 ```bash
 lprm jobnumber
 ```
 
 ### o. `ls`
-Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
+ファイルを一覧表示する。
+
+`ls` には多くのオプションがある :
+
+`-l` は、ファイルの正確なサイズ、ファイルの所有者、閲覧権限を持つユーザ、そして、最後に変更された時間を表示する long format でファイルを表示する。  
+`-a` は、隠しファイルを含む全てのファイルを表示する。このコマンドの詳細については、この[リンク(英語)](https://ss64.com/bash/ls.html)をチェック。
 ```bash
 ls option
 ```
 Example:
-<pre>
+```
 $ ls -la
 rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .
 drwxrwxrwx  60 adnan  staff    2040 Mar 21 15:06 ..
@@ -227,42 +235,43 @@ drwxrwxrwx  60 adnan  staff    2040 Mar 21 15:06 ..
 -rw-r--r--   1 adnan  staff    5805 Mar 27 18:44 .config.override.ini
 drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
-</pre>
+```
 
 ### p. `more`
-Shows the first part of a file (move with space and type q to quit).  
+ファイルの最初の部分を表示する ( スペースで移動、q で終了 ) 。
 ```bash
 more filename
 ```
 
 ### q. `mv`
-Moves a file from one location to other.  
+ある場所から別の場所にファイルを移動する。
 ```bash
 mv filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+`filename1` はファイルのソースパスで、 `filename2` は移動先のパスです。
 
-Also it can be used for rename a file.
+また、ファイル名の変更にも使用できます。
 ```bash
 mv old_name new_name
 ```
 
 ### r. `rm`
-Removes a file. Using this command on a directory gives you an error.
+ファイルを削除する。ディレクトリでこのコマンドを使用するとエラーが発生する。
 `rm: directory: is a directory`
-To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
+ディレクトリを削除するには `-r` を渡す必要がある。これはディレクトリのコンテンツを再帰的に削除する。
+オプションで `-r` フラグを使用して削除を強制することができる。確認なしで実行したい場合など
 ```bash
 rm filename
 ```
 
 ### s. `tail`
-Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
+ファイルの最後10行を出力する。ファイルが大きくなると追加されたデータを出力するために、`-f` を使う。
 ```bash
 tail filename
 ```
 
 ### t. `touch`
-Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
+ファイルのアクセスタイムスタンプと更新タイムスタンプを更新する。ファイルが存在しない場合は作成される。
 ```bash
 touch filename
 ```
@@ -294,13 +303,14 @@ $ touch trick.md
 </table>
 
 ### a. `awk`
-awk is the most useful command for handling text files. It operates on an entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
-
+awk はテキストファイルを扱うのに最も有用なコマンドです。
+ファイル全体を1行ずつ処理します。
+デフォルトではスペースを使用してフィールドを区切ります。
+awk コマンドの最も一般的な構文は次の通りです。
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
-
-Lets take following file `/etc/passwd`. Here's the sample data that this file contains:
+`/etc/passwd` ファイルをフォローできる。このファイルに含まれているサンプルデータは次の通りです。
 ```
 root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -308,11 +318,14 @@ bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
-So now lets get only username from this file. Where `-F` specifies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
+これで、このファイルからユーザ名だけを取得できるようになりました。
+`-F` は、どの文字をベースにフィールドを区切るかを指定する。
+今回の場合は `:` 。
+`{ print $1 }` の意味は、最初に一致するフィールドを表示することを意味する。
 ```bash
 awk -F':' '{ print $1 }' /etc/passwd
 ```
-After running the above command you will get following output.
+上記のコマンドを実行すると、次の出力が得られる。
 ```
 root
 daemon
@@ -320,18 +333,17 @@ bin
 sys
 sync
 ```
-For more detail on how to use `awk`, check following [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
-
+`awk` の使い方の詳細については、この[リンク(英語)](https://www.cyberciti.biz/faq/bash-scripting-using-awk)をチェック。
 
 ### b. `cut`
-Remove sections from each line of files
+ファイルの各行からセクションを削除する。
 
 *example.txt*
 ```bash
 red riding hood went to the park to play
 ```
 
-*show me columns 2 , 7 , and 9 with a space as a separator*
+*スペースをセパレータとして列 2, 7, 9 を表示する*
 ```bash
 cut -d " " -f2,7,9 example.txt
 ```
@@ -340,9 +352,9 @@ riding park play
 ```
 
 ### c. `echo`
-Display a line of text
+テキスト行を表示する。
 
-*display "Hello World"*
+*"Hello World" を表示する*
 ```bash
 echo Hello World
 ```
@@ -350,7 +362,7 @@ echo Hello World
 Hello World
 ```
 
-*display "Hello World" with newlines between words*
+*単語間の改行で "Hello World" を表示する*
 ```bash
 echo -ne "Hello\nWorld\n"
 ```
@@ -360,12 +372,12 @@ World
 ```
 
 ### d. `egrep`
-Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
+パターンにマッチする行を表示する - 正規表現 ( `grep -E` のエイリアス )
 
 *example.txt*
 ```bash
 Lorem ipsum
-dolor sit amet, 
+dolor sit amet,
 consetetur
 sadipscing elitr,
 sed diam nonumy
@@ -385,7 +397,7 @@ ipsum dolor sit
 amet.
 ```
 
-*display lines that have either "Lorem" or "dolor" in them.*
+*"Lorem" か "dolor" を持つ行を表示する*
 ```bash
 egrep '(Lorem|dolor)' example.txt
 or
@@ -401,7 +413,7 @@ ipsum dolor sit
 ```
 
 ### e. `fgrep`
-Print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
+パターンにマッチする行を表示する - FIXED パターンマッチング ( `grep -F` のエイリアス )
 
 *example.txt*
 ```bash
@@ -411,7 +423,7 @@ consetetur
 sadipscing elitr,
 sed diam nonumy
 eirmod tempor
-foo (Lorem|dolor) 
+foo (Lorem|dolor)
 invidunt ut labore
 et dolore magna
 aliquyam erat, sed
@@ -427,25 +439,25 @@ ipsum dolor sit
 amet.
 ```
 
-*Find the exact string '(Lorem|dolor)' in example.txt*
+*example.txt から (Lorem|dolor) 文字列を検索する*
 ```bash
 fgrep '(Lorem|dolor)' example.txt
 or
 grep -F '(Lorem|dolor)' example.txt
 ```
 ```bash
-foo (Lorem|dolor) 
+foo (Lorem|dolor)
 ```
 
 ### f. `fmt`
-Simple optimal text formatter
+シンプルで最適なテキストフォーマッター
 
 *example: example.txt (1 line)*
 ```bash
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 ```
 
-*output the lines of example.txt to 20 character width*
+*example.txt 行を20文字幅で出力する*
 ```bash
 cat example.txt | fmt -w 20
 ```
@@ -472,7 +484,8 @@ amet.
 ```
 
 ### g. `grep`
-Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
+ファイル内のテキストを検索する。
+grep を使用して、1つまたは複数の正規表現に一致するテキスト行を検索し、一致する行だけを出力することが出来る。
 ```bash
 grep pattern filename
 ```
@@ -483,14 +496,17 @@ _kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
 _kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
 _krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
 ```
-You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for example:
+`-i` オプションを使うことで、grep に単語の大文字小文字を無視することが出来る。  
+`-r` を使うと指定されたディレクトリの下にあるすべてのファイルを検索することが出来る。  
+例 :
 ```bash
 $ grep -r admin /etc/
 ```
-And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
+`-w` は単語だけを検索する。  
+grep の詳細については、この[リンク(英語)](https://www.cyberciti.biz/faq/grep-in-bash)をチェック。
 
 ### h. `nl`
-Number lines of files
+ファイルの行数
 
 *example.txt*
 ```bash
@@ -515,7 +531,7 @@ ipsum dolor sit
 amet.
 ```
 
-*show example.txt with line numbers*
+*行数と共に example.txt を表示*
 ```bash
 nl -s". " example.txt 
 ```
@@ -542,14 +558,14 @@ nl -s". " example.txt
 ```
 
 ### i. `sed`
-Stream editor for filtering and transforming text
+テキストのフィルタリングと変換のためのストリームエディタ
 
 *example.txt*
 ```bash
 Hello This is a Test 1 2 3 4
-``` 
+```
 
-*replace all spaces with hyphens*
+*全てのスペースをハイフンに置換する*
 ```bash
 sed 's/ /-/g' example.txt
 ```
@@ -557,7 +573,7 @@ sed 's/ /-/g' example.txt
 Hello-This-is-a-Test-1-2-3-4
 ```
 
-*replace all digits with "d"*
+*全ての数字を d に置換する*
 ```bash
 sed 's/[0-9]/d/g' example.txt
 ```
@@ -566,7 +582,7 @@ Hello This is a Test d d d d
 ```
 
 ### j. `sort`
-Sort lines of text files
+テキストファイルの行をソートする
 
 *example.txt*
 ```bash
@@ -593,7 +609,7 @@ f
 g
 ```
 
-*randomize a sorted example.txt*
+*ソートされた example.txt をランダム化*
 ```bash
 sort example.txt | sort -R
 ```
@@ -608,22 +624,22 @@ e
 ```
 
 ### k. `tr`
-Translate or delete characters
+文字の翻訳または削除
 
 *example.txt*
 ```bash
 Hello World Foo Bar Baz!
 ```
 
-*take all lower case letters and make them upper case*
+*すべての小文字を取り大文字にする*
 ```bash
-cat example.txt | tr 'a-z' 'A-Z' 
+cat example.txt | tr 'a-z' 'A-Z'
 ```
 ```bash
 HELLO WORLD FOO BAR BAZ!
 ```
 
-*take all spaces and make them into newlines*
+*全てのスペースをとって改行する*
 ```bash
 cat example.txt | tr ' ' '\n'
 ```
@@ -636,7 +652,7 @@ Baz!
 ```
 
 ### l. `uniq`
-Report or omit repeated lines
+繰り返し行を報告するか省略するか
 
 *example.txt*
 ```bash
@@ -650,7 +666,7 @@ d
 c
 ```
 
-*show only unique lines of example.txt (first you need to sort it, otherwise it won't see the overlap)*
+*example.txt の一意の行だけを表示する ( 最初にソートする必要がある、そうでなければ重複を判定できない )*
 ```bash
 sort example.txt | uniq
 ```
@@ -661,7 +677,7 @@ c
 d
 ```
 
-*show the unique items for each line, and tell me how many instances it found*
+*各行のユニークな項目を表示し、見つかった数を教えてくれる*
 ```bash
 sort example.txt | uniq -c
 ```
@@ -673,7 +689,7 @@ sort example.txt | uniq -c
 ```
 
 ### m. `wc`
-Tells you how many lines, words and characters there are in a file.  
+ファイル内にいくつの行、単語、文字があるかを表示する。
 ```bash
 wc filename
 ```
@@ -682,7 +698,7 @@ Example:
 $ wc demo.txt
 7459   15915  398400 demo.txt
 ```
-Where `7459` is lines, `15915` is words and `398400` is characters.
+`7459` は行、`15915` は単語、`398400` は文字。
 
 ## 1.3. Directory Operations
 
@@ -695,23 +711,25 @@ Where `7459` is lines, `15915` is words and `398400` is characters.
 </table>
 
 ### a. `cd`
-Moves you from one directory to other. Running this  
+1つのディレクトリから別のディレクトリに移動する。
 ```bash
 $ cd
 ```
-moves you to home directory. This command accepts an optional `dirname`, which moves you to that directory.
+home ディレクトリに移動する。
+
+このコマンドはオプションの `dirname` を受け取り、そのディレクトリに移動する。
 ```bash
 cd dirname
 ```
 
 ### b. `mkdir`
-Makes a new directory.  
+新しいディレクトリを作る。
 ```bash
 mkdir dirname
 ```
 
 ### c. `pwd`
-Tells you which directory you currently are in.  
+今いるディレクトリを表示する。
 ```bash
 pwd
 ```
@@ -752,31 +770,33 @@ pwd
 </table>
 
 ### a. `bg`
-Lists stopped or background jobs; resume a stopped job in the background.
+停止したジョブまたはバックグラウンドジョブを一覧表示する。
+停止したジョブをバックグラウンドで再開する。
 
 ### b. `cal`
-Shows the month's calendar.
+月のカレンダーを表示する。
 
 ### c. `date`
-Shows the current date and time.
+現在の日付と時刻を表示する。
 
 ### d. `df`
-Shows disk usage.
+ディスクの使用状況を表示する。
 
 ### e. `dig`
-Gets DNS information for domain.  
+ドメインの DNS 情報を取得する。
 ```bash
 dig domain
 ```
 
 ### f. `du`
-Shows the disk usage of files or directories. For more information on this command check this [link](http://www.linfo.org/du.html)
+ファイルまたはディレクトリのディスク使用量を表示する。
+このコマンドの詳細については、この[リンク(英語)](http://www.linfo.org/du.html)をチェック
 ```bash
 du [option] [filename|directory]
 ```
-Options:
-- `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
-- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
+オプション:
+- `-h` (人間が読める) 出力をキロバイト、メガバイト、ギガバイトで表示する。
+- `-s` (抑制または要約) ディレクトリの合計ディスク容量を出力し、サブディレクトリのレポートは控える。
 
 Example:
 ```bash
@@ -785,102 +805,102 @@ du -sh pictures
 ```
 
 ### g. `fg`
-Brings the most recent job in the foreground.
+直前のジョブをフォアグラウンドに表示する。
 
 ### h. `finger`
-Displays information about user.  
+ユーザーに関する情報を表示する。
 ```bash
 finger username
 ```
 ### i. `jobs`
-Lists the jobs running in the background, giving the job number.
+バックグラウンドで実行中のジョブをリストし、ジョブ番号を指定する。
 
 ### j. `last`
-Lists your last logins of specified user.  
+指定したユーザーの最終ログインを一覧表示する。
 ```bash
 last yourUsername
 ```
 
 ### k. `man`
-Shows the manual for specified command.  
+指定されたコマンドのマニュアルを表示する。
 ```bash
 man command
 ```
 
 ### l. `passwd`
-Allows the current logged user to change his password.
+現在ログインしているユーザーがパスワードを変更できるようにする。
 
 ### m. `ping`
-Pings host and outputs results.  
+ホストに ping して結果を出力する。
 ```bash
 ping host
 ```
 
 ### n. `ps`
-Lists your processes.  
+プロセスを一覧表示する。
 ```bash
 ps -u yourusername
 ```
 
 ### o. `quota`
-Shows what your disk quota is.  
+ディスククォータ情報を表示する。
 ```bash
 quota -v
 ```
 
 ### p. `scp`
-Transfer files between a local host and a remote host or between two remote hosts.
+ローカルホストとリモートホスト間、または2つのリモートホスト間でファイルを転送する。
 
-*copy from local host to remote host*
+*ローカルホストからリモートホストにコピーする*
 ```bash
 scp source_file user@host:directory/target_file
 ```
-*copy from remote host to local host*
+*リモートホストからローカルホストにコピーする*
 ```bash
 scp user@host:directory/source_file target_file
 scp -r user@host:directory/source_folder target_folder
 ```
-This command also accepts an option `-P` that can be used to connect to specific port.  
+このコマンドは、特定ポートに接続するために使用 `-P` オプションも受け付ける。
 ```bash
 scp -P port user@host:directory/source_file target_file
 ```
 
 ### q. `ssh`
-ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
+ssh ( SSH クライアント ) は、リモートマシンでログインしてコマンドを実行するためのプログラム。
 ```bash
 ssh user@host
 ```
-This command also accepts an option `-p` that can be used to connect to specific port.  
+このコマンドは、特定ポートに接続するために使用 `-P` オプションも受け付ける。
 ```bash
 ssh -p port user@host
 ```
 
 ### r. `top`
-Displays your currently active processes.
+現在アクティブなプロセスを表示する。
 
 ### s. `uname`
-Shows kernel information.  
+カーネル情報を表示する。
 ```bash
 uname -a
 ```
 
 ### t. `uptime`
-Shows current uptime.
+現在の uptime ( 稼働時間 ) を表示する。
 
 ### u. `w`
-Displays who is online.
+オンラインのユーザーを表示する。
 
 ### v. `wget`
-Downloads file.  
+ファイルをダウンロードする。
 ```bash
 wget file
 ```
 
 ### w. `whoami`
-Return current logged in username.
+現在ログインしているユーザー名を返す。
 
 ### x. `whois`
-Gets whois information for domain.  
+ドメインの whois 情報を取得する。
 ```bash
 whois domain
 ```
@@ -897,59 +917,67 @@ whois domain
 </table>
 
 ### a. `kill`
-Kills (ends) the processes with the ID you gave.  
+指定した ID でプロセスを Kill ( 終了 ) する。
 ```bash
 kill PID
 ```
 
 ### b. `killall`
-Kill all processes with the name.  
+すべてのプロセスを名前で削除する。
 ```bash
 killall processname
 ```
 
 ### c. &
-The `&` symbol instructs the command to run as a background process in a subshell.
+`&` シンボルは、コマンドがサブシェルのバックグラウンドプロセスとして実行されるように指示する。
 ```bash
 command &
 ```
 
 ### d. `nohup`
-nohup stands for "No Hang Up". This allows to run command/process or shell script that can continue running in the background after you log out from a shell.
+nohup は "No Hang Up" の略。
+シェルからログアウトした後、バックグラウンドで実行を継続できるコマンド/プロセスまたはシェルスクリプトを実行できる。
 ```bash
 nohup command
 ```
-Combine it with `&` to create background processes 
+`&` と組み合わせてバックグラウンドプロセスを作成する
 ```bash
 nohup command &
 ```
 
 # 2. Basic Shell Programming
-
-
-The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
-
+bash スクリプトファイルに書き込み最初の行は、`shebang` (シバン、シェバン) と呼ばれる。  
+どのスクリプトでも、あらかじめターミナルに sh, bash, python, php など入力しなくても、スタンドアロンの実行可能ファイルのように実行できる。
 ```bash
 #!/bin/bash
 ```
 
 ## 2.1. Variables
-
-Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
+bash で変数を作成することは他の言語に似ている。
+データ型は無い。
+bash の変数には、数値、文字、文字列などを含めることが出来る。
+変数を宣言する必要はなく、参照に値を代入するだけで変数が作成される。
 
 Example:
 ```bash
 str="hello world"
 ```
 
-The above line creates a variable `str` and assigns "hello world" to it. The value of variable is retrieved by putting the `$` in the beginning of variable name.
+上記の行は変数 `str` を作成し、それに "hello world" を割り当てている。
+変数の値は、変数名の先頭に `$` を置くことによって取り出される。
 
 Example:
 ```bash
 echo $str   # hello world
 ```
 ## 2.2. Array
-Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
+他の言語と同様、bash にも配列があります。
+配列は、複数の値を含む変数です。
+配列のサイズには最大限の制限はありません。
+bash の配列はゼロベースです。
+最初の要素は要素0で索引付けされます。
+bash で配列を作成する方法はいくつかあります。
+これは以下の通り。
 
 Examples:
 ```bash
@@ -959,39 +987,41 @@ array[2] = val
 array=([2]=val [0]=val [1]=val)
 array=(val val val)
 ```
-To display a value at specific index use following syntax:
+
+特定のインデックスで値を表示するには、次の構文を使用 :
 
 ```bash
 ${array[i]}     # where i is the index
 ```
 
-If no index is supplied, array element 0 is assumed. To find out how many values there are in the array use the following syntax:
+インデックスが指定されない場合、配列要素0が仮定される。
+配列内にある値の数を調べるには、次の構文を使用 :
 
 ```bash
 ${#array[@]}
 ```
 
-Bash has also support for the ternary conditions. Check some examples below.
+Bash は三項演算子もサポートしている。以下の例をチェック。
 
 ```bash
-${varname:-word}    # if varname exists and isn't null, return its value; otherwise return word
-${varname:=word}    # if varname exists and isn't null, return its value; otherwise set it word and then return its value
-${varname:+word}    # if varname exists and isn't null, return word; otherwise return null
-${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+${varname:-word}    # varname が存在し、null でない場合は、その値を返す。そうでなければ word を返す
+${varname:=word}    # varname が存在し、null でない場合は、その値を返す。それ以外の場合は word を設定し、その値を返す
+${varname:+word}    # varname が存在し、null でない場合は、word を返す。そうでない場合は null を返す
+${varname:offset:length}    # 部分文字列展開を行う。これは、offset から始まり length 文字までの $varname の部分文字列を返す
 ```
 
 ## 2.3 String Substitution
-
+文字列を操作する方法の構文をチェック
 Check some of the syntax on how to manipulate strings
 
 ```bash
-${variable#pattern}         # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
-${variable##pattern}        # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
-${variable%pattern}         # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
-${variable%%pattern}        # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
-${variable/pattern/string}  # the longest match to pattern in variable is replaced by string. Only the first match is replaced
-${variable//pattern/string} # the longest match to pattern in variable is replaced by string. All matches are replaced
-${#varname}     # returns the length of the value of the variable as a character string
+${variable#pattern}         # パターンが変数の値の先頭に一致する場合は、一致する最も短い部分を削除し、残りの部分を返す
+${variable##pattern}        # パターンが変数の値の先頭に一致する場合は、一致する最も長い部分を削除し、残りの部分を返す
+${variable%pattern}         # パターンが変数の値の終わりと一致する場合は、一致する最も短い部分を削除し、残りの部分を返す
+${variable%%pattern}        # パターンが変数の値の終わりと一致する場合は、一致する最も長い部分を削除し、残りの部分を返す
+${variable/pattern/string}  # 変数の中で最も長いパターンが文字列に置き換えられる。最初の一致のみ置換される
+${variable//pattern/string} # 変数の中で最も長いパターンが文字列に置き換えられる。全ての一致が置換される
+${#varname}     # 変数の値の長さを文字列として返す
 ```
 
 ## 2.4. Functions
