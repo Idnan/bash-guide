@@ -1178,6 +1178,7 @@ bash -x scriptname
 
 ## Translation
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
+- [Japanese | 日本語](https://github.com/itooww/bash-guide)
 
 ## License
 
