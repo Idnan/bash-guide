@@ -1117,7 +1117,7 @@ file1 -ot file2     # file1 is older than file2
 -ne     # not equal
 ```
 
-## 2.6. Loop
+## 2.6. Loops
 There are three types of loops in bash. `for`, `while` and `until`.
 
 Different `for` Syntax:
