@@ -1177,6 +1177,7 @@ bash -x scriptname
 - Spread the word
 
 ## Translation
+- [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 - [Japanese | 日本語](https://github.com/itooww/bash-guide)
 
