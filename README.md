@@ -808,7 +808,7 @@ man command
 ```
 
 ### l. `passwd`
-Allows the current logged user to change his password.
+Allows the current logged user to change their password.
 
 ### m. `ping`
 Pings host and outputs results.  
