@@ -11,7 +11,7 @@
     1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
-    2.2  [Array](#22-array)  
+    2.2. [Array](#22-array)  
     2.3. [String Substitution](#23-string-substitution)  
     2.4. [Functions](#24-functions)  
     2.5. [Conditionals](#25-conditionals)  
@@ -820,6 +820,10 @@ ping host
 Lists your processes.  
 ```bash
 ps -u yourusername
+```
+Use the flags ef. e for every process and f for full listing. 
+```bash
+ps -ef
 ```
 
 ### o. `quota`
