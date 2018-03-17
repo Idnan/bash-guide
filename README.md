@@ -748,6 +748,7 @@ pwd
       <td><a href="#v-wget">wget</a></td>
       <td><a href="#w-whoami">whoami</a></td>
       <td><a href="#x-whois">whois</a></td>
+      <td><a href="#y-rsync">rsync</a></td>
    </tr>
 </table>
 
@@ -887,6 +888,13 @@ Return current logged in username.
 Gets whois information for domain.  
 ```bash
 whois domain
+```
+
+### y. `rsync`
+Does the same job as `scp` command, but transfers only changed files. Useful when transferring the same folder to/from server multiple times.
+```bash
+rsync source_folder user@host:target_folder
+rsync user@host:target_folder target_folder
 ```
 
 ## 1.5. Process Monitoring Operations
