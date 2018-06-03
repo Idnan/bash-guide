@@ -75,7 +75,7 @@ $ which php
 ### e. clear
 Очищает содержимое окна.
 
-## 1.1. File Operations
+## 1.1. Файловые операции
 <table>
    <tr>
       <td><a href="#a-cat">cat</a></td>
@@ -104,11 +104,11 @@ $ which php
 </table>
 
 ### a. `cat`
-It can be used for the following purposes under UNIX or Linux.  
-* Display text files on screen
-* Copy text files  
-* Combine text files  
-* Create new text files  
+Может использоваться для следующих целей в UNIX или Linux.  
+* Отображение текстовых файлов на экране
+* Копирование текстовых файлов  
+* Объединение текстовых файлов  
+* Создание новых текстовых файлов  
 ```bash
 cat filename
 cat file1 file2 
@@ -117,32 +117,32 @@ cat < file1 > file2 #copy file1 to file2
 ```
 
 ### b. `chmod`
-The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
+Команда chmod позволяет вам изменять права на чтение, запись и выполнение для ваших файлов и папок. Для получения дополнительной информации об этой команде пройдите по [ссылке](https://ss64.com/bash/chmod.html).
 ```bash
 chmod -options filename
 ```
 
 ### c. `chown`
-The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
+Команда chown означает «владелец прав и позволяет вам изменять владельца данного файла или папки, которые могут быть пользователем и группой. Пользоваться просто, сначала пользователь (владелец), а затем группа, разделенная двоеточием.
 ```bash
 chown -options user:group filename
 ```
 
 ### d. `cp`
-Copies a file from one location to other.  
+Копирует файл из одного места в другое.  
 ```bash
 cp filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+Где `filename1` является исходным путем к файлу и `filename2` путь назначения к файлу.
 
 ### e. `diff`
-Compares files, and lists their differences.  
+Сравнивает файлы и перечисляет их различия.
 ```bash
 diff filename1 filename2
 ```
 
 ### f. `file`
-Determine file type.  
+Определите тип файла.
 ```bash
 file filename
 ```
@@ -152,7 +152,7 @@ $ file index.html
  index.html: HTML document, ASCII text
 ```
 ### g. `find`
-Find files in directory
+Поиск файлов в каталоге.
 ```bash
 find directory options pattern
 ```
@@ -163,31 +163,31 @@ $ find /home/user1 -name '*.png'
 ```
 
 ### h. `gunzip`
-Un-compresses files compressed by gzip.  
+Разархивирует файлы сжатые gzip.  
 ```bash
 gunzip filename
 ```
 
 ### i. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it.  
+Позволяет просматривать файлы архива gzipped без необходимости его разархивирования.
 ```bash
 gzcat filename
 ```
 
 ### j. `gzip`
-Compresses files.  
+Архивирование файлов.  
 ```bash
 gzip filename
 ```
 
 ### k. `head`
-Outputs the first 10 lines of file  
+Выводит первые 10 строк файла 
 ```bash
 head filename
 ```
 
 ### l. `lpq`
-Check out the printer queue.  
+Проверка очередь вывода.
 ```bash
 lpq
 ```
@@ -200,13 +200,13 @@ active  adnanad 59      demo                            399360 bytes
 ```
 
 ### m. `lpr`
-Print the file.  
+Печать файла.  
 ```bash
 lpr filename
 ```
 
 ### n. `lprm`
-Remove something from the printer queue.  
+Удалите что-то из очереди печати.
 ```bash
 lprm jobnumber
 ```
