@@ -2,32 +2,32 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
-## Table of Contents
-  1. [Basic Operations](#1-basic-operations)  
-    1.1. [File Operations](#11-file-operations)  
-    1.2. [Text Operations](#12-text-operations)  
-    1.3. [Directory Operations](#13-directory-operations)  
-    1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
-    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
-  2. [Basic Shell Programming](#2-basic-shell-programming)  
-    2.1. [Variables](#21-variables)  
-    2.2. [Array](#22-array)  
-    2.3. [String Substitution](#23-string-substitution)  
-    2.4. [Functions](#24-functions)  
-    2.5. [Conditionals](#25-conditionals)  
-    2.6. [Loops](#26-loops)  
-  3. [Tricks](#3-tricks)  
-  4. [Debugging](#4-debugging)  
+## Содержание
+  1. [Основные операции](#1-basic-operations)  
+    1.1. [Файловые операции](#11-file-operations)  
+    1.2. [Текстовые операции](#12-text-operations)  
+    1.3. [Операции с каталогами](#13-directory-operations)  
+    1.4. [SSH, системная информация и сетевые операции](#14-ssh-system-info--network-operations)  
+    1.5. [Операции по мониторингу процессов](#15-process-monitoring-operations)
+  2. [Основы программирования в командной строке](#2-basic-shell-programming)  
+    2.1. [Переменные](#21-variables)  
+    2.2. [Массивы](#22-array)  
+    2.3. [Замена строк](#23-string-substitution)  
+    2.4. [Функции](#24-functions)  
+    2.5. [Условные выражения](#25-conditionals)  
+    2.6. [Циклы](#26-loops)  
+  3. [Трюки](#3-tricks)  
+  4. [Отладка (Debug)](#4-debugging)  
   
 
-# 1. Basic Operations
+# 1. Основные операции
 
 ### a. `export`
-Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
+Отображает все переменные среды. Если вы хотите получить подробную информацию о конкретной переменной, используйте `echo $VARIABLE_NAME`.  
 ```bash
 export
 ```
-Example:
+Пример:
 ```bash
 $ export
 AWS_HOME=/Users/adnanadnan/.aws
@@ -40,40 +40,40 @@ $ echo $AWS_HOME
 ```
 
 ### b. `whatis`
-whatis shows description for user commands, system calls, library functions, and others in manual pages
+whatis показывает описание для пользовательских команд, системных вызовов, библиотечных функций и другое на страницах руководства.
 ```bash
 whatis something
 ```
-Example:
+Пример:
 ```bash
 $ whatis bash
 bash (1)             - GNU Bourne-Again SHell
 ```
 
 ### c. `whereis`
-whereis searches for executables, source files, and manual pages using a database built by system automatically.
+whereis ищет исполняемые файлы, исходные файлы и страницы руководства, используя базу данных, созданную системой автоматически.
 ```bash
 whereis name
 ```
-Example:
+Пример:
 ```bash
 $ whereis php
 /usr/bin/php
 ```
 
 ### d. `which`
-which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
+which ищет исполняемые файлы в каталогах, заданных переменной среды PATH. Эта команда будет печатать полный путь к исполняемому файлу.
 ```bash
 which program_name 
 ```
-Example:
+Пример:
 ```bash
 $ which php
 /c/xampp/php/php
 ```
 
 ### e. clear
-Clears content on window.
+Очищает содержимое окна.
 
 ## 1.1. File Operations
 <table>
@@ -146,7 +146,7 @@ Determine file type.
 ```bash
 file filename
 ```
-Example:
+Пример:
 ```bash
 $ file index.html
  index.html: HTML document, ASCII text
@@ -156,7 +156,7 @@ Find files in directory
 ```bash
 find directory options pattern
 ```
-Example:
+Пример:
 ```bash
 $ find . -name README.md
 $ find /home/user1 -name '*.png'
@@ -191,7 +191,7 @@ Check out the printer queue.
 ```bash
 lpq
 ```
-Example:
+Пример:
 ```bash
 $ lpq
 Rank    Owner   Job     File(s)                         Total Size
@@ -216,7 +216,7 @@ Lists your files. `ls` has many options: `-l` lists files in 'long format', whic
 ```bash
 ls option
 ```
-Example:
+Пример:
 <pre>
 $ ls -la
 rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .
@@ -266,7 +266,7 @@ Updates access and modification time stamps of your file. If it doesn't exists, 
 ```bash
 touch filename
 ```
-Example:
+Пример:
 ```bash
 $ touch trick.md
 ```
@@ -440,7 +440,7 @@ foo (Lorem|dolor)
 ### f. `fmt`
 Simple optimal text formatter
 
-*example: example.txt (1 line)*
+*Пример: example.txt (1 line)*
 ```bash
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 ```
@@ -476,14 +476,14 @@ Looks for text inside files. You can use grep to search for lines of text that m
 ```bash
 grep pattern filename
 ```
-Example:
+Пример:
 ```bash
 $ grep admin /etc/passwd
 _kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
 _kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
 _krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
 ```
-You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for example:
+You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for Пример:
 ```bash
 $ grep -r admin /etc/
 ```
@@ -677,7 +677,7 @@ Tells you how many lines, words and characters there are in a file.
 ```bash
 wc filename
 ```
-Example:
+Пример:
 ```bash
 $ wc demo.txt
 7459   15915  398400 demo.txt
@@ -778,7 +778,7 @@ Options:
 - `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
 - `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
 
-Example:
+Пример:
 ```bash
 du -sh pictures
 1.4M pictures
@@ -941,14 +941,14 @@ The first line that you will write in bash script files is called `shebang`. Thi
 
 Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
 
-Example:
+Пример:
 ```bash
 str="hello world"
 ```
 
 The above line creates a variable `str` and assigns "hello world" to it. The value of variable is retrieved by putting the `$` in the beginning of variable name.
 
-Example:
+Пример:
 ```bash
 echo $str   # hello world
 ```
@@ -1007,7 +1007,7 @@ function name() {
 }
 ```
 
-Example:
+Пример:
 ```bash
 #!/bin/bash
 function hello {
