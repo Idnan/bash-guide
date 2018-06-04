@@ -3,8 +3,8 @@
 </p>
 
 ## Содержание
-  1. [Основные операции](#1-basic-operations)  
-    1.1. [Файловые операции](#11-file-operations)  
+  1. [Основные операции](#1-Основные-операции)  
+    1.1. [Файловые операции](#11-Файловые-операции)  
     1.2. [Текстовые операции](#12-text-operations)  
     1.3. [Операции с каталогами](#13-directory-operations)  
     1.4. [SSH, системная информация и сетевые операции](#14-ssh-system-info--network-operations)  
@@ -142,7 +142,7 @@ diff filename1 filename2
 ```
 
 ### f. `file`
-Определите тип файла.
+Определяет тип файла.
 ```bash
 file filename
 ```
@@ -187,7 +187,7 @@ head filename
 ```
 
 ### l. `lpq`
-Проверка очередь вывода.
+Проверка очереди вывода.
 ```bash
 lpq
 ```
@@ -206,13 +206,13 @@ lpr filename
 ```
 
 ### n. `lprm`
-Удалите что-то из очереди печати.
+Удалить что-то из очереди печати.
 ```bash
 lprm jobnumber
 ```
 
 ### o. `ls`
-Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
+Список файлов. `ls` имеет множество опций: `-l` список файлов в 'длинном формате', который содержит точный размер файла, имя владельца файла, который имеет право просматривать его и время последнего изменения. `-a` список файлов, включая скрытые файлы. Для получения дополнительной информации об этой команде перейдите по [ссылке](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
 ```
@@ -230,39 +230,39 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 </pre>
 
 ### p. `more`
-Shows the first part of a file (move with space and type q to quit).  
+Показывает первую часть файла (перемещайтесь нажимая пробел и нажмите q для выхода).
 ```bash
 more filename
 ```
 
 ### q. `mv`
-Moves a file from one location to other.  
+Перемещает файл из одного места в другое.
 ```bash
 mv filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+Где `filename1` является исходным путем к файлу и `filename2` путь назначения к файлу.
 
-Also it can be used for rename a file.
+Также может использоваться для переименования файла.
 ```bash
 mv old_name new_name
 ```
 
 ### r. `rm`
-Removes a file. Using this command on a directory gives you an error.
+Удаляет файл. Использование этой команды для каталога приводит к ошибке.
 `rm: directory: is a directory`
-To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
+Чтобы удалить каталог необходимо ввести `-r` который будет рекурсивно удалять содержимое каталога. При желании вы можете использовать `-f` флаг для принудительного удаления, то есть без каких-либо подтверждений и т.д.
 ```bash
 rm filename
 ```
 
 ### s. `tail`
-Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
+Выводит последние 10 строк файла. Используйте `-f` для вывода добавленных данных по мере роста файла.  
 ```bash
 tail filename
 ```
 
 ### t. `touch`
-Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
+Обновляет отметки времени создания и изменения файла. Если он не существует, он будет создан.
 ```bash
 touch filename
 ```
