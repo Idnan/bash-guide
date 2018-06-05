@@ -566,7 +566,7 @@ Hello This is a Test d d d d
 ```
 
 ### j. `sort`
-Sort lines of text files
+Сортирует строки в текстовом файле
 
 *example.txt*
 ```bash
@@ -579,7 +579,7 @@ e
 d
 ```
 
-*sort example.txt*
+*сортировать example.txt*
 ```bash
 sort example.txt
 ```
@@ -593,7 +593,7 @@ f
 g
 ```
 
-*randomize a sorted example.txt*
+*рандомизировать отсортированный example.txt*
 ```bash
 sort example.txt | sort -R
 ```
@@ -608,14 +608,14 @@ e
 ```
 
 ### k. `tr`
-Translate or delete characters
+Переводит или удаляет символы
 
 *example.txt*
 ```bash
 Hello World Foo Bar Baz!
 ```
 
-*take all lower case letters and make them upper case*
+*заменяет все буквы нижнего регистра в верхний регистр*
 ```bash
 cat example.txt | tr 'a-z' 'A-Z' 
 ```
@@ -623,7 +623,7 @@ cat example.txt | tr 'a-z' 'A-Z'
 HELLO WORLD FOO BAR BAZ!
 ```
 
-*take all spaces and make them into newlines*
+*превращает все пробелы в новые строки*
 ```bash
 cat example.txt | tr ' ' '\n'
 ```
@@ -636,7 +636,7 @@ Baz!
 ```
 
 ### l. `uniq`
-Report or omit repeated lines
+Сообщает об повторяющиеся строках или пропускает их
 
 *example.txt*
 ```bash
@@ -650,7 +650,7 @@ d
 c
 ```
 
-*show only unique lines of example.txt (first you need to sort it, otherwise it won't see the overlap)*
+*показавыет только уникальные строки example.txt (сначала вам нужно отсортировать его, иначе он не увидит совпадения)*
 ```bash
 sort example.txt | uniq
 ```
@@ -661,7 +661,7 @@ c
 d
 ```
 
-*show the unique items for each line, and tell me how many instances it found*
+*показавает уникальные элементы для каждой строки и сообщает, сколько экземпляров найдено*
 ```bash
 sort example.txt | uniq -c
 ```
@@ -673,7 +673,7 @@ sort example.txt | uniq -c
 ```
 
 ### m. `wc`
-Tells you how many lines, words and characters there are in a file.  
+Сообщает, сколько строк, слов и символов содержит файл.
 ```bash
 wc filename
 ```
@@ -682,9 +682,9 @@ wc filename
 $ wc demo.txt
 7459   15915  398400 demo.txt
 ```
-Where `7459` is lines, `15915` is words and `398400` is characters.
+Где `7459` линий, `15915` слов и `398400` символов.
 
-## 1.3. Directory Operations
+## 1.3. Операции с каталогами
 
 <table>
    <tr>
@@ -1174,16 +1174,18 @@ bash -v scriptname
 bash -x scriptname
 ```
 
-## Contribution
+## Помощь
 
-- Report issues [How to](https://help.github.com/articles/creating-an-issue/)
-- Open pull request with improvements [How to](https://help.github.com/articles/about-pull-requests/)
-- Spread the word
+- Сообщить об ошибке [Как?](https://help.github.com/articles/creating-an-issue/)
+- Создать pull request с улучшениями [Как?](https://help.github.com/articles/about-pull-requests/)
+- Поделиться
 
-## Translation
+## Переводы
+- [English ](https://github.com/itooww/bash-guide)
 - [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 - [Japanese | 日本語](https://github.com/itooww/bash-guide)
+- [Russian | Русский](https://github.com/itooww/bash-guide)
 
 ## License
 
