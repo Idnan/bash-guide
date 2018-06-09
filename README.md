@@ -2,32 +2,32 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
-## Содержание
-  1. [Основные операции](#1-Основные-операции)  
-    1.1. [Файловые операции](#11-Файловые-операции)  
-    1.2. [Текстовые операции](#12-Текстовые-операции)  
-    1.3. [Операции с каталогами](#13-Операции-с-каталогами)  
-    1.4. [SSH, системная информация и сетевые операции](#14-SSH-системная-информация-и-сетевые-операции)  
-    1.5. [Операции по мониторингу процессов](#15-Операции-по-мониторингу-процессов)
-  2. [Основы программирования в командной строке](#2-Основы-программирования-в-командной-строке)  
-    2.1. [Переменные](#21-Переменные)  
-    2.2. [Массивы](#22-Массивы)  
-    2.3. [Замена строк](#23-Замена-строк)  
-    2.4. [Функции](#24-Функции)  
-    2.5. [Условные выражения](#25-Условные-выражения)  
-    2.6. [Циклы](#26-Циклы)  
-  3. [Трюки](#3-Трюки)  
-  4. [Отладка (Debug)](#4-Отладка-Debug)  
+## Table of Contents
+  1. [Basic Operations](#1-basic-operations)  
+    1.1. [File Operations](#11-file-operations)  
+    1.2. [Text Operations](#12-text-operations)  
+    1.3. [Directory Operations](#13-directory-operations)  
+    1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
+    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
+  2. [Basic Shell Programming](#2-basic-shell-programming)  
+    2.1. [Variables](#21-variables)  
+    2.2. [Array](#22-array)  
+    2.3. [String Substitution](#23-string-substitution)  
+    2.4. [Functions](#24-functions)  
+    2.5. [Conditionals](#25-conditionals)  
+    2.6. [Loops](#26-loops)  
+  3. [Tricks](#3-tricks)  
+  4. [Debugging](#4-debugging)  
   
 
-# 1. Основные операции
+# 1. Basic Operations
 
 ### a. `export`
-Отображает все переменные среды. Если вы хотите получить подробную информацию о конкретной переменной, используйте `echo $VARIABLE_NAME`.  
+Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
 ```bash
 export
 ```
-Пример:
+Example:
 ```bash
 $ export
 AWS_HOME=/Users/adnanadnan/.aws
@@ -40,42 +40,42 @@ $ echo $AWS_HOME
 ```
 
 ### b. `whatis`
-whatis показывает описание для пользовательских команд, системных вызовов, библиотечных функций и другое на страницах руководства.
+whatis shows description for user commands, system calls, library functions, and others in manual pages
 ```bash
 whatis something
 ```
-Пример:
+Example:
 ```bash
 $ whatis bash
 bash (1)             - GNU Bourne-Again SHell
 ```
 
 ### c. `whereis`
-whereis ищет исполняемые файлы, исходные файлы и страницы руководства, используя базу данных, созданную системой автоматически.
+whereis searches for executables, source files, and manual pages using a database built by system automatically.
 ```bash
 whereis name
 ```
-Пример:
+Example:
 ```bash
 $ whereis php
 /usr/bin/php
 ```
 
 ### d. `which`
-which ищет исполняемые файлы в каталогах, заданных переменной среды PATH. Эта команда будет печатать полный путь к исполняемому файлу.
+which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
 ```bash
 which program_name 
 ```
-Пример:
+Example:
 ```bash
 $ which php
 /c/xampp/php/php
 ```
 
 ### e. clear
-Очищает содержимое окна.
+Clears content on window.
 
-## 1.1. Файловые операции
+## 1.1. File Operations
 <table>
    <tr>
       <td><a href="#a-cat">cat</a></td>
@@ -104,11 +104,11 @@ $ which php
 </table>
 
 ### a. `cat`
-Может использоваться для следующих целей в UNIX или Linux.  
-* Отображение текстовых файлов на экране
-* Копирование текстовых файлов  
-* Объединение текстовых файлов  
-* Создание новых текстовых файлов  
+It can be used for the following purposes under UNIX or Linux.  
+* Display text files on screen
+* Copy text files  
+* Combine text files  
+* Create new text files  
 ```bash
 cat filename
 cat file1 file2 
@@ -117,81 +117,81 @@ cat < file1 > file2 #copy file1 to file2
 ```
 
 ### b. `chmod`
-Команда chmod позволяет вам изменять права на чтение, запись и выполнение для ваших файлов и папок. Для получения дополнительной информации об этой команде пройдите по [ссылке](https://ss64.com/bash/chmod.html).
+The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
 ```bash
 chmod -options filename
 ```
 
 ### c. `chown`
-Команда chown означает «владелец прав и позволяет вам изменять владельца данного файла или папки, которые могут быть пользователем и группой. Пользоваться просто, сначала пользователь (владелец), а затем группа, разделенная двоеточием.
+The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
 ```bash
 chown -options user:group filename
 ```
 
 ### d. `cp`
-Копирует файл из одного места в другое.  
+Copies a file from one location to other.  
 ```bash
 cp filename1 filename2
 ```
-Где `filename1` является исходным путем к файлу и `filename2` путь назначения к файлу.
+Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
 ### e. `diff`
-Сравнивает файлы и перечисляет их различия.
+Compares files, and lists their differences.  
 ```bash
 diff filename1 filename2
 ```
 
 ### f. `file`
-Определяет тип файла.
+Determine file type.  
 ```bash
 file filename
 ```
-Пример:
+Example:
 ```bash
 $ file index.html
  index.html: HTML document, ASCII text
 ```
 ### g. `find`
-Поиск файлов в каталоге.
+Find files in directory
 ```bash
 find directory options pattern
 ```
-Пример:
+Example:
 ```bash
 $ find . -name README.md
 $ find /home/user1 -name '*.png'
 ```
 
 ### h. `gunzip`
-Разархивирует файлы сжатые gzip.  
+Un-compresses files compressed by gzip.  
 ```bash
 gunzip filename
 ```
 
 ### i. `gzcat`
-Позволяет просматривать файлы архива gzipped без необходимости его разархивирования.
+Lets you look at gzipped file without actually having to gunzip it.  
 ```bash
 gzcat filename
 ```
 
 ### j. `gzip`
-Архивирование файлов.  
+Compresses files.  
 ```bash
 gzip filename
 ```
 
 ### k. `head`
-Выводит первые 10 строк файла 
+Outputs the first 10 lines of file  
 ```bash
 head filename
 ```
 
 ### l. `lpq`
-Проверка очереди вывода.
+Check out the printer queue.  
 ```bash
 lpq
 ```
-Пример:
+Example:
 ```bash
 $ lpq
 Rank    Owner   Job     File(s)                         Total Size
@@ -200,23 +200,23 @@ active  adnanad 59      demo                            399360 bytes
 ```
 
 ### m. `lpr`
-Печать файла.  
+Print the file.  
 ```bash
 lpr filename
 ```
 
 ### n. `lprm`
-Удалить что-то из очереди печати.
+Remove something from the printer queue.  
 ```bash
 lprm jobnumber
 ```
 
 ### o. `ls`
-Список файлов. `ls` имеет множество опций: `-l` список файлов в 'длинном формате', который содержит точный размер файла, имя владельца файла, который имеет право просматривать его и время последнего изменения. `-a` список файлов, включая скрытые файлы. Для получения дополнительной информации об этой команде перейдите по [ссылке](https://ss64.com/bash/ls.html).  
+Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
 ```
-Пример:
+Example:
 <pre>
 $ ls -la
 rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .
@@ -230,48 +230,48 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 </pre>
 
 ### p. `more`
-Показывает первую часть файла (перемещайтесь нажимая пробел и нажмите q для выхода).
+Shows the first part of a file (move with space and type q to quit).  
 ```bash
 more filename
 ```
 
 ### q. `mv`
-Перемещает файл из одного места в другое.
+Moves a file from one location to other.  
 ```bash
 mv filename1 filename2
 ```
-Где `filename1` является исходным путем к файлу и `filename2` путь назначения к файлу.
+Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
-Также может использоваться для переименования файла.
+Also it can be used for rename a file.
 ```bash
 mv old_name new_name
 ```
 
 ### r. `rm`
-Удаляет файл. Использование этой команды для каталога приводит к ошибке.
+Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
-Чтобы удалить каталог необходимо ввести `-r` который будет рекурсивно удалять содержимое каталога. При желании вы можете использовать `-f` флаг для принудительного удаления, то есть без каких-либо подтверждений и т.д.
+To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
 ```bash
 rm filename
 ```
 
 ### s. `tail`
-Выводит последние 10 строк файла. Используйте `-f` для вывода добавленных данных по мере роста файла.  
+Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
 ```bash
 tail filename
 ```
 
 ### t. `touch`
-Обновляет отметки времени создания и изменения файла. Если он не существует, он будет создан.
+Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
 ```bash
 touch filename
 ```
-Пример:
+Example:
 ```bash
 $ touch trick.md
 ```
 
-## 1.2. Текстовые операции
+## 1.2. Text Operations
 
 <table>
     <tr>
@@ -294,13 +294,13 @@ $ touch trick.md
 </table>
 
 ### a. `awk`
-awk является наиболее полезной командой для обработки текстовых файлов. Работает по строкам. По умолчанию для разделения полей используется пробел. Наиболее распространенным синтаксисом для команды awk является
+awk is the most useful command for handling text files. It operates on an entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
 
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
 
-Возьмем следующий файл `/etc/passwd`. Вот пример данных, которые содержит этот файл:
+Lets take following file `/etc/passwd`. Here's the sample data that this file contains:
 ```
 root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -308,11 +308,11 @@ bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
-Итак, теперь вы можете получить только имя пользователя из этого файла. Где `-F` указывает на какой основе мы собираемся разделить поля. В нашем случае `:`. `{print $ 1}` означает вывод первого поля соответствия.
+So now lets get only username from this file. Where `-F` specifies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
 ```bash
 awk -F':' '{ print $1 }' /etc/passwd
 ```
-После выполнения указанной команды вы получите следующий вывод.
+After running the above command you will get following output.
 ```
 root
 daemon
@@ -320,18 +320,18 @@ bin
 sys
 sync
 ```
-Подробнее о том, как использовать `awk`, перейдите по [ссылке](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
+For more detail on how to use `awk`, check following [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
 
 
 ### b. `cut`
-Удалить разделы из каждой строки файлов.
+Remove sections from each line of files
 
 *example.txt*
 ```bash
 red riding hood went to the park to play
 ```
 
-*покажите мне столбцы 2, 7 и 9 с пробелом в качестве разделителя*
+*show me columns 2 , 7 , and 9 with a space as a separator*
 ```bash
 cut -d " " -f2,7,9 example.txt
 ```
@@ -340,9 +340,9 @@ riding park play
 ```
 
 ### c. `echo`
-Отображение строки текста
+Display a line of text
 
-*отобразить «Hello World»*
+*display "Hello World"*
 ```bash
 echo Hello World
 ```
@@ -350,7 +350,7 @@ echo Hello World
 Hello World
 ```
 
-*отобразите «Hello World» каждое слово с новой строки*
+*display "Hello World" with newlines between words*
 ```bash
 echo -ne "Hello\nWorld\n"
 ```
@@ -360,7 +360,7 @@ World
 ```
 
 ### d. `egrep`
-Вывод строк, соответствующие шаблону - Extended Expression (псевдоним для: 'grep -E')
+Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
 
 *example.txt*
 ```bash
@@ -385,7 +385,7 @@ ipsum dolor sit
 amet.
 ```
 
-*отобразить строки в которых есть «Lorem», либо «dolor».*
+*display lines that have either "Lorem" or "dolor" in them.*
 ```bash
 egrep '(Lorem|dolor)' example.txt
 or
@@ -401,7 +401,7 @@ ipsum dolor sit
 ```
 
 ### e. `fgrep`
-Вывод строк, соответствующие шаблону - FIXED pattern matching (псевдоним для: 'grep -F')
+Print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
 
 *example.txt*
 ```bash
@@ -427,7 +427,7 @@ ipsum dolor sit
 amet.
 ```
 
-*Найти строку с '(Lorem|dolor)' в example.txt*
+*Find the exact string '(Lorem|dolor)' in example.txt*
 ```bash
 fgrep '(Lorem|dolor)' example.txt
 or
@@ -438,14 +438,14 @@ foo (Lorem|dolor)
 ```
 
 ### f. `fmt`
-Простое форматирование текста
+Simple optimal text formatter
 
-*Пример: example.txt (1 строка)*
+*example: example.txt (1 line)*
 ```bash
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 ```
 
-*выводить строки example.txt шириной 20 символов*
+*output the lines of example.txt to 20 character width*
 ```bash
 cat example.txt | fmt -w 20
 ```
@@ -472,25 +472,25 @@ amet.
 ```
 
 ### g. `grep`
-Ищет текст внутри файлов. Вы можете использовать grep для поиска строк текста, которые соответствуют одному или нескольким регулярным выражениям, и выводит только соответствующие строки.  
+Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
 ```bash
 grep pattern filename
 ```
-Пример:
+Example:
 ```bash
 $ grep admin /etc/passwd
 _kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
 _kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
 _krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
 ```
-Вы также можете игнорировать словосочетания с помощью опции `-i`. `-r` может использоваться для поиска всех файлов в указанном каталоге, пример:
+You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for example:
 ```bash
 $ grep -r admin /etc/
 ```
-И `-w` для поиска только слов. Более подробно о `grep`, перейдите по [ссылке](https://www.cyberciti.biz/faq/grep-in-bash).
+And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
 
 ### h. `nl`
-Номер строк в файле
+Number lines of files
 
 *example.txt*
 ```bash
@@ -515,7 +515,7 @@ ipsum dolor sit
 amet.
 ```
 
-*вывести example.txt с номерами строк*
+*show example.txt with line numbers*
 ```bash
 nl -s". " example.txt 
 ```
@@ -542,14 +542,14 @@ nl -s". " example.txt
 ```
 
 ### i. `sed`
-Потоковый редактор для фильтрации и преобразования текста.
+Stream editor for filtering and transforming text
 
 *example.txt*
 ```bash
 Hello This is a Test 1 2 3 4
 ``` 
 
-*заменить все пробелы дефисом*
+*replace all spaces with hyphens*
 ```bash
 sed 's/ /-/g' example.txt
 ```
@@ -557,7 +557,7 @@ sed 's/ /-/g' example.txt
 Hello-This-is-a-Test-1-2-3-4
 ```
 
-*заменить все цифры на "d"*
+*replace all digits with "d"*
 ```bash
 sed 's/[0-9]/d/g' example.txt
 ```
@@ -566,7 +566,7 @@ Hello This is a Test d d d d
 ```
 
 ### j. `sort`
-Сортирует строки в текстовом файле.
+Sort lines of text files
 
 *example.txt*
 ```bash
@@ -579,7 +579,7 @@ e
 d
 ```
 
-*сортировать example.txt*
+*sort example.txt*
 ```bash
 sort example.txt
 ```
@@ -593,7 +593,7 @@ f
 g
 ```
 
-*рандомизировать отсортированный example.txt*
+*randomize a sorted example.txt*
 ```bash
 sort example.txt | sort -R
 ```
@@ -608,14 +608,14 @@ e
 ```
 
 ### k. `tr`
-Переводит или удаляет символы.
+Translate or delete characters
 
 *example.txt*
 ```bash
 Hello World Foo Bar Baz!
 ```
 
-*заменяет все буквы нижнего регистра в верхний регистр*
+*take all lower case letters and make them upper case*
 ```bash
 cat example.txt | tr 'a-z' 'A-Z' 
 ```
@@ -623,7 +623,7 @@ cat example.txt | tr 'a-z' 'A-Z'
 HELLO WORLD FOO BAR BAZ!
 ```
 
-*превращает все пробелы в новые строки*
+*take all spaces and make them into newlines*
 ```bash
 cat example.txt | tr ' ' '\n'
 ```
@@ -636,7 +636,7 @@ Baz!
 ```
 
 ### l. `uniq`
-Сообщает об повторяющиеся строках или пропускает их.
+Report or omit repeated lines
 
 *example.txt*
 ```bash
@@ -650,7 +650,7 @@ d
 c
 ```
 
-*показавыет только уникальные строки example.txt (сначала нужно отсортировать его, иначе он не увидит совпадения)*
+*show only unique lines of example.txt (first you need to sort it, otherwise it won't see the overlap)*
 ```bash
 sort example.txt | uniq
 ```
@@ -661,7 +661,7 @@ c
 d
 ```
 
-*показавает уникальные элементы для каждой строки и сообщает, сколько экземпляров найдено*
+*show the unique items for each line, and tell me how many instances it found*
 ```bash
 sort example.txt | uniq -c
 ```
@@ -673,18 +673,18 @@ sort example.txt | uniq -c
 ```
 
 ### m. `wc`
-Сообщает, сколько строк, слов и символов содержит файл.
+Tells you how many lines, words and characters there are in a file.  
 ```bash
 wc filename
 ```
-Пример:
+Example:
 ```bash
 $ wc demo.txt
 7459   15915  398400 demo.txt
 ```
-Где `7459` линий, `15915` слов и `398400` символов.
+Where `7459` is lines, `15915` is words and `398400` is characters.
 
-## 1.3. Операции с каталогами
+## 1.3. Directory Operations
 
 <table>
    <tr>
@@ -716,7 +716,7 @@ Tells you which directory you currently are in.
 pwd
 ```
 
-## 1.4. SSH, системная информация и сетевые операции
+## 1.4. SSH, System Info & Network Operations
 
 <table>
    <tr>
@@ -752,144 +752,144 @@ pwd
 </table>
 
 ### a. `bg`
-Список остановленных или фоновых заданий; возобновление работы в фоновом режиме.
+Lists stopped or background jobs; resume a stopped job in the background.
 
 ### b. `cal`
-Показывает календарь месяца.
+Shows the month's calendar.
 
 ### c. `date`
-Показывает текущую дату и время.
+Shows the current date and time.
 
 ### d. `df`
-Показывает использование диска.
+Shows disk usage.
 
 ### e. `dig`
-Получает информацию DNS для домена. 
+Gets DNS information for domain.  
 ```bash
 dig domain
 ```
 
 ### f. `du`
-Показывает дисковое использование файлов или каталогов. Для получения дополнительной информации об этой команде перейдите по этой [ссылке](http://www.linfo.org/du.html)
+Shows the disk usage of files or directories. For more information on this command check this [link](http://www.linfo.org/du.html)
 ```bash
 du [option] [filename|directory]
 ```
-Опции:
-- `-h` (человекочитаемое) Отображает вывод его в килобайтах (К), мегабайтах (М) и гигабайтах (G).
-- `-s` (сжатое или общее) Выводит общее дисковое пространство каталога и отчеты для подкаталогов. 
+Options:
+- `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
+- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
 
-Пример:
+Example:
 ```bash
 du -sh pictures
 1.4M pictures
 ```
 
 ### g. `fg`
-Команда возобновления работы задачи.
+Brings the most recent job in the foreground.
 
 ### h. `finger`
-Отображает информацию о пользователе.  
+Displays information about user.  
 ```bash
 finger username
 ```
 ### i. `jobs`
-Список заданий, выполняемые в фоновом режиме, указывая номер задания.
+Lists the jobs running in the background, giving the job number.
 
 ### j. `last`
-Список последних авторизаций указанного пользователя.
+Lists your last logins of specified user.  
 ```bash
 last yourUsername
 ```
 
 ### k. `man`
-Показывает руководство для указанной команды.
+Shows the manual for specified command.  
 ```bash
 man command
 ```
 
 ### l. `passwd`
-Позволяет текущему зарегистрированному пользователю изменить свой пароль.
+Allows the current logged user to change their password.
 
 ### m. `ping`
-Запрашивает хост и выводит результаты.  
+Pings host and outputs results.  
 ```bash
 ping host
 ```
 
 ### n. `ps`
-Перечисляет процессы.  
+Lists your processes.  
 ```bash
 ps -u yourusername
 ```
-Используйте флаг ef. e для каждого процесса и f для полного списка.
+Use the flags ef. e for every process and f for full listing. 
 ```bash
 ps -ef
 ```
 
 ### o. `quota`
-Показывает, какова ваша дисковая квота. 
+Shows what your disk quota is.  
 ```bash
 quota -v
 ```
 
 ### p. `scp`
-Передача файлов между локальным хостом и удаленным хостом или между двумя удаленными узлами.
+Transfer files between a local host and a remote host or between two remote hosts.
 
-*копирование с локального хоста на удаленный хост*
+*copy from local host to remote host*
 ```bash
 scp source_file user@host:directory/target_file
 ```
-*копирование с удаленного хоста на локальный хост*
+*copy from remote host to local host*
 ```bash
 scp user@host:directory/source_file target_file
 scp -r user@host:directory/source_folder target_folder
 ```
-Эта команда также принимает опцию `-P`, которая может использоваться для подключения к определенному порту.  
+This command also accepts an option `-P` that can be used to connect to specific port.  
 ```bash
 scp -P port user@host:directory/source_file target_file
 ```
 
 ### q. `ssh`
-ssh (SSH client) - это программа для входа в систему и выполнения команд на удаленном компьютере.  
+ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
 ```bash
 ssh user@host
 ```
-Эта команда также принимает опцию `-p`, которая может использоваться для подключения к определенному порту. 
+This command also accepts an option `-p` that can be used to connect to specific port.  
 ```bash
 ssh -p port user@host
 ```
 
 ### r. `top`
-Отображает текущие активные процессы.
+Displays your currently active processes.
 
 ### s. `uname`
-Показывает информацию о ядре. 
+Shows kernel information.  
 ```bash
 uname -a
 ```
 
 ### t. `uptime`
-Показывает текущее время бесперебойной работы.
+Shows current uptime.
 
 ### u. `w`
-Отображает, кто в сети.
+Displays who is online.
 
 ### v. `wget`
-Скачать файл.  
+Downloads file.  
 ```bash
 wget file
 ```
 
 ### w. `whoami`
-Вернуть текущий логин.
+Return current logged in username.
 
 ### x. `whois`
-Получает информацию whois для домена.
+Gets whois information for domain.  
 ```bash
 whois domain
 ```
 
-## 1.5. Операции по мониторингу процессов
+## 1.5. Process Monitoring Operations
 
 <table>
    <tr>
@@ -901,60 +901,61 @@ whois domain
 </table>
 
 ### a. `kill`
-Убивает (завершает) процессы с указанным идентификатором.
+Kills (ends) the processes with the ID you gave.  
 ```bash
 kill PID
 ```
 
 ### b. `killall`
-Убейте все процессы по имени.
+Kill all processes with the name.  
 ```bash
 killall processname
 ```
 
 ### c. &
-Символ `&` инструктирует команду работать как фоновый процесс в подоболочке.
+The `&` symbol instructs the command to run as a background process in a subshell.
 ```bash
 command &
 ```
 
 ### d. `nohup`
-nohup означает «No Hang Up (без зависаний)». Это позволяет запускать сценарий команд / процессов или оболочки, которые могут продолжаться в фоновом режиме после выхода из оболочки.
+nohup stands for "No Hang Up". This allows to run command/process or shell script that can continue running in the background after you log out from a shell.
 ```bash
 nohup command
 ```
-Объедините его с `&` для создания фоновых процессов
+Combine it with `&` to create background processes 
 ```bash
 nohup command &
 ```
 
-# 2. Основы программирования в командной строке
+# 2. Basic Shell Programming
 
-Первая строка, которую вы напишете в файлах сценария bash, называется `shebang`. Эта строка в любом скрипте определяет способность скрипта быть выполненным как автономный исполняемый файл без ввода sh, bash, python, php и т. Д. Заранее в терминале.
+
+The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
 ```bash
 #!/usr/bin/env bash
 ```
 
-## 2.1. Переменные
+## 2.1. Variables
 
-Создание переменных в bash аналогично другим языкам. Нет типов данных. Переменная в bash может содержать число, символ, строку символов и т.д. Вам не нужно объявлять переменную. Просто присваивая значение она будет создана.
+Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
 
-Пример:
+Example:
 ```bash
 str="hello world"
 ```
 
-Вышеприведенная строка создает переменную `str` и присваивает ей «hello world». Значение переменной извлекается, помещая `$` в начало имени переменной.
+The above line creates a variable `str` and assigns "hello world" to it. The value of variable is retrieved by putting the `$` in the beginning of variable name.
 
-Пример:
+Example:
 ```bash
 echo $str   # hello world
 ```
-## 2.2. Массивы
-Как и другие языки, bash также имеет массивы. Массив - это переменная, содержащая несколько значений. Максимального ограничения на размер массива нет. Массив в bash основан на нулевом значении. Первый элемент индексируется с элементом 0. Существует несколько способов создания массивов в bash. Ниже приведены примеры.
+## 2.2. Array
+Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
 
-Примеры:
+Examples:
 ```bash
 array[0] = val
 array[1] = val
@@ -962,43 +963,43 @@ array[2] = val
 array=([2]=val [0]=val [1]=val)
 array=(val val val)
 ```
-Чтобы отобразить значение в определенном индексе, используйте следующий синтаксис:
+To display a value at specific index use following syntax:
 
 ```bash
-${array[i]}     # где i это индекс
+${array[i]}     # where i is the index
 ```
 
-Если индекс не указан, предполагается элемент массива 0. Чтобы узнать, сколько значений в массиве, используйте следующий синтаксис:
+If no index is supplied, array element 0 is assumed. To find out how many values there are in the array use the following syntax:
 
 ```bash
 ${#array[@]}
 ```
 
-Bash также поддерживает тернарные условия. Ниже приведенны примеры.
+Bash has also support for the ternary conditions. Check some examples below.
 
 ```bash
-${varname:-word}    # если varname существует и не значение не null, возвращается его значение; в ином случае вернется word
-${varname:=word}    # если varname существует и не значение не null, возвращается его значение; в ином случае устанавливает word и после вернется его значение
-${varname:+word}    # если varname существует и не значение не null, возвращается word; в ином случае вернется null
-${varname:offset:length}    # выполняет расширение подстроки. Он возвращает подстроку $varname, начинающуюся со смещения(offset) и до символа длины(length)
+${varname:-word}    # if varname exists and isn't null, return its value; otherwise return word
+${varname:=word}    # if varname exists and isn't null, return its value; otherwise set it word and then return its value
+${varname:+word}    # if varname exists and isn't null, return word; otherwise return null
+${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
 ```
 
-## 2.3 Замена строк
+## 2.3 String Substitution
 
-Синтаксис как манипулировать строками
+Check some of the syntax on how to manipulate strings
 
 ```bash
-${variable#pattern}  # если шаблон соответствует началу значения переменной, удаляет самую короткую часть, которая соответствует и возвращает остальные
-${variable##pattern}  # если шаблон соответствует началу значения переменной, удаляет самую длинную часть, которая соответствует и возвращает остальные
-${variable%pattern}  # если шаблон соответствует концу значения переменной, удаляет самую короткую часть, которая соответствует и возвращает остальные
-${variable%%pattern}  # если шаблон соответствует концу значения переменной, удаляет самую длинную часть, которая соответствует и возвращает остальные
-${variable/pattern/string}  # самую длинная часть, соответствующая шаблону переменной, заменяется на строку. Заменяется только первое совпадение
-${variable//pattern/string} # самую длинная часть, соответствующая шаблону переменной, заменяется на строку. Заменяются все совпадения
-${#varname}  # возвращает длину значения переменной в виде символьной строки
+${variable#pattern}         # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
+${variable##pattern}        # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
+${variable%pattern}         # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
+${variable%%pattern}        # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
+${variable/pattern/string}  # the longest match to pattern in variable is replaced by string. Only the first match is replaced
+${variable//pattern/string} # the longest match to pattern in variable is replaced by string. All matches are replaced
+${#varname}     # returns the length of the value of the variable as a character string
 ```
 
-## 2.4. Функции
-Как и почти на любом языке программирования, вы можете использовать функции для группировки фрагментов кода более логичным способом или практиковать божественное искусство рекурсии. Объявление функции - это только вопрос написания функции my_func {my_code}. Вызов функции аналогичен вызову другой программы, вы просто пишете ее имя.
+## 2.4. Functions
+As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
 ```bash
 function name() {
@@ -1006,7 +1007,7 @@ function name() {
 }
 ```
 
-Пример:
+Example:
 ```bash
 #!/bin/bash
 function hello {
@@ -1020,21 +1021,21 @@ function say {
 say "hello world!"
 ```
 
-Когда вы запустите приведенный выше пример, функция `hello` выведет «world». Вышеупомянутые две функции «hello» и «say» идентичны. Основное различие - это функция `say`. Эта функция печатает первый аргумент, который он получает. Аргументы внутри функций обрабатываются так же, как аргументы, заданные скрипту.
+When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within functions, are treated in the same manner as arguments given to the script.
 
-## 2.5. Условные выражения
+## 2.5. Conditionals
 
-Условные выражения в bash аналогично другим языкам программирования. Условия имеют много форм, таких как самая простая форма: `if` и `then`, где оператор выполняется только в том случае, если выражение `if` истинно.
+The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
 ```bash
-if [ выражение ]; then
-    будет выполняться только в том случае, если выражение true
+if [ expression ]; then
+    will execute only if expression is true
 else
-    будет выполняться, если выражение false
+    will execute if expression is false
 fi
 ```
 
-Иногда, если условия сбивают с толка вы можете написать то же условие, используя `case statements`.
+Sometime if conditions becoming confusing so you can write the same condition using the `case statements`.
 
 ```bash
 case expression in
@@ -1046,47 +1047,47 @@ case expression in
 esac
 ```
 
-Примеры выражений:
+Expression Examples:
 
 ```bash
-statement1 && statement2  # оба утверждения верны
-statement1 || statement2  # верно хотя бы одно из утверждений
+statement1 && statement2  # both statements are true
+statement1 || statement2  # at least one of the statements is true
 
-str1=str2       # str1 соответствует str2
-str1!=str2      # str1 не соответствует str2
-str1<str2       # str1 меньше чем str2
-str1>str2       # str1 больше чем str2
--n str1         # str1 не null (имеет длину больше 0)
--z str1         # str1 значение null (имеет длину 0)
+str1=str2       # str1 matches str2
+str1!=str2      # str1 does not match str2
+str1<str2       # str1 is less than str2
+str1>str2       # str1 is greater than str2
+-n str1         # str1 is not null (has length greater than 0)
+-z str1         # str1 is null (has length 0)
 
--a file         # файл существует
--d file         # файл существует и является каталогом
--e file         # файл существует; то же самое -a
--f file         # файл существует и является обычным файлом (т. е. не каталогом или другим специальным типом файла)
--r file         # у вас есть права на чтение
--s file         # файл существует и не пуст
--w file         # у вас есть права на запись
--x file         # у вас есть права на выполнение для файла или права на поиск в каталоге, если оно является каталогом
--N file         # файл был изменен с момента последнего чтения
--O file         # вы владелец файлп
--G file         # идентификатор группы файлов совпадает с вашим (или одним из ваших, если вы находитесь в нескольких группах)
+-a file         # file exists
+-d file         # file exists and is a directory
+-e file         # file exists; same -a
+-f file         # file exists and is a regular file (i.e., not a directory or other special type of file)
+-r file         # you have read permission
+-s file         # file exists and is not empty
+-w file         # you have write permission
+-x file         # you have execute permission on file, or directory search permission if it is a directory
+-N file         # file was modified since it was last read
+-O file         # you own file
+-G file         # file's group ID matches yours (or one of yours, if you are in multiple groups)
 
-file1 -nt file2     # file1 новее чем file2
-file1 -ot file2     # file1 старше чем file2
+file1 -nt file2     # file1 is newer than file2
+file1 -ot file2     # file1 is older than file2
 
--lt     # меньше чем
--le     # меньше чем или равны
--eq     # равны
--ge     # больше чем или равны
--gt     # больше чем
--ne     # не равны
+-lt     # less than
+-le     # less than or equal
+-eq     # equal
+-ge     # greater than or equal
+-gt     # greater than
+-ne     # not equal
 ```
 
-## 2.6. Циклы
+## 2.6. Loops
 
-Существует три типа циклов в bash. `for`,` while` и `until`.
+There are three types of loops in bash. `for`, `while` and `until`.
 
-Различные синтаксис `for`:
+Different `for` Syntax:
 ```bash
 for x := 1 to 10 do
 begin
@@ -1104,28 +1105,27 @@ do
 done
 ```
 
-`while` синтаксис:
+`while` Syntax:
 ```bash
 while condition; do
   statements
 done
 ```
 
-`until` синтаксис:
+`until` Syntax:
 ```bash
 until condition; do
   statements
 done
 ```
 
-# 3. Трюки
+# 3. Tricks
 
-## Установить псевдоним
-Откройте `bash_profile`, выполнив следующую команду` nano ~ / .bash_profile`
-> alias dockerlogin='ssh www-data@adnan.local -p2222'  # добавьте свой псевдоним в
-.bash_profile
+## Set an alias
+Open `bash_profile` by running following command `nano ~/.bash_profile`
+> alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
 
-## Чтобы быстро перейти к определенному каталогу
+## To quickly go to a specific directory
 nano ~/.bashrc
 > export hotellogs="/workspace/hotel-api/storage/logs"
 
@@ -1134,39 +1134,39 @@ source ~/.bashrc
 cd $hotellogs
 ```
 
-## Выйти из ловушки
+## Exit traps
 
-Сделайте свои скрипты bash более надежными, выполнив очистку.
+Make your bash scripts more robust by reliably performing cleanup.
 
 ```bash
 function finish {
-  # ваша очистка здесь. например убить любые разветвленные процессы
+  # your cleanup here. e.g. kill any forked processes
   jobs -p | xargs kill
 }
 trap finish EXIT
 ```
 
-## Сохранение переменных среды
+## Saving your environment variables
 
-Когда вы выполняете `export FOO = BAR`, ваша переменная экспортируется только в эту текущую оболочку и все ее дочерние элементы, чтобы в будущем вы могли просто добавить в свой файл `~/.bash_profile` команду для экспорта вашей переменной
+When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
 ```bash
 echo export FOO=BAR >> ~/.bash_profile
 ```
 
-## Доступ к вашим скриптам
+## Accessing your scripts
 
-Вы можете легко получить доступ к своим скриптам, создав папку bin в своем домашней директории с помощью `mkdir ~/bin`, теперь все скрипты, которые вы помещаете в эту папку, вы можете получить в любой директории.
+You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
 
-Если вы не можете получить доступ, попробуйте добавить код ниже в файл `~/.bash_profile` и после запустите `source ~/.bash_profile`.
+If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
 ```bash
-    # установите PATH, чтобы он включал в себя отдельный bin пользователя, если он существует
+    # set PATH so it includes user's private bin if it exists
     if [ -d "$HOME/bin" ] ; then
         PATH="$HOME/bin:$PATH"
     fi
 ```
 
-# 4. Отладка (Debug)
-Вы можете легко отладить скрипт bash, передав разные опции команде `bash`. Например, `-n` не будет запускать команды и проверит только синтаксические ошибки. `-v` проверит перед выполнением. `-x` после выполнения командной строки.
+# 4. Debugging
+You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
 ```bash
 bash -n scriptname
@@ -1174,14 +1174,13 @@ bash -v scriptname
 bash -x scriptname
 ```
 
-## Как помочь
+## Contribution
 
-- Сообщить об ошибке [Как?](https://help.github.com/articles/creating-an-issue/)
-- Создать pull request с улучшениями [Как?](https://help.github.com/articles/about-pull-requests/)
-- Поделиться
+- Report issues [How to](https://help.github.com/articles/creating-an-issue/)
+- Open pull request with improvements [How to](https://help.github.com/articles/about-pull-requests/)
+- Spread the word
 
-## Переводы
-- [English ](https://github.com/itooww/bash-guide)
+## Translation
 - [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 - [Japanese | 日本語](https://github.com/itooww/bash-guide)
