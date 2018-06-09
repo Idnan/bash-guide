@@ -930,7 +930,7 @@ nohup command &
 
 # 2. Основы программирования в командной строке
 
-The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
+Первая строка, которую вы напишете в файлах сценария bash, называется `shebang`. Эта строка в любом скрипте определяет способность скрипта быть выполненным как автономный исполняемый файл без ввода sh, bash, python, php и т. Д. Заранее в терминале.
 
 ```bash
 #!/usr/bin/env bash
@@ -938,23 +938,23 @@ The first line that you will write in bash script files is called `shebang`. Thi
 
 ## 2.1. Переменные
 
-Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
+Создание переменных в bash аналогично другим языкам. Нет типов данных. Переменная в bash может содержать число, символ, строку символов и т.д. Вам не нужно объявлять переменную. Просто присваивая значение она будет создана.
 
 Пример:
 ```bash
 str="hello world"
 ```
 
-The above line creates a variable `str` and assigns "hello world" to it. The value of variable is retrieved by putting the `$` in the beginning of variable name.
+Вышеприведенная строка создает переменную `str` и присваивает ей «hello world». Значение переменной извлекается, помещая `$` в начало имени переменной.
 
 Пример:
 ```bash
 echo $str   # hello world
 ```
 ## 2.2. Массивы
-Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
+Как и другие языки, bash также имеет массивы. Массив - это переменная, содержащая несколько значений. Максимального ограничения на размер массива нет. Массив в bash основан на нулевом значении. Первый элемент индексируется с элементом 0. Существует несколько способов создания массивов в bash. Ниже приведены примеры.
 
-Examples:
+Примеры:
 ```bash
 array[0] = val
 array[1] = val
@@ -962,43 +962,43 @@ array[2] = val
 array=([2]=val [0]=val [1]=val)
 array=(val val val)
 ```
-To display a value at specific index use following syntax:
+Чтобы отобразить значение в определенном индексе, используйте следующий синтаксис:
 
 ```bash
-${array[i]}     # where i is the index
+${array[i]}     # где i это индекс
 ```
 
-If no index is supplied, array element 0 is assumed. To find out how many values there are in the array use the following syntax:
+Если индекс не указан, предполагается элемент массива 0. Чтобы узнать, сколько значений в массиве, используйте следующий синтаксис:
 
 ```bash
 ${#array[@]}
 ```
 
-Bash has also support for the ternary conditions. Check some examples below.
+Bash также поддерживает тернарные условия. Ниже приведенны примеры.
 
 ```bash
-${varname:-word}    # if varname exists and isn't null, return its value; otherwise return word
-${varname:=word}    # if varname exists and isn't null, return its value; otherwise set it word and then return its value
-${varname:+word}    # if varname exists and isn't null, return word; otherwise return null
-${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+${varname:-word}    # если varname существует и не значение не null, возвращается его значение; в ином случае вернется word
+${varname:=word}    # если varname существует и не значение не null, возвращается его значение; в ином случае устанавливает word и после вернется его значение
+${varname:+word}    # если varname существует и не значение не null, возвращается word; в ином случае вернется null
+${varname:offset:length}    # выполняет расширение подстроки. Он возвращает подстроку $varname, начинающуюся со смещения(offset) и до символа длины(length)
 ```
 
 ## 2.3 Замена строк
 
-Check some of the syntax on how to manipulate strings
+Синтаксис как манипулировать строками
 
 ```bash
-${variable#pattern}         # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
-${variable##pattern}        # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
-${variable%pattern}         # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
-${variable%%pattern}        # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
-${variable/pattern/string}  # the longest match to pattern in variable is replaced by string. Only the first match is replaced
-${variable//pattern/string} # the longest match to pattern in variable is replaced by string. All matches are replaced
-${#varname}     # returns the length of the value of the variable as a character string
+${variable#pattern}  # если шаблон соответствует началу значения переменной, удаляет самую короткую часть, которая соответствует и возвращает остальные
+${variable##pattern}  # если шаблон соответствует началу значения переменной, удаляет самую длинную часть, которая соответствует и возвращает остальные
+${variable%pattern}  # если шаблон соответствует концу значения переменной, удаляет самую короткую часть, которая соответствует и возвращает остальные
+${variable%%pattern}  # если шаблон соответствует концу значения переменной, удаляет самую длинную часть, которая соответствует и возвращает остальные
+${variable/pattern/string}  # самую длинная часть, соответствующая шаблону переменной, заменяется на строку. Заменяется только первое совпадение
+${variable//pattern/string} # самую длинная часть, соответствующая шаблону переменной, заменяется на строку. Заменяются все совпадения
+${#varname}  # возвращает длину значения переменной в виде символьной строки
 ```
 
 ## 2.4. Функции
-As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
+Как и почти на любом языке программирования, вы можете использовать функции для группировки фрагментов кода более логичным способом или практиковать божественное искусство рекурсии. Объявление функции - это только вопрос написания функции my_func {my_code}. Вызов функции аналогичен вызову другой программы, вы просто пишете ее имя.
 
 ```bash
 function name() {
@@ -1020,21 +1020,21 @@ function say {
 say "hello world!"
 ```
 
-When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within functions, are treated in the same manner as arguments given to the script.
+Когда вы запустите приведенный выше пример, функция `hello` выведет «world». Вышеупомянутые две функции «hello» и «say» идентичны. Основное различие - это функция `say`. Эта функция печатает первый аргумент, который он получает. Аргументы внутри функций обрабатываются так же, как аргументы, заданные скрипту.
 
 ## 2.5. Условные выражения
 
-The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
+Условные выражения в bash аналогично другим языкам программирования. Условия имеют много форм, таких как самая простая форма: `if` и `then`, где оператор выполняется только в том случае, если выражение `if` истинно.
 
 ```bash
-if [ expression ]; then
-    will execute only if expression is true
+if [ выражение ]; then
+    будет выполняться только в том случае, если выражение true
 else
-    will execute if expression is false
+    будет выполняться, если выражение false
 fi
 ```
 
-Sometime if conditions becoming confusing so you can write the same condition using the `case statements`.
+Иногда, если условия сбивают с толка вы можете написать то же условие, используя `case statements`.
 
 ```bash
 case expression in
@@ -1046,47 +1046,47 @@ case expression in
 esac
 ```
 
-Expression Examples:
+Примеры выражений:
 
 ```bash
-statement1 && statement2  # both statements are true
-statement1 || statement2  # at least one of the statements is true
+statement1 && statement2  # оба утверждения верны
+statement1 || statement2  # верно хотя бы одно из утверждений
 
-str1=str2       # str1 matches str2
-str1!=str2      # str1 does not match str2
-str1<str2       # str1 is less than str2
-str1>str2       # str1 is greater than str2
--n str1         # str1 is not null (has length greater than 0)
--z str1         # str1 is null (has length 0)
+str1=str2       # str1 соответствует str2
+str1!=str2      # str1 не соответствует str2
+str1<str2       # str1 меньше чем str2
+str1>str2       # str1 больше чем str2
+-n str1         # str1 не null (имеет длину больше 0)
+-z str1         # str1 значение null (имеет длину 0)
 
--a file         # file exists
--d file         # file exists and is a directory
--e file         # file exists; same -a
--f file         # file exists and is a regular file (i.e., not a directory or other special type of file)
--r file         # you have read permission
--s file         # file exists and is not empty
--w file         # you have write permission
--x file         # you have execute permission on file, or directory search permission if it is a directory
--N file         # file was modified since it was last read
--O file         # you own file
--G file         # file's group ID matches yours (or one of yours, if you are in multiple groups)
+-a file         # файл существует
+-d file         # файл существует и является каталогом
+-e file         # файл существует; то же самое -a
+-f file         # файл существует и является обычным файлом (т. е. не каталогом или другим специальным типом файла)
+-r file         # у вас есть права на чтение
+-s file         # файл существует и не пуст
+-w file         # у вас есть права на запись
+-x file         # у вас есть права на выполнение для файла или права на поиск в каталоге, если оно является каталогом
+-N file         # файл был изменен с момента последнего чтения
+-O file         # вы владелец файлп
+-G file         # идентификатор группы файлов совпадает с вашим (или одним из ваших, если вы находитесь в нескольких группах)
 
-file1 -nt file2     # file1 is newer than file2
-file1 -ot file2     # file1 is older than file2
+file1 -nt file2     # file1 новее чем file2
+file1 -ot file2     # file1 старше чем file2
 
--lt     # less than
--le     # less than or equal
--eq     # equal
--ge     # greater than or equal
--gt     # greater than
--ne     # not equal
+-lt     # меньше чем
+-le     # меньше чем или равны
+-eq     # равны
+-ge     # больше чем или равны
+-gt     # больше чем
+-ne     # не равны
 ```
 
 ## 2.6. Циклы
 
-There are three types of loops in bash. `for`, `while` and `until`.
+Существует три типа циклов в bash. `for`,` while` и `until`.
 
-Different `for` Syntax:
+Различные синтаксис `for`:
 ```bash
 for x := 1 to 10 do
 begin
@@ -1104,14 +1104,14 @@ do
 done
 ```
 
-`while` Syntax:
+`while` синтаксис:
 ```bash
 while condition; do
   statements
 done
 ```
 
-`until` Syntax:
+`until` синтаксис:
 ```bash
 until condition; do
   statements
@@ -1120,11 +1120,12 @@ done
 
 # 3. Трюки
 
-## Set an alias
-Open `bash_profile` by running following command `nano ~/.bash_profile`
-> alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
+## Установить псевдоним
+Откройте `bash_profile`, выполнив следующую команду` nano ~ / .bash_profile`
+> alias dockerlogin='ssh www-data@adnan.local -p2222'  # добавьте свой псевдоним в
+.bash_profile
 
-## To quickly go to a specific directory
+## Чтобы быстро перейти к определенному каталогу
 nano ~/.bashrc
 > export hotellogs="/workspace/hotel-api/storage/logs"
 
@@ -1133,39 +1134,39 @@ source ~/.bashrc
 cd $hotellogs
 ```
 
-## Exit traps
+## Выйти из ловушки
 
-Make your bash scripts more robust by reliably performing cleanup.
+Сделайте свои скрипты bash более надежными, выполнив очистку.
 
 ```bash
 function finish {
-  # your cleanup here. e.g. kill any forked processes
+  # ваша очистка здесь. например убить любые разветвленные процессы
   jobs -p | xargs kill
 }
 trap finish EXIT
 ```
 
-## Saving your environment variables
+## Сохранение переменных среды
 
-When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
+Когда вы выполняете `export FOO = BAR`, ваша переменная экспортируется только в эту текущую оболочку и все ее дочерние элементы, чтобы в будущем вы могли просто добавить в свой файл `~/.bash_profile` команду для экспорта вашей переменной
 ```bash
 echo export FOO=BAR >> ~/.bash_profile
 ```
 
-## Accessing your scripts
+## Доступ к вашим скриптам
 
-You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
+Вы можете легко получить доступ к своим скриптам, создав папку bin в своем домашней директории с помощью `mkdir ~/bin`, теперь все скрипты, которые вы помещаете в эту папку, вы можете получить в любой директории.
 
-If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
+Если вы не можете получить доступ, попробуйте добавить код ниже в файл `~/.bash_profile` и после запустите `source ~/.bash_profile`.
 ```bash
-    # set PATH so it includes user's private bin if it exists
+    # установите PATH, чтобы он включал в себя отдельный bin пользователя, если он существует
     if [ -d "$HOME/bin" ] ; then
         PATH="$HOME/bin:$PATH"
     fi
 ```
 
 # 4. Отладка (Debug)
-You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
+Вы можете легко отладить скрипт bash, передав разные опции команде `bash`. Например, `-n` не будет запускать команды и проверит только синтаксические ошибки. `-v` проверит перед выполнением. `-x` после выполнения командной строки.
 
 ```bash
 bash -n scriptname
