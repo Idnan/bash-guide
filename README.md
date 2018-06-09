@@ -5,19 +5,19 @@
 ## Содержание
   1. [Основные операции](#1-Основные-операции)  
     1.1. [Файловые операции](#11-Файловые-операции)  
-    1.2. [Текстовые операции](#12-text-operations)  
-    1.3. [Операции с каталогами](#13-directory-operations)  
-    1.4. [SSH, системная информация и сетевые операции](#14-ssh-system-info--network-operations)  
-    1.5. [Операции по мониторингу процессов](#15-process-monitoring-operations)
-  2. [Основы программирования в командной строке](#2-basic-shell-programming)  
-    2.1. [Переменные](#21-variables)  
-    2.2. [Массивы](#22-array)  
-    2.3. [Замена строк](#23-string-substitution)  
-    2.4. [Функции](#24-functions)  
-    2.5. [Условные выражения](#25-conditionals)  
-    2.6. [Циклы](#26-loops)  
-  3. [Трюки](#3-tricks)  
-  4. [Отладка (Debug)](#4-debugging)  
+    1.2. [Текстовые операции](#12-Текстовые-операции)  
+    1.3. [Операции с каталогами](#13-Операции-с-каталогами)  
+    1.4. [SSH, системная информация и сетевые операции](#14-SSH-системная-информация-и-сетевые-операции)  
+    1.5. [Операции по мониторингу процессов](#15-Операции-по-мониторингу-процессов)
+  2. [Основы программирования в командной строке](#2-Основы-программирования-в-командной-строке)  
+    2.1. [Переменные](#21-Переменные)  
+    2.2. [Массивы](#22-Массивы)  
+    2.3. [Замена строк](#23-Замена-строк)  
+    2.4. [Функции](#24-Функции)  
+    2.5. [Условные выражения](#25-Условные-выражения)  
+    2.6. [Циклы](#26-Циклы)  
+  3. [Трюки](#3-Трюки)  
+  4. [Отладка (Debug)](#4-Отладка-Debug)  
   
 
 # 1. Основные операции
@@ -271,7 +271,7 @@ touch filename
 $ touch trick.md
 ```
 
-## 1.2. Text Operations
+## 1.2. Текстовые операции
 
 <table>
     <tr>
@@ -294,13 +294,13 @@ $ touch trick.md
 </table>
 
 ### a. `awk`
-awk is the most useful command for handling text files. It operates on an entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
+awk является наиболее полезной командой для обработки текстовых файлов. Работает по строкам. По умолчанию для разделения полей используется пробел. Наиболее распространенным синтаксисом для команды awk является
 
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
 
-Lets take following file `/etc/passwd`. Here's the sample data that this file contains:
+Возьмем следующий файл `/etc/passwd`. Вот пример данных, которые содержит этот файл:
 ```
 root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -308,11 +308,11 @@ bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
-So now lets get only username from this file. Where `-F` specifies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
+Итак, теперь вы можете получить только имя пользователя из этого файла. Где `-F` указывает на какой основе мы собираемся разделить поля. В нашем случае `:`. `{print $ 1}` означает вывод первого поля соответствия.
 ```bash
 awk -F':' '{ print $1 }' /etc/passwd
 ```
-After running the above command you will get following output.
+После выполнения указанной команды вы получите следующий вывод.
 ```
 root
 daemon
@@ -320,18 +320,18 @@ bin
 sys
 sync
 ```
-For more detail on how to use `awk`, check following [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
+Подробнее о том, как использовать `awk`, перейдите по [ссылке](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
 
 
 ### b. `cut`
-Remove sections from each line of files
+Удалить разделы из каждой строки файлов.
 
 *example.txt*
 ```bash
 red riding hood went to the park to play
 ```
 
-*show me columns 2 , 7 , and 9 with a space as a separator*
+*покажите мне столбцы 2, 7 и 9 с пробелом в качестве разделителя*
 ```bash
 cut -d " " -f2,7,9 example.txt
 ```
@@ -340,9 +340,9 @@ riding park play
 ```
 
 ### c. `echo`
-Display a line of text
+Отображение строки текста
 
-*display "Hello World"*
+*отобразить «Hello World»*
 ```bash
 echo Hello World
 ```
@@ -350,7 +350,7 @@ echo Hello World
 Hello World
 ```
 
-*display "Hello World" with newlines between words*
+*отобразите «Hello World» каждое слово с новой строки*
 ```bash
 echo -ne "Hello\nWorld\n"
 ```
@@ -360,7 +360,7 @@ World
 ```
 
 ### d. `egrep`
-Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
+Вывод строк, соответствующие шаблону - Extended Expression (псевдоним для: 'grep -E')
 
 *example.txt*
 ```bash
@@ -385,7 +385,7 @@ ipsum dolor sit
 amet.
 ```
 
-*display lines that have either "Lorem" or "dolor" in them.*
+*отобразить строки в которых есть «Lorem», либо «dolor».*
 ```bash
 egrep '(Lorem|dolor)' example.txt
 or
@@ -401,7 +401,7 @@ ipsum dolor sit
 ```
 
 ### e. `fgrep`
-Print lines matching a pattern - FIXED pattern matching  (alias for: 'grep -F')
+Вывод строк, соответствующие шаблону - FIXED pattern matching (псевдоним для: 'grep -F')
 
 *example.txt*
 ```bash
@@ -427,7 +427,7 @@ ipsum dolor sit
 amet.
 ```
 
-*Find the exact string '(Lorem|dolor)' in example.txt*
+*Найти строку с '(Lorem|dolor)' в example.txt*
 ```bash
 fgrep '(Lorem|dolor)' example.txt
 or
@@ -438,14 +438,14 @@ foo (Lorem|dolor)
 ```
 
 ### f. `fmt`
-Simple optimal text formatter
+Простое форматирование текста
 
-*Пример: example.txt (1 line)*
+*Пример: example.txt (1 строка)*
 ```bash
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 ```
 
-*output the lines of example.txt to 20 character width*
+*выводить строки example.txt шириной 20 символов*
 ```bash
 cat example.txt | fmt -w 20
 ```
@@ -472,7 +472,7 @@ amet.
 ```
 
 ### g. `grep`
-Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
+Ищет текст внутри файлов. Вы можете использовать grep для поиска строк текста, которые соответствуют одному или нескольким регулярным выражениям, и выводит только соответствующие строки.  
 ```bash
 grep pattern filename
 ```
@@ -483,14 +483,14 @@ _kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false
 _kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false
 _krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false
 ```
-You can also force grep to ignore word case by using `-i` option. `-r` can be used to search all files under the specified directory, for Пример:
+Вы также можете игнорировать словосочетания с помощью опции `-i`. `-r` может использоваться для поиска всех файлов в указанном каталоге, пример:
 ```bash
 $ grep -r admin /etc/
 ```
-And `-w` to search for words only. For more detail on `grep`, check following [link](https://www.cyberciti.biz/faq/grep-in-bash).
+И `-w` для поиска только слов. Более подробно о `grep`, перейдите по [ссылке](https://www.cyberciti.biz/faq/grep-in-bash).
 
 ### h. `nl`
-Number lines of files
+Номер строк в файле
 
 *example.txt*
 ```bash
@@ -515,7 +515,7 @@ ipsum dolor sit
 amet.
 ```
 
-*show example.txt with line numbers*
+*вывести example.txt с номерами строк*
 ```bash
 nl -s". " example.txt 
 ```
@@ -542,14 +542,14 @@ nl -s". " example.txt
 ```
 
 ### i. `sed`
-Stream editor for filtering and transforming text
+Потоковый редактор для фильтрации и преобразования текста.
 
 *example.txt*
 ```bash
 Hello This is a Test 1 2 3 4
 ``` 
 
-*replace all spaces with hyphens*
+*заменить все пробелы дефисом*
 ```bash
 sed 's/ /-/g' example.txt
 ```
@@ -557,7 +557,7 @@ sed 's/ /-/g' example.txt
 Hello-This-is-a-Test-1-2-3-4
 ```
 
-*replace all digits with "d"*
+*заменить все цифры на "d"*
 ```bash
 sed 's/[0-9]/d/g' example.txt
 ```
@@ -566,7 +566,7 @@ Hello This is a Test d d d d
 ```
 
 ### j. `sort`
-Сортирует строки в текстовом файле
+Сортирует строки в текстовом файле.
 
 *example.txt*
 ```bash
@@ -608,7 +608,7 @@ e
 ```
 
 ### k. `tr`
-Переводит или удаляет символы
+Переводит или удаляет символы.
 
 *example.txt*
 ```bash
@@ -636,7 +636,7 @@ Baz!
 ```
 
 ### l. `uniq`
-Сообщает об повторяющиеся строках или пропускает их
+Сообщает об повторяющиеся строках или пропускает их.
 
 *example.txt*
 ```bash
@@ -650,7 +650,7 @@ d
 c
 ```
 
-*показавыет только уникальные строки example.txt (сначала вам нужно отсортировать его, иначе он не увидит совпадения)*
+*показавыет только уникальные строки example.txt (сначала нужно отсортировать его, иначе он не увидит совпадения)*
 ```bash
 sort example.txt | uniq
 ```
