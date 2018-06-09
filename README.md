@@ -716,7 +716,7 @@ Tells you which directory you currently are in.
 pwd
 ```
 
-## 1.4. SSH, System Info & Network Operations
+## 1.4. SSH, системная информация и сетевые операции
 
 <table>
    <tr>
@@ -752,31 +752,31 @@ pwd
 </table>
 
 ### a. `bg`
-Lists stopped or background jobs; resume a stopped job in the background.
+Список остановленных или фоновых заданий; возобновление работы в фоновом режиме.
 
 ### b. `cal`
-Shows the month's calendar.
+Показывает календарь месяца.
 
 ### c. `date`
-Shows the current date and time.
+Показывает текущую дату и время.
 
 ### d. `df`
-Shows disk usage.
+Показывает использование диска.
 
 ### e. `dig`
-Gets DNS information for domain.  
+Получает информацию DNS для домена. 
 ```bash
 dig domain
 ```
 
 ### f. `du`
-Shows the disk usage of files or directories. For more information on this command check this [link](http://www.linfo.org/du.html)
+Показывает дисковое использование файлов или каталогов. Для получения дополнительной информации об этой команде перейдите по этой [ссылке](http://www.linfo.org/du.html)
 ```bash
 du [option] [filename|directory]
 ```
-Options:
-- `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
-- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
+Опции:
+- `-h` (человекочитаемое) Отображает вывод его в килобайтах (К), мегабайтах (М) и гигабайтах (G).
+- `-s` (сжатое или общее) Выводит общее дисковое пространство каталога и отчеты для подкаталогов. 
 
 Пример:
 ```bash
@@ -785,106 +785,106 @@ du -sh pictures
 ```
 
 ### g. `fg`
-Brings the most recent job in the foreground.
+Команда возобновления работы задачи.
 
 ### h. `finger`
-Displays information about user.  
+Отображает информацию о пользователе.  
 ```bash
 finger username
 ```
 ### i. `jobs`
-Lists the jobs running in the background, giving the job number.
+Список заданий, выполняемые в фоновом режиме, указывая номер задания.
 
 ### j. `last`
-Lists your last logins of specified user.  
+Список последних авторизаций указанного пользователя.
 ```bash
 last yourUsername
 ```
 
 ### k. `man`
-Shows the manual for specified command.  
+Показывает руководство для указанной команды.
 ```bash
 man command
 ```
 
 ### l. `passwd`
-Allows the current logged user to change their password.
+Позволяет текущему зарегистрированному пользователю изменить свой пароль.
 
 ### m. `ping`
-Pings host and outputs results.  
+Запрашивает хост и выводит результаты.  
 ```bash
 ping host
 ```
 
 ### n. `ps`
-Lists your processes.  
+Перечисляет процессы.  
 ```bash
 ps -u yourusername
 ```
-Use the flags ef. e for every process and f for full listing. 
+Используйте флаг ef. e для каждого процесса и f для полного списка.
 ```bash
 ps -ef
 ```
 
 ### o. `quota`
-Shows what your disk quota is.  
+Показывает, какова ваша дисковая квота. 
 ```bash
 quota -v
 ```
 
 ### p. `scp`
-Transfer files between a local host and a remote host or between two remote hosts.
+Передача файлов между локальным хостом и удаленным хостом или между двумя удаленными узлами.
 
-*copy from local host to remote host*
+*копирование с локального хоста на удаленный хост*
 ```bash
 scp source_file user@host:directory/target_file
 ```
-*copy from remote host to local host*
+*копирование с удаленного хоста на локальный хост*
 ```bash
 scp user@host:directory/source_file target_file
 scp -r user@host:directory/source_folder target_folder
 ```
-This command also accepts an option `-P` that can be used to connect to specific port.  
+Эта команда также принимает опцию `-P`, которая может использоваться для подключения к определенному порту.  
 ```bash
 scp -P port user@host:directory/source_file target_file
 ```
 
 ### q. `ssh`
-ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
+ssh (SSH client) - это программа для входа в систему и выполнения команд на удаленном компьютере.  
 ```bash
 ssh user@host
 ```
-This command also accepts an option `-p` that can be used to connect to specific port.  
+Эта команда также принимает опцию `-p`, которая может использоваться для подключения к определенному порту. 
 ```bash
 ssh -p port user@host
 ```
 
 ### r. `top`
-Displays your currently active processes.
+Отображает текущие активные процессы.
 
 ### s. `uname`
-Shows kernel information.  
+Показывает информацию о ядре. 
 ```bash
 uname -a
 ```
 
 ### t. `uptime`
-Shows current uptime.
+Показывает текущее время бесперебойной работы.
 
 ### u. `w`
-Displays who is online.
+Отображает, кто в сети.
 
 ### v. `wget`
-Downloads file.  
+Скачать файл.  
 ```bash
 wget file
 ```
 
 ### w. `whoami`
-Return current logged in username.
+Вернуть текущий логин.
 
 ### x. `whois`
-Gets whois information for domain.  
+Получает информацию whois для домена.
 ```bash
 whois domain
 ```
