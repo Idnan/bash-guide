@@ -889,7 +889,7 @@ wget file
 whois domain
 ```
 
-## 1.5. Process Monitoring Operations
+## 1.5. Операции по мониторингу процессов
 
 <table>
    <tr>
@@ -901,35 +901,34 @@ whois domain
 </table>
 
 ### a. `kill`
-Kills (ends) the processes with the ID you gave.  
+Убивает (завершает) процессы с указанным идентификатором.
 ```bash
 kill PID
 ```
 
 ### b. `killall`
-Kill all processes with the name.  
+Убейте все процессы по имени.
 ```bash
 killall processname
 ```
 
 ### c. &
-The `&` symbol instructs the command to run as a background process in a subshell.
+Символ `&` инструктирует команду работать как фоновый процесс в подоболочке.
 ```bash
 command &
 ```
 
 ### d. `nohup`
-nohup stands for "No Hang Up". This allows to run command/process or shell script that can continue running in the background after you log out from a shell.
+nohup означает «No Hang Up (без зависаний)». Это позволяет запускать сценарий команд / процессов или оболочки, которые могут продолжаться в фоновом режиме после выхода из оболочки.
 ```bash
 nohup command
 ```
-Combine it with `&` to create background processes 
+Объедините его с `&` для создания фоновых процессов
 ```bash
 nohup command &
 ```
 
-# 2. Basic Shell Programming
-
+# 2. Основы программирования в командной строке
 
 The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
@@ -937,7 +936,7 @@ The first line that you will write in bash script files is called `shebang`. Thi
 #!/usr/bin/env bash
 ```
 
-## 2.1. Variables
+## 2.1. Переменные
 
 Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
 
@@ -952,7 +951,7 @@ The above line creates a variable `str` and assigns "hello world" to it. The val
 ```bash
 echo $str   # hello world
 ```
-## 2.2. Array
+## 2.2. Массивы
 Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
 
 Examples:
@@ -984,7 +983,7 @@ ${varname:+word}    # if varname exists and isn't null, return word; otherwise r
 ${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
 ```
 
-## 2.3 String Substitution
+## 2.3 Замена строк
 
 Check some of the syntax on how to manipulate strings
 
@@ -998,7 +997,7 @@ ${variable//pattern/string} # the longest match to pattern in variable is replac
 ${#varname}     # returns the length of the value of the variable as a character string
 ```
 
-## 2.4. Functions
+## 2.4. Функции
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
 ```bash
@@ -1023,7 +1022,7 @@ say "hello world!"
 
 When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within functions, are treated in the same manner as arguments given to the script.
 
-## 2.5. Conditionals
+## 2.5. Условные выражения
 
 The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
@@ -1083,7 +1082,7 @@ file1 -ot file2     # file1 is older than file2
 -ne     # not equal
 ```
 
-## 2.6. Loops
+## 2.6. Циклы
 
 There are three types of loops in bash. `for`, `while` and `until`.
 
@@ -1119,7 +1118,7 @@ until condition; do
 done
 ```
 
-# 3. Tricks
+# 3. Трюки
 
 ## Set an alias
 Open `bash_profile` by running following command `nano ~/.bash_profile`
@@ -1165,7 +1164,7 @@ If you can not access, try append the code below in your `~/.bash_profile` file 
     fi
 ```
 
-# 4. Debugging
+# 4. Отладка (Debug)
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
 
 ```bash
@@ -1174,7 +1173,7 @@ bash -v scriptname
 bash -x scriptname
 ```
 
-## Помощь
+## Как помочь
 
 - Сообщить об ошибке [Как?](https://help.github.com/articles/creating-an-issue/)
 - Создать pull request с улучшениями [Как?](https://help.github.com/articles/about-pull-requests/)
@@ -1185,7 +1184,7 @@ bash -x scriptname
 - [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 - [Japanese | 日本語](https://github.com/itooww/bash-guide)
-- [Russian | Русский](https://github.com/itooww/bash-guide)
+- [Russian | Русский](https://github.com/navinweb/bash-guide)
 
 ## License
 
