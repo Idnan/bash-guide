@@ -858,6 +858,44 @@ This command also accepts an option `-p` that can be used to connect to specific
 ```bash
 ssh -p port user@host
 ```
+For easy access:
+```bash
+nano ~/.ssh/config
+```
+The config file is organized by hosts. Each host definition can define connection options for the specific matching host. Wildcards are also available to allow for options that should have a broader scope.
+
+
+```bash
+Host firsthost
+    SSH_OPTION_1 custom_value
+    SSH_OPTION_2 custom_value
+    SSH_OPTION_3 custom_value
+
+Host secondhost
+    ANOTHER_OPTION custom_value
+
+Host *host
+    ANOTHER_OPTION custom_value
+
+Host *
+    CHANGE_DEFAULT custom_value
+```
+However, we could also use the full option names with the -o flag, like this:
+
+```bash
+ssh -o "User=custom_value" -o "Port=custom_value" -o "HostName=custom_value" anything
+```
+#### q1. `SOCKS5`
+```bash
+ssh -D port -f -C -q -N user@host
+```
+#### Explanation of arguments:
+- -D: Tells SSH that we want a SOCKS tunnel on the specified port number (you can choose a number between 1025-65536)
+- -f: Forks the process to the background
+- -C: Compresses the data before sending it
+- -q: Uses quiet mode
+- -N: Tells SSH that no command will be sent once the tunnel is up
+
 
 ### r. `top`
 Displays your currently active processes.
@@ -1084,7 +1122,6 @@ file1 -ot file2     # file1 is older than file2
 ```
 
 ## 2.6. Loops
-
 There are three types of loops in bash. `for`, `while` and `until`.
 
 Different `for` Syntax:
@@ -1146,6 +1183,41 @@ function finish {
 trap finish EXIT
 ```
 
+## Extract
+Make your life easier.
+```bash
+function extract()      # Handy Extract Program
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xvjf $1     ;;
+            *.tar.gz)    tar xvzf $1     ;;
+            *.bz2)       bunzip2 $1      ;;
+            *.rar)       unrar x $1      ;;
+            *.gz)        gunzip $1       ;;
+            *.tar)       tar xvf $1      ;;
+            *.tbz2)      tar xvjf $1     ;;
+            *.tgz)       tar xvzf $1     ;;
+            *.zip)       unzip $1        ;;
+            *.Z)         uncompress $1   ;;
+            *.7z)        7z x $1         ;;
+            *)           echo "'$1' cannot be extracted via >extract<" ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+    fi
+}
+```
+## Exit
+```bash
+function _exit()              # Function to run upon exit of shell.
+{
+    echo -e "${BRed}Hasta la vista, cabron ${NC}"
+}
+trap _exit EXIT
+
+```
+
 ## Saving your environment variables
 
 When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
@@ -1163,6 +1235,13 @@ If you can not access, try append the code below in your `~/.bash_profile` file 
     if [ -d "$HOME/bin" ] ; then
         PATH="$HOME/bin:$PATH"
     fi
+```
+## Aliases
+Put this in your ~/.bashrc file to include all your aliases in a neatly organized file:
+```bash
+if [ -f ~/.bash_aliases ]; then
+	source ~/.bash_aliases
+fi
 ```
 
 # 4. Debugging
