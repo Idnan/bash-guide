@@ -12,9 +12,9 @@
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
     2.2. [Array](#22-array)  
-    2.3. [String Substitution](#23-string-substitution)
-    2.4. [Other String Tricks](#24-string-tricks)
-    2.5. [Functions](#25-functions)  
+    2.3. [String Substitution](#23-string-substitution)  
+    2.4. [Other String Tricks](#24-other-string-tricks)  
+    2.5. [Functions](#25-functions) 
     2.6. [Conditionals](#26-conditionals)  
     2.7. [Loops](#27-loops)  
   3. [Tricks](#3-tricks)  
@@ -1034,6 +1034,7 @@ case "$var" in
 		#otherSubString is in variable
 	;;
 esac
+```
 
 ## 2.5. Functions
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
