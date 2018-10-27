@@ -14,7 +14,7 @@
     2.2. [Array](#22-array)  
     2.3. [String Substitution](#23-string-substitution)  
     2.4. [Other String Tricks](#24-other-string-tricks)  
-    2.5. [Functions](#25-functions) 
+    2.5. [Functions](#25-functions)  
     2.6. [Conditionals](#26-conditionals)  
     2.7. [Loops](#27-loops)  
   3. [Tricks](#3-tricks)  
