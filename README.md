@@ -957,9 +957,9 @@ Like other languages bash has also arrays. An array is a variable containing mul
 
 Examples:
 ```bash
-array[0] = val
-array[1] = val
-array[2] = val
+array[0]=val
+array[1]=val
+array[2]=val
 array=([2]=val [0]=val [1]=val)
 array=(val val val)
 ```
