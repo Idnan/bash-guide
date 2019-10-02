@@ -746,8 +746,9 @@ pwd
    <tr>
       <td><a href="#u-w">w</a></td>
       <td><a href="#v-wget">wget</a></td>
-      <td><a href="#w-whoami">whoami</a></td>
-      <td><a href="#x-whois">whois</a></td>
+      <td><a href="#w-curl">curl</a></td>
+      <td><a href="#x-whoami">whoami</a></td>
+      <td><a href="#y-whois">whois</a></td>
    </tr>
 </table>
 
@@ -880,10 +881,18 @@ Downloads file.
 wget file
 ```
 
-### w. `whoami`
+### w. `curl`
+Curl is a command-line tool for requesting or sending data using URL syntax. Usefull on systems where you only have terminal available for making various requests.
+```bash
+curl url
+```
+Use  `-X` or `--request` to specify which method you would like invoke (GET, POST, DELETE, ...).
+Use `-d <data>` or `--data <data>` to POST data on given URL.
+
+### x. `whoami`
 Return current logged in username.
 
-### x. `whois`
+### y. `whois`
 Gets whois information for domain.  
 ```bash
 whois domain
