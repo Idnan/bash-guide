@@ -91,15 +91,16 @@ Clears content on window.
       <td><a href="#k-head">head</a></td>
    </tr>
    <tr>
-      <td><a href="#l-lpq">lpq</a></td>
-      <td><a href="#m-lpr">lpr</a></td>
-      <td><a href="#n-lprm">lprm</a></td>
-      <td><a href="#o-ls">ls</a></td>
-      <td><a href="#p-more">more</a></td>
-      <td><a href="#q-mv">mv</a></td>
-      <td><a href="#r-rm">rm</a></td>
-      <td><a href="#s-tail">tail</a></td>
-      <td><a href="#t-touch">touch</a></td>
+      <td><a href="#l-locate">locate</a></td>
+      <td><a href="#m-lpq">lpq</a></td>
+      <td><a href="#n-lpr">lpr</a></td>
+      <td><a href="#o-lprm">lprm</a></td>
+      <td><a href="#p-ls">ls</a></td>
+      <td><a href="#q-more">more</a></td>
+      <td><a href="#r-mv">mv</a></td>
+      <td><a href="#s-rm">rm</a></td>
+      <td><a href="#t-tail">tail</a></td>
+      <td><a href="#u-touch">touch</a></td>
    </tr>
 </table>
 
@@ -186,7 +187,13 @@ Outputs the first 10 lines of file
 head filename
 ```
 
-### l. `lpq`
+### l. `locate`
+Find files by name. It searches database for the filename instead of searching your filesystem (witch is what the find command does).
+```bash
+locate
+```
+
+### m. `lpq`
 Check out the printer queue.  
 ```bash
 lpq
@@ -199,19 +206,19 @@ active  adnanad 59      demo                            399360 bytes
 1st     adnanad 60      (stdin)                         0 bytes
 ```
 
-### m. `lpr`
+### n. `lpr`
 Print the file.  
 ```bash
 lpr filename
 ```
 
-### n. `lprm`
+### o. `lprm`
 Remove something from the printer queue.  
 ```bash
 lprm jobnumber
 ```
 
-### o. `ls`
+### p. `ls`
 Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
@@ -229,13 +236,13 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 -rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore
 </pre>
 
-### p. `more`
+### q. `more`
 Shows the first part of a file (move with space and type q to quit).  
 ```bash
 more filename
 ```
 
-### q. `mv`
+### r. `mv`
 Moves a file from one location to other.  
 ```bash
 mv filename1 filename2
@@ -247,7 +254,7 @@ Also it can be used for rename a file.
 mv old_name new_name
 ```
 
-### r. `rm`
+### s. `rm`
 Removes a file. Using this command on a directory gives you an error.
 `rm: directory: is a directory`
 To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
@@ -255,13 +262,13 @@ To remove a directory you have to pass `-r` which will remove the content of the
 rm filename
 ```
 
-### s. `tail`
+### t. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
 ```bash
 tail filename
 ```
 
-### t. `touch`
+### u. `touch`
 Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
 ```bash
 touch filename
