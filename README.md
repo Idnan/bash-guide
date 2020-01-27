@@ -1131,12 +1131,22 @@ done
 # 3. Tricks
 
 ## Set an alias
-Open `bash_profile` by running following command `nano ~/.bash_profile`
-> alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
+
+Run `nano ~/.bash_profile` and add the following line:
+
+```bash
+alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
+```
 
 ## To quickly go to a specific directory
-nano ~/.bashrc
-> export hotellogs="/workspace/hotel-api/storage/logs"
+
+Run `nano ~/.bashrc` and add the following line:
+
+```bash
+export hotellogs="/workspace/hotel-api/storage/logs"
+```
+
+Now you can use the saved path:
 
 ```bash
 source ~/.bashrc
@@ -1144,12 +1154,17 @@ cd $hotellogs
 ```
 
 ## Re-execute the previous command
+
 This goes back to the days before you could rely on keyboards to have an "up" arrow key, but can still be useful. 
 To run the last command in your history
-> !!
+```bash
+!!
+```
 A common error is to forget to use `sudo` to prefix a command requiring privileged execution. Instead of typing the whole command again, you can:
-> sudo !!
-This would change a `mkdir somedir` into `sudo mkdir somedir`
+```bash
+sudo !!
+```
+This would change a `mkdir somedir` into `sudo mkdir somedir`.
 
 ## Exit traps
 
@@ -1176,10 +1191,10 @@ You can easily access your scripts by creating a bin folder in your home with `m
 
 If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
 ```bash
-    # set PATH so it includes user's private bin if it exists
-    if [ -d "$HOME/bin" ] ; then
-        PATH="$HOME/bin:$PATH"
-    fi
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 ```
 
 # 4. Debugging
