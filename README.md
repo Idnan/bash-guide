@@ -1206,6 +1206,20 @@ bash -v scriptname
 bash -x scriptname
 ```
 
+# 5. Multi-threading
+You can easily multi-threading your jobs using `&`. All those jobs will then run in the background simultaneously and you can see the processes below are running using `jobs`.
+
+```bash
+sleep 15 & sleep 5 &
+```
+
+The optional `wait` command will then wait for all the jobs to finish.
+
+```bash
+sleep 10 & sleep 5 &
+wait
+```
+
 ## Contribution
 
 - Report issues [How to](https://help.github.com/articles/creating-an-issue/)
