@@ -1216,6 +1216,7 @@ bash -x scriptname
 - [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 - [Japanese | 日本語](https://github.com/itooww/bash-guide)
+- [Khmer | ភាសាខ្មែរ](https://github.com/samreachyan/bash-guide)
 
 ## License
 
