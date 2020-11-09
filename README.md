@@ -18,7 +18,7 @@
     2.6. [Loops](#26-loops)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
-  
+
 
 # 1. Basic Operations
 
@@ -34,7 +34,6 @@ AWS_HOME=/Users/adnanadnan/.aws
 LANG=en_US.UTF-8
 LC_CTYPE=en_US.UTF-8
 LESS=-R
-
 $ echo $AWS_HOME
 /Users/adnanadnan/.aws
 ```
@@ -134,6 +133,28 @@ Copies a file from one location to other.
 cp filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+```bash
+cp -i filename1 filename2
+```
+Same as previous command,except that if filename2 exists,the user is promoted before it is overwritten.
+```bash
+cp filename1 filename1 dir1
+```
+Copy file1 and file2 into directory dir1 . The directory dir1
+must already exist.
+```bash
+cp dir1/* dir2
+```
+Using a wildcard, copy all the files in dir1 into dir2 . The direc-
+tory dir2 must already exist.
+```bash
+cp -r dir1 dir2
+```
+Copy the contents of directory dir1 to directory dir2 . If directory dir2 does not exist, it is created and, after the copy, will contain
+the same contents as directory dir1 . If directory dir2 does exist,then directory dir1 (and its contents) will be copied into dir2 .
+
+
+
 
 ### e. `diff`
 Compares files, and lists their differences.  
@@ -254,6 +275,14 @@ To remove a directory you have to pass `-r` which will remove the content of the
 ```bash
 rm filename
 ```
+```bash
+rm *.html
+```
+It will delete all the html file current directory.But carefully if you do something like this 
+```bash
+rm * .html
+```
+thats mean if you put extra space before `.html`the rm command will delete all the files in the directory and then complain that there is no file called .html.
 
 ### s. `tail`
 Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
@@ -1023,7 +1052,6 @@ function hello {
    echo world!
 }
 hello
-
 function say {
     echo $1
 }
@@ -1043,9 +1071,7 @@ else
     will execute if expression is false
 fi
 ```
-
 Sometime if conditions becoming confusing so you can write the same condition using the `case statements`.
-
 ```bash
 case expression in
     pattern1 )
@@ -1055,20 +1081,16 @@ case expression in
     ...
 esac
 ```
-
 Expression Examples:
-
 ```bash
 statement1 && statement2  # both statements are true
 statement1 || statement2  # at least one of the statements is true
-
 str1=str2       # str1 matches str2
 str1!=str2      # str1 does not match str2
 str1<str2       # str1 is less than str2
 str1>str2       # str1 is greater than str2
 -n str1         # str1 is not null (has length greater than 0)
 -z str1         # str1 is null (has length 0)
-
 -a file         # file exists
 -d file         # file exists and is a directory
 -e file         # file exists; same -a
@@ -1080,10 +1102,8 @@ str1>str2       # str1 is greater than str2
 -N file         # file was modified since it was last read
 -O file         # you own file
 -G file         # file's group ID matches yours (or one of yours, if you are in multiple groups)
-
 file1 -nt file2     # file1 is newer than file2
 file1 -ot file2     # file1 is older than file2
-
 -lt     # less than
 -le     # less than or equal
 -eq     # equal
@@ -1091,70 +1111,52 @@ file1 -ot file2     # file1 is older than file2
 -gt     # greater than
 -ne     # not equal
 ```
-
 ## 2.6. Loops
-
 There are three types of loops in bash. `for`, `while` and `until`.
-
 Different `for` Syntax:
 ```bash
 for x := 1 to 10 do
 begin
   statements
 end
-
 for name [in list]
 do
   statements that can use $name
 done
-
 for (( initialisation ; ending condition ; update ))
 do
   statements...
 done
 ```
-
 `while` Syntax:
 ```bash
 while condition; do
   statements
 done
 ```
-
 `until` Syntax:
 ```bash
 until condition; do
   statements
 done
 ```
-
 # 3. Tricks
-
 ## Set an alias
-
 Run `nano ~/.bash_profile` and add the following line:
-
 ```bash
 alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
 ```
-
 ## To quickly go to a specific directory
-
 Run `nano ~/.bashrc` and add the following line:
-
 ```bash
 export hotellogs="/workspace/hotel-api/storage/logs"
 ```
-
 Now you can use the saved path:
-
 ```bash
 source ~/.bashrc
 cd $hotellogs
 ```
-
 ## Re-execute the previous command
-
 This goes back to the days before you could rely on keyboards to have an "up" arrow key, but can still be useful. 
 To run the last command in your history
 ```bash
@@ -1165,11 +1167,8 @@ A common error is to forget to use `sudo` to prefix a command requiring privileg
 sudo !!
 ```
 This would change a `mkdir somedir` into `sudo mkdir somedir`.
-
 ## Exit traps
-
 Make your bash scripts more robust by reliably performing cleanup.
-
 ```bash
 function finish {
   # your cleanup here. e.g. kill any forked processes
@@ -1177,18 +1176,13 @@ function finish {
 }
 trap finish EXIT
 ```
-
 ## Saving your environment variables
-
 When you do `export FOO = BAR`, your variable is only exported in this current shell and all its children, to persist in the future you can simply append in your `~/.bash_profile` file the command to export your variable
 ```bash
 echo export FOO=BAR >> ~/.bash_profile
 ```
-
 ## Accessing your scripts
-
 You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
-
 If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
 ```bash
 # set PATH so it includes user's private bin if it exists
@@ -1196,27 +1190,20 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 ```
-
 # 4. Debugging
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
-
 ```bash
 bash -n scriptname
 bash -v scriptname
 bash -x scriptname
 ```
-
 ## Contribution
-
 - Report issues [How to](https://help.github.com/articles/creating-an-issue/)
 - Open pull request with improvements [How to](https://help.github.com/articles/about-pull-requests/)
 - Spread the word
-
 ## Translation
 - [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 - [Japanese | 日本語](https://github.com/itooww/bash-guide)
-
 ## License
-
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
