@@ -2,9 +2,13 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
+[TOC]
+
 # 1. Basic Operations
 
 ### a. `export`
+
+
 Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
 ```bash
 export
@@ -529,7 +533,7 @@ Stream editor for filtering and transforming text
 *example.txt*
 ```bash
 Hello This is a Test 1 2 3 4
-``` 
+```
 
 *replace all spaces with hyphens*
 ```bash
