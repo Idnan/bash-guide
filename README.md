@@ -697,7 +697,7 @@ mkdir 1stDirectory 2ndDirectory 3rdDirectory
 ```
 You can also use this to create parent directories at the same time. For instance, if you wanted a directory named 'project1' in another subdirectory at '/samples/bash/projects/', you could run:
 ```bash 
-mkdir /samples/bash/projects/project1
+mkdir /samples/bash/projects/project1 -p
 ```
 If any of these directories did no already exist, they would be created as well.
 
