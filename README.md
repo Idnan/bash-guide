@@ -19,6 +19,7 @@
     2.7. [Loops](#27-loops)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
+  5. [Multi-threading](#5-multi-threading)
 
 # 1. Basic Operations
 
