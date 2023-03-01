@@ -19,7 +19,6 @@
     2.7. [Loops](#27-loops)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
-  
 
 # 1. Basic Operations
 
@@ -710,6 +709,17 @@ Makes a new directory.
 ```bash
 mkdir dirname
 ```
+You can use this to create multiple directories at once within your current directory.
+```bash
+mkdir 1stDirectory 2ndDirectory 3rdDirectory
+```
+You can also use this to create parent directories at the same time with the -p (or --parents) flag. For instance, if you wanted a directory named 'project1' in another subdirectory at '/samples/bash/projects/', you could run:
+```bash 
+mkdir -p /samples/bash/projects/project1
+mkdir --parents /samples/bash/projects/project1
+```
+Both commands above will do the same thing.
+If any of these directories did no already exist, they would be created as well.
 
 ### c. `pwd`
 Tells you which directory you currently are in.  
@@ -954,13 +964,13 @@ Example:
 echo $str   # hello world
 ```
 ## 2.2. Array
-Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
+Like other languages bash has also arrays. An array is a variable containing multiple values. There's no maximum limit on the size of array. Arrays in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash which are given below.
 
 Examples:
 ```bash
-array[0] = val
-array[1] = val
-array[2] = val
+array[0]=val
+array[1]=val
+array[2]=val
 array=([2]=val [0]=val [1]=val)
 array=(val val val)
 ```
@@ -1160,17 +1170,40 @@ done
 # 3. Tricks
 
 ## Set an alias
-Open `bash_profile` by running following command `nano ~/.bash_profile`
-> alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
+
+Run `nano ~/.bash_profile` and add the following line:
+
+```bash
+alias dockerlogin='ssh www-data@adnan.local -p2222'  # add your alias in .bash_profile
+```
 
 ## To quickly go to a specific directory
-nano ~/.bashrc
-> export hotellogs="/workspace/hotel-api/storage/logs"
+
+Run `nano ~/.bashrc` and add the following line:
+
+```bash
+export hotellogs="/workspace/hotel-api/storage/logs"
+```
+
+Now you can use the saved path:
 
 ```bash
 source ~/.bashrc
 cd $hotellogs
 ```
+
+## Re-execute the previous command
+
+This goes back to the days before you could rely on keyboards to have an "up" arrow key, but can still be useful. 
+To run the last command in your history
+```bash
+!!
+```
+A common error is to forget to use `sudo` to prefix a command requiring privileged execution. Instead of typing the whole command again, you can:
+```bash
+sudo !!
+```
+This would change a `mkdir somedir` into `sudo mkdir somedir`.
 
 ## Exit traps
 
@@ -1197,10 +1230,10 @@ You can easily access your scripts by creating a bin folder in your home with `m
 
 If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
 ```bash
-    # set PATH so it includes user's private bin if it exists
-    if [ -d "$HOME/bin" ] ; then
-        PATH="$HOME/bin:$PATH"
-    fi
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 ```
 
 # 4. Debugging
@@ -1222,6 +1255,9 @@ bash -x scriptname
 - [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 - [Japanese | 日本語](https://github.com/itooww/bash-guide)
+- [Russian | Русский](https://github.com/navinweb/bash-guide)
+- [Vietnamese | Tiếng Việt](https://github.com/nguyenvanhieuvn/hoc-bash)
+- [Spanish | Español](https://github.com/mariotristan/bash-guide)
 
 ## License
 
