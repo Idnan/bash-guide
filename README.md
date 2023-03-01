@@ -2,6 +2,24 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
+## Table of Contents
+  1. [Basic Operations](#1-basic-operations)  
+    1.1. [File Operations](#11-file-operations)  
+    1.2. [Text Operations](#12-text-operations)  
+    1.3. [Directory Operations](#13-directory-operations)  
+    1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
+    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
+  2. [Basic Shell Programming](#2-basic-shell-programming)  
+    2.1. [Variables](#21-variables)  
+    2.2. [Array](#22-array)  
+    2.3. [String Substitution](#23-string-substitution)  
+    2.4. [Other String Tricks](#24-other-string-tricks)  
+    2.5. [Functions](#25-functions)  
+    2.6. [Conditionals](#26-conditionals)  
+    2.7. [Loops](#27-loops)  
+  3. [Tricks](#3-tricks)  
+  4. [Debugging](#4-debugging)  
+
 # 1. Basic Operations
 
 ### a. `export`
@@ -991,7 +1009,44 @@ ${variable//pattern/string} # the longest match to pattern in variable is replac
 ${#varname}     # returns the length of the value of the variable as a character string
 ```
 
-## 2.4. Functions
+## 2.4. Other String Tricks
+
+Bash has multiple shorthand tricks for doing various things to strings.
+
+```bash
+${variable,,}    #this converts every letter in the variable to lowercase
+${variable^^}    #this converts every letter in the variable to uppercase
+
+${variable:2:8}  #this returns a substring of a string, starting at the character at the 2 index(strings start at index 0, so this is the 3rd character),
+                 #the substring will be 8 characters long, so this would return a string made of the 3rd to the 11th characters.
+```
+
+Here are some handy pattern matching tricks
+```bash
+if [[ "$variable" == *subString* ]]  #this returns true if the provided substring is in the variable
+if [[ "$variable" != *subString* ]]  #this returns true if the provided substring is not in the variable
+if [[ "$variable" == subString* ]]   #this returns true if the variable starts with the given subString
+if [[ "$variable" == *subString ]]   #this returns true if the variable ends with the given subString
+```
+
+
+The above can be shortened using a case statement and the IN keyword
+```bash
+case "$var" in
+	begin*)
+		#variable begins with "begin"
+	;;
+	*subString*)
+		#subString is in variable
+	;;
+
+	*otherSubString*)
+		#otherSubString is in variable
+	;;
+esac
+```
+
+## 2.5. Functions
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
 
 ```bash
@@ -1016,7 +1071,7 @@ say "hello world!"
 
 When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within functions, are treated in the same manner as arguments given to the script.
 
-## 2.5. Conditionals
+## 2.6. Conditionals
 
 The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
@@ -1076,7 +1131,7 @@ file1 -ot file2     # file1 is older than file2
 -ne     # not equal
 ```
 
-## 2.6. Loops
+## 2.7. Loops
 
 There are three types of loops in bash. `for`, `while` and `until`.
 
