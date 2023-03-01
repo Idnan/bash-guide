@@ -1200,7 +1200,10 @@ bash -x scriptname
 - [Chinese | 简体中文](https://github.com/vuuihc/bash-guide)
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
 - [Japanese | 日本語](https://github.com/itooww/bash-guide)
+- [Vietnamese | Tiếng Việt](https://github.com/nguyenvanhieuvn/hoc-bash)
 - [Spanish | Español](https://github.com/mariotristan/bash-guide)
+
+
 ## License
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
