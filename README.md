@@ -757,9 +757,10 @@ pwd
    <tr>
       <td><a href="#u-w">w</a></td>
       <td><a href="#v-wget">wget</a></td>
-      <td><a href="#w-curl">curl</a></td>
-      <td><a href="#x-whoami">whoami</a></td>
-      <td><a href="#y-whois">whois</a></td>
+      <td><a href="#w-whoami">whoami</a></td>
+      <td><a href="#x-whois">whois</a></td>
+      <td><a href="#y-rsync">sync</a></td>
+      <td><a href="#z-curl">curl</a></td>
    </tr>
 </table>
 
@@ -892,22 +893,29 @@ Downloads file.
 wget file
 ```
 
-### w. `curl`
+### w. `whoami`
+Return current logged in username.
+
+### x. `whois`
+Gets whois information for domain.  
+```bash
+whois domain
+```
+
+### y. `rsync`
+Does the same job as `scp` command, but transfers only changed files. Useful when transferring the same folder to/from server multiple times.
+```bash
+rsync source_folder user@host:target_folder
+rsync user@host:target_folder target_folder
+```
+
+### z. `curl`
 Curl is a command-line tool for requesting or sending data using URL syntax. Usefull on systems where you only have terminal available for making various requests.
 ```bash
 curl url
 ```
 Use  `-X` or `--request` to specify which method you would like invoke (GET, POST, DELETE, ...).
 Use `-d <data>` or `--data <data>` to POST data on given URL.
-
-### x. `whoami`
-Return current logged in username.
-
-### y. `whois`
-Gets whois information for domain.  
-```bash
-whois domain
-```
 
 ## 1.5. Process Monitoring Operations
 
