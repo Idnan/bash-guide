@@ -695,10 +695,12 @@ You can use this to create multiple directories at once within your current dire
 ```bash
 mkdir 1stDirectory 2ndDirectory 3rdDirectory
 ```
-You can also use this to create parent directories at the same time. For instance, if you wanted a directory named 'project1' in another subdirectory at '/samples/bash/projects/', you could run:
+You can also use this to create parent directories at the same time with the -p (or --parents) flag. For instance, if you wanted a directory named 'project1' in another subdirectory at '/samples/bash/projects/', you could run:
 ```bash 
-mkdir /samples/bash/projects/project1
+mkdir -p /samples/bash/projects/project1
+mkdir --parents /samples/bash/projects/project1
 ```
+Both commands above will do the same thing.
 If any of these directories did no already exist, they would be created as well.
 
 ### c. `pwd`
