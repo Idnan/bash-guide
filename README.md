@@ -2,33 +2,33 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
-## Table of Contents
-  1. [Basic Operations](#1-basic-operations)  
-    1.1. [File Operations](#11-file-operations)  
-    1.2. [Text Operations](#12-text-operations)  
-    1.3. [Directory Operations](#13-directory-operations)  
-    1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
-    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
-  2. [Basic Shell Programming](#2-basic-shell-programming)  
-    2.1. [Variables](#21-variables)  
-    2.2. [Array](#22-array)  
-    2.3. [String Substitution](#23-string-substitution)  
-    2.4. [Other String Tricks](#24-other-string-tricks)  
-    2.5. [Functions](#25-functions)  
-    2.6. [Conditionals](#26-conditionals)  
-    2.7. [Loops](#27-loops)  
-  3. [Tricks](#3-tricks)  
-  4. [Debugging](#4-debugging)  
+## Daftar Isi
+  1. [Operasi Dasar](#1-operasi-dasar)
+    1.1. [Operasi File](#11-operasi-file)
+    1.2. [Operasi Teks](#12-operasi-teks)
+    1.3. [Operasi Direktori](#13-operasi-direktori)
+    1.4. [SSH, Informasi Sistem & Network Operations](#14-ssh-informasi-sistem--operasi-jaringan)
+    1.5. [Operasi Monitoring Proses](#15-operasi-monitoring-proses)
+  2. [Basic Shell Programming](#2-basic-shell-programming)
+    2.1. [Variables](#21-variables)
+    2.2. [Array](#22-array)
+    2.3. [String Substitution](#23-string-substitution)
+    2.4. [Other String Tricks](#24-other-string-tricks)
+    2.5. [Functions](#25-functions)
+    2.6. [Conditionals](#26-conditionals)
+    2.7. [Loops](#27-loops)
+  3. [Tricks](#3-tricks)
+  4. [Debugging](#4-debugging)
   5. [Multi-threading](#5-multi-threading)
 
-# 1. Basic Operations
+# 1. Operasi Dasar
 
 ### a. `export`
-Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
+Menampilkan semua variabel environment. Jika kamu ingin mendapatkan detail dari variabel tertentu, gunakan `echo $VARIABLE_NAME`.
 ```bash
 export
 ```
-Example:
+Contoh:
 ```bash
 $ export
 AWS_HOME=/Users/adnanadnan/.aws
@@ -41,7 +41,7 @@ $ echo $AWS_HOME
 ```
 
 ### b. `whatis`
-whatis shows description for user commands, system calls, library functions, and others in manual pages
+whatis menampilkan deskripsi dari perintah yang diinputkan user atau pengguna, system calls, library functions, dan lainnya pada terminal.
 ```bash
 whatis something
 ```
@@ -52,7 +52,7 @@ bash (1)             - GNU Bourne-Again SHell
 ```
 
 ### c. `whereis`
-whereis searches for executables, source files, and manual pages using a database built by system automatically.
+whereis digunakan untuk mencari executable file, source filesnya, dan ditampilkan di terminal menggunakan database yang dibuat oleh sistem secara otomatis.
 ```bash
 whereis name
 ```
@@ -63,9 +63,9 @@ $ whereis php
 ```
 
 ### d. `which`
-which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
+which digunakan untuk mencari executable file yang ada di direktori tertentu yang sudah ditentukan sebelumnya oleh PATH environment variable. Perintah ini akan menampilkan `PATH` dari executable file yang ingin kamu cari.
 ```bash
-which program_name 
+which program_name
 ```
 Example:
 ```bash
@@ -74,9 +74,9 @@ $ which php
 ```
 
 ### e. clear
-Clears content on window.
+Menghapus isi dari console atau terminal.
 
-## 1.1. File Operations
+## 1.1. Operasi File
 <table>
    <tr>
       <td><a href="#a-cat">cat</a></td>
@@ -105,14 +105,14 @@ Clears content on window.
 </table>
 
 ### a. `cat`
-It can be used for the following purposes under UNIX or Linux.  
+It can be used for the following purposes under UNIX or Linux.
 * Display text files on screen
-* Copy text files  
-* Combine text files  
-* Create new text files  
+* Copy text files
+* Combine text files
+* Create new text files
 ```bash
 cat filename
-cat file1 file2 
+cat file1 file2
 cat file1 file2 > newcombinedfile
 cat < file1 > file2 #copy file1 to file2
 ```
@@ -130,20 +130,20 @@ chown -options user:group filename
 ```
 
 ### d. `cp`
-Copies a file from one location to other.  
+Copies a file from one location to other.
 ```bash
 cp filename1 filename2
 ```
 Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
 
 ### e. `diff`
-Compares files, and lists their differences.  
+Compares files, and lists their differences.
 ```bash
 diff filename1 filename2
 ```
 
 ### f. `file`
-Determine file type.  
+Determine file type.
 ```bash
 file filename
 ```
@@ -164,31 +164,31 @@ $ find /home/user1 -name '*.png'
 ```
 
 ### h. `gunzip`
-Un-compresses files compressed by gzip.  
+Un-compresses files compressed by gzip.
 ```bash
 gunzip filename
 ```
 
 ### i. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it.  
+Lets you look at gzipped file without actually having to gunzip it.
 ```bash
 gzcat filename
 ```
 
 ### j. `gzip`
-Compresses files.  
+Compresses files.
 ```bash
 gzip filename
 ```
 
 ### k. `head`
-Outputs the first 10 lines of file  
+Outputs the first 10 lines of file
 ```bash
 head filename
 ```
 
 ### l. `lpq`
-Check out the printer queue.  
+Check out the printer queue.
 ```bash
 lpq
 ```
@@ -201,19 +201,19 @@ active  adnanad 59      demo                            399360 bytes
 ```
 
 ### m. `lpr`
-Print the file.  
+Print the file.
 ```bash
 lpr filename
 ```
 
 ### n. `lprm`
-Remove something from the printer queue.  
+Remove something from the printer queue.
 ```bash
 lprm jobnumber
 ```
 
 ### o. `ls`
-Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
+Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).
 ```bash
 ls option
 ```
@@ -231,13 +231,13 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 </pre>
 
 ### p. `more`
-Shows the first part of a file (move with space and type q to quit).  
+Shows the first part of a file (move with space and type q to quit).
 ```bash
 more filename
 ```
 
 ### q. `mv`
-Moves a file from one location to other.  
+Moves a file from one location to other.
 ```bash
 mv filename1 filename2
 ```
@@ -257,7 +257,7 @@ rm filename
 ```
 
 ### s. `tail`
-Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
+Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.
 ```bash
 tail filename
 ```
@@ -272,7 +272,7 @@ Example:
 $ touch trick.md
 ```
 
-## 1.2. Text Operations
+## 1.2. Operasi Teks
 
 <table>
     <tr>
@@ -366,7 +366,7 @@ Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
 *example.txt*
 ```bash
 Lorem ipsum
-dolor sit amet, 
+dolor sit amet,
 consetetur
 sadipscing elitr,
 sed diam nonumy
@@ -412,7 +412,7 @@ consetetur
 sadipscing elitr,
 sed diam nonumy
 eirmod tempor
-foo (Lorem|dolor) 
+foo (Lorem|dolor)
 invidunt ut labore
 et dolore magna
 aliquyam erat, sed
@@ -435,7 +435,7 @@ or
 grep -F '(Lorem|dolor)' example.txt
 ```
 ```bash
-foo (Lorem|dolor) 
+foo (Lorem|dolor)
 ```
 
 ### f. `fmt`
@@ -473,7 +473,7 @@ amet.
 ```
 
 ### g. `grep`
-Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.  
+Looks for text inside files. You can use grep to search for lines of text that match one or many regular expressions, and outputs only the matching lines.
 ```bash
 grep pattern filename
 ```
@@ -518,7 +518,7 @@ amet.
 
 *show example.txt with line numbers*
 ```bash
-nl -s". " example.txt 
+nl -s". " example.txt
 ```
 ```bash
      1. Lorem ipsum
@@ -548,7 +548,7 @@ Stream editor for filtering and transforming text
 *example.txt*
 ```bash
 Hello This is a Test 1 2 3 4
-``` 
+```
 
 *replace all spaces with hyphens*
 ```bash
@@ -618,7 +618,7 @@ Hello World Foo Bar Baz!
 
 *take all lower case letters and make them upper case*
 ```bash
-cat example.txt | tr 'a-z' 'A-Z' 
+cat example.txt | tr 'a-z' 'A-Z'
 ```
 ```bash
 HELLO WORLD FOO BAR BAZ!
@@ -674,7 +674,7 @@ sort example.txt | uniq -c
 ```
 
 ### m. `wc`
-Tells you how many lines, words and characters there are in a file.  
+Tells you how many lines, words and characters there are in a file.
 ```bash
 wc filename
 ```
@@ -685,7 +685,7 @@ $ wc demo.txt
 ```
 Where `7459` is lines, `15915` is words and `398400` is characters.
 
-## 1.3. Directory Operations
+## 1.3. Operasi Direktori
 
 <table>
    <tr>
@@ -696,7 +696,7 @@ Where `7459` is lines, `15915` is words and `398400` is characters.
 </table>
 
 ### a. `cd`
-Moves you from one directory to other. Running this  
+Moves you from one directory to other. Running this
 ```bash
 $ cd
 ```
@@ -706,7 +706,7 @@ cd dirname
 ```
 
 ### b. `mkdir`
-Makes a new directory.  
+Makes a new directory.
 ```bash
 mkdir dirname
 ```
@@ -715,7 +715,7 @@ You can use this to create multiple directories at once within your current dire
 mkdir 1stDirectory 2ndDirectory 3rdDirectory
 ```
 You can also use this to create parent directories at the same time with the -p (or --parents) flag. For instance, if you wanted a directory named 'project1' in another subdirectory at '/samples/bash/projects/', you could run:
-```bash 
+```bash
 mkdir -p /samples/bash/projects/project1
 mkdir --parents /samples/bash/projects/project1
 ```
@@ -723,12 +723,12 @@ Both commands above will do the same thing.
 If any of these directories did no already exist, they would be created as well.
 
 ### c. `pwd`
-Tells you which directory you currently are in.  
+Tells you which directory you currently are in.
 ```bash
 pwd
 ```
 
-## 1.4. SSH, System Info & Network Operations
+## 1.4. SSH, Informasi Sistem & Operasi Jaringan
 
 <table>
    <tr>
@@ -739,7 +739,7 @@ pwd
       <td><a href="#e-dig">dig</a></td>
       <td><a href="#f-du">du</a></td>
       <td><a href="#g-fg">fg</a></td>
-      <td><a href="#h-finger">finger</a></td>   
+      <td><a href="#h-finger">finger</a></td>
       <td><a href="#i-jobs">jobs</a></td>
       <td><a href="#j-last">last</a></td>
    </tr>
@@ -778,7 +778,7 @@ Shows the current date and time.
 Shows disk usage.
 
 ### e. `dig`
-Gets DNS information for domain.  
+Gets DNS information for domain.
 ```bash
 dig domain
 ```
@@ -790,7 +790,7 @@ du [option] [filename|directory]
 ```
 Options:
 - `-h` (human readable) Displays output it in kilobytes (K), megabytes (M) and gigabytes (G).
-- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories. 
+- `-s` (supress or summarize) Outputs total disk space of a directory and supresses reports for subdirectories.
 
 Example:
 ```bash
@@ -802,7 +802,7 @@ du -sh pictures
 Brings the most recent job in the foreground.
 
 ### h. `finger`
-Displays information about user.  
+Displays information about user.
 ```bash
 finger username
 ```
@@ -810,13 +810,13 @@ finger username
 Lists the jobs running in the background, giving the job number.
 
 ### j. `last`
-Lists your last logins of specified user.  
+Lists your last logins of specified user.
 ```bash
 last yourUsername
 ```
 
 ### k. `man`
-Shows the manual for specified command.  
+Shows the manual for specified command.
 ```bash
 man command
 ```
@@ -825,23 +825,23 @@ man command
 Allows the current logged user to change their password.
 
 ### m. `ping`
-Pings host and outputs results.  
+Pings host and outputs results.
 ```bash
 ping host
 ```
 
 ### n. `ps`
-Lists your processes.  
+Lists your processes.
 ```bash
 ps -u yourusername
 ```
-Use the flags ef. e for every process and f for full listing. 
+Use the flags ef. e for every process and f for full listing.
 ```bash
 ps -ef
 ```
 
 ### o. `quota`
-Shows what your disk quota is.  
+Shows what your disk quota is.
 ```bash
 quota -v
 ```
@@ -858,17 +858,17 @@ scp source_file user@host:directory/target_file
 scp user@host:directory/source_file target_file
 scp -r user@host:directory/source_folder target_folder
 ```
-This command also accepts an option `-P` that can be used to connect to specific port.  
+This command also accepts an option `-P` that can be used to connect to specific port.
 ```bash
 scp -P port user@host:directory/source_file target_file
 ```
 
 ### q. `ssh`
-ssh (SSH client) is a program for logging into and executing commands on a remote machine.  
+ssh (SSH client) is a program for logging into and executing commands on a remote machine.
 ```bash
 ssh user@host
 ```
-This command also accepts an option `-p` that can be used to connect to specific port.  
+This command also accepts an option `-p` that can be used to connect to specific port.
 ```bash
 ssh -p port user@host
 ```
@@ -877,7 +877,7 @@ ssh -p port user@host
 Displays your currently active processes.
 
 ### s. `uname`
-Shows kernel information.  
+Shows kernel information.
 ```bash
 uname -a
 ```
@@ -889,7 +889,7 @@ Shows current uptime.
 Displays who is online.
 
 ### v. `wget`
-Downloads file.  
+Downloads file.
 ```bash
 wget file
 ```
@@ -898,7 +898,7 @@ wget file
 Return current logged in username.
 
 ### x. `whois`
-Gets whois information for domain.  
+Gets whois information for domain.
 ```bash
 whois domain
 ```
@@ -918,7 +918,7 @@ curl url
 Use  `-X` or `--request` to specify which method you would like invoke (GET, POST, DELETE, ...).
 Use `-d <data>` or `--data <data>` to POST data on given URL.
 
-## 1.5. Process Monitoring Operations
+## 1.5. Operasi Monitoring Proses
 
 <table>
    <tr>
@@ -930,13 +930,13 @@ Use `-d <data>` or `--data <data>` to POST data on given URL.
 </table>
 
 ### a. `kill`
-Kills (ends) the processes with the ID you gave.  
+Kills (ends) the processes with the ID you gave.
 ```bash
 kill PID
 ```
 
 ### b. `killall`
-Kill all processes with the name.  
+Kill all processes with the name.
 ```bash
 killall processname
 ```
@@ -952,7 +952,7 @@ nohup stands for "No Hang Up". This allows to run command/process or shell scrip
 ```bash
 nohup command
 ```
-Combine it with `&` to create background processes 
+Combine it with `&` to create background processes
 ```bash
 nohup command &
 ```
@@ -1212,7 +1212,7 @@ cd $hotellogs
 
 ## Re-execute the previous command
 
-This goes back to the days before you could rely on keyboards to have an "up" arrow key, but can still be useful. 
+This goes back to the days before you could rely on keyboards to have an "up" arrow key, but can still be useful.
 To run the last command in your history
 ```bash
 !!
