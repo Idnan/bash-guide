@@ -24,7 +24,7 @@
 # 1. Operasi Dasar
 
 ### a. `export`
-Menampilkan semua variabel environment. Jika kamu ingin mendapatkan detail dari variabel tertentu, gunakan `echo $VARIABLE_NAME`.
+Menampilkan semua variabel environment. Jika Kamu ingin mendapatkan detail dari variabel tertentu, gunakan `echo $VARIABLE_NAME`.
 ```bash
 export
 ```
@@ -118,13 +118,13 @@ cat < file1 > file2 #copy file1 to file2 file1 > file2 #copy file1 to file2
 ```
 
 ### b. `chmod`
-Perintah atau command chmod adalah singkatan dari "change mode" yang memungkinkan kita untuk mengubah izin `read`, `write`, dan `execute` pada file dan folder. Untuk informasi lebih lanjut tentang perintah ini, kunjungi tautan berikut [Link](https://ss64.com/bash/chmod.html).
+Perintah atau command chmod adalah singkatan dari "change mode" yang memungkinkan Kita untuk mengubah izin `read`, `write`, dan `execute` pada file dan folder. Untuk informasi lebih lanjut tentang perintah ini, kunjungi tautan berikut [Link](https://ss64.com/bash/chmod.html).
 ```bash
 chmod -options filename
 ```
 
 ### c. `chown`
-Perintah chown yang merupakan singkatan dari "change owner", memungkinkan kita untuk mengubah pemilik atau owner dari file atau folder, yang mana dapat berupa user atau group. Kombinasi penggunaannya yaitu user (owner), kemudian groupnya, yang dipisahkan oleh titik dua `(:)`.
+Perintah chown yang merupakan singkatan dari "change owner", memungkinkan Kita untuk mengubah pemilik atau owner dari file atau folder, yang mana dapat berupa user atau group. Kombinasi penggunaannya yaitu user (owner), kemudian groupnya, yang dipisahkan oleh titik dua `(:)`.
 ```bash
 chown -options user:group filename
 ```
@@ -164,31 +164,31 @@ $ find /home/user1 -name '*.png'
 ```
 
 ### h. `gunzip`
-Un-compresses files compressed by gzip.  
+Membuka atau mengekstrak file yang dikompres oleh gzip.  
 ```bash
 gunzip filename
 ```
 
 ### i. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it.  
+Dengan perintah ini Kamu dapat melihat isi dari file `gzip` tanpa diekstrak terlebih dahulu.  
 ```bash
 gzcat filename
 ```
 
 ### j. `gzip`
-Compresses files.  
+Mengkompres files.  
 ```bash
 gzip filename
 ```
 
 ### k. `head`
-Outputs the first 10 lines of file  
+Menampilkan 10 baris pertama dari file.
 ```bash
 head filename
 ```
 
 ### l. `lpq`
-Check out the printer queue.  
+Menampilkan job pada antrian printer.  
 ```bash
 lpq
 ```
@@ -201,19 +201,19 @@ active  adnanad 59      demo                            399360 bytes
 ```
 
 ### m. `lpr`
-Print the file.  
+Cetak isi dari file.  
 ```bash
 lpr filename
 ```
 
 ### n. `lprm`
-Remove something from the printer queue.  
+Mengahapus job pada antrian printer.  
 ```bash
 lprm jobnumber
 ```
 
 ### o. `ls`
-Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
+Menampilkan list atau daftar file dalam direktori. `ls` memiliki banyak opsi: `-l` mencantumkan file dalam 'format panjang', yang berisi ukuran dari file, siapa pemilik atau owner file, siapa yang berhak untuk mengakses file, dan kapan terakhir kali file tersebut dimodifikasi. `-a` menampilakan daftar file, termasuk file yang tersembunyi. Kunjungi link berikut untuk informasi lebih lanjut [link](https://ss64.com/bash/ls.html).  
 ```bash
 ls option
 ```
@@ -231,39 +231,39 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 </pre>
 
 ### p. `more`
-Shows the first part of a file (move with space and type q to quit).  
+Menampilkan isi dari file (gunakan space untuk menampilkan lebih banyak isi dari file dan untuk keluar gunakan q).  
 ```bash
 more filename
 ```
 
 ### q. `mv`
-Moves a file from one location to other.  
+Memindahkan file secara permanen ke lokasi yang berbeda.  
 ```bash
 mv filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+Yang mana `filename1` adalah file sumbernya `filename2` adalah destinasinya.
 
-Also it can be used for rename a file.
+Juga digunakan untuk mengganti nama atau rename file.
 ```bash
 mv old_name new_name
 ```
 
 ### r. `rm`
-Removes a file. Using this command on a directory gives you an error.
+Digunakan untuk menghapus file. Akan error jika command ini digunakan untuk menghapus direktori.
 `rm: directory: is a directory`
-To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
+Untuk menghapus direktori cukup tambahkan argumen `-r` sehingga akan menghapus isi direktori secara rekursif. Opsi lainnya yaitu jika ingin  mengahapus file atau direktori tanpa konfirmasi terlebih dahulu gunakan argumen `-f`.
 ```bash
 rm filename
 ```
 
 ### s. `tail`
-Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
+Menampilkan 10 baris terakhir file. Gunakan `-f` ketika ingin melihat perubahan baru dari isi file.  
 ```bash
 tail filename
 ```
 
 ### t. `touch`
-Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
+Memperbarui akses dan time stamps dari file. Kita juga bisa memanfaatkan touch untuk membuat file baru.
 ```bash
 touch filename
 ```
@@ -272,7 +272,7 @@ Example:
 $ touch trick.md
 ```
 
-## 1.2. Text Operations
+## 1.2. Operasi Teks
 
 <table>
     <tr>
