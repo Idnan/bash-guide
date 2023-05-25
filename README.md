@@ -1155,11 +1155,6 @@ There are three types of loops in bash. `for`, `while` and `until`.
 
 Different `for` Syntax:
 ```bash
-for x := 1 to 10 do
-begin
-  statements
-end
-
 for name [in list]
 do
   statements that can use $name
