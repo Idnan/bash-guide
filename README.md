@@ -754,6 +754,7 @@ pwd
       <td><a href="#r-top">top</a></td>
       <td><a href="#s-uname">uname</a></td>
       <td><a href="#t-uptime">uptime</a></td>
+      <td><a href="#t2-netstat">netstat</a></td>
    </tr>
    <tr>
       <td><a href="#u-w">w</a></td>
@@ -884,6 +885,9 @@ uname -a
 
 ### t. `uptime`
 Shows current uptime.
+
+### t2. `netstat`
+Shows network status and protocol statistics.
 
 ### u. `w`
 Displays who is online.
