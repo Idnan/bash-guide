@@ -101,7 +101,7 @@ Clears content on window.
       <td><a href="#r-rm">rm</a></td>
       <td><a href="#s-tail">tail</a></td>
       <td><a href="#t-touch">touch</a></td>
-      <td><a href="#File operations Tricks">File operations Tricks</a></td>
+      <td><a href="#u-File operations Tricks">File operations Tricks</a></td>
    </tr>
 </table>
 
@@ -272,7 +272,7 @@ Example:
 ```bash
 $ touch trick.md
 ```
-### File operations Tricks.
+### u. File operations Tricks.
 
 To check the size of a file, you can use the `du` command
 ```bash
