@@ -101,6 +101,7 @@ Clears content on window.
       <td><a href="#r-rm">rm</a></td>
       <td><a href="#s-tail">tail</a></td>
       <td><a href="#t-touch">touch</a></td>
+      <td><a href="#u-du">du</a></td>
    </tr>
 </table>
 
@@ -270,6 +271,22 @@ touch filename
 Example:
 ```bash
 $ touch trick.md
+```
+### u. `du`
+
+To check the size of a file, you can use the `du` command
+```bash
+du -h myfile.txt
+```
+### File operations Tricks.
+
+copy current directory to the parent directory (the directory one level above the current one).
+```bash
+cp filename ../
+```
+You can redirect the output of a command to a file using `>`.
+```bash
+command > output.txt
 ```
 
 ## 1.2. Text Operations
