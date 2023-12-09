@@ -3,28 +3,67 @@
 </p>
 
 ## Table of Contents
-  1. [Basic Operations](#1-basic-operations)  
-    1.1. [File Operations](#11-file-operations)  
-    1.2. [Text Operations](#12-text-operations)  
-    1.3. [Directory Operations](#13-directory-operations)  
-    1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
-    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
-  2. [Basic Shell Programming](#2-basic-shell-programming)  
-    2.1. [Variables](#21-variables)  
-    2.2. [Array](#22-array)  
-    2.3. [String Substitution](#23-string-substitution)  
-    2.4. [Other String Tricks](#24-other-string-tricks)  
-    2.5. [Functions](#25-functions)  
-    2.6. [Conditionals](#26-conditionals)  
-    2.7. [Loops](#27-loops)  
-  3. [Tricks](#3-tricks)  
-  4. [Debugging](#4-debugging)  
-  5. [Multi-threading](#5-multi-threading)
+
+  1. [Basic Operations](#basic-operations)
+    1.1. [File Operations](#file-operations)
+    1.2. [Text Operations](#text-operations)
+    1.3. [Directory Operations](#directory-operations)
+    1.4. [SSH, System Info & Network Operations](#ssh-system-info--network-operations)
+    1.5. [Process Monitoring Operations](#process-monitoring-operations)
+    1.6. [Redirections and Piping](#redirections-and-piping)
+      1.6.1. [`>`](#greater-than)
+      1.6.2. [`>>`](#double-greater-than)
+      1.6.3. [`|`](#pipe)
+    1.7. [Permission Management](#permission-management)
+      1.7.1. [chmod](#chmod)
+      1.7.2. [chown](#chown)
+      1.7.3. [chgrp](#chgrp)
+    1.8. [Pattern Search and Manipulation](#pattern-search-and-manipulation)
+      1.8.1. [grep](#grep)
+      1.8.2. [awk](#awk)
+      1.8.3. [sed](#sed)
+
+  2. [Basic Shell Programming](#basic-shell-programming)
+    2.1. [Variables](#variables)
+    2.2. [Array](#array)
+    2.3. [String Substitution](#string-substitution)
+    2.4. [Other String Tricks](#other-string-tricks)
+    2.5. [Functions](#functions)
+    2.6. [Conditionals](#conditionals)
+    2.7. [Loops](#loops)
+    2.8. [Working with History](#working-with-history)
+      2.8.1. [history](#history)
+      2.8.2. [History Shortcuts and Tricks](#history-shortcuts)
+    2.9. [Advanced Shell Programming](#advanced-shell-programming)
+      2.9.1. [trap](#trap)
+      2.9.2. [getopts](#getopts)
+    2.10. [Interacting with Other Languages](#interacting-with-other-languages)
+      2.10.1. [Executing Other Languages](#executing-other-languages)
+      2.10.2. [Running SQL Commands from Bash](#sql-from-bash)
+    2.11. [Use of Additional Tools](#use-of-additional-tools)
+      2.11.1. [tmux](#tmux)
+      2.11.2. [wget](#wget)
+
+  3. [Tricks](#tricks)
+    3.1. [Best Practices](#best-practices)
+      3.1.1. [Writing Style](#writing-style)
+      3.1.2. [Tips for Maintainability](#maintainability-tips)
+    3.2. [Environments and Profiles](#environments-and-profiles)
+      3.2.1. [`.bashrc vs .bash_profile`](#bashrc-vs-bash_profile)
+      3.2.2. [Custom Aliases](#custom-aliases)
+    3.3. [Package and Software Management](#package-and-software-management)
+      3.3.1. [Package Managers](#package-managers)
+      3.3.2. [Installation from Source Code](#source-code-installation)
+    3.4. [Archiving and Compression](#archiving-and-compression)
+      4.1. [tar](#tar)
+      4.2. [Compression Tools](#compression-tools)
+  4. [Debugging](#debugging)
+  5. [Multi-threading](#multi-threading)
 
 # 1. Basic Operations
 
 ### a. `export`
-Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
+Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.
 ```bash
 export
 ```
@@ -957,8 +996,75 @@ Combine it with `&` to create background processes
 nohup command &
 ```
 
-# 2. Basic Shell Programming
+## 1.6. Redirections and Piping
 
+<table>
+   <tr>
+      <td><a href="#a-input,output,errorRedirection">Input,Output, and Error Redirection</a></td>
+      <td><a href="#b-pipe">Using pipe '|' to connect commands</a></td>
+   </tr>
+</table>
+
+### a. `imput,output,errorRedirection`
+Redirects input, output, or errors to/from files or commands. 
+```bash
+command > output.txt  # Redirects output
+command 2> error.txt  # Redirects errors
+command < input.txt   # Redirects input
+```
+Example:
+```
+$ echo "Hello, World!" > hello.txt
+$ cat < hello.txt
+Hello, World!
+```
+
+### b. `pipe`
+Pipe the output of one command into another
+```bash
+command1 | command2
+```
+Example:
+```bash
+$ echo "Hello, World!" | awk '{print $2}'
+World!
+```
+
+## 1.7. Permisions managment
+
+<table>
+   <tr>
+      <td><a href="#a-chmod">chmod</a></td>
+      <td><a href="#b-chown">chown</a></td>
+      <td><a href="#b-chgrp">chgrp</a></td>
+      <td><a href="#b-umask">umask</a></td>
+   </tr>
+</table>
+
+### a. `chmod`
+Change files permissions.
+```bash
+chmod [permissions] [file]
+```
+
+### b. `chown`
+Change file owner
+```bash
+chown [owner]:[group] [file]
+```
+
+### c. `chgrp`
+Change group ownership of a file
+```bash
+chgrp [group] [file]
+```
+
+### d. `umask`
+Set default permisions for newly created files
+```bash
+umask [value]
+```
+# 2. Basic Shell Programming
 
 The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
 
