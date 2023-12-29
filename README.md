@@ -711,6 +711,10 @@ moves you to home directory. This command accepts an optional `dirname`, which m
 ```bash
 cd dirname
 ```
+Switch to the previous working directory
+```bash
+cd -
+```
 
 ### b. `mkdir`
 Makes a new directory.  
