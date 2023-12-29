@@ -17,7 +17,8 @@
     2.5. [Functions](#25-functions)  
     2.6. [Conditionals](#26-conditionals)  
     2.7. [Loops](#27-loops)  
-    2.8. [Pipes](#28-pipes)  
+    2.8. [Regex](#28-regex)
+    2.9. [Pipes](#29-pipes)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
   5. [Multi-threading](#5-multi-threading)
@@ -1192,7 +1193,137 @@ until condition; do
 done
 ```
 
-## 2.8. Pipes
+# 2.8. Regex
+
+They are a powerful tool for manipulating and searching text. Here are some examples of regular expressions that use each `metacharacter`:
+
+<table>
+   <tr>
+      <td><a href="#a-dot">`.`(dot)</a></td>
+      <td><a href="#b-asterisk">`*`(asterisk)</a></td>
+      <td><a href="#c-plus">`+`(plus)</a></td>
+      <td><a href="#d-question_mark">`?`(question mark)</a></td>
+      <td><a href="#c-plus">`|`(pipe)</a></td>
+      <td><a href="#c-plus">`[]`(character class)</a></td>
+      <td><a href="#c-plus">`[^]`(negated character class)</a></td>
+      <td><a href="#c-plus">`()`(grouping)</a></td>
+      <td><a href="#c-plus">`{}`(quantifiers)</a></td>
+      <td><a href="#c-plus">`\`(escape)</a></td>
+   </tr>
+</table>
+
+### a. `.` (dot)
+Matches any single character except newline.  
+```bash
+grep h.t file.txt
+```
+Output:
+```bash
+hat
+hot
+hit
+```
+
+### b. `*` (asterisk)
+Matches zero or more occurrences of the preceding character or group.
+```bash
+grep ab*c file.txt
+```
+Output:
+```bash
+ac
+abc
+abbc
+abbbc
+```
+
+### c. `+` (plus)
+Matches one or more occurrences of the preceding character or group.
+```bash
+grep ab+c file.txt
+```
+Output:
+```bash
+abc
+abbc
+abbbc
+abbbbc
+```
+
+### d. `?` (question mark)
+Matches zero or one occurrence of the preceding character or group.
+```bash
+grep ab?c file.txt
+```
+Output:
+```bash
+ac
+abc
+```
+
+### e. `|` (pipe)
+Matches either the pattern to the left or the pattern to the right.
+```bash
+egrep "cat|dog" file.txt
+```
+Output:
+```bash
+cat
+dog
+```
+
+### f. `[]` (character class)
+Matches any character inside the brackets.
+```bash
+[aeiou] will match any vowel
+[a-z] will match any lowercase letter
+```
+
+### g. `[]` (negated character class)
+Matches any character not inside the brackets.
+```bash
+[^aeiou] will match any consonant
+[^a-z] will match any non-lowercase letter
+```
+
+### h. `()` (grouping)
+Groups multiple tokens together and creates a capture group.
+```bash
+egrep "(ab)+" file.txt
+```
+
+Output:
+```bash
+ab
+abab
+ababab
+```
+
+### i. `{}` (quantifiers)
+Matches a specific number of occurrences of the preceding character or group.
+```bash
+egrep "a{3}" file.txt
+```
+
+Output:
+```bash
+aaa
+aaaa
+aaaaa
+```
+
+### j. `\` (escape)
+Escapes the next character to match it literally.
+```bash
+egrep "a\+" file.txt
+```
+
+Output:
+```bash
+a+
+```
+=======
+## 2.9. Pipes
 
 Multiple commands can be linked together with a pipe, `|`. A `|` will send the standard-output from command A to the standard-input of command B.
 Pipes can also be constructed with the `|&` symbols. This will send the standard-output **and** standard-error from command A to the standard-input of command B.
