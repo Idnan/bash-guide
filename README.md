@@ -17,6 +17,7 @@
     2.5. [Functions](#25-functions)  
     2.6. [Conditionals](#26-conditionals)  
     2.7. [Loops](#27-loops)  
+    2.8. [Pipes](#28-pipes)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
   5. [Multi-threading](#5-multi-threading)
@@ -1190,6 +1191,11 @@ until condition; do
   statements
 done
 ```
+
+## 2.8. Pipes
+
+Multiple commands can be linked together with a pipe, `|`. A `|` will send the standard-output from command A to the standard-input of command B.
+Pipes can also be constructed with the `|&` symbols. This will send the standard-output **and** standard-error from command A to the standard-input of command B.
 
 # 3. Tricks
 
