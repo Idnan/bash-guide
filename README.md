@@ -17,7 +17,7 @@
     2.5. [Functions](#25-functions)  
     2.6. [Conditionals](#26-conditionals)  
     2.7. [Loops](#27-loops)  
-    2.8. [Regex](#28-regex)
+    2.8. [Regex](#28-regex)  
     2.9. [Pipes](#29-pipes)  
   3. [Tricks](#3-tricks)  
   4. [Debugging](#4-debugging)  
