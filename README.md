@@ -2,6 +2,12 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
+## Sponsored By
+
+[Manyapis - A place where you can find the best APIs for your project like IP Geolocation Data, Email Verification, Phone Number Validation, Currency Exchange Rates, URL Shortening, and many more.](https://manyapis.com)
+
+If you would like to sponsor my efforts, please do reach out.
+
 ## Table of Contents
   1. [Basic Operations](#1-basic-operations)  
     1.1. [File Operations](#11-file-operations)  
@@ -1433,12 +1439,6 @@ wait
 - [Russian | Русский](https://github.com/navinweb/bash-guide)
 - [Vietnamese | Tiếng Việt](https://github.com/nguyenvanhieuvn/hoc-bash)
 - [Spanish | Español](https://github.com/mariotristan/bash-guide)
-
-## Sponsored By
-
-[Manyapis - A place where you can find the best APIs for your project like IP Geolocation Data, Email Verification, Phone Number Validation, Currency Exchange Rates, URL Shortening, and many more.](https://manyapis.com)
-
-If you would like to sponsor my efforts, please do reach out.
 
 ## License
 
