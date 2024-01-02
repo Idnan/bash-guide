@@ -1434,6 +1434,12 @@ wait
 - [Vietnamese | Tiếng Việt](https://github.com/nguyenvanhieuvn/hoc-bash)
 - [Spanish | Español](https://github.com/mariotristan/bash-guide)
 
+## Sponsored By
+
+[Manyapis - A place where you can find the best APIs for your project like IP Geolocation Data, Email Verification, Phone Number Validation, Currency Exchange Rates, URL Shortening, and many more.](https://manyapis.com)
+
+If you would like to sponsor my efforts, please do reach out.
+
 ## License
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
