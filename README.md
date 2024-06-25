@@ -1107,7 +1107,7 @@ When you run the above example the `hello` function will output "world!". The ab
 The conditional statement in bash is similar to other programming languages. Conditions have many form like the most basic form is `if` expression `then` statement where statement is only executed if expression is true.
 
 ```bash
-if [ expression ]; then
+if [[ expression ]]; then
     will execute only if expression is true
 else
     will execute if expression is false
