@@ -11,6 +11,7 @@
     1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
   2. [Basic Shell Programming](#2-basic-shell-programming)  
     2.1. [Variables](#21-variables)  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.1.1. [Special variables](#211-special-variables)  
     2.2. [Array](#22-array)  
     2.3. [String Substitution](#23-string-substitution)  
     2.4. [Other String Tricks](#24-other-string-tricks)  
@@ -994,6 +995,63 @@ Example:
 ```bash
 echo $str   # hello world
 ```
+
+## 2.1.1. Special Variables
+
+### a. `$!`
+Expands to the PID (Process ID) of the most recent job placed into background.
+
+Example:
+```bash
+$ sleep 20 &
+[1] 30969 # PID
+$ echo $!
+30969
+```
+
+### b. `$@`
+Expands to the positional parameters passed to script/function.
+
+Example:
+```bash
+#!/bin/bash
+function demo {
+   echo $@
+}
+demo foo bar # Output: foo bar
+```
+
+### c. `$#`
+Expands to number of positional parameters passed to a script/function.
+
+Example:
+```bash
+#!/bin/bash
+function param_count {
+   echo $#
+}
+param_count foo bar foo # Output: 3
+```
+
+### d. `$$`
+Expands to the PID (Process ID) of current running shell/shell script. In subshell it expands to PID of invonking shell, not current subshell.
+
+### e. `$*`
+Expands to positional parameters passed to script/function, similar to `$@` but the difference is noticed when we put quotes around `$*` and `$@`  
+`./test.sh "$*"` - `test.sh` recieves `arg1 arg2 arg3` as single argument  
+`./test.sh "$@"` - `test.sh` recieves `arg1`, `arg2`, `arg3` as seperate argument
+
+### f. `$_`
+Holds the value of the last argument to the previous command
+
+Example
+```bash
+$ echo Hello, bashers
+Hello, bashers
+$ echo $_
+bashers
+```
+
 ## 2.2. Array
 Like other languages bash has also arrays. An array is a variable containing multiple values. There's no maximum limit on the size of array. Arrays in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash which are given below.
 
