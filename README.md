@@ -1,4 +1,4 @@
-<p align="center">
+<p> align="center">
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
@@ -155,16 +155,27 @@ Example:
 $ file index.html
  index.html: HTML document, ASCII text
 ```
+
 ### g. `find`
 Find files in directory
+
 ```bash
 find directory options pattern
 ```
+
 Example:
+
 ```bash
+# Case-sensitive search
 $ find . -name README.md
 $ find /home/user1 -name '*.png'
+
+# Case-insensitive search
+$ find /home/user1 -iname '*.png'
 ```
+
+The `-name` option performs a case-sensitive search. If you are unsure about
+the exact filename casing, use `-iname` to perform a case-insensitive search.
 
 ### h. `gunzip`
 Un-compresses files compressed by gzip.  
@@ -616,7 +627,7 @@ d
 g
 e
 ```
-
+why so fucking complicate
 ### k. `tr`
 Translate or delete characters
 
